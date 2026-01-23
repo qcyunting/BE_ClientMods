@@ -1,0 +1,14 @@
+{
+  "netgame_mod_name": "HyperClashMod",
+  "netgame_mod_version": "1.0.0",
+  "min_app_version": null,
+  "author": null,
+  "group": null,
+  "module_names": null,
+  "support_server_type": [
+    "game"
+  ],
+  "unsupport_app_version": null,
+  "CustomPath": null,
+  "CustomTags": []
+}
