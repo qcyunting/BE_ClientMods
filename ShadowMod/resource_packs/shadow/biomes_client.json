@@ -1,0 +1,337 @@
+/*
+ - Default is the settings that a biome will use if it is not specified.
+ - All fields in a biome are optional default values will overwrite the missing ones.
+ - If the default is overwritten in a resource pack then it will overwrite all biomes unless the resource pack defines the biomes.
+  */
+{
+  "biomes": {
+    "default": {
+      "water_surface_color": "#44AFF5",
+      "water_surface_transparency": 0.5,
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 120,
+      "fog_identifier": "repixelcraft:base"
+    },
+    "plains": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "sunflower_plains": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "desert": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "extreme_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "forest": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "flower_forest": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "taiga": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "taiga_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "swampland": {
+      "water_surface_color": "#44AFF5",
+      "water_surface_transparency": 0.1,
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 20,
+      "fog_identifier":"repixelcraft:base"
+    },
+    "swampland_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_surface_transparency": 0.1,
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 20,
+      "fog_identifier":"repixelcraft:base"
+    },
+    "river": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 30,
+      "fog_identifier": "repixelcraft:base"
+    },
+    "hell": {
+      "hell_fog_color": "#ff6400",
+      "hell_fog_distance": 16,
+      "water_surface_color": "#ff6400",
+      "water_fog_color": "#ff6400",
+      "water_fog_distance": 16,
+      "fog_identifier": "repixelcraft:hell"
+    },
+    "basalt_deltas": {
+      "basalt_deltas_fog_color": "#ff6400",
+      "basalt_deltas_fog_distance": 16,
+      "water_surface_color": "#ff6400",
+      "water_fog_color": "#ff6400",
+      "water_fog_distance": 16,
+      "fog_identifier": "repixelcraft:basalt_deltas"
+    },
+    "crimson_forest": {
+      "crimson_forest_fog_color": "#ff6400",
+      "crimson_forest_fog_distance": 16,
+      "water_surface_color": "#ff6400",
+      "water_fog_color": "#ff6400",
+      "water_fog_distance": 16,
+      "fog_identifier": "repixelcraft:crimson_forest"
+    },
+    "soulsand_valley": {
+      "soulsand_valley_fog_color": "#ff6400",
+      "soulsand_valley_fog_distance": 16,
+      "water_surface_color": "#ff6400",
+      "water_fog_color": "#ff6400",
+      "water_fog_distance": 16,
+      "fog_identifier": "repixelcraft:soulsand_valley"
+    },
+    "warped_forest": {
+      "warped_forest_fog_color": "#ff6400",
+      "warped_forest_fog_distance": 16,
+      "water_surface_color": "#ff6400",
+      "water_fog_color": "#ff6400",
+      "water_fog_distance": 16,
+      "fog_identifier": "repixelcraft:warped_forest"
+    },
+    "the_end": {
+      "the_end_fog_color": "#ffffff",
+      "the_end_fog_distance": 16,
+      "fog_identifier": "repixelcraft:ender"
+      
+    },
+    "frozen_river": {
+      "water_surface_color": "#44AFF5"
+    },
+    "ice_plains": {
+      "water_surface_color": "#44AFF5"
+    },
+    "ice_plains_spikes": {
+      "water_surface_color": "#44AFF5"
+    },
+    "ice_mountains": {
+      "water_surface_color": "#44AFF5"
+    },
+    "mushroom_island": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "mushroom_island_shore": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "beach": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "desert_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "forest_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "taiga_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "extreme_hills_edge": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "jungle": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "bamboo_jungle": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "jungle_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "jungle_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "bamboo_jungle_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "jungle_edge": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "stone_beach": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "cold_beach": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 50
+    },
+    "birch_forest": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "birch_forest_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "roofed_forest": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "cold_taiga": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "cold_taiga_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "cold_taiga_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "mega_taiga": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "mega_spruce_taiga": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "mega_taiga_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "mega_spruce_taiga_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "mega_taiga_hills": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "extreme_hills_plus_trees": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+
+    "extreme_hills_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "savanna": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "savanna_plateau": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "savanna_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_identifier": "repixelcraft:base"
+    },
+    "mesa": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "mesa_bryce": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "mesa_mutated": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "mesa_plateau_stone": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "mesa_plateau": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5"
+    },
+    "ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "deep_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "warm_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_surface_transparency": 0.1,
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "deep_warm_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "lukewarm_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "deep_lukewarm_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "cold_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "deep_cold_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    },
+    "frozen_ocean": {
+      "water_surface_color": "#44AFF5"
+    },
+    "deep_frozen_ocean": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 60
+    }
+  }
+}

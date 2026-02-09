@@ -1,0 +1,7 @@
+{
+    "format_version": "0.0.1",
+    "name": "admin",
+    "description": "管理员面板",
+    "permission_level":"any",
+    "requires_cheats":false
+}

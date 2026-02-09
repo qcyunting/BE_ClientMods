@@ -13,7 +13,7 @@ class imchuyun(object):
 		商店系统客户端初始化
 		"""
 		CliName = "ShopSystem"
-		path = "%s.modClient.clientSystem.%s.%s" % (modConfig.ModName,CliName,CliName)
+		path = "HyperClashModScripts.modClient.clientSystem.%s.%s" % (CliName, CliName)
 		clientApi.RegisterSystem(modConfig.ModName, CliName, path)
 
 	@Mod.DestroyClient()

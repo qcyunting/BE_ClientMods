@@ -1,0 +1,36 @@
+{
+    "main@common.base_screen": {
+        "$screen_content": "xg_hud.root_screen"
+    },
+    "namespace": "xg_chat",
+    "root_screen": {
+        "type": "screen",
+        "controls": [
+            {
+                "switch_toggle@common_toggles.switch_toggle_collection": {
+                    "type": "panel",
+                    "$default_texture": "textures/ui/chat/off",
+                    "$hover_texture": "textures/ui/chat/on",
+                    "$pressed_no_hover_texture": "textures/ui/chat/on_hover",
+                    "$pressed_texture": "textures/ui/chat/off_hover",
+                    "$toggle_name": "#netease_editor_template_namespace.toggle_name",
+                    "$toggle_state_binding_name": "#netease_editor_template_namespace.toggle_state",
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle",
+                    "size": [
+                        15.0,
+                        15.0
+                    ],
+                    "layer": 1,
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "",
+                            "binding_condition": "always_when_visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

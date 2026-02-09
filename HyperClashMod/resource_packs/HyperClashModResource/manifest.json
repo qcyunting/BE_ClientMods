@@ -1,12 +1,14 @@
 {
     "format_version": 1,
     "header": {
+        "name": "HyperClash Resources",
+        "description": "HyperClash Mod Resource Pack",
         "min_engine_version": [
             1,
             18,
             0
         ],
-        "uuid": "d238e406-3dd8-4bcb-9974-e66101d31ad8",
+        "uuid": "c0eaa970-462f-4922-897c-7b978c34c1ba",
         "version": [
             0,
             0,
@@ -16,7 +18,8 @@
     "modules": [
         {
             "type": "resources",
-            "uuid": "ceb98f67-a1b9-4122-b6ae-cc4569332f51",
+            "description": "HyperClash Resources",
+            "uuid": "1c9cd058-be21-4092-8459-ab550f3e065d",
             "version": [
                 0,
                 0,

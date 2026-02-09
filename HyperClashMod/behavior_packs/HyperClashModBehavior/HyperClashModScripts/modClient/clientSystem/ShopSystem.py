@@ -7,42 +7,72 @@ engineCompFactory = clientApi.GetEngineCompFactory()
 
 class ShopSystem(ClientSystem):
 	def __init__(self, namespace, systemName):
-		print("==== ShopSystem Init ====")
+		print "==== ShopSystem Init ===="
 		ClientSystem.__init__(self, namespace, systemName)
 		self._ClientListenEvent()
 		self.mLocalPlayerId = clientApi.GetLocalPlayerId()
 
 		self.levelId = clientApi.GetLevelId()
 		self.msgComp = engineCompFactory.CreateTextNotifyClient(self.levelId)
+		# 保存商店UI实例引用
+		self.shopUI = None
+		self.uiRegistered = False
 
 	def _ClientListenEvent(self):
-		self.listen_client("UiInitFinished", self.UiInitFinished)
+		# 监听引擎事件 - UI初始化完成
+		self.ListenForEvent("Minecraft", "engine", "UiInitFinished", self, self.UiInitFinished)
 
+		# 监听服务端事件
 		self.listen_server("showMsg", self._showMsg)
 		self.listen_server("OpenCustomShop", self._OpenCustomShop)
+		self.listen_server("UpdateItemDetail", self._UpdateItemDetail)
 
-	def listen_server(self,event,func):
+	def listen_server(self, event, func):
 		self.ListenForEvent(modConfig.ModName, "ShopSystem", event, self, func)
-	
-	def listen_client(self,event,func):
+
+	def listen_client(self, event, func):
 		self.ListenForEvent("Minecraft", "ShopSystem", event, self, func)
 
 	def UiInitFinished(self, args):
-		# 注册并创建商店ui
+		print "==== UiInitFinished, RegisterUI ===="
 		path_h = "HyperClashModScripts.modClient.ui."
-		clientApi.RegisterUI(modConfig.ModName, "shop", "%sShopUI.ShopUI" % path_h, "ShopUI.main")
+		# RegisterUI(namespace, uiKey, clsPath, uiDef)
+		# uiDef 格式: "jsonNamespace.screenName"
+		clientApi.RegisterUI("shop", "main", "%sShopUI.ShopUI" % path_h, "shop.main")
+		self.uiRegistered = True
 
 	def _showMsg(self, args):
 		# 客户端通知事件
 		comp = clientApi.GetEngineCompFactory().CreateTextNotifyClient(clientApi.GetLevelId())
 		comp.SetLeftCornerNotify(args['msg'])
 
-	def _OpenCustomShop(self,args):
-		# 弹出商店UI
-		print("_OpenCustomShop",args)
-		clientApi.PushScreen(modConfig.ModName, "shop",args)
+	def _OpenCustomShop(self, args):
+		print "_OpenCustomShop", args
+		# 确保UI已注册
+		if not self.uiRegistered:
+			self.UiInitFinished(None)
 
-	# 函数名为Destroy才会被调用，在这个System被引擎回收的时候会调这个函数来销毁一些内容
+		# 检查UI是否已经存在
+		if self.shopUI:
+			try:
+				# 尝试更新数据
+				self.shopUI.UpdateShopData(args)
+				print "[ShopSystem] Updated existing shop UI"
+				return
+			except Exception as e:
+				print "[ShopSystem] Failed to update UI, will recreate: " + str(e)
+				self.shopUI = None
+
+		# 第一次打开，或者UI被关闭了
+		self.shopUI = clientApi.PushScreen("shop", "main", args)
+		print "[ShopSystem] Created new shop UI"
+
+	def _UpdateItemDetail(self, args):
+		# 更新物品详情
+		print "_UpdateItemDetail", args
+		if self.shopUI:
+			self.shopUI.UpdateItemDetail(args)
+
 	def Destroy(self):
-		print("===== ShopSystem Destroy =====")
-		pass
+		print "===== ShopSystem Destroy ====="
+		self.shopUI = None

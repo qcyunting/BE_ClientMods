@@ -1,5 +1,6 @@
 {
     "ui_defs": [
-        "ui/shop.json"
+        "ui/shop.json",
+        "ui/netease_editor_template_namespace.json"
     ]
 }

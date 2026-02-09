@@ -1,0 +1,19 @@
+{
+    "format_version": "0.0.1",
+    "name": "debug",
+    "description": "服务器调试",
+    "permission_level":"any",
+    "requires_cheats":false,
+    "args": [
+        {"name": "类型", "type": "enum", "options": ["op","fly","unfly","hide","show","spectator"]}
+    ],
+    "args2": [
+        {"name": "类型", "type": "enum", "options": ["join","effect"]},
+        {"name": "值1", "type": "str"}
+    ],
+    "args3": [
+        {"name": "类型", "type": "enum", "options": ["ui"]},
+        {"name": "值1", "type": "str"},
+        {"name": "值2", "type": "str"}
+    ]
+}

@@ -1,12 +1,14 @@
 {
     "format_version": 1,
     "header": {
+        "name": "HyperClash Behavior",
+        "description": "HyperClash Mod Behavior Pack",
         "min_engine_version": [
             1,
             18,
             0
         ],
-        "uuid": "5d156ac7-d0c5-40d1-ae27-e9e850c4a2b3",
+        "uuid": "24d40b4d-3573-48a8-b8fa-48b9f2cde796",
         "version": [
             0,
             0,
@@ -16,12 +18,19 @@
     "modules": [
         {
             "type": "data",
-            "uuid": "80664df7-ee5c-4158-9d48-b75635b5bf69",
+            "description": "HyperClash Behavior",
+            "uuid": "9aba96f0-389f-49e8-bdfc-01eb4d80e9a5",
             "version": [
                 0,
                 0,
                 1
             ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "c0eaa970-462f-4922-897c-7b978c34c1ba",
+            "version": [0, 0, 1]
         }
     ]
 }

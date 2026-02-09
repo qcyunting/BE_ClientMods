@@ -1,0 +1,7 @@
+{
+    "format_version": "0.0.1",
+    "name": "coin",
+    "description": "货币查询",
+    "permission_level":"any",
+    "requires_cheats":false
+}

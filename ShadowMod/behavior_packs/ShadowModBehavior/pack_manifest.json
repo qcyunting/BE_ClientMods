@@ -1,0 +1,47 @@
+{
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "a3ed4412-d8c0-4160-89d9-ebbd6a26de8e",
+      "version": [
+        0,
+        0,
+        26
+      ],
+      "description": ""
+    }
+  ],
+  "header": {
+    "uuid": "b62db889-3049-4b93-9dcd-69032dd672b1",
+    "version": [
+      0,
+      0,
+      27
+    ],
+    "description": "",
+    "min_engine_version": [
+      1,
+      18,
+      0
+    ],
+    "name": "behavior_pack"
+  },
+  "dependencies": [
+    {
+      "uuid": "242b29be-3a68-454c-8879-f8ed148b51cd",
+      "version": [
+        0,
+        0,
+        3
+      ]
+    }
+  ],
+  "format_version": 1,
+  "metadata": {
+    "authors": [
+      "初云杯服务器"
+    ],
+    "license": "版权所有，侵权必究！！请勿未经授权使用！",
+    "url": "24cyy.cn"
+  }
+}
