@@ -20,7 +20,7 @@ class ShopSystem(ClientSystem):
 
 	def _ClientListenEvent(self):
 		# 监听引擎事件 - UI初始化完成
-		self.ListenForEvent("Minecraft", "engine", "UiInitFinished", self, self.UiInitFinished)
+		self.listen_client("UiInitFinished",self.UiInitFinished)
 
 		# 监听服务端事件
 		self.listen_server("showMsg", self._showMsg)

@@ -14,6 +14,8 @@ class ShopUI(ScreenNode):
         self.entityId = None
         self.levelId = clientApi.GetLevelId()
 
+        self.firstgood_iid = None
+
         # 路径映射
         # 指向 common.scrolling_panel 模板内部的真实内容路径
         
@@ -23,7 +25,7 @@ class ShopUI(ScreenNode):
             "detail_desc": "/left/image/des/stack_panel/des",
             "btn_buy": "/left/image/des/btn_group/buy",
             "btn_sell": "/left/image/des/btn_group/sell",
-            "close_btn": "/right/image/btn_close",  # 关闭按钮
+            "close_btn": "/right/btn_close",  # 关闭按钮
             
             # 指向深层的 Grid
             "goods_grid": "/right/image/top/scroll_view",
@@ -37,19 +39,15 @@ class ShopUI(ScreenNode):
             # 确保 ScrollView 可见
             scroll = self.GetBaseUIControl("/right/image/top/scroll_view")
             if scroll: scroll.SetVisible(True)
-
+            self._bindButtonEvents()
             if self.shopData:
                 self.currentTab = self.shopData.get("current_tab", "")
                 self.selectedItemId = self.shopData.get("selected_item_id", "")
                 self.entityId = self.shopData.get("entityId", "")
 
                 comp = clientApi.GetEngineCompFactory().CreateGame(self.levelId)
-                comp.AddTimer(0.1,self.delay_init)
-                
-                
-            
-            self._bindButtonEvents()
-            
+                comp.AddTimer(0.2,self.delay_init)
+
         except Exception as e:
             print "[ShopUI] Error in Create:", e
     
@@ -58,65 +56,90 @@ class ShopUI(ScreenNode):
         self._renderGoods()
         self._renderHistory()
         self._renderDetail()
+        if self.firstgood_iid:
+            comp = clientApi.GetEngineCompFactory().CreateGame(self.levelId)
+            comp.AddTimer(0.8,self._onItemClick,iid=self.firstgood_iid)
 
     def _renderGoods(self):
         # 渲染商品
+        try:
+            goods = self.shopData.get("goods", [])
+            gridPath = self.mPaths["goods_grid"]
+            if goods:
+                self.firstgood_iid = goods[0]["id"]
+            
+            # 获取控件并转换为 Grid
+            ScrollView = self.GetBaseUIControl(gridPath).asScrollView()
+            ScrollViewCtrl = ScrollView.GetScrollViewContentControl()
+            gridCtrl = ScrollViewCtrl
+            if gridCtrl:
+                gridCtrl = gridCtrl.asGrid()
+            
+            if not gridCtrl:
+                print "[ShopUI] Error: Goods Grid not found at", gridPath
+                return
+            
+            total_goods = len(goods)
+            # 计算行数 (每行3个)
+            rows = (total_goods + 2) // 3
+            gridCtrl.SetGridDimension((1, rows))
+            
+            print "[ShopUI] Rendering {} goods in {} rows".format(total_goods, rows)
 
-        goods = self.shopData.get("goods", [])
-        gridPath = self.mPaths["goods_grid"]
-        
-        # 获取控件并转换为 Grid
-        ScrollView = self.GetBaseUIControl(gridPath).asScrollView()
-        ScrollViewCtrl = ScrollView.GetScrollViewContentControl()
-        gridCtrl = ScrollViewCtrl
-        if gridCtrl:
-            gridCtrl = gridCtrl.asGrid()
-        
-        if not gridCtrl:
-            print "[ShopUI] Error: Goods Grid not found at", gridPath
-            return
-        
-        total_goods = len(goods)
-        # 计算行数 (每行3个)
-        rows = (total_goods + 2) // 3
-        gridCtrl.SetGridDimension((3, rows))
-        
-        print "[ShopUI] Rendering {} goods in {} rows".format(total_goods, rows)
+            goodid = 0
+            i = 0
+            grid_row_data = []
+            for good in goods:
+                i+=1
+                goodid+=1
+                y = goodid//3
+                grid_row_data.append(good)
+                if i>=3:
+                    gridchild = gridCtrl.GetGridItem(0, y-1)
+                    self._updateGoodsItem(gridchild,grid_row_data)
+                    i=0
+                    grid_row_data = []
+            if total_goods%3!=0:
+                gridchild = gridCtrl.GetGridItem(0, rows-1)
+                self._updateGoodsItem(gridchild,goods[-(total_goods%3):])
 
-        goodid = 0
-        for good in goods:
-            goodid+=1
-            if goodid>3:
-                x = goodid % 3
-            else:
-                x = goodid - 1
-            y = goodid//3
-            gridchild = gridCtrl.GetGridItem(x, y)
-            self._updateGoodsItem(gridchild,good)
+        except Exception as e:
+            print e
 
 
-    def _updateGoodsItem(self, gridchild, item):
+
+    def _updateGoodsItem(self, gridchild, grid_row_data):
         # 更新商品格子内容
-        def getbaseui(path):
-            gridchild.GetChildByPath(path)
-        base = "/item/button/image"
-        
-        nameCtrl = getbaseui(base + "/label")
-        if nameCtrl: nameCtrl.asLabel().SetText(item.get("name", ""))
-        
-        priceCtrl = getbaseui(base + "/lable_coin")
-        if priceCtrl: priceCtrl.asLabel().SetText(str(item.get("price", 0)))
-        
-        iconCtrl = getbaseui(base + "/icon/item")
-        if iconCtrl: iconCtrl.asImage().SetSprite(self._getItemTexture(item.get("icon")))
-        
-        # 绑定点击
-        btnCtrl = getbaseui("/item/button").asButton()
-        btnCtrl.AddTouchEventParams({"iid":item.get("id")})
-        def cb(args):
-            iid = args["AddTouchEventParams"].get("iid")
-            self._onItemClick(iid)
-        btnCtrl.SetButtonTouchDownCallback(cb)
+        if not gridchild: return
+        row_grid = gridchild.GetChildByPath("/grid").asGrid()
+        i = -1
+        if len(grid_row_data)!=3:
+            grid_row_data.append({"name":"","price":"","icon":""})
+        for good in grid_row_data:
+            i+=1
+            row_grid_item = row_grid.GetGridItem(i, 0)
+
+            def getbaseui(path):
+                return row_grid_item.GetChildByPath(path)
+            base = "/button/image"
+
+            
+            nameCtrl = getbaseui(base + "/label")
+            if nameCtrl: nameCtrl.asLabel().SetText(good.get("name", ""))
+            
+            priceCtrl = getbaseui(base + "/lable_coin")
+            if priceCtrl: priceCtrl.asLabel().SetText("§l§e"+str(good.get("price", 0)))
+            
+            iconCtrl = getbaseui(base + "/icon/item")
+            if iconCtrl: iconCtrl.asImage().SetSprite(self._getItemTexture(good.get("icon")))
+            
+            # 绑定点击
+            btnCtrl = getbaseui("/button").asButton()
+            btnCtrl.AddTouchEventParams({"iid":good.get("id")})
+            def cb(args):
+                iid = args["AddTouchEventParams"].get("iid")
+                self._onItemClick(iid)
+            btnCtrl.SetButtonTouchDownCallback(cb)
 
     def _renderHistory(self):
         # 渲染购买记录
@@ -208,7 +231,7 @@ class ShopUI(ScreenNode):
         self.GetBaseUIControl(self.mPaths["btn_sell"] + "/button_label").asLabel().SetText(" 出售({})".format(detail.get("sell_price")))
 
     def _getItemTexture(self, name):
-        if not name: return "textures/items/barrier"
+        if not name: return "textures/blocks/barrier"
         name = name.lower()
         name = name.replace("golden_", "gold_").replace("wooden_", "wood_")
         if "block" in name or "ore" in name or "stone" in name or "grass" in name:
