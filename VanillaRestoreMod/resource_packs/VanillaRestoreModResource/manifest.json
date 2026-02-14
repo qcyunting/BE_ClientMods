@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "351d3903-0699-4ce8-9230-852f5592ca24",
+      "version": [
+        100,
+        100,
+        100
+      ],
+      "description": "vanilla_netease"
+    }
+  ],
+  "header": {
+    "uuid": "3d770e46-772e-45bb-a07a-d53c812b0e32",
+    "version": [
+      100,
+      100,
+      100
+    ],
+    "description": "vanilla_netease",
+    "name": "vanilla_netease",
+    "min_engine_version": [
+      1,
+      13,
+      0
+    ]
+  },
+  "format_version": 2
+}

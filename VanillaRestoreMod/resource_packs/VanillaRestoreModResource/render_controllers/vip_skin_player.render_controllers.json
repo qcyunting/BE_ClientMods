@@ -1,0 +1,81 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.player.vip_skin_idle_third_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": true },
+        { "helmet": false },
+        { "leftLegging": false },
+        { "rightLegging": false },
+        { "leftBoot": false },
+        { "rightBoot": false },
+        { "leftSock": false },
+        { "rightSock": false },
+        { "bodyArmor": false },
+        { "leftArmArmor": false },
+        { "rightArmArmor": false },
+        { "belt": false }
+      ]
+    },
+    "controller.render.player.vip_skin_fight_third_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": true },
+        { "helmet": false },
+        { "leftLegging": false },
+        { "rightLegging": false },
+        { "leftBoot": false },
+        { "rightBoot": false },
+        { "leftSock": false },
+        { "rightSock": false },
+        { "bodyArmor": false },
+        { "leftArmArmor": false },
+        { "rightArmArmor": false },
+        { "belt": false }
+      ]
+    },
+    "controller.render.player.vip_skin_scared_third_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": true },
+        { "helmet": false },
+        { "leftLegging": false },
+        { "rightLegging": false },
+        { "leftBoot": false },
+        { "rightBoot": false },
+        { "leftSock": false },
+        { "rightSock": false },
+        { "bodyArmor": false },
+        { "leftArmArmor": false },
+        { "rightArmArmor": false },
+        { "belt": false }
+      ]
+    },
+    "controller.render.player.vip_skin_happy_third_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": true },
+        { "helmet": false },
+        { "leftLegging": false },
+        { "rightLegging": false },
+        { "leftBoot": false },
+        { "rightBoot": false },
+        { "leftSock": false },
+        { "rightSock": false },
+        { "bodyArmor": false },
+        { "leftArmArmor": false },
+        { "rightArmArmor": false },
+        { "belt": false }
+      ]
+    }
+  }
+}
