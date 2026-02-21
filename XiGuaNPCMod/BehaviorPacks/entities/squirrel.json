@@ -1,0 +1,14 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "netease:squirrel"
+		},
+		"component_groups": {
+		},
+        "components": {
+        },
+		"events": {
+		}
+	}
+}

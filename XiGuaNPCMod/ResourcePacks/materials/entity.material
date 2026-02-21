@@ -1,0 +1,9 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "custom_entity:entity_static": {
+      "+defines": [ "USE_OVERLAY", "USE_SKINNING", "RNGL_PLAYER", "SELF_DEFINE" ],
+      "msaaSupport": "Both"
+    }
+  }
+}

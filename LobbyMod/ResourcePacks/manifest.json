@@ -1,0 +1,30 @@
+{
+    "format_version": 1,
+    "header": {
+        "min_engine_version": [
+            1,
+            20,
+            50
+        ],
+        "description": "By XiGua",
+        "name": "LobbyMod",
+        "uuid": "d674fe0c-fc61-4b24-a237-12687d7eb0e0",
+        "version": [
+            0,
+            0,
+            1
+        ]
+    },
+    "modules": [
+        {
+            "description": "By XiGua",
+            "type": "resources",
+            "uuid": "14c4386c-b1f0-4d18-92c9-d74b2c6582d5",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ]
+}
