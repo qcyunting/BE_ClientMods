@@ -1,0 +1,40 @@
+{
+    "Addon": {
+        "EnchantSetting": {
+            "amplifier": 1
+        },
+        "PackResourceSortData": {
+            "32768_sound_definitions": {
+                "createTime": 1771079202.7192204,
+                "modifyTime": 1771079202.7192204
+            }
+        },
+        "PlayerEffectSetting": {
+            "amplifier": 1,
+            "duration": 10
+        },
+        "PresetInstanceTreeData": [
+
+        ]
+    },
+    "UI": {
+        "customPrefabGroupExpand": [
+
+        ],
+        "expandData": {
+            "prefab": {
+
+            },
+            "screen": {
+                "G:\\Git\\qcyunting\\mods\\LobbyMod\\resource_packs\\LobbyModResource\\ui\\gameselect.json": [
+                    "/main",
+                    "/main/image",
+                    "/main/image/card",
+                    "/main/image/card/card_hyperclash",
+                    "/main/image/card/card_villager",
+                    "/main/image/card/card_survival"
+                ]
+            }
+        }
+    }
+}

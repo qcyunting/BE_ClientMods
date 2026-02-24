@@ -1,0 +1,12 @@
+{
+    "Arena.Component.Namespace": "jgtlf",
+    "FirstTabSetting": 0,
+    "ShortItemSettings": [
+        "resource_packs\\CommoModResource\\ui",
+        "resource_packs\\CommoModResource\\textures"
+    ],
+    "Uluru.autoLayerDict": {
+
+    },
+    "Uluru.checkSuspectOldUI": true
+}

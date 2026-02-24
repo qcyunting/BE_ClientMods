@@ -1,0 +1,13 @@
+{
+    "Arena.Component.Namespace": "lchpc",
+    "FirstTabSetting": 0,
+    "ShortItemSettings": [
+        "resource_packs\\LobbyModResource\\ui",
+        "resource_packs\\LobbyModResource\\models",
+        "resource_packs\\LobbyModResource\\textures"
+    ],
+    "Uluru.autoLayerDict": {
+
+    },
+    "Uluru.checkSuspectOldUI": true
+}

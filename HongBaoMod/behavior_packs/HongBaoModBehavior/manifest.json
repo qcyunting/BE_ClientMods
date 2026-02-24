@@ -1,0 +1,40 @@
+{
+    "format_version": 1,
+    "header": {
+        "min_engine_version": [
+            1,
+            20,
+            50
+        ],
+        "description": "By XiGua",
+        "name": "HongBaoMod",
+        "uuid": "85fe8797-e311-46c0-a6a4-72762d3102d9",
+        "version": [
+            0,
+            0,
+            1
+        ]
+    },
+    "modules": [
+        {
+            "description": "By XiGua",
+            "type": "data",
+            "uuid": "aa762899-1ffd-40bf-8414-256c333d8bd8",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "d2cedced-a3f9-40ff-9fcb-179043820bf7",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ]
+}
