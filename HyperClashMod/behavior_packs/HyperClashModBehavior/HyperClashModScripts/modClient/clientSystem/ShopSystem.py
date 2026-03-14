@@ -27,24 +27,39 @@ class ShopSystem(ClientSystem):
 		self.listen_server("OpenCustomShop", self._OpenCustomShop)
 		self.listen_server("UpdateItemDetail", self._UpdateItemDetail)
 
+		self.ListenForEvent(modConfig.ModName, "SkillSystem", "ShowSkillButtons", self, self.initSkill)  # 初始化
+
+
 	def listen_server(self, event, func):
 		self.ListenForEvent(modConfig.ModName, "ShopSystem", event, self, func)
 
 	def listen_client(self, event, func):
-		self.ListenForEvent("Minecraft", "ShopSystem", event, self, func)
+		self.ListenForEvent("Minecraft", "Engine", event, self, func)
 
 	def UiInitFinished(self, args):
 		print "==== UiInitFinished, RegisterUI ===="
 		path_h = "HyperClashModScripts.modClient.ui."
 		# RegisterUI(namespace, uiKey, clsPath, uiDef)
 		# uiDef 格式: "jsonNamespace.screenName"
-		clientApi.RegisterUI("shop", "main", "%sShopUI.ShopUI" % path_h, "shop.main")
+		clientApi.RegisterUI("HyperClash", "shop", "%sShopUI.ShopUI" % path_h, "shop.main")
+		clientApi.RegisterUI("HyperClashHUD", "main", "%sHUD.HUD" % path_h, "HyperClashHUD.main")
 		self.uiRegistered = True
 
 	def _showMsg(self, args):
 		# 客户端通知事件
 		comp = clientApi.GetEngineCompFactory().CreateTextNotifyClient(clientApi.GetLevelId())
 		comp.SetLeftCornerNotify(args['msg'])
+
+	def initSkill(self, args):
+		hud_ui = clientApi.GetUI("HyperClashHUD", "main")
+		if hud_ui:
+			hud_ui.Destroy()
+			hud_ui.param = {"data": args}
+			hud_ui.skills.clear()
+			hud_ui._initialized = False
+			hud_ui.Create()
+		else:
+			clientApi.CreateUI("HyperClashHUD", "main", {"isHud": 1, "data": args})
 
 	def _OpenCustomShop(self, args):
 		print "_OpenCustomShop", args
@@ -64,7 +79,7 @@ class ShopSystem(ClientSystem):
 				self.shopUI = None
 
 		# 第一次打开，或者UI被关闭了
-		self.shopUI = clientApi.PushScreen("shop", "main", args)
+		self.shopUI = clientApi.PushScreen("HyperClash", "shop", args)
 		print "[ShopSystem] Created new shop UI"
 
 	def _UpdateItemDetail(self, args):

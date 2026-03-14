@@ -1,0 +1,93 @@
+{
+    "main": {
+        "type": "screen",
+        "controls": [
+            {
+                "skill_button_1@HyperClashHUD.skill_button": {
+                    "offset": [
+                        -88,
+                        -13
+                    ]
+                }
+            },
+            {
+                "skill_button_2@HyperClashHUD.skill_button": {
+                    "offset": [
+                        -55,
+                        -52
+                    ]
+                }
+            },
+            {
+                "skill_button_3@HyperClashHUD.skill_button": {
+                    "offset": [
+                        -6,
+                        -83
+                    ]
+                }
+            }
+        ]
+    },
+    "namespace": "HyperClashHUD",
+    "skill_button@common.button": {
+        "type": "button",
+        "$control_alpha": 1.0,
+        "$is_new_nine_slice": false,
+        "$label_color": [
+            1,
+            1,
+            1
+        ],
+        "$label_font_scale_factor": 1.0,
+        "$label_font_size": "large",
+        "$label_layer": 3,
+        "$label_offset": [
+            0,
+            0
+        ],
+        "$label_text": " ",
+        "$nine_slice_buttom": 0,
+        "$nine_slice_left": 0,
+        "$nine_slice_right": 0,
+        "$nine_slice_top": 0,
+        "$nineslice_size": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "$pressed_button_name": "%netease_editor_template_namespace.click",
+        "$texture_layer": 2,
+        "anchor_from": "bottom_right",
+        "anchor_to": "bottom_right",
+        "size": [
+            40.0,
+            40.0
+        ],
+        "layer": 2,
+        "button_mappings": [],
+        "default_control": "default",
+        "hover_control": "hover",
+        "is_handle_button_move_event": true,
+        "pressed_control": "pressed",
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "",
+                "binding_condition": "always_when_visible"
+            }
+        ],
+        "controls": [
+            {
+                "icon": {
+                    "type": "image"
+                }
+            },
+            {
+                "text@netease_editor_template_namespace.button_label": {
+                    "font_type": "unicode"
+                }
+            }
+        ]
+    }
+}
