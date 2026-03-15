@@ -25,10 +25,86 @@
                         -83
                     ]
                 }
+            },
+            {
+                "player_game_info_panel": {
+                    "type": "stack_panel",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "size": [
+                        "100%c+0px",
+                        "100%cm+0px"
+                    ],
+                    "layer": 1,
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "item_button0@player_game_info": {}
+                        },
+                        {
+                            "item_button1@player_game_info": {}
+                        },
+                        {
+                            "item_button2@player_game_info": {}
+                        },
+                        {
+                            "item_button3@player_game_info": {}
+                        },
+                        {
+                            "item_button4@player_game_info": {}
+                        },
+                        {
+                            "item_button5@player_game_info": {}
+                        },
+                        {
+                            "item_button6@player_game_info": {}
+                        },
+                        {
+                            "item_button7@player_game_info": {}
+                        }
+                    ]
+                }
             }
         ]
     },
     "namespace": "HyperClashHUD",
+    "player_game_info": {
+        "type": "panel",
+        "size": [
+            "100%c+6px",
+            10.0
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "icon": {
+                    "type": "image",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [
+                        10.0,
+                        10.0
+                    ],
+                    "layer": 1,
+                    "texture": ""
+                }
+            },
+            {
+                "text": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        11.0,
+                        0.0
+                    ],
+                    "font_type": "unicode",
+                    "shadow": true,
+                    "text_alignment": "center"
+                }
+            }
+        ]
+    },
     "skill_button@common.button": {
         "type": "button",
         "$control_alpha": 1.0,

@@ -62,7 +62,6 @@ class ShopSystem(ClientSystem):
 			clientApi.CreateUI("HyperClashHUD", "main", {"isHud": 1, "data": args})
 
 	def _OpenCustomShop(self, args):
-		print "_OpenCustomShop", args
 		# 确保UI已注册
 		if not self.uiRegistered:
 			self.UiInitFinished(None)

@@ -38,6 +38,7 @@ class HUD(ScreenNode):
 
         # 监听事件
         self.clientSystem.ListenForEvent(ModName, "SkillSystem", "UpdateSkillCooldown", self, self.UpdateSkillCooldown)
+        self.clientSystem.ListenForEvent(ModName, "PlayerStats", "UpdateStats", self, self.UpdateStats)
 
         # 初始化按钮
         self._init_buttons()
@@ -88,7 +89,6 @@ class HUD(ScreenNode):
 
     def _on_skill_button_click(self, skillId, slot):
         """技能按钮点击处理"""
-        print 'skill_button_click', skillId
 
         # 检查是否已在冷却中
         if skillId in self.all_cooldown:
@@ -109,7 +109,6 @@ class HUD(ScreenNode):
     def UpdateSkillCooldown(self, args):
         """每秒接收冷却值"""
         for skill in args['skills']:
-            print skill
             skillId = skill.get("skillId", '')
             cooldown = skill.get("cooldown", 0)
             self.all_cooldown[skillId] = cooldown
@@ -134,6 +133,16 @@ class HUD(ScreenNode):
                 text_path = button_path + "/text"
                 text_control = self.GetBaseUIControl(text_path).asLabel()
                 text_control.SetText('')
+
+    def UpdateStats(self, args):
+        for index, stat in enumerate(args['stats']):
+            icon = stat.get("icon", "")
+            name = stat.get("name", "")
+            path = "/player_game_info_panel/item_button" + str(index)
+            icon_panel = self.GetBaseUIControl(path + "/icon").asImage()
+            icon_panel.SetSprite(icon)
+            text_control = self.GetBaseUIControl(path + "/text").asLabel()
+            text_control.SetText(name)
 
     def Destroy(self):
         """UI销毁时调用"""
