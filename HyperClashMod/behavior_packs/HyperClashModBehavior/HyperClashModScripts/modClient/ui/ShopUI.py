@@ -15,6 +15,8 @@ class ShopUI(ScreenNode):
         self.levelId = clientApi.GetLevelId()
         self.isDestroyed = False
 
+        self.clientSystem.ListenForEvent("Minecraft", "Engine", "GridComponentSizeChangedClientEvent", self, self.GridComponentSizeChangedClientEvent)
+
         # 路径映射
         # 指向 common.scrolling_panel 模板内部的真实内容路径
         
@@ -45,7 +47,7 @@ class ShopUI(ScreenNode):
                 self.entityId = self.shopData.get("entityId", "")
 
                 comp = clientApi.GetEngineCompFactory().CreateGame(self.levelId)
-                comp.AddTimer(0.2, self._delayInit)
+                comp.AddTimer(0.0, self._delayInit)
 
         except Exception as e:
             print "[ShopUI] Error in Create:", e
@@ -57,6 +59,9 @@ class ShopUI(ScreenNode):
         self._renderGoods()
         self._renderHistory()
         self._renderDetail()
+
+    def GridComponentSizeChangedClientEvent(self, args):
+        self._renderGoods()
 
     def _renderGoods(self):
         # 渲染商品
@@ -152,21 +157,20 @@ class ShopUI(ScreenNode):
         try:
             history = self.shopData.get("history", [])
             gridPath = self.mPaths["history_grid"]
-            
+
             gridCtrl = self.GetBaseUIControl(gridPath)
             if gridCtrl: gridCtrl = gridCtrl.asGrid()
             
             if not gridCtrl: return
-            gridCtrl.RemoveAllChildren()
 
             for i, item in enumerate(history):
-                childName = "hist_{}".format(i)
+                childName = "item_mini{}".format(i + 1)
                 self.Clone("shop.item_mini", gridPath, childName)
                 
                 itemPath = "{}/{}".format(gridPath, childName)
                 
                 self.GetBaseUIControl(itemPath + "/label").asLabel().SetText(item.get("name", ""))
-                self.GetBaseUIControl(itemPath + "/image/icon/item").asImage().SetSprite(self._getItemTexture(item.get("icon")))
+                self.GetBaseUIControl(itemPath + "/image/item").asImage().SetSprite(self._getItemTexture(item.get("icon")))
                 
                 bgCtrl = self.GetBaseUIControl(itemPath + "/image")
                 if bgCtrl:

@@ -1,6 +1,6 @@
 {
     "ui_defs": [
-        "ui/shop.json",
-        "ui/netease_editor_template_namespace.json"
+        "ui/HyperClashHUD.json",
+        "ui/shop.json"
     ]
 }
