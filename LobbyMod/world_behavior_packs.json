@@ -1,11 +1,11 @@
 [
-    {
-        "pack_id": "100c463c-d73e-4e15-99e3-898f914cd01a",
-        "type": "Addon",
-        "version": [
-            0,
-            0,
-            1
-        ]
-    }
+  {
+    "pack_id": "100c463c-d73e-4e15-99e3-898f914cd01a",
+    "type": "Addon",
+    "version": [
+      0,
+      0,
+      1
+    ]
+  }
 ]
