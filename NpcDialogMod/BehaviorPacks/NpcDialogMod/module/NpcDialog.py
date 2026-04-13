@@ -49,25 +49,40 @@ class NpcDialogModule(BaseState):
     def __init__(self, namespace, systemName):
         super(NpcDialogModule, self).__init__(namespace, systemName)
 
+        self.ui_npcdialog = None
+
     def on_enable(self):
         print("启用NpcDialog")
         self.ListenForEvent(modName, systemName, "OpenDialogue", self, self.OpenDialogue)
-    
+        clientApi.CreateUI(modName, 'npcdialog', {"isHud": 1, 'data': {}, 'client': self})
     
     def OpenDialogue(self, args):
         print("OpenDialogue",args)
         dialogue_id = args.get("dialogue_id")
         npc_name = args.get("npc_name")
-        npc_icon = args.get("npc_icon")
+        npc_icon = self.npc_icon_default_fun(args.get("npc_icon","STEVE"))
         text = args.get("text")
-        step_index = args.get("step_index")
+        step_index = int(args.get("step_index",0))
         buttons = args.get("buttons")
+        if all([dialogue_id,npc_name,npc_icon,text,buttons]) and step_index>=0:
+            if self.ui_npcdialog is None:
+                self.ui_npcdialog = clientApi.PushScreen(modName, 'npcdialog', {"isHud": 1, 'data': {}, 'client': self})
+            self.ui_npcdialog.SetData(dialogue_id,npc_name,npc_icon,text,step_index,buttons)
+        else:
+            print("[ERROR] OpenDialogue",args)
+    
+    def NotifyToServer(self,event,args):
+        self.NotifyToServer(event,args)
 
-        if dialogue_id and npc_name and text and step_index and buttons:
-            
-
-
-
+    def npc_icon_default_fun(self,icon):
+        # 进行路径转换
+        if icon[0] == "/":
+            # 则为路径
+            return icon
+        else:
+            if not icon in self.npc_icon_default:
+                icon = "STEVE"
+            return "/textures/npc/" + icon.lower()
 
 
     def on_disable(self):
