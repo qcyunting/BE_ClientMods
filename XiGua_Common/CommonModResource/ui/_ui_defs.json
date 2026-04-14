@@ -1,0 +1,9 @@
+{
+    "ui_defs": [
+        "ui/xg_chat.json",
+        "ui/xg_hud.json",
+        "ui/Xigua_settings.json",
+        "ui/hud_screen.json",
+        "ui/pause_screen.json"
+    ]
+}

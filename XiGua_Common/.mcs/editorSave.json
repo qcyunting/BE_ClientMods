@@ -1,0 +1,110 @@
+{
+    "Addon": {
+        "EnchantSetting": {
+            "amplifier": 1
+        },
+        "PackResourceSortData": {
+            "32768_sound_definitions": {
+                "createTime": 1770993072.6204026,
+                "modifyTime": 1770993072.6204026
+            },
+            "4194304_admin": {
+                "createTime": 1770993072.6214004,
+                "modifyTime": 1770993072.6214004
+            },
+            "4194304_coin": {
+                "createTime": 1770993072.6214004,
+                "modifyTime": 1770993072.6214004
+            },
+            "4194304_debug": {
+                "createTime": 1770993072.6214004,
+                "modifyTime": 1770993072.6214004
+            },
+            "4194304_hub": {
+                "createTime": 1770993072.6204026,
+                "modifyTime": 1770993072.6204026
+            },
+            "4194304_lobby": {
+                "createTime": 1770993072.6214004,
+                "modifyTime": 1770993072.6214004
+            },
+            "4194304_test": {
+                "createTime": 1771314596.396083,
+                "modifyTime": 1771314623.7574515
+            }
+        },
+        "PlayerEffectSetting": {
+            "amplifier": 1,
+            "duration": 10
+        },
+        "PresetInstanceTreeData": [
+
+        ]
+    },
+    "UI": {
+        "customPrefabGroupExpand": [
+            "Xigua_settings",
+            "xg_hud"
+        ],
+        "expandData": {
+            "prefab": {
+                "Xigua_settings.screen_background": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/screen_background"
+                ],
+                "xg_hud.game_info_bar": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_hud.heart_renderer": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_hud.hunger_renderer": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/hunger_renderer"
+                ],
+                "xg_hud.progress_bar_renderer": [
+                    "/netease_prefab_screen/progress_bar_renderer"
+                ],
+                "xg_hud.root_panel_watermelon": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/root_panel_watermelon"
+                ],
+                "xg_hud.top_bar": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/top_bar"
+                ],
+                "xg_hud.top_bar_image": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/top_bar_image",
+                    "/netease_prefab_screen/top_bar_image/image"
+                ],
+                "xg_hud.top_bar_progress_bar": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/top_bar_progress_bar"
+                ],
+                "xg_hud.top_bar_text": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/top_bar_text",
+                    "/netease_prefab_screen/top_bar_text/image"
+                ]
+            },
+            "screen": {
+                "D:\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xg_hud.json": [
+
+                ],
+                "D:\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xigua_server_form.json": [
+
+                ],
+                "F:\\Documents\\client_mod\\XiGua_Common\\CommoModResource\\ui\\Xigua_settings.json": [
+                    "/main",
+                    "/main/variables_button_mappings_and_controls/safezone_screen_matrix/inner_matrix"
+                ],
+                "F:\\Documents\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xg_hud.json": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/top_bar_image",
+                    "/netease_prefab_screen/top_bar_image/image"
+                ]
+            }
+        }
+    }
+}

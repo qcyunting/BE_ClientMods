@@ -1,0 +1,12 @@
+{
+    "Arena.Component.Namespace": "fqqgt",
+    "FirstTabSetting": 0,
+    "ShortItemSettings": [
+        "CommonModResource\\ui",
+        "CommonModResource\\textures"
+    ],
+    "Uluru.autoLayerDict": {
+
+    },
+    "Uluru.checkSuspectOldUI": true
+}

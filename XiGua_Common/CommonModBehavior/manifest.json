@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "62d14ca8-f954-4bc4-80ea-0a4df40ff89e",
+      "version": [
+        0,
+        0,
+        4
+      ],
+      "description": "By XiGua, neteast server common mod"
+    }
+  ],
+  "header": {
+    "uuid": "4325a9c6-2754-4319-998d-f94c61d5a777",
+    "version": [
+      0,
+      0,
+      4
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      50
+    ],
+    "description": "By XiGua, neteast server common mod",
+    "name": "Commomod"
+  },
+  "format_version": 1
+}

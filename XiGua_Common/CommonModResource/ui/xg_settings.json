@@ -1,0 +1,23 @@
+{
+    "main@common.base_screen": {
+        "$screen_bg_content": "xg_settings.screen_background",
+        "$screen_content": "xg_settings.root_screen"
+    },
+    "namespace": "xg_settings",
+    "root_screen": {
+        "type": "screen"
+    },
+    "screen_background": {
+        "type": "panel",
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "layer": 1,
+                    "keep_ratio": false,
+                    "texture": "textures/netease/common/image/default"
+                }
+            }
+        ]
+    }
+}
