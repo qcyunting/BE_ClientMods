@@ -6,3 +6,7 @@ empty-directory/
 
 # Yunxiao pipeline
 .yunxiao/
+
+.idea/
+
+*.zip

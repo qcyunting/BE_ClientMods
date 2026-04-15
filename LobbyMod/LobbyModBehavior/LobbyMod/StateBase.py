@@ -17,7 +17,7 @@ class Main(ClientSystem):
         self.fsm = FSM()
 
         self.ListenForEvent("Minecraft", "Engine", "LoadClientAddonScriptsAfter", self, self.LoadClientAddonScriptsAfter)
-        self.ListenForEvent("Common", "main", "StartMod", self, self.start_mod)
+        self.ListenForEvent("Xigua_common", "main", "StartMod", self, self.start_mod)
 
     def LoadClientAddonScriptsAfter(self, args):
         main_state = self.fsm.add_state(main.Main)  # 添加状态
