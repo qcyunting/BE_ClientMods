@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "default": "animation.villagehero.loop"
+            },
+            "geometry": {
+                "default": "geometry.npc.villagehero"
+            },
+            "identifier": "npc:villagehero",
+            "materials": {
+                "default": "npc"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "default"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/npc/villagehero"
+            }
+        }
+    }
+}

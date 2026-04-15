@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "28a9b8b5-20a8-427f-83f8-f89e6003c65e",
+      "version": [
+        0,
+        0,
+        4
+      ],
+      "description": "By Netease"
+    }
+  ],
+  "header": {
+    "uuid": "3ed59456-f71d-43d1-8565-bca7ac376e95",
+    "version": [
+      0,
+      0,
+      4
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      50
+    ],
+    "description": "By Netease",
+    "name": "Xigua_NPC"
+  },
+  "format_version": 1
+}

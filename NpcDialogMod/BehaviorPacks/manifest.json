@@ -19,6 +19,7 @@
         {
             "description": "By XiGua",
             "type": "data",
+            "name": "NpcDialogMod",
             "uuid": "e3cb6660-56d7-4e39-a0dd-3cc4ed27d3ff",
             "version": [
                 0,
