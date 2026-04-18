@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.npc.trampoline",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-13, 0, -13], "size": [26, 2, 26], "uv": [0, 0]},
+						{"origin": [-13, 2, -13], "size": [26, 1, 1], "uv": [0, 76]},
+						{"origin": [-13, 2, 12], "size": [26, 1, 1], "uv": [54, 76]},
+						{"origin": [12, 2, -12], "size": [1, 1, 24], "uv": [0, 51]},
+						{"origin": [-13, 2, -12], "size": [1, 1, 24], "uv": [50, 51]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "bone",
+					"pivot": [0, 2, 0],
+					"cubes": [
+						{"origin": [-11, 2, -11], "size": [22, 1, 22], "uv": [0, 28]}
+					]
+				}
+			]
+		}
+	]
+}

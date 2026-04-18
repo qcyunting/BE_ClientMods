@@ -290,10 +290,12 @@ class Main(BaseCustomScreenProxy):
     def OnRightClickBeforeClientEvent(self, args):
         self.CPS_right_click_set.append(time.time())
 
-    @Listen(event_name="ping_update", event_type="Xigua_common", system_name="main")
+    @Listen(event_name="pong", event_type=Listen.server)
     def OnPingValueChange(self, args):
         self.all_player_ping = args
         for name, info in args.items():
+            print name, info
+            print playerName
             if name == playerName:
                 self.NewPingValue = info.get("value")
 
@@ -360,10 +362,12 @@ class Main(BaseCustomScreenProxy):
         ping_list = sorted(PING_ICONS.keys())
         if self.NewPingValue == -1:
             return ""
-        ping_value = "延迟: §c{}ms".format(self.NewPingValue)
+        ping_value = " ping§c{} §fms".format(self.NewPingValue)
+        if self.NewPingValue < 20:
+            self.NewPingValue = 20
         for ping in ping_list:
             if self.NewPingValue <= ping:
-                ping_value = "延迟: {}{}ms".format(PING_ICONS[ping]["color"], self.NewPingValue)
+                ping_value = " ping {}{} §fms".format(PING_ICONS[ping]["color"], self.NewPingValue)
                 break
         return ping_value
 

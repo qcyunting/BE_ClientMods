@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.huntergame.loop": {
+		"animation.huntergame.idle": {
 			"loop": true,
 			"animation_length": 4.8,
 			"bones": {

@@ -17,8 +17,7 @@ from client import config as client_config
 class XiGua_client(object):
     @Mod.InitClient()
     def clientInit(self):
-        path = "{}.client.main.Main".format(client_config.modName)
         for system_name, cls_path in client_config.system_dict.items():
             clientApi.RegisterSystem(client_config.modName, system_name, cls_path)
-        print ("======Init{}Client======".format(client_config.modName))
+            print ("======Init {}:{} Client======".format(client_config.modName, system_name))
 

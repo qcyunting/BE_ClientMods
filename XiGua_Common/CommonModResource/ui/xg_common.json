@@ -1,0 +1,331 @@
+{
+    "appearance_viewer_panel": {
+        "type": "input_panel",
+        "$gesture_input_panel_control|default": "",
+        "$skin_preview|default": "#preview_skin",
+        "size": [
+            "51%y",
+            "110%"
+        ],
+        "max_size": [
+            "100%",
+            "100%"
+        ],
+        "button_mappings": [
+            {
+                "to_button_id": "button.turn_doll",
+                "button_up_right_of_first_refusal": true,
+                "mapping_type": "pressed",
+                "from_button_id": "button.menu_select"
+            }
+        ],
+        "gesture_tracking_button": "button.turn_doll",
+        "controls": [
+            {
+                "appearance_model": {
+                    "type": "custom",
+                    "renderer": "paper_doll_renderer",
+                    "offset": [
+                        0,
+                        "-15%"
+                    ],
+                    "layer": 5,
+                    "camera_tilt_degrees": -10,
+                    "rotation": "gesture_x",
+                    "starting_rotation": 30,
+                    "use_selected_skin": true,
+                    "use_skin_gui_scale": true,
+                    "anims": [
+                        "@common.screen_exit_size_animation_push",
+                        "@common.screen_exit_size_animation_pop",
+                        "@common.screen_entrance_size_animation_push",
+                        "@common.screen_entrance_size_animation_pop"
+                    ],
+                    "animation_reset_name": "screen_animation_reset",
+                    "bindings": [
+                        {
+                            "source_property_name": "#gesture_delta_source",
+                            "binding_type": "view",
+                            "target_property_name": "#gesture_delta_source",
+                            "source_control_name": "$gesture_input_panel_control"
+                        },
+                        {
+                            "source_property_name": "#gesture_mouse_delta_x",
+                            "binding_type": "view",
+                            "target_property_name": "#gesture_mouse_delta_x",
+                            "source_control_name": "$gesture_input_panel_control"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "button_texture": {
+        "type": "image",
+        "anchor_from": "$texture_anchor_from",
+        "anchor_to": "$texture_anchor_to",
+        "offset": "$texture_offset",
+        "size": "$texture_size",
+        "layer": "$texture_layer",
+        "alpha": "$control_alpha",
+        "texture": "$texture"
+    },
+    "cancel_btn@common.button": {
+        "type": "button",
+        "$control_alpha": 1.0,
+        "$label_color": [
+            1,
+            1,
+            1
+        ],
+        "$label_layer": 3,
+        "$label_offset": [
+            20.0,
+            0.0
+        ],
+        "$label_text": "关闭",
+        "$pressed_button_name": "%netease_editor_template_namespace.click",
+        "$texture": "textures/ui/button/cancel_btn",
+        "$texture_anchor_from": "left_middle",
+        "$texture_anchor_to": "left_middle",
+        "$texture_layer": 2,
+        "$texture_offset": [
+            0.0,
+            0.0
+        ],
+        "$texture_size": [
+            9.0,
+            9.0
+        ],
+        "size": [
+            50,
+            10.0
+        ],
+        "button_mappings": [
+            {
+                "to_button_id": "#cancel_btn_click",
+                "from_button_id": "button.menu_select",
+                "mapping_type": "pressed"
+            },
+            {
+                "to_button_id": "#cancel_btn_click",
+                "from_button_id": "button.menu_cancel",
+                "mapping_type": "global"
+            },
+            {
+                "to_button_id": "#cancel_btn_click",
+                "from_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            },
+            {
+                "to_button_id": "#cancel_btn_click",
+                "from_button_id": "button.menu_inventory_cancel",
+                "mapping_type": "global"
+            }
+        ],
+        "default_control": "default",
+        "hover_control": "hover",
+        "is_handle_button_move_event": true,
+        "pressed_control": "pressed",
+        "bindings": [
+            {
+                "binding_type": "collection_details",
+                "binding_collection_name": "",
+                "binding_condition": "always_when_visible"
+            }
+        ],
+        "controls": [
+            {
+                "default@xg_common.button_texture": {}
+            },
+            {
+                "hover@xg_common.button_texture": {
+                    "color": [
+                        0.3333,
+                        0.3333,
+                        0.3333
+                    ]
+                }
+            },
+            {
+                "pressed@xg_common.button_texture": {
+                    "color": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ]
+                }
+            },
+            {
+                "label": {
+                    "type": "label",
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle",
+                    "offset": "$label_offset",
+                    "layer": "$label_layer",
+                    "alpha": "$control_alpha",
+                    "color": "$label_color",
+                    "text": "$label_text"
+                }
+            }
+        ]
+    },
+    "namespace": "xg_common",
+    "player_paper_doll": {
+        "type": "panel",
+        "controls": [
+            {
+                "paper_doll": {
+                    "type": "custom",
+                    "renderer": "live_player_renderer",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "layer": 8,
+                    "anims": [
+                        "@common.screen_exit_size_animation_push",
+                        "@common.screen_exit_size_animation_pop",
+                        "@common.screen_entrance_size_animation_push",
+                        "@common.screen_entrance_size_animation_pop"
+                    ],
+                    "animation_reset_name": "screen_animation_reset",
+                    "property_bag": {
+                        "#look_at_cursor": true
+                    }
+                }
+            }
+        ]
+    },
+    "screen_background": {
+        "type": "panel",
+        "controls": [
+            {
+                "top_bar": {
+                    "type": "image",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "size": [
+                        "default",
+                        22.0
+                    ],
+                    "layer": 3,
+                    "texture": "textures/ui/header_bar",
+                    "controls": [
+                        {
+                            "label": {
+                                "type": "label",
+                                "offset": [
+                                    0.0,
+                                    -1.0
+                                ],
+                                "color": [
+                                    0.3333333333333333,
+                                    0.3333333333333333,
+                                    0.3333333333333333
+                                ],
+                                "font_type": "default",
+                                "text": "更衣室",
+                                "text_alignment": "center"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "image": {
+                    "type": "image",
+                    "layer": -1,
+                    "alpha": 0.5,
+                    "keep_ratio": false,
+                    "texture": "textures/ui/Black"
+                }
+            }
+        ]
+    },
+    "toggle_checked_state": {
+        "type": "image",
+        "$font_scale_factor|default": 1.0,
+        "$pressed_font_color|default": [
+            1,
+            1,
+            1
+        ],
+        "$pressed_texture|default": "textures/ui/button/pressed",
+        "$size|default": [
+            24,
+            12
+        ],
+        "size": "$size",
+        "layer": 10,
+        "texture": "$pressed_texture",
+        "controls": [
+            {
+                "toggleText": {
+                    "type": "label",
+                    "$text|default": "",
+                    "layer": 3,
+                    "color": "$pressed_font_color",
+                    "font_scale_factor": "$font_scale_factor",
+                    "text": "$text"
+                }
+            }
+        ]
+    },
+    "toggle_unchecked_state": {
+        "type": "image",
+        "$default_font_color|default": [
+            0,
+            0,
+            0
+        ],
+        "$default_texture|default": "textures/ui/button/default",
+        "$font_scale_factor|default": 1.0,
+        "$size|default": [
+            24,
+            12
+        ],
+        "size": "$size",
+        "layer": 1,
+        "texture": "$default_texture",
+        "controls": [
+            {
+                "toggleText": {
+                    "type": "label",
+                    "$text|default": "",
+                    "layer": 3,
+                    "color": "$default_font_color",
+                    "font_scale_factor": "$font_scale_factor",
+                    "text": "$text"
+                }
+            }
+        ]
+    },
+    "toggle_locked_state": {
+        "type": "image",
+        "$default_font_color|default": [
+            0,
+            0,
+            0
+        ],
+        "$default_texture|default": "textures/ui/button/default",
+        "$font_scale_factor|default": 0.8,
+        "$size|default": [
+            20,
+            10
+        ],
+        "size": "$size",
+        "layer": 1,
+        "texture": "$default_texture",
+        "controls": [
+            {
+                "toggleText": {
+                    "type": "label",
+                    "$text|default": "",
+                    "layer": 3,
+                    "color": "$default_font_color",
+                    "font_scale_factor": "$font_scale_factor",
+                    "text": "$text"
+                }
+            }
+        ]
+    }
+}

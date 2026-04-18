@@ -3,7 +3,7 @@
     "minecraft:client_entity": {
         "description": {
             "animations": {
-                "bide": "animation.enchanter.bide",
+                "idle": "animation.enchanter.idle",
                 "enchanter": "animation.enchanter.enchanter"
             },
             "geometry": {
@@ -22,7 +22,7 @@
                         "enchanter": "query.is_item_equipped('main_hand', 'minecraft:enchanted_book')"
                     },
                     {
-                        "bide": "!query.is_item_equipped('main_hand', 'minecraft:enchanted_book')"
+                        "idle": "!query.is_item_equipped('main_hand', 'minecraft:enchanted_book')"
                     }
                 ]
             },

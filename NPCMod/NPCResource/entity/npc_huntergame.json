@@ -3,7 +3,7 @@
     "minecraft:client_entity": {
         "description": {
             "animations": {
-                "default": "animation.huntergame.loop"
+                "default": "animation.huntergame.idle"
             },
             "geometry": {
                 "default": "geometry.npc.huntergame"
