@@ -4,7 +4,7 @@
         "components": {
             "minecraft:collision_box": {
                 "height": 3.0,
-                "width": 4.0
+                "width": 5.0
             },
             "minecraft:nameable": {"alwaysShow": true},
             "minecraft:persistent": {

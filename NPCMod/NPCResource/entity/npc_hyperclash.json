@@ -3,7 +3,7 @@
     "minecraft:client_entity": {
         "description": {
             "animations": {
-                "default": "animation.hyperclash.loop"
+                "default": "animation.hyperclash.idle"
             },
             "geometry": {
                 "default": "geometry.npc.hyperclash"

@@ -35,6 +35,16 @@ class Main(BaseSystem):
 
         self.NotifyToServer('UiInitFinished', dict())
 
+    @Listen()
+    def OnKeyPressInGame(self, args):
+        if args["isDown"] == "1":
+            if args["key"] == "18":
+                CF.CreateCamera(levelId).DepartCamera()
+        else:
+            if args["key"] == "18":
+                CF.CreateCamera(levelId).UnDepartCamera()
+
+
     def test_shop(self):
         network_proxy = escapeInstance.importModule("network_proxy")
         mc_game_ctrl = escapeInstance.importModule("mc_game_ctrl")

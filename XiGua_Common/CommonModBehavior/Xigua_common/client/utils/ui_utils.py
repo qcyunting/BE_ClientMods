@@ -37,6 +37,16 @@ class BaseCustomScreen(ScreenNode):
         """
         self.system.NotifyToServer(eventName, eventData)
 
+    def close(self):
+        """
+        关闭UI
+        """
+        clientApi.PopScreen()
+
+    @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#cancel_btn_click")
+    def cancel_btn_click(self, args):
+        clientApi.PopScreen()
+
 CustomUIScreenProxy = clientApi.GetUIScreenProxyCls()
 class BaseCustomScreenProxy(CustomUIScreenProxy):
     ListenDict = {"Minecraft": ("Minecraft", "Engine"), "client": (modName, "main"), "server": (modName, "main")}

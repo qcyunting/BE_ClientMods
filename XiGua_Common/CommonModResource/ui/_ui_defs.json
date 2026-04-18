@@ -1,9 +1,14 @@
 {
     "ui_defs": [
+        "ui/dressing_room.json",
         "ui/xg_chat.json",
+        "ui/xg_common.json",
         "ui/xg_hud.json",
-        "ui/Xigua_settings.json",
+        "ui/xg_settings.json",
         "ui/hud_screen.json",
-        "ui/pause_screen.json"
+        "ui/inventory_screen.json",
+        "ui/pause_screen.json",
+        "ui/scoreboards.json",
+        "ui/ui_common.json"
     ]
 }

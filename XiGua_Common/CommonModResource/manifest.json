@@ -8,7 +8,7 @@
         0,
         5
       ],
-      "description": "By XiGua, neteast server common mod"
+      "description": "By Netease"
     }
   ],
   "header": {
@@ -23,8 +23,8 @@
       20,
       50
     ],
-    "description": "By XiGua, neteast server common mod",
-    "name": "Xigua_common"
+    "description": "By Netease",
+    "name": "Commomod"
   },
   "format_version": 1
 }

@@ -4,8 +4,8 @@
 		{
 			"description": {
 				"identifier": "geometry.npc.big_door",
-				"texture_width": 512,
-				"texture_height": 512,
+				"texture_width": 1024,
+				"texture_height": 1024,
 				"visible_bounds_width": 8,
 				"visible_bounds_height": 9.5,
 				"visible_bounds_offset": [0, 4.25, 0]
@@ -16,6 +16,9 @@
 					"pivot": [0, 0, 0],
 					"cubes": [
 						{"origin": [-35, 0, -9], "size": [70, 4, 18], "inflate": 0.001, "uv": [0, 57]},
+						{"origin": [-39, 4, 2], "size": [78, 65, 0], "inflate": 0.001, "uv": [0, 375]},
+						{"origin": [-39, 4, 1], "size": [78, 65, 0], "inflate": 0.001, "uv": [390, 309]},
+						{"origin": [-39, 4, 3], "size": [78, 65, 0], "inflate": 0.001, "uv": [390, 309]},
 						{"origin": [-43, 0, -9], "size": [16, 4, 18], "inflate": -0.002, "pivot": [-27, 4, 0], "rotation": [0, 0, 22.5], "uv": [66, 179]},
 						{"origin": [27, 0, -9], "size": [16, 4, 18], "inflate": -0.002, "pivot": [27, 4, 0], "rotation": [0, 0, -22.5], "uv": [184, 33]},
 						{"origin": [-40, 68, -9], "size": [80, 15, 18], "uv": [0, 0]},

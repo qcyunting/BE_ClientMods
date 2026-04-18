@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "idle": "animation.merchant.idle",
+                "lottery": "animation.merchant.lottery"
+            },
+            "geometry": {
+                "default": "geometry.npc.merchant"
+            },
+            "identifier": "npc:merchant",
+            "materials": {
+                "default": "npc"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    {
+                        "lottery": "query.is_item_equipped('main_hand', 'minecraft:diamond')"
+                    },
+                    "idle"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/npc/merchant"
+            }
+        }
+    }
+}
