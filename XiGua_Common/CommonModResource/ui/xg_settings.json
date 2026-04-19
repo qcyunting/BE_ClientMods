@@ -15,7 +15,7 @@
                     "type": "image",
                     "layer": 1,
                     "keep_ratio": false,
-                    "texture": "textures/netease/common/image/default"
+                    "texture": "textures/ui/black"
                 }
             }
         ]

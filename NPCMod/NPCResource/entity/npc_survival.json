@@ -1,1 +1,26 @@
-{"format_version":"1.10.0","minecraft:client_entity":{"description":{"animations":{"default":"animation.survival.loop"},"geometry":{"default":"geometry.npc.survival"},"identifier":"npc:survival","materials":{"default":"npc"},"render_controllers":["controller.render.default"],"scripts":{"animate":["default"]},"textures":{"default":"textures/entity/npc/survival"}}}}
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "default": "animation.survival.idle"
+            },
+            "geometry": {
+                "default": "geometry.npc.survival"
+            },
+            "identifier": "npc:survival",
+            "materials": {
+                "default":"npc"
+            },
+            "render_controllers":[
+                "controller.render.default"
+            ],
+            "scripts":{
+                "animate":["default"]
+            },
+            "textures":{
+                "default":"textures/entity/npc/survival"
+            }
+        }
+    }
+}

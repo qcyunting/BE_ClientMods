@@ -1,6 +1,6 @@
 {
     "animations": {
-        "animation.survival.loop": {
+        "animation.survival.idle": {
             "animation_length": 2.5,
             "bones": {
                 "ALL": {
