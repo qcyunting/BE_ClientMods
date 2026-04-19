@@ -19,57 +19,120 @@ class Main(ScreenNode):
                            "close":"§c关闭",
                            "finish":"§b完成",
                            "claim_reward":"§d领取奖励"}
+        
+        self.dialogue_id = None
+        self.step_index = None
+
+        self.tasks = []
+        self.CreateStatus = False
+
+        self.delay_next = None
+
+        self.LevelId = clientApi.GetLevelId()
 
 
     def Create(self):
         """
         @description UI创建成功时调用
         """
-        self.btn_close = self.GetBaseUIControl("/bg/btn_close").asButton()
-        self.btn_close.AddTouchEventParams()
-        self.btn_close.SetButtonTouchDownCallback(self.btn_close_event)
+        self.CreateStatus = True
+        tasks = self.tasks[:]
+        self.tasks = []
+        for F in tasks:
+            F()
+
+    def delay_nextF(self,index,delay):
+        # 下一页延迟
+        self.delay_next = delay
+        def btn_countdown(indexB):
+            if self.delay_next>0:
+                text = "§7下一页(%ss)" % (str(self.delay_next))
+                pathB = "/stack_panel_btn/button%s/button_label" % (indexB+1)
+                pathA = "/stack_panel_btn/button%s" % (indexB+1)
+                btn_lable = self.GetBaseUIControl(pathB).asLabel()
+                btn_lable.SetText(text)
+                btn = self.GetBaseUIControl(pathA).asButton()
+                btn.SetTouchEnable(False)
+                self.delay_next -=1
+
+            else:
+                pathB = "/stack_panel_btn/button%s/button_label" % (indexB+1)
+                pathA = "/stack_panel_btn/button%s" % (indexB+1)
+                btn_lable = self.GetBaseUIControl(pathB).asLabel()
+                btn_lable.SetText("§a下一页")
+                btn = self.GetBaseUIControl(pathA).asButton()
+                btn.SetTouchEnable(True)
+
+                # 取消定时器
+                comp = clientApi.GetEngineCompFactory().CreateGame(self.LevelId)
+                comp.CancelTimer(self.Timer_delay_next)
+
+        comp = clientApi.GetEngineCompFactory().CreateGame(self.LevelId)
+        self.Timer_delay_next = comp.AddRepeatedTimer(1.0,btn_countdown,indexB=index)
+
+
+
 
     def SetData(self,dialogue_id,npc_name,npc_icon,text,step_index,buttons):
-        self.GetBaseUIControl("/bg/stack_panel_btn/btn_1").SetScreenVisible(False)
-        self.GetBaseUIControl("/bg/stack_panel_btn/btn_2").SetScreenVisible(False)
-        self.GetBaseUIControl("/bg/stack_panel_btn/btn_3").SetScreenVisible(False)
+        if not self.CreateStatus:
+            # UI未创建完成
+            self.tasks = []
+            self.tasks.append(
+                lambda: self.SetData(dialogue_id, npc_name, npc_icon, text, step_index, buttons)
+            )
+            return
+        # if self.dialogue_id==dialogue_id and self.step_index==step_index:
+        #     # 重复发同一个对话
+        #     return
+        try:
+            self.dialogue_id = dialogue_id
+            self.step_index = step_index
 
-        self.lable_title = self.GetBaseUIControl("/bg/panel_head/label").asLabel()
-        self.lable_title.SetText(npc_name)
+            self.delay_next = 3
+            
+            for i in range(5):
+                path = "/stack_panel_btn/button%s" % (i+1)
+                self.GetBaseUIControl(path).SetVisible(False)
+            
+            self.lable_title = self.GetBaseUIControl("/image/label_title").asLabel()
+            self.lable_title.SetText(npc_name)
 
-        self.lable_text = self.GetBaseUIControl("/bg/panel_dialog/bg_content/label").asLabel()
-        self.lable_text.SetText(text)
-        self.lable_text.resetAnimation()
+            self.lable_text = self.GetBaseUIControl("/image/label_text").asLabel()
+            self.lable_text.SetText(text)
 
-        self.image_npc = self.GetBaseUIControl("/bg/panel_dialog/bg_npc/image").asImage()
-        self.image_npc.SetSprite(npc_icon)
+            self.image_npc = self.GetBaseUIControl("/image/image_icon").asImage()
+            self.image_npc.SetSprite(npc_icon)
 
-        if len(buttons)>0:
-            self.GetBaseUIControl("/bg/stack_panel_btn/btn_1").SetScreenVisible(True)
-            self.btn_1 = self.GetBaseUIControl("/bg/stack_panel_btn/btn_1").asButton()
-            self.btn_1.AddTouchEventParams({"index":0,"type":buttons[0]})
-            self.btn_1.SetButtonTouchDownCallback(self.btn_down_cb)
+            def btn_set(index,type):
+                pathA = "/stack_panel_btn/button%s" % (index+1)
+                self.GetBaseUIControl(pathA).SetVisible(True)
+                btn = self.GetBaseUIControl(pathA).asButton()
+                btn.AddTouchEventParams({"index":index,"type":type})
+                btn.SetButtonTouchDownCallback(self.btn_down_cb)
 
-            self.lable_btn_1 = self.GetBaseUIControl("/bg/stack_panel_btn/btn_1/button_label").asLabel()
-            self.lable_btn_1.SetText(self.btn_change.get(buttons[0]))
+                pathB = "/stack_panel_btn/button%s/button_label" % (index+1)
+                btn_lable = self.GetBaseUIControl(pathB).asLabel()
+                btn_lable.SetText(self.btn_change.get(type))
 
-        if len(buttons)>1:
-            self.GetBaseUIControl("/bg/stack_panel_btn/btn_2").SetScreenVisible(True)
-            self.btn_2 = self.GetBaseUIControl("/bg/stack_panel_btn/btn_2").asButton()
-            self.btn_2.AddTouchEventParams({"index":1,"type":buttons[1]})
-            self.btn_2.SetButtonTouchDownCallback(self.btn_down_cb)
+                pathC = "/stack_panel_btn/button%s/image" % (index+1)
+                btn_image = self.GetBaseUIControl(pathC).asImage()
+                btn_image.SetSprite("textures/npcdialog/" + type)
 
-            self.lable_btn_2 = self.GetBaseUIControl("/bg/stack_panel_btn/btn_2/button_label").asLabel()
-            self.lable_btn_2.SetText(self.btn_change.get(buttons[1]))
+                if type=="next":
+                    self.delay_nextF(index,3)
 
-        if len(buttons)>2:
-            self.GetBaseUIControl("/bg/stack_panel_btn/btn_3").SetScreenVisible(True)
-            self.btn_3 = self.GetBaseUIControl("/bg/stack_panel_btn/btn_3").asButton()
-            self.btn_3.AddTouchEventParams({"index":2,"type":buttons[2]})
-            self.btn_3.SetButtonTouchDownCallback(self.btn_down_cb)
+            for index,type in enumerate(buttons[:5]):
+                btn_set(index,type)
 
-            self.lable_btn_3 = self.GetBaseUIControl("/bg/stack_panel_btn/btn_3/button_label").asLabel()
-            self.lable_btn_3.SetText(self.btn_change.get(buttons[2]))
+            # 设置显隐动画
+            self.image_dialog = self.GetBaseUIControl("/image").asImage()
+            self.image_dialog.resetAnimation()
+            self.stack_panel_btn = self.GetBaseUIControl("/stack_panel_btn").asStackPanel()
+            self.image_dialog.resetAnimation()
+
+        except Exception as e:
+            print "[ERROR]SetData",e
+            
     
     def btn_down_cb(self,args):
         Params = args["AddTouchEventParams"]
@@ -77,22 +140,22 @@ class Main(ScreenNode):
         btn_type = Params["type"]
         if btn_type == "next":
             # 下一页
-            self.client.NotifyToServer("RequestNextPage", {})
+            self.client.NotifyToServerF("RequestNextPage", {})
         elif btn_type == "close":
             # 关闭
-            self.client.NotifyToServer("RequestClose", {})
+            self.client.NotifyToServerF("RequestClose", {})
             self.client.ui_npcdialog = None
             clientApi.PopScreen()
         elif btn_type == "finish":
             # 完成
-            self.client.NotifyToServer("RequestFinish", {})
+            self.client.NotifyToServerF("RequestFinish", {})
         elif btn_type == "claim_reward":
             # 领取奖励
-            self.client.NotifyToServer("RequestClaimReward", {})
+            self.client.NotifyToServerF("RequestClaimReward", {})
 
     def btn_close_event(self,args):
         # 关闭
-        self.client.NotifyToServer("RequestClose", {})
+        self.client.NotifyToServerF("RequestClose", {})
         self.client.ui_npcdialog = None
         clientApi.PopScreen()
 

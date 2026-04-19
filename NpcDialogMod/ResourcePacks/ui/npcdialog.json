@@ -1,35 +1,176 @@
 {
-    "type": {
-        "duration": 5.0,
-        "to": [
-            "100%+0px",
-            "100%+0px"
-        ],
-        "anim_type": "size",
-        "from": [
-            "100%+0px",
-            "0%+0px"
-        ],
-        "next": ""
+    "appear": {
+        "anim_type": "alpha",
+        "duration": 0.5,
+        "from": 0,
+        "next": "",
+        "to": 1
     },
     "main": {
         "type": "screen",
         "controls": [
             {
-                "bg": {
-                    "layer": 1,
+                "image": {
                     "type": "image",
-                    "texture": "textures/ui/dialog_background_opaque",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "offset": [
+                        0.0,
+                        1.0
+                    ],
+                    "size": [
+                        "100%+0px",
+                        "35%+0px"
+                    ],
+                    "max_size": [
+                        "default",
+                        100.0
+                    ],
+                    "layer": 1,
+                    "alpha": "@npcdialog.appear",
+                    "propagate_alpha": true,
+                    "nineslice_size": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "texture": "textures/npcdialog/rec",
                     "controls": [
                         {
-                            "btn_close@common.button": {
+                            "image_icon": {
+                                "type": "image",
+                                "anchor_from": "bottom_left",
+                                "anchor_to": "bottom_left",
+                                "offset": [
+                                    30.0,
+                                    -5.0
+                                ],
+                                "size": [
+                                    "90%y+0px",
+                                    "135%+0px"
+                                ],
+                                "min_size": [
+                                    100.0,
+                                    120.0
+                                ],
+                                "layer": 1,
+                                "texture": "textures/npc/technoblade"
+                            }
+                        },
+                        {
+                            "image_line": {
+                                "type": "image",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    20.0
+                                ],
+                                "size": [
+                                    "50%+0px",
+                                    5.0
+                                ],
+                                "layer": 2,
+                                "texture": "textures/npcdialog/line"
+                            }
+                        },
+                        {
+                            "label_title": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    10.0
+                                ],
+                                "layer": 3,
+                                "font_type": "unicode",
+                                "text": "§6钻石小子",
+                                "text_alignment": "center"
+                            }
+                        },
+                        {
+                            "label_text": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    25.0
+                                ],
+                                "max_size": [
+                                    "50%+0px",
+                                    "default"
+                                ],
+                                "layer": 4,
+                                "font_type": "unicode",
+                                "text": "这是什么玩法？重生之我在麦块打工吗？啊......",
+                                "text_alignment": "center"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "stack_panel_btn": {
+                    "type": "stack_panel",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "offset": [
+                        80.0,
+                        "-35%+0px"
+                    ],
+                    "size": [
+                        "100%cm+0px",
+                        "100%c+0px"
+                    ],
+                    "layer": 6,
+                    "alpha": "@npcdialog.appear",
+                    "propagate_alpha": true,
+                    "controls": [
+                        {
+                            "button1@common.button": {
+                                "type": "button",
+                                "$control_alpha": 1.0,
+                                "$default_texture": "textures/npcdialog/btn",
+                                "$hover_texture": "textures/npcdialog/btn_a",
+                                "$is_new_nine_slice": false,
+                                "$label_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$label_font_scale_factor": 0.9,
+                                "$label_font_size": "normal",
+                                "$label_layer": 3,
                                 "$label_offset": [
+                                    20.0,
+                                    0.0
+                                ],
+                                "$label_text": "按钮1",
+                                "$nine_slice_buttom": 0,
+                                "$nine_slice_left": 0,
+                                "$nine_slice_right": 0,
+                                "$nine_slice_top": 0,
+                                "$nineslice_size": [
+                                    0,
+                                    0,
                                     0,
                                     0
                                 ],
-                                "anchor_from": "top_right",
-                                "$nine_slice_right": 0,
+                                "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                "$pressed_texture": "textures/npcdialog/btn_a",
+                                "$texture_layer": 2,
+                                "size": [
+                                    100.0,
+                                    25.0
+                                ],
                                 "button_mappings": [],
+                                "default_control": "default",
+                                "hover_control": "hover",
+                                "is_handle_button_move_event": true,
+                                "pressed_control": "pressed",
                                 "bindings": [
                                     {
                                         "binding_type": "collection_details",
@@ -37,24 +178,7 @@
                                         "binding_condition": "always_when_visible"
                                     }
                                 ],
-                                "$label_font_size": "normal",
-                                "size": [
-                                    16.0,
-                                    16.0
-                                ],
-                                "$texture_layer": 2,
-                                "$hover_texture": "",
-                                "$nine_slice_left": 0,
-                                "$label_layer": 3,
-                                "$pressed_button_name": "%netease_editor_template_namespace.click",
                                 "controls": [
-                                    {
-                                        "image": {
-                                            "layer": 1,
-                                            "type": "image",
-                                            "texture": "textures/ui/close_button_default"
-                                        }
-                                    },
                                     {
                                         "default@netease_editor_template_namespace.default": {}
                                     },
@@ -65,424 +189,375 @@
                                         "pressed@netease_editor_template_namespace.pressed": {}
                                     },
                                     {
-                                        "button_label@netease_editor_template_namespace.button_label": {}
+                                        "button_label@netease_editor_template_namespace.button_label": {
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle"
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "type": "image",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                5.0,
+                                                0.0
+                                            ],
+                                            "size": [
+                                                12.0,
+                                                12.0
+                                            ],
+                                            "layer": 10,
+                                            "texture": "textures/npcdialog/gift"
+                                        }
                                     }
-                                ],
-                                "$is_new_nine_slice": false,
+                                ]
+                            }
+                        },
+                        {
+                            "button2@common.button": {
                                 "type": "button",
-                                "hover_control": "hover",
-                                "$pressed_texture": "",
+                                "$control_alpha": 1.0,
+                                "$default_texture": "textures/npcdialog/btn",
+                                "$hover_texture": "textures/npcdialog/btn_a",
+                                "$is_new_nine_slice": false,
                                 "$label_color": [
-                                    0.3215686274509804,
-                                    0.3176470588235294,
-                                    0.3215686274509804
+                                    1,
+                                    1,
+                                    1
                                 ],
-                                "$default_texture": "",
-                                "offset": [
-                                    -2.0,
-                                    2.0
+                                "$label_font_scale_factor": 0.9,
+                                "$label_font_size": "normal",
+                                "$label_layer": 3,
+                                "$label_offset": [
+                                    20.0,
+                                    0.0
                                 ],
-                                "anchor_to": "top_right",
-                                "$label_font_scale_factor": 1.0,
-                                "pressed_control": "pressed",
-                                "$label_text": "",
-                                "default_control": "default",
+                                "$label_text": "按钮1",
+                                "$nine_slice_buttom": 0,
+                                "$nine_slice_left": 0,
+                                "$nine_slice_right": 0,
+                                "$nine_slice_top": 0,
                                 "$nineslice_size": [
                                     0,
                                     0,
                                     0,
                                     0
                                 ],
-                                "$control_alpha": 1.0,
-                                "is_handle_button_move_event": true,
-                                "$nine_slice_buttom": 0,
-                                "$nine_slice_top": 0
-                            }
-                        },
-                        {
-                            "panel_head": {
-                                "anchor_from": "top_middle",
+                                "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                "$pressed_texture": "textures/npcdialog/btn_a",
+                                "$texture_layer": 2,
+                                "size": [
+                                    100.0,
+                                    25.0
+                                ],
                                 "layer": 12,
-                                "anchor_to": "top_middle",
-                                "controls": [
+                                "button_mappings": [],
+                                "default_control": "default",
+                                "hover_control": "hover",
+                                "is_handle_button_move_event": true,
+                                "pressed_control": "pressed",
+                                "bindings": [
                                     {
-                                        "label": {
-                                            "text_alignment": "center",
-                                            "layer": 1,
-                                            "text": "§l§eMinecraft新手引导§r§8--前言",
-                                            "font_type": "default",
-                                            "type": "label",
-                                            "font_scale_factor": 0.8
-                                        }
+                                        "binding_type": "collection_details",
+                                        "binding_collection_name": "",
+                                        "binding_condition": "always_when_visible"
                                     }
                                 ],
-                                "type": "panel",
-                                "size": [
-                                    "100%c+0px",
-                                    20.0
-                                ]
-                            }
-                        },
-                        {
-                            "panel_dialog": {
-                                "anchor_from": "top_left",
-                                "layer": 14,
-                                "type": "panel",
                                 "controls": [
                                     {
-                                        "bg_npc": {
+                                        "default@netease_editor_template_namespace.default": {}
+                                    },
+                                    {
+                                        "hover@netease_editor_template_namespace.hover": {}
+                                    },
+                                    {
+                                        "pressed@netease_editor_template_namespace.pressed": {}
+                                    },
+                                    {
+                                        "button_label@netease_editor_template_namespace.button_label": {
                                             "anchor_from": "left_middle",
-                                            "layer": 1,
-                                            "type": "image",
-                                            "controls": [
-                                                {
-                                                    "image": {
-                                                        "layer": 1,
-                                                        "type": "image",
-                                                        "texture": "textures/npcdialog/npc/technoblade",
-                                                        "size": [
-                                                            "90%+0px",
-                                                            "90%+0px"
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "nineslice_size": [
-                                                1.0,
-                                                1.0,
-                                                1.0,
-                                                1.0
-                                            ],
-                                            "texture": "textures/ui/checkbox_space",
-                                            "offset": [
-                                                8.0,
-                                                0.0
-                                            ],
-                                            "anchor_to": "left_middle",
-                                            "size": [
-                                                75.0,
-                                                95.0
-                                            ]
+                                            "anchor_to": "left_middle"
                                         }
                                     },
                                     {
-                                        "bg_content": {
-                                            "anchor_from": "right_middle",
-                                            "layer": 3,
+                                        "image": {
                                             "type": "image",
-                                            "controls": [
-                                                {
-                                                    "bg_arrow": {
-                                                        "anchor_from": "left_middle",
-                                                        "layer": 1,
-                                                        "type": "image",
-                                                        "texture": "textures/ui/dialog_bubble_point",
-                                                        "priority": 10,
-                                                        "offset": [
-                                                            -14.0,
-                                                            0.0
-                                                        ],
-                                                        "anchor_to": "left_middle",
-                                                        "size": [
-                                                            16.0,
-                                                            16.0
-                                                        ]
-                                                    }
-                                                },
-                                                {
-                                                    "label": {
-                                                        "size": "@npcdialog.type",
-                                                        "anchor_from": "top_left",
-                                                        "layer": 2,
-                                                        "font_type": "default",
-                                                        "type": "label",
-                                                        "color": [
-                                                            0.0,
-                                                            0.0,
-                                                            0.0
-                                                        ],
-                                                        "text": "§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。\n§l我是猪神，原来你们还记得我。",
-                                                        "hide_hyphen": true,
-                                                        "offset": [
-                                                            4.0,
-                                                            4.0
-                                                        ],
-                                                        "clips_children": true,
-                                                        "anchor_to": "top_left",
-                                                        "font_scale_factor": 0.8
-                                                    }
-                                                }
-                                            ],
-                                            "nineslice_size": [
-                                                0.0,
-                                                0.0,
-                                                0.0,
-                                                0.0
-                                            ],
-                                            "texture": "textures/ui/dialog_bubble",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
                                             "offset": [
-                                                -8.0,
+                                                5.0,
                                                 0.0
                                             ],
-                                            "anchor_to": "right_middle",
                                             "size": [
-                                                "100%+-95px",
-                                                95.0
-                                            ]
+                                                12.0,
+                                                12.0
+                                            ],
+                                            "layer": 10,
+                                            "texture": "textures/npcdialog/gift"
                                         }
                                     }
-                                ],
-                                "offset": [
-                                    0.0,
-                                    20.0
-                                ],
-                                "anchor_to": "top_left",
-                                "size": [
-                                    "100%+0px",
-                                    100
                                 ]
                             }
                         },
                         {
-                            "stack_panel_btn": {
-                                "anchor_from": "bottom_middle",
-                                "layer": 20,
-                                "orientation": "horizontal",
-                                "type": "stack_panel",
-                                "controls": [
+                            "button3@common.button": {
+                                "type": "button",
+                                "$control_alpha": 1.0,
+                                "$default_texture": "textures/npcdialog/btn",
+                                "$hover_texture": "textures/npcdialog/btn_a",
+                                "$is_new_nine_slice": false,
+                                "$label_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$label_font_scale_factor": 0.9,
+                                "$label_font_size": "normal",
+                                "$label_layer": 3,
+                                "$label_offset": [
+                                    20.0,
+                                    0.0
+                                ],
+                                "$label_text": "按钮1",
+                                "$nine_slice_buttom": 0,
+                                "$nine_slice_left": 0,
+                                "$nine_slice_right": 0,
+                                "$nine_slice_top": 0,
+                                "$nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                "$pressed_texture": "textures/npcdialog/btn_a",
+                                "$texture_layer": 2,
+                                "size": [
+                                    100.0,
+                                    25.0
+                                ],
+                                "layer": 23,
+                                "button_mappings": [],
+                                "default_control": "default",
+                                "hover_control": "hover",
+                                "is_handle_button_move_event": true,
+                                "pressed_control": "pressed",
+                                "bindings": [
                                     {
-                                        "btn_1@common.button": {
-                                            "$label_offset": [
-                                                0,
-                                                0
-                                            ],
-                                            "$nine_slice_right": 1,
-                                            "button_mappings": [],
-                                            "bindings": [
-                                                {
-                                                    "binding_type": "collection_details",
-                                                    "binding_collection_name": "",
-                                                    "binding_condition": "always_when_visible"
-                                                }
-                                            ],
-                                            "$label_font_size": "normal",
-                                            "size": [
-                                                80.0,
-                                                "100%+0px"
-                                            ],
-                                            "$texture_layer": 2,
-                                            "$hover_texture": "textures/netease/common/button/hover",
-                                            "$nine_slice_left": 1,
-                                            "$label_layer": 3,
-                                            "$pressed_button_name": "%netease_editor_template_namespace.click",
-                                            "controls": [
-                                                {
-                                                    "default@netease_editor_template_namespace.default": {}
-                                                },
-                                                {
-                                                    "hover@netease_editor_template_namespace.hover": {}
-                                                },
-                                                {
-                                                    "pressed@netease_editor_template_namespace.pressed": {}
-                                                },
-                                                {
-                                                    "button_label@netease_editor_template_namespace.button_label": {}
-                                                }
-                                            ],
-                                            "$is_new_nine_slice": true,
-                                            "type": "button",
-                                            "hover_control": "hover",
-                                            "$pressed_texture": "textures/netease/common/button/pressed",
-                                            "$label_color": [
-                                                1,
-                                                1,
-                                                1
-                                            ],
-                                            "$default_texture": "textures/netease/common/button/default",
-                                            "$label_font_scale_factor": 0.9,
-                                            "pressed_control": "pressed",
-                                            "$label_text": "按钮1",
-                                            "default_control": "default",
-                                            "$nineslice_size": [
-                                                0,
-                                                0,
-                                                0,
-                                                0
-                                            ],
-                                            "$control_alpha": 1.0,
-                                            "is_handle_button_move_event": true,
-                                            "$nine_slice_buttom": 1,
-                                            "$nine_slice_top": 1
-                                        }
-                                    },
-                                    {
-                                        "panel": {
-                                            "layer": 11,
-                                            "type": "panel",
-                                            "size": [
-                                                2.0,
-                                                "default"
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "btn_2@common.button": {
-                                            "$label_offset": [
-                                                0,
-                                                0
-                                            ],
-                                            "layer": 12,
-                                            "$nine_slice_right": 1,
-                                            "button_mappings": [],
-                                            "bindings": [
-                                                {
-                                                    "binding_type": "collection_details",
-                                                    "binding_collection_name": "",
-                                                    "binding_condition": "always_when_visible"
-                                                }
-                                            ],
-                                            "$label_font_size": "normal",
-                                            "size": [
-                                                80.0,
-                                                "100%+0px"
-                                            ],
-                                            "$texture_layer": 2,
-                                            "$hover_texture": "textures/netease/common/button/hover",
-                                            "$nine_slice_left": 1,
-                                            "$label_layer": 3,
-                                            "$pressed_button_name": "%netease_editor_template_namespace.click",
-                                            "controls": [
-                                                {
-                                                    "default@netease_editor_template_namespace.default": {}
-                                                },
-                                                {
-                                                    "hover@netease_editor_template_namespace.hover": {}
-                                                },
-                                                {
-                                                    "pressed@netease_editor_template_namespace.pressed": {}
-                                                },
-                                                {
-                                                    "button_label@netease_editor_template_namespace.button_label": {}
-                                                }
-                                            ],
-                                            "$is_new_nine_slice": true,
-                                            "type": "button",
-                                            "hover_control": "hover",
-                                            "$pressed_texture": "textures/netease/common/button/pressed",
-                                            "$label_color": [
-                                                1,
-                                                1,
-                                                1
-                                            ],
-                                            "$default_texture": "textures/netease/common/button/default",
-                                            "$label_font_scale_factor": 0.9,
-                                            "pressed_control": "pressed",
-                                            "$label_text": "按钮2",
-                                            "default_control": "default",
-                                            "$nineslice_size": [
-                                                0,
-                                                0,
-                                                0,
-                                                0
-                                            ],
-                                            "$control_alpha": 1.0,
-                                            "is_handle_button_move_event": true,
-                                            "$nine_slice_buttom": 1,
-                                            "$nine_slice_top": 1
-                                        }
-                                    },
-                                    {
-                                        "panel1": {
-                                            "layer": 22,
-                                            "type": "panel",
-                                            "size": [
-                                                2.0,
-                                                "default"
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "btn_3@common.button": {
-                                            "$label_offset": [
-                                                0,
-                                                0
-                                            ],
-                                            "layer": 23,
-                                            "$nine_slice_right": 1,
-                                            "button_mappings": [],
-                                            "bindings": [
-                                                {
-                                                    "binding_type": "collection_details",
-                                                    "binding_collection_name": "",
-                                                    "binding_condition": "always_when_visible"
-                                                }
-                                            ],
-                                            "$label_font_size": "normal",
-                                            "size": [
-                                                80.0,
-                                                "100%+0px"
-                                            ],
-                                            "$texture_layer": 2,
-                                            "$hover_texture": "textures/netease/common/button/hover",
-                                            "$nine_slice_left": 1,
-                                            "$label_layer": 3,
-                                            "$pressed_button_name": "%netease_editor_template_namespace.click",
-                                            "controls": [
-                                                {
-                                                    "default@netease_editor_template_namespace.default": {}
-                                                },
-                                                {
-                                                    "hover@netease_editor_template_namespace.hover": {}
-                                                },
-                                                {
-                                                    "pressed@netease_editor_template_namespace.pressed": {}
-                                                },
-                                                {
-                                                    "button_label@netease_editor_template_namespace.button_label": {}
-                                                }
-                                            ],
-                                            "$is_new_nine_slice": true,
-                                            "type": "button",
-                                            "hover_control": "hover",
-                                            "$pressed_texture": "textures/netease/common/button/pressed",
-                                            "$label_color": [
-                                                1,
-                                                1,
-                                                1
-                                            ],
-                                            "$default_texture": "textures/netease/common/button/default",
-                                            "$label_font_scale_factor": 0.9,
-                                            "pressed_control": "pressed",
-                                            "$label_text": "按钮3",
-                                            "default_control": "default",
-                                            "$nineslice_size": [
-                                                0,
-                                                0,
-                                                0,
-                                                0
-                                            ],
-                                            "$control_alpha": 1.0,
-                                            "is_handle_button_move_event": true,
-                                            "$nine_slice_buttom": 1,
-                                            "$nine_slice_top": 1
-                                        }
+                                        "binding_type": "collection_details",
+                                        "binding_collection_name": "",
+                                        "binding_condition": "always_when_visible"
                                     }
                                 ],
-                                "offset": [
-                                    0.0,
-                                    -8.0
+                                "controls": [
+                                    {
+                                        "default@netease_editor_template_namespace.default": {}
+                                    },
+                                    {
+                                        "hover@netease_editor_template_namespace.hover": {}
+                                    },
+                                    {
+                                        "pressed@netease_editor_template_namespace.pressed": {}
+                                    },
+                                    {
+                                        "button_label@netease_editor_template_namespace.button_label": {
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle"
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "type": "image",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                5.0,
+                                                0.0
+                                            ],
+                                            "size": [
+                                                12.0,
+                                                12.0
+                                            ],
+                                            "layer": 10,
+                                            "texture": "textures/npcdialog/gift"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "button4@common.button": {
+                                "type": "button",
+                                "$control_alpha": 1.0,
+                                "$default_texture": "textures/npcdialog/btn",
+                                "$hover_texture": "textures/npcdialog/btn_a",
+                                "$is_new_nine_slice": false,
+                                "$label_color": [
+                                    1,
+                                    1,
+                                    1
                                 ],
-                                "anchor_to": "bottom_middle",
+                                "$label_font_scale_factor": 0.9,
+                                "$label_font_size": "normal",
+                                "$label_layer": 3,
+                                "$label_offset": [
+                                    20.0,
+                                    0.0
+                                ],
+                                "$label_text": "按钮1",
+                                "$nine_slice_buttom": 0,
+                                "$nine_slice_left": 0,
+                                "$nine_slice_right": 0,
+                                "$nine_slice_top": 0,
+                                "$nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                "$pressed_texture": "textures/npcdialog/btn_a",
+                                "$texture_layer": 2,
                                 "size": [
-                                    "100%+-16px",
-                                    14.0
+                                    100.0,
+                                    25.0
+                                ],
+                                "layer": 34,
+                                "button_mappings": [],
+                                "default_control": "default",
+                                "hover_control": "hover",
+                                "is_handle_button_move_event": true,
+                                "pressed_control": "pressed",
+                                "bindings": [
+                                    {
+                                        "binding_type": "collection_details",
+                                        "binding_collection_name": "",
+                                        "binding_condition": "always_when_visible"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "default@netease_editor_template_namespace.default": {}
+                                    },
+                                    {
+                                        "hover@netease_editor_template_namespace.hover": {}
+                                    },
+                                    {
+                                        "pressed@netease_editor_template_namespace.pressed": {}
+                                    },
+                                    {
+                                        "button_label@netease_editor_template_namespace.button_label": {
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle"
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "type": "image",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                5.0,
+                                                0.0
+                                            ],
+                                            "size": [
+                                                12.0,
+                                                12.0
+                                            ],
+                                            "layer": 10,
+                                            "texture": "textures/npcdialog/gift"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "button5@common.button": {
+                                "type": "button",
+                                "$control_alpha": 1.0,
+                                "$default_texture": "textures/npcdialog/btn",
+                                "$hover_texture": "textures/npcdialog/btn_a",
+                                "$is_new_nine_slice": false,
+                                "$label_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$label_font_scale_factor": 0.9,
+                                "$label_font_size": "normal",
+                                "$label_layer": 3,
+                                "$label_offset": [
+                                    20.0,
+                                    0.0
+                                ],
+                                "$label_text": "按钮1",
+                                "$nine_slice_buttom": 0,
+                                "$nine_slice_left": 0,
+                                "$nine_slice_right": 0,
+                                "$nine_slice_top": 0,
+                                "$nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                "$pressed_texture": "textures/npcdialog/btn_a",
+                                "$texture_layer": 2,
+                                "size": [
+                                    100.0,
+                                    25.0
+                                ],
+                                "layer": 45,
+                                "button_mappings": [],
+                                "default_control": "default",
+                                "hover_control": "hover",
+                                "is_handle_button_move_event": true,
+                                "pressed_control": "pressed",
+                                "bindings": [
+                                    {
+                                        "binding_type": "collection_details",
+                                        "binding_collection_name": "",
+                                        "binding_condition": "always_when_visible"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "default@netease_editor_template_namespace.default": {}
+                                    },
+                                    {
+                                        "hover@netease_editor_template_namespace.hover": {}
+                                    },
+                                    {
+                                        "pressed@netease_editor_template_namespace.pressed": {}
+                                    },
+                                    {
+                                        "button_label@netease_editor_template_namespace.button_label": {
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle"
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "type": "image",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                5.0,
+                                                0.0
+                                            ],
+                                            "size": [
+                                                12.0,
+                                                12.0
+                                            ],
+                                            "layer": 10,
+                                            "texture": "textures/npcdialog/gift"
+                                        }
+                                    }
                                 ]
                             }
                         }
-                    ],
-                    "size": [
-                        260.0,
-                        142.0
                     ]
                 }
             }
