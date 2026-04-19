@@ -10,6 +10,7 @@ LevelId  = clientApi.GetLevelId()
 class BaseCustomScreen(ScreenNode):
     ListenDict = {"Minecraft": ("Minecraft", "Engine"), "client": (modName, "main"), "server": (modName, "main")}
     system = None
+    local_id = -2
     def __init__(self, namespace, name, param):
         super(BaseCustomScreen, self).__init__(namespace, name, param)
         self.system = clientApi.GetSystem(modName, "main")
@@ -47,11 +48,19 @@ class BaseCustomScreen(ScreenNode):
     def cancel_btn_click(self, args):
         clientApi.PopScreen()
 
+    @Listen(event_type=Listen.server)
+    def setLocalId(self, args):
+        """
+        设置本地的玩家Id
+        """
+        self.local_id = args.get("local_id", -2)
+
 CustomUIScreenProxy = clientApi.GetUIScreenProxyCls()
 class BaseCustomScreenProxy(CustomUIScreenProxy):
     ListenDict = {"Minecraft": ("Minecraft", "Engine"), "client": (modName, "main"), "server": (modName, "main")}
     system = None
     screen = None
+    local_id = -2
     def __init__(self, screenName, screenNode):
         super(BaseCustomScreenProxy, self).__init__(screenName, screenNode)
         self.system = clientApi.GetSystem(modName, "main")
@@ -84,4 +93,10 @@ class BaseCustomScreenProxy(CustomUIScreenProxy):
         """
         self.system.NotifyToServer(eventName, eventData)
 
+    @Listen(event_type=Listen.server)
+    def setLocalId(self, args):
+        """
+        设置本地的玩家Id
+        """
+        self.local_id = args.get("local_id", -2)
 

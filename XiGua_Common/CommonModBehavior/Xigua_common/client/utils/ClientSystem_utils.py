@@ -3,6 +3,7 @@ import mod.client.extraClientApi as clientApi
 import mod.common.minecraftEnum as MC_Enum
 from mod_log import logger as logger
 from ..config import *
+from listen_util import *
 ClientSystem = clientApi.GetClientSystemCls()
 CF = clientApi.GetEngineCompFactory()
 levelId = clientApi.GetLevelId()
@@ -28,6 +29,7 @@ class BaseSystem(ClientSystem):
         "client": (modName, "main"),
         "server": (modName, "main")
     }
+    local_id = -2
     def __init__(self, namespace, systemName):
         super(BaseSystem, self).__init__(namespace, systemName)
         self.Register()
@@ -48,3 +50,10 @@ class BaseSystem(ClientSystem):
         else:
             name, system = self.ListenDict[_type]
         self.ListenForEvent(name, system, event, self, func, priority=priority)
+
+    @Listen(event_type=Listen.server)
+    def setLocalId(self, args):
+        """
+        设置本地的玩家Id
+        """
+        self.local_id = args.get("local_id", -2)

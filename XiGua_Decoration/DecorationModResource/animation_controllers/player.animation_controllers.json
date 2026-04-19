@@ -1,0 +1,16 @@
+{
+  "format_version": "1.17.0",
+  "animation_controllers": {
+    "controller.animation.decoration.dragon_wings": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "dragon_wings"
+          ],
+          "transitions": []
+        }
+      }
+    }
+  }
+}

@@ -1,227 +1,246 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 from ..utils.ClientSystem_utils import *
-from ..utils.listen_util import *
-from collections import defaultdict
+from .utils import ItemsManager
+
 
 class Decoration(BaseSystem):
+    BATCH_SYNC_EVENT = "saveDressingRoomChanges"
+    REMOTE_SYNC_EVENT = "syncPlayerDecorations"
+
     def __init__(self, namespace, systemName):
         super(Decoration, self).__init__(namespace, systemName)
-        self._current_show_key = ""
-        self.all_decoration = {}
-        self.has_decoration = {}
-        self.items_by_type = {}
-        self.has_items_by_type = {}
-        self.all_dressed = []
-        self.try_on_by_location = {}
+        self.manager = ItemsManager({}, {}, {})
+        self._origin_dressed_keys = []
+
+    def _get_server_local_id(self):
+        if self.local_id not in (None, -2):
+            return self.local_id
+        return clientApi.GetLocalPlayerId()
+
+    def _get_local_player_id(self):
+        return clientApi.GetLocalPlayerId()
 
     @Listen()
     def UiInitFinished(self, args):
-        clientApi.RegisterUI(modName, "dressing_room", base_clsPath + "decoration.ui.dressing_room.Main", "dressing_room.main")
+        clientApi.RegisterUI(modName, "dressing_room", base_clsPath + "decoration.ui.dressing_room.Main",
+                             "dressing_room.main")
 
     @Listen(event_type=Listen.server)
     def openDressingRoom(self, args):
-        self.all_decoration = args.get("all", {})
-        self.has_decoration = args.get("has", {})
+        self.manager.set_all(args.get("all", {}))
+        self.manager.set_has(args.get("has", {}))
+        self.manager.set_dressed(args.get("dressed", {}))
+        self.manager.clear_trying()
 
-        item_type_map = {key: value.get('type', 'unknown') for key, value in self.all_decoration.items()}
+        server_local_id = self._get_server_local_id()
+        player_id = self._get_local_player_id()
+        if player_id != server_local_id:
+            self.manager.set_player_dressed(player_id, self.manager.get_dressed_by_pid(server_local_id))
+        self._origin_dressed_keys = self.manager.get_dressed_by_pid(player_id)
+        self._rebuild_local_player_render()
 
-        classified = defaultdict(dict)
-        for key, value in self.all_decoration.items():
-            item_type = value.get('type', 'unknown')
-            classified[item_type][key] = value
-        self.items_by_type = dict(classified)
+        clientApi.PushScreen(modName, "dressing_room", {"system": self})
 
-        for item_type, items_dict in self.items_by_type.items():
-            self.items_by_type[item_type] = sorted(items_dict.items(), key=lambda x: x[1]['index'])
+    @Listen(event_type=Listen.server)
+    def syncPlayerDecorations(self, args):
+        server_local_id = self._get_server_local_id()
+        local_player_id = self._get_local_player_id()
+        self.manager.set_all(args.get("all", {}))
+        dressed_map = args.get("dressed", {})
+        if not isinstance(dressed_map, dict):
+            return
 
-        has_classified = defaultdict(dict)
-        for key, value in self.has_decoration.items():
-            item_type = item_type_map.get(key, 'unknown')
-            full_info = self.all_decoration.get(key, {}).copy()
-            full_info.update(value)
-            if full_info.get("isEquipped"):
-                self.all_dressed.append(key)
-            has_classified[item_type][key] = full_info
-        self.has_items_by_type = dict(has_classified)
+        for player_id, dressed_keys in dressed_map.items():
+            if player_id == server_local_id:
+                self.manager.set_player_dressed(local_player_id, dressed_keys)
+                self._rebuild_player_render(local_player_id, include_try=False)
+                continue
 
-        # 排序
-        for item_type, items_dict in self.has_items_by_type.items():
-            self.has_items_by_type[item_type] = sorted(items_dict.items(), key=lambda x: x[1]['index'])
+            self.manager.set_player_dressed(player_id, dressed_keys)
+            self._rebuild_player_render(player_id, include_try=False)
 
-        data = {"system": self}
-        clientApi.PushScreen(modName, "dressing_room", data)
+    def get_type_list(self):
+        return self.manager.get_type_list()
+
+    def get_items_for_type(self, item_type, owned_only=False):
+        return self.manager.get_items_by_type(item_type, owned_only)
+
+    def toggle_try_decoration(self, key):
+        if not key or not self.manager.get_item(key):
+            self.clear_try_decoration()
+            return
+        if self.manager.is_trying(key):
+            self.clear_try_decoration()
+            return
+        self.manager.set_trying(key)
+        self._rebuild_local_player_render()
 
     def show_one_decoration(self, key):
-        """临时展示单个装饰品，展示下一个会清除上一个"""
-        if key == self._current_show_key:
-            self._clear_show()
+        self.toggle_try_decoration(key)
+    def clear_try_decoration(self):
+        if not self.manager.get_trying_key():
             return
-        self._clear_show()
-        if not key:
-            self._current_show_key = None
-            return
-        item_data = self.all_decoration.get(key)
-        if not item_data:
-            print "装饰品不存在: " + key
-            return
-
-        self._current_show_key = key
-        comp = clientApi.GetEngineCompFactory().CreateActorRender(playerId)
-        for model_key, model_name in item_data.get('model', {}).items():
-            if None not in [model_key, model_name]:
-                comp.AddPlayerGeometry(model_key, model_name)
-        for texture_key, texture_path in item_data.get('texture', {}).items():
-            if None not in [texture_key, texture_path]:
-                comp.AddPlayerTexture(texture_key, texture_path)
-        for anim_key, anim_name in item_data.get('animation', {}).items():
-            if None not in [anim_key, anim_name]:
-                comp.AddPlayerAnimation(anim_key, anim_name)
-            for anim_controller_key, anim_controller_name in item_data.get('animation_controller', {}).items():
-                if None not in [anim_controller_key, anim_controller_name]:
-                    comp.AddPlayerAnimationController(anim_controller_key, anim_controller_name)
-                    comp.AddActorScriptAnimate("minecraft:player", anim_controller_key)
-        for render_key, condition in item_data.get('render', {}).items():
-            if None not in [render_key, condition]:
-                comp.AddPlayerRenderController(render_key, condition)
-
-        comp.RebuildPlayerRender()
-
-    def _clear_show(self):
-        """清除当前展示的装饰品效果"""
-        if not self._current_show_key:
-            return
-
-        playerId = clientApi.GetLocalPlayerId()
-        comp = clientApi.GetEngineCompFactory().CreateActorRender(playerId)
-
-        item_data = self.all_decoration.get(self._current_show_key)
-        if item_data:
-            for model_key in item_data.get('model', {}):
-                if model_key is not None:
-                    comp.RemovePlayerGeometry(model_key)
-            for render_key in item_data.get('render', {}):
-                if render_key is not None:
-                    comp.RemovePlayerRenderController(render_key)
-
-        self._apply_dressed_items()
-
-        comp.RebuildPlayerRender()
-        self._current_show_key = None
-
-    def _apply_dressed_items(self):
-        """应用所有已穿戴的装饰品"""
-        playerId = clientApi.GetLocalPlayerId()
-        comp = clientApi.GetEngineCompFactory().CreateActorRender(playerId)
-
-        for key in self.all_dressed:
-            item_data = self.all_decoration.get(key)
-            if not item_data:
-                continue
-            for model_key, model_name in item_data.get('model', {}).items():
-                if None not in [model_key, model_name]:
-                    comp.AddPlayerGeometry(model_key, model_name)
-            for texture_key, texture_path in item_data.get('texture', {}).items():
-                if None not in [texture_key, texture_path]:
-                    comp.AddPlayerTexture(texture_key, texture_path)
-            for anim_key, anim_name in item_data.get('animation', {}).items():
-                if None not in [anim_key, anim_name]:
-                    comp.AddPlayerAnimation(anim_key, anim_name)
-            for anim_controller_key, anim_controller_name in item_data.get('animation_controller', {}).items():
-                if None not in [anim_controller_key, anim_controller_name]:
-                    comp.AddPlayerAnimationController(anim_controller_key, anim_controller_name)
-                    comp.AddActorScriptAnimate("minecraft:player", anim_controller_key)
-            for render_key, condition in item_data.get('render', {}).items():
-                if None not in [render_key, condition]:
-                    comp.AddPlayerRenderController(render_key, condition)
-
-        comp.RebuildPlayerRender()
+        self.manager.clear_trying()
+        self._rebuild_local_player_render()
 
     def wear_one_decoration(self, key):
-        """穿戴装饰品（永久）"""
-        if key in self.all_dressed:
-            print "已经穿戴过了: " + key
-            return
-        item_data = self.all_decoration.get(key)
-        if not item_data:
-            print "装饰品不存在: " + key
-            return
+        player_id = self._get_local_player_id()
+        item_data = self.manager.get_item(key)
+        if not item_data or not self.manager.is_owned(key):
+            return False
 
-        self.all_dressed.append(key)
+        slot = item_data.get("slot")
+        dressed_keys = self.manager.get_dressed_by_pid(player_id)
+        old_key = self.manager.get_equipped_key_by_slot(player_id, slot)
 
-        if self._current_show_key:
-            self._clear_show()
-        else:
-            self._apply_dressed_items()
-        self.NotifyToServer("wearOneDecoration", {"key": key})
+        if old_key == key:
+            return False
+
+        if old_key in dressed_keys:
+            dressed_keys.remove(old_key)
+        dressed_keys.append(key)
+        self.manager.set_player_dressed(player_id, dressed_keys)
+
+        if self.manager.is_trying(key):
+            self.manager.clear_trying()
+
+        self._rebuild_local_player_render()
+        return True
 
     def unwear_one_decoration(self, key):
-        """脱掉装饰品"""
-        if key not in self.all_dressed:
-            print "未穿戴: " + key
-            return
+        player_id = self._get_local_player_id()
+        dressed_keys = self.manager.get_dressed_by_pid(player_id)
+        if key not in dressed_keys:
+            return False
 
-        self.all_dressed.remove(key)
+        dressed_keys.remove(key)
+        self.manager.set_player_dressed(player_id, dressed_keys)
 
-        if self._current_show_key:
-            self._clear_show()
-        else:
-            self._reapply_all_dressed()
-        self.NotifyToServer("unwearOneDecoration", {"key": key})
+        if self.manager.is_trying(key):
+            self.manager.clear_trying()
 
-    def _reapply_all_dressed(self):
-        """重新应用所有已穿戴装饰品（先清除全部再应用）"""
-        playerId = clientApi.GetLocalPlayerId()
-        comp = clientApi.GetEngineCompFactory().CreateActorRender(playerId)
-        for key in self.all_dressed:
-            item_data = self.all_decoration.get(key)
-            if not item_data:
+        self._rebuild_local_player_render()
+        return True
+
+    def buy_one_decoration(self, key):
+        if not key or self.manager.is_owned(key):
+            return False
+        self.NotifyToServer("buyOneDecoration", {"key": key})
+        return True
+
+    def apply_buy_result(self, args):
+        if not args.get("success"):
+            return False
+
+        key = args.get("key")
+        if key:
+            self.manager.ensure_owned(key, args.get("has_info", {}))
+
+        has_data = args.get("has")
+        if isinstance(has_data, dict):
+            self.manager.set_has(has_data)
+
+        return True
+
+    def flush_changes_to_server(self):
+        player_id = self._get_local_player_id()
+        self.clear_try_decoration()
+
+        current_keys = self.manager.get_dressed_by_pid(player_id)
+        origin_set = set(self._origin_dressed_keys)
+        current_set = set(current_keys)
+
+        wear_list = [key for key in current_keys if key not in origin_set]
+        unwear_list = [key for key in self._origin_dressed_keys if key not in current_set]
+
+        data = {
+            "wear_list": wear_list,
+            "unwear_list": unwear_list,
+            "dressed_keys": current_keys
+        }
+        print "发送事件" + self.BATCH_SYNC_EVENT + str(data)
+        self.NotifyToServer(self.BATCH_SYNC_EVENT, data)
+        self._origin_dressed_keys = list(current_keys)
+
+    def get_effective_dressed_keys(self, player_id):
+        result = self.manager.get_dressed_by_pid(player_id)
+        try_key = self.manager.get_trying_key()
+        if not try_key:
+            return self._merge_keys_by_slot(result)
+
+        try_item = self.manager.get_item(try_key)
+        if not try_item:
+            return self._merge_keys_by_slot(result)
+
+        try_slot = try_item.get("slot")
+        filtered = []
+        for key in result:
+            item = self.manager.get_item(key)
+            if item and item.get("slot") == try_slot:
                 continue
-            for model_key, model_name in item_data.get('model', {}).items():
-                if None not in [model_key, model_name]:
-                    comp.AddPlayerGeometry(model_key, model_name)
-            for texture_key, texture_path in item_data.get('texture', {}).items():
-                if None not in [texture_key, texture_path]:
-                    comp.AddPlayerTexture(texture_key, texture_path)
-            for anim_key, anim_name in item_data.get('animation', {}).items():
-                if None not in [anim_key, anim_name]:
-                    comp.AddPlayerAnimation(anim_key, anim_name)
-            for anim_controller_key, anim_controller_name in item_data.get('animation_controller', {}).items():
-                if None not in [anim_controller_key, anim_controller_name]:
-                    comp.AddPlayerAnimationController(anim_controller_key, anim_controller_name)
-                    comp.AddActorScriptAnimate("minecraft:player", anim_controller_key)
-            for render_key, condition in item_data.get('render', {}).items():
-                if None not in [render_key, condition]:
-                    comp.AddPlayerRenderController(render_key, condition)
+            filtered.append(key)
+        filtered.append(try_key)
+        return self._merge_keys_by_slot(filtered)
+
+    def _merge_keys_by_slot(self, keys):
+        merged = []
+        slot_to_index = {}
+        for key in keys:
+            item = self.manager.get_item(key)
+            if not item:
+                continue
+
+            slot = item.get("slot")
+            if not slot:
+                if key not in merged:
+                    merged.append(key)
+                continue
+
+            if slot in slot_to_index:
+                merged[slot_to_index[slot]] = key
+                continue
+
+            slot_to_index[slot] = len(merged)
+            merged.append(key)
+        return merged
+
+    def _rebuild_local_player_render(self):
+        self._rebuild_player_render(self._get_local_player_id(), include_try=True)
+
+    def _rebuild_player_render(self, player_id, include_try):
+        comp = clientApi.GetEngineCompFactory().CreateActorRender(player_id)
+        self._clear_all_item_effects(comp)
+
+        if include_try:
+            dressed_keys = self.get_effective_dressed_keys(player_id)
+        else:
+            dressed_keys = self.manager.get_dressed_by_pid(player_id)
+
+        for key in dressed_keys:
+            item_data = self.manager.get_item(key)
+            if item_data:
+                self._apply_item_effects(comp, item_data)
 
         comp.RebuildPlayerRender()
 
-    def buy_one_decoration(self, key):
-        self.NotifyToServer("buyOneDecoration", {"key": key})
+    def _safe_remove(self, comp, method_name, key):
+        if not key:
+            return
+        method = getattr(comp, method_name, None)
+        if callable(method):
+            try:
+                method(key)
+            except Exception:
+                pass
 
-    def render_layer_decoration(self):
-        """示例"""
-        comp = CF.CreateActorRender(playerId) # 创建actorRender组件
-        # 修改玩家模型、新增翅膀和披风
-        comp.AddPlayerGeometry("custom_cape", "geometry.cape") # 新增自定义披风
-        comp.AddPlayerGeometry("dragon_wings", "geometry.dragon_wings") # 新增翅膀
+    def _clear_all_item_effects(self, comp):
+        for item_data in self.manager._all.values():
+            render_name = item_data.get("render_name")
+            if render_name:
+                self._safe_remove(comp, "RemovePlayerRenderController", render_name)
 
-        comp.AddPlayerTexture("dragon_wings", "textures/decorations/dragon_wings/dragon_wings_autumn")  # 新增翅膀贴图
-        comp.AddPlayerTexture("custom_cape", "textures/decorations/cape/15th_anniversary_cape")  # 新增披风贴图
-
-        # 新增动作部分
-        comp.AddPlayerAnimation('dragon_wings','animation.dragon_wings.idle') # 新增翅膀动画
-
-        # 新增玩家渲染控制器部分
-        comp.AddPlayerRenderController("controller.render.player.custom_cape",
-                                       "!variable.is_first_person && !query.is_spectator"
-        )
-        comp.AddPlayerRenderController("controller.render.player.dragon_wings",
-                                       "!variable.is_first_person && !query.is_spectator"
-        )
-
-        # 新增动画控制器部分
-        comp.AddPlayerAnimationController('dragon_wings', 'controller.animation.decoration.dragon_wings')  # 新增动画控制器
-        comp.AddActorScriptAnimate("minecraft:player", "dragon_wings")  # 执行新的动画控制器
-
-        # 保存部分
-        comp.RebuildPlayerRender() # 保存上面的所有操作并立刻显示上面修改的所有内容
+    def _apply_item_effects(self, comp, item_data):
+        render_name = item_data.get("render_name")
+        render_condition = item_data.get("render_condition")
+        if render_name and render_condition:
+            comp.AddPlayerRenderController(render_name, render_condition)

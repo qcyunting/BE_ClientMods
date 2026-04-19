@@ -43,14 +43,177 @@
     },
     "UI": {
         "customPrefabGroupExpand": [
-            "Xigua_settings",
-            "xg_hud"
+            "dressing_room",
+            "xg_common"
         ],
         "expandData": {
             "prefab": {
                 "Xigua_settings.screen_background": [
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/screen_background"
+                ],
+                "dressing_room.decoration_item_grid": [
+                    "/netease_prefab_screen"
+                ],
+                "dressing_room.decoration_item_grod": [
+                    "/netease_prefab_screen"
+                ],
+                "dressing_room.decoration_item_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/decoration_item_panel"
+                ],
+                "dressing_room.isHasTypeToggleBtn": [
+                    "/netease_prefab_screen"
+                ],
+                "dressing_room.item_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/item_panel"
+                ],
+                "dressing_room.screen_background": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/screen_background",
+                    "/netease_prefab_screen/screen_background/top_bar"
+                ],
+                "dressing_room.tab_list": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/tab_list"
+                ],
+                "dressing_room.tab_list_item_button": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/tab_list_item_button"
+                ],
+                "persona_cast_character_screen_.cast_character_button_content_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_character_screen_right_side_model": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_character_select_main": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_common_dialog_background": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_grid_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_grid_with_buttons": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_modal_bottom_bar": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_modal_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_preview_page_one_inner_section": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_preview_page_two_inner_section": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_scroll_view_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.cast_single_character_button_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.character_loading_anim_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.chevron_button": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.chevron_image_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.common_cast_modal_top_bar": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.common_dcast_popup_framework": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.ftue_subpage_indicator_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.horizontal_20px_padding": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.horizontal_8px_padding": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.how_to_section": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.in_use_grid_item": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.individaul_cast_page_indicator": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.persona_cast_paper_doll_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.shift_page_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_cast_character_screen_.skin_viewer_panel_skin_model": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.emote_image": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.emote_label": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.emote_selection_wheel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.emote_wheel_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.emote_wheel_slot_content": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.equipped_border": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.focus_border": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.gamepad_hotkey_helpers": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.generic_title_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.green_checkmark_icon": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.icon_image": [
+                    "/netease_prefab_screen"
+                ],
+                "persona_common_.info_bulb_icon": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_common.cancel_btn": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/cancel_btn"
+                ],
+                "xg_common.screen_background": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/screen_background",
+                    "/netease_prefab_screen/screen_background/top_bar"
+                ],
+                "xg_common.skin_model": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_common.toggle_checked_state": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_common.toggle_unchecked_state": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/toggle_unchecked_state"
                 ],
                 "xg_hud.game_info_bar": [
                     "/netease_prefab_screen"
@@ -103,6 +266,32 @@
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/top_bar_image",
                     "/netease_prefab_screen/top_bar_image/image"
+                ],
+                "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\dressing_room.json": [
+                    "/dressing_room_main_screen",
+                    "/dressing_room_main_screen/stack_panel/tab_panel",
+                    "/dressing_room_main_screen/stack_panel/tab_panel/cancel_button",
+                    "/dressing_room_main_screen/stack_panel/tab_panel/cancel_button/default",
+                    "/dressing_room_main_screen/stack_panel/tab_panel/cancel_button/hover",
+                    "/dressing_room_main_screen/stack_panel/tab_panel/cancel_button/pressed",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image/panel",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image/scroll_view/scroll_mouse",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image/scroll_view/scroll_mouse/scroll_view",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image/scroll_view/scroll_mouse/scroll_view/stack_panel",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image/scroll_view/scroll_mouse/scroll_view/stack_panel/background_and_viewport",
+                    "/dressing_room_main_screen/stack_panel/item_grid/image/scroll_view/scroll_mouse/scroll_view/stack_panel/background_and_viewport/scrolling_view_port",
+                    "/dressing_room_main_screen/stack_panel/render",
+                    "/dressing_room_main_screen/stack_panel/render/image",
+                    "/dressing_room_main_screen/stack_panel/render/image/button",
+                    "/dressing_room_main_screen/input_panel",
+                    "/dressing_room_main_screen/input_panel/image(0)"
+                ],
+                "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_cast_character_screen.json": [
+
+                ],
+                "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_common.json": [
+                    "/netease_prefab_screen"
                 ]
             }
         }
