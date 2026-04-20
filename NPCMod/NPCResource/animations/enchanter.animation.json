@@ -97,23 +97,6 @@
 					}
 				}
 			}
-		},
-		"animation": {
-			"loop": true,
-			"bones": {
-				"bone3": {
-					"position": [0, 19, 0]
-				},
-				"bone8": {
-					"position": [18, 0, 0]
-				},
-				"bone9": {
-					"position": [-14, 0, 0]
-				},
-				"bone15": {
-					"position": [0, 28, 0]
-				}
-			}
 		}
 	}
 }
