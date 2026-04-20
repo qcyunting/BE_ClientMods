@@ -83,7 +83,7 @@ class NpcDialogModule(BaseState):
                 # self.ui_npcdialog = None
 
     def OpenDialogue(self, args):
-        print("OpenDialogue",args)
+        print "OpenDialogue",args
         dialogue_id = args.get("dialogue_id")
         npc_name = args.get("npc_name")
         npc_icon = self.npc_icon_default_fun(args.get("npc_icon","STEVE"))
