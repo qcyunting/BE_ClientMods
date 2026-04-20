@@ -114,7 +114,6 @@ class Main(BaseCustomScreen):
         y = max(1, (item_count + self.max_x - 1) // self.max_x)
         self.item_grid.SetGridDimension((self.max_x, y))
         self.UpdateScreen()
-        gameComp.AddTimer(0.1, lambda: self.UpdateScreen())
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindBool, "decoration_item_grid_binding", "#item_panel_visible")
     def return_item_panel_visible(self, index):
