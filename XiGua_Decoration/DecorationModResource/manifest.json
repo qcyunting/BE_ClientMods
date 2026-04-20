@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "c8133aee-a0b8-46c1-b690-f3890de2d453",
+      "version": [
+        0,
+        0,
+        4
+      ],
+      "description": "By Netease"
+    }
+  ],
+  "header": {
+    "uuid": "a062c747-87aa-4834-a84b-1098dcd565e2",
+    "version": [
+      0,
+      0,
+      4
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      50
+    ],
+    "description": "By Netease",
+    "name": "Commomod"
+  },
+  "format_version": 1
+}

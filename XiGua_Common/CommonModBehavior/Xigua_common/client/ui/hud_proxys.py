@@ -293,10 +293,8 @@ class Main(BaseCustomScreenProxy):
     @Listen(event_name="pong", event_type=Listen.server)
     def OnPingValueChange(self, args):
         self.all_player_ping = args
-        for name, info in args.items():
-            print name, info
-            print playerName
-            if name == playerName:
+        for pid, info in args.items():
+            if pid == self.local_id:
                 self.NewPingValue = info.get("value")
 
     @ViewBinder.binding(ViewBinder.BF_BindBool, "#player_info.visible")
