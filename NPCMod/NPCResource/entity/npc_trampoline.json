@@ -13,7 +13,7 @@
                 "default": "npc"
             },
             "render_controllers": [
-                "controller.render.default"
+                "controller.render.trampoline"
             ],
             "scripts": {
                 "animate": [
@@ -21,7 +21,12 @@
                 ]
             },
             "textures": {
-                "default": "textures/entity/npc/trampoline"
+                "green": "textures/entity/npc/trampoline/green",
+                "red": "textures/entity/npc/trampoline/red",
+                "cyan": "textures/entity/npc/trampoline/cyan",
+                "orange": "textures/entity/npc/trampoline/orange",
+                "purple": "textures/entity/npc/trampoline/purple",
+                "yellow": "textures/entity/npc/trampoline/yellow"
             }
         }
     }
