@@ -137,7 +137,7 @@ class Main(BaseCustomScreen):
         key, item_data = self._get_item_by_index(index)
         if not item_data:
             return ""
-        return item_data.get("currency", "")
+        return item_data.get("currency_icon", "")
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindString, "decoration_item_grid_binding", "#item_icon_texture")
     def return_item_panel_icon(self, index):
@@ -206,9 +206,20 @@ class Main(BaseCustomScreen):
         self._ensure_selection()
         self.update_grid()
 
+    def pop_tip_msg(self, msg):
+        self.GetBaseUIControl(BP + "/input_panel").SetVisible(True)
+        self.GetBaseUIControl(BP + "/input_panel/image/image/label").asLabel().SetText(msg)
+
+    @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#ok_button_click")
+    def ok_button_click(self, args):
+        self.GetBaseUIControl(BP + "/input_panel/image/image/label").asLabel().SetText("")
+        self.GetBaseUIControl(BP + "/input_panel").SetVisible(False)
+
     @Listen(event_type=Listen.server)
     def buyItemResult(self, args):
-        if not self.system.apply_buy_result(args):
+        suc, msg = self.system.apply_buy_result(args)
+        self.pop_tip_msg(msg)
+        if not suc:
             return
         self._ensure_selection()
         self.update_grid()

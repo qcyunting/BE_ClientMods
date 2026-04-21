@@ -129,8 +129,12 @@ class Decoration(BaseSystem):
         return True
 
     def apply_buy_result(self, args):
+        msg = args.get("msg")
+        if not msg:
+            msg = "§c购买失败"
+
         if not args.get("success"):
-            return False
+            return False, msg
 
         key = args.get("key")
         if key:
@@ -140,7 +144,7 @@ class Decoration(BaseSystem):
         if isinstance(has_data, dict):
             self.manager.set_has(has_data)
 
-        return True
+        return True, msg
 
     def flush_changes_to_server(self):
         player_id = self._get_local_player_id()
@@ -158,7 +162,6 @@ class Decoration(BaseSystem):
             "unwear_list": unwear_list,
             "dressed_keys": current_keys
         }
-        print "发送事件" + self.BATCH_SYNC_EVENT + str(data)
         self.NotifyToServer(self.BATCH_SYNC_EVENT, data)
         self._origin_dressed_keys = list(current_keys)
 

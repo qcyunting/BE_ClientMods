@@ -593,17 +593,11 @@
                     "type": "input_panel",
                     "layer": 100,
                     "visible": false,
-                    "button_mappings": [
-                        {
-                            "to_button_id": "#netease_to_button_id",
-                            "from_button_id": "button.menu_select",
-                            "mapping_type": "pressed"
-                        }
-                    ],
+                    "button_mappings": [],
                     "modal": true,
                     "controls": [
                         {
-                            "image": {
+                            "bp": {
                                 "type": "image",
                                 "layer": 1,
                                 "alpha": 0.2,
@@ -611,7 +605,7 @@
                             }
                         },
                         {
-                            "image(0)": {
+                            "image": {
                                 "type": "image",
                                 "size": [
                                     100,
@@ -624,8 +618,8 @@
                                         "button@common.button": {
                                             "type": "button",
                                             "$control_alpha": 1.0,
-                                            "$default_texture": "textures/ui/banners_no_border_dark_hover",
-                                            "$hover_texture": "textures/netease/common/button/hover",
+                                            "$default_texture": "textures/ui/store/btn/confirm",
+                                            "$hover_texture": "textures/ui/store/btn/confirm",
                                             "$is_new_nine_slice": false,
                                             "$label_color": [
                                                 1,
@@ -651,16 +645,27 @@
                                                 0
                                             ],
                                             "$pressed_button_name": "%netease_editor_template_namespace.click",
-                                            "$pressed_texture": "textures/netease/common/button/pressed",
+                                            "$pressed_texture": "textures/ui/store/btn/confirm",
                                             "$texture_layer": 2,
                                             "anchor_from": "bottom_middle",
                                             "anchor_to": "bottom_middle",
                                             "size": [
-                                                100,
-                                                50
+                                                90.0,
+                                                35.0
                                             ],
                                             "layer": 2,
-                                            "button_mappings": [],
+                                            "button_mappings": [
+                                                {
+                                                    "to_button_id": "#ok_button_click",
+                                                    "from_button_id": "button.menu_select",
+                                                    "mapping_type": "pressed"
+                                                },
+                                                {
+                                                    "to_button_id": "#ok_button_click",
+                                                    "from_button_id": "button.controller_select",
+                                                    "mapping_type": "pressed"
+                                                }
+                                            ],
                                             "default_control": "default",
                                             "hover_control": "hover",
                                             "is_handle_button_move_event": true,
@@ -681,9 +686,46 @@
                                                 },
                                                 {
                                                     "pressed@netease_editor_template_namespace.pressed": {}
-                                                },
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "type": "image",
+                                            "anchor_from": "top_middle",
+                                            "anchor_to": "top_middle",
+                                            "offset": [
+                                                0.0,
+                                                5.0
+                                            ],
+                                            "size": [
+                                                90.0,
+                                                55.0
+                                            ],
+                                            "layer": 1,
+                                            "color": [
+                                                0.6666666666666666,
+                                                0.6666666666666666,
+                                                0.6666666666666666
+                                            ],
+                                            "texture": "textures/ui/Banners",
+                                            "controls": [
                                                 {
-                                                    "button_label@netease_editor_template_namespace.button_label": {}
+                                                    "label": {
+                                                        "type": "label",
+                                                        "anchor_from": "top_left",
+                                                        "anchor_to": "top_left",
+                                                        "offset": [
+                                                            1.0,
+                                                            1.0
+                                                        ],
+                                                        "max_size": [
+                                                            88.0,
+                                                            53.0
+                                                        ],
+                                                        "font_type": "default"
+                                                    }
                                                 }
                                             ]
                                         }
