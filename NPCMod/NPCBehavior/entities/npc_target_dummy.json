@@ -1,0 +1,145 @@
+{
+    "format_version": "1.19.60",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "npc:target_dummy",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "minecraft:alive": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "has_damage",
+                                            "value": "fatal"
+                                        }
+                                    ]
+                                },
+                                "event": "minecraft:death"
+                            },
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "all",
+                            "deals_damage": true,
+                            "on_damage": {
+                                "filters": {
+                                    "test": "is_family",
+                                    "subject": "self",
+                                    "value": "npc"
+                                },
+                                "event": "npc:on_hurt"
+                            }
+                        }
+                    ]
+                }
+            },
+            "minecraft:hurt": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:timer": {
+                    "time": 0.3,
+                    "time_down_event": {
+                        "event": "npc:hurt_end"
+                    }
+                }
+            },
+            "minecraft:death": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false
+                        }
+                    ]
+                },
+                "minecraft:physics": {},
+                "minecraft:pushable": {
+                    "is_pushable": false,
+                    "is_pushable_by_piston": false
+                },
+                "minecraft:type_family": {
+                    "family": ["death"]
+                },
+                "minecraft:explode": {
+                    "fuseLength": 1.5,
+                    "fuseLit": true,
+                    "power": 0,
+                    "causesFire": false,
+                    "fireAffectedByGriefing": false,
+                    "destroyAffectedByGriefing": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "width": 1.0,
+                "height": 2.0
+            },
+            "minecraft:health": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:physics": {},
+            "minecraft:variant": {
+                "value": 0
+            },
+            "minecraft:nameable": {
+                "alwaysShow": true,
+                "name": "靶子"
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:type_family": {
+                "family": ["npc", "target_dummy"]
+            },
+            "minecraft:persistent": {}
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": ["minecraft:alive"]
+                }
+            },
+            "npc:on_hurt": {
+                "add": {
+                    "component_groups": ["minecraft:hurt"]
+                },
+                "remove": {
+                    "component_groups": ["minecraft:alive"]
+                }
+            },
+            "npc:hurt_end": {
+                "remove": {
+                    "component_groups": ["minecraft:hurt"]
+                },
+                "add": {
+                    "component_groups": ["minecraft:alive"]
+                }
+            },
+            "minecraft:death": {
+                "remove": {
+                    "component_groups": ["minecraft:alive", "minecraft:hurt"]
+                },
+                "add": {
+                    "component_groups": ["minecraft:death"]
+                }
+            }
+        }
+    }
+}

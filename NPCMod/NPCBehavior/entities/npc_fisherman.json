@@ -6,7 +6,9 @@
                 "height": 2.0,
                 "width": 1.0
             },
-            "minecraft:nameable": {"alwaysShow": true},
+            "minecraft:nameable": {
+                "alwaysShow": true
+            },
             "minecraft:persistent": {
 
             },
@@ -15,7 +17,7 @@
             }
         },
         "description": {
-            "identifier": "npc:huntergame",
+            "identifier": "npc:fisherman",
             "is_spawnable": true,
             "is_summonable": true
         }

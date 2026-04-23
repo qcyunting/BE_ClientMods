@@ -3,8 +3,8 @@
     "minecraft:entity": {
         "components": {
             "minecraft:collision_box": {
-                "height": 3.0,
-                "width": 5.0
+                "height": 2.0,
+                "width": 1.0
             },
             "minecraft:nameable": {"alwaysShow": true},
             "minecraft:persistent": {

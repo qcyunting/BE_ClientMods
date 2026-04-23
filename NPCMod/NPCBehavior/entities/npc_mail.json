@@ -15,7 +15,7 @@
             }
         },
         "description": {
-            "identifier": "npc:huntergame",
+            "identifier": "npc:mail",
             "is_spawnable": true,
             "is_summonable": true
         }
