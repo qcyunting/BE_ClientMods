@@ -6,14 +6,24 @@ class ItemsManager(object):
     def __init__(self, all_items, has_items, dressed):
         self._all = {}
         self._has = {}
+        self._hidden = set()
         self._dressed = {}
         self._try_key = None
         self.set_all(all_items)
+        self.set_hidden([])
         self.set_has(has_items)
         self.set_dressed(dressed)
 
     def set_all(self, all_items):
         self._all = all_items if isinstance(all_items, dict) else {}
+
+    def set_hidden(self, hidden_keys):
+        result = set()
+        for key in hidden_keys if isinstance(hidden_keys, list) else []:
+            resolved_key = self._resolve_key(key)
+            if resolved_key:
+                result.add(resolved_key)
+        self._hidden = result
 
     def _resolve_key(self, key):
         if key in self._all:
@@ -33,15 +43,26 @@ class ItemsManager(object):
                 result[resolved_key] = data if isinstance(data, dict) else {}
         self._has = result
 
+    def _normalize_pid(self, pid):
+        if pid is None:
+            return None
+        return str(pid)
+
     def set_dressed(self, dressed):
         source = dressed if isinstance(dressed, dict) else {}
         result = {}
         for pid, keys in source.items():
-            result[pid] = self._normalize_dressed_keys(keys)
+            normalized_pid = self._normalize_pid(pid)
+            if normalized_pid is None:
+                continue
+            result[normalized_pid] = self._normalize_dressed_keys(keys)
         self._dressed = result
 
     def set_player_dressed(self, pid, keys):
-        self._dressed[pid] = self._normalize_dressed_keys(keys)
+        normalized_pid = self._normalize_pid(pid)
+        if normalized_pid is None:
+            return
+        self._dressed[normalized_pid] = self._normalize_dressed_keys(keys)
 
     def _normalize_dressed_keys(self, keys):
         valid_keys = []
@@ -103,6 +124,8 @@ class ItemsManager(object):
                 continue
             if owned_only and key not in self._has:
                 continue
+            if not owned_only and key in self._hidden and key not in self._has:
+                continue
             result.append((key, data))
         return self._sort_items(result)
 
@@ -133,16 +156,19 @@ class ItemsManager(object):
         return key in self._has
 
     def is_equipped(self, pid, key):
-        return key in self._dressed.get(pid, [])
+        normalized_pid = self._normalize_pid(pid)
+        return key in self._dressed.get(normalized_pid, [])
 
     def is_trying(self, key):
         return self._try_key == key
 
     def get_dressed_by_pid(self, pid):
-        return list(self._dressed.get(pid, []))
+        normalized_pid = self._normalize_pid(pid)
+        return list(self._dressed.get(normalized_pid, []))
 
     def get_equipped_key_by_slot(self, pid, slot):
-        for key in self._dressed.get(pid, []):
+        normalized_pid = self._normalize_pid(pid)
+        for key in self._dressed.get(normalized_pid, []):
             item = self.get_item(key)
             if item and item.get("slot") == slot:
                 return key

@@ -6,9 +6,9 @@
       "version": [
         0,
         0,
-        5
+        12
       ],
-      "description": "By XiGua"
+      "description": "By Netease"
     }
   ],
   "header": {
@@ -16,15 +16,15 @@
     "version": [
       0,
       0,
-      5
+      12
     ],
     "min_engine_version": [
       1,
       20,
       50
     ],
-    "description": "By XiGua",
-    "name": "Decoration"
+    "description": "By Netease",
+    "name": "Commomod"
   },
   "format_version": 1
 }
