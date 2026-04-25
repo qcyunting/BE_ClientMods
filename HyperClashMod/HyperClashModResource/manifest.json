@@ -1,30 +1,30 @@
 {
-    "format_version": 1,
-    "header": {
-        "name": "HyperClash Resources",
-        "description": "HyperClash Mod Resource Pack",
-        "min_engine_version": [
-            1,
-            18,
-            0
-        ],
-        "uuid": "c0eaa970-462f-4922-897c-7b978c34c1ba",
-        "version": [
-            0,
-            0,
-            1
-        ]
-    },
-    "modules": [
-        {
-            "type": "resources",
-            "description": "HyperClash Resources",
-            "uuid": "1c9cd058-be21-4092-8459-ab550f3e065d",
-            "version": [
-                0,
-                0,
-                1
-            ]
-        }
+  "format_version": 1,
+  "header": {
+    "name": "HyperClash Resources",
+    "description": "HyperClash Mod Resource Pack",
+    "min_engine_version": [
+      1,
+      18,
+      0
+    ],
+    "uuid": "c0eaa970-462f-4922-897c-7b978c34c1ba",
+    "version": [
+      0,
+      0,
+      2
     ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "description": "HyperClash Resources",
+      "uuid": "1c9cd058-be21-4092-8459-ab550f3e065d",
+      "version": [
+        0,
+        0,
+        2
+      ]
+    }
+  ]
 }

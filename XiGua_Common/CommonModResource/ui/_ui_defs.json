@@ -1,5 +1,6 @@
 {
     "ui_defs": [
+        "ui/disconnect_screen.json",
         "ui/dressing_room.json",
         "ui/xg_chat.json",
         "ui/xg_common.json",

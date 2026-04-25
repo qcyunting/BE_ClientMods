@@ -1,36 +1,40 @@
 {
-    "format_version": 1,
-    "header": {
-        "name": "HyperClash Behavior",
-        "description": "HyperClash Mod Behavior Pack",
-        "min_engine_version": [
-            1,
-            18,
-            0
-        ],
-        "uuid": "24d40b4d-3573-48a8-b8fa-48b9f2cde796",
-        "version": [
-            0,
-            0,
-            1
-        ]
-    },
-    "modules": [
-        {
-            "type": "data",
-            "description": "HyperClash Behavior",
-            "uuid": "9aba96f0-389f-49e8-bdfc-01eb4d80e9a5",
-            "version": [
-                0,
-                0,
-                1
-            ]
-        }
+  "format_version": 1,
+  "header": {
+    "name": "HyperClash Behavior",
+    "description": "HyperClash Mod Behavior Pack",
+    "min_engine_version": [
+      1,
+      18,
+      0
     ],
-    "dependencies": [
-        {
-            "uuid": "c0eaa970-462f-4922-897c-7b978c34c1ba",
-            "version": [0, 0, 1]
-        }
+    "uuid": "24d40b4d-3573-48a8-b8fa-48b9f2cde796",
+    "version": [
+      0,
+      0,
+      2
     ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "description": "HyperClash Behavior",
+      "uuid": "9aba96f0-389f-49e8-bdfc-01eb4d80e9a5",
+      "version": [
+        0,
+        0,
+        2
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c0eaa970-462f-4922-897c-7b978c34c1ba",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
 }

@@ -6,4 +6,5 @@ base_clsPath = "{}.client.".format(modName)
 system_dict = {
     "main": base_clsPath + "main.Main",
     "decoration": base_clsPath + "decoration.main.Decoration",
+    "text_board": base_clsPath + "text_board.main.TextBoard",
 }

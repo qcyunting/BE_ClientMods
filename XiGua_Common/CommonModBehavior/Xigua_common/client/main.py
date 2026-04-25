@@ -2,6 +2,7 @@
 from utils.ClientSystem_utils import *
 from utils import escape
 escapeInstance = escape.instance
+clienthttp = escapeInstance.importModule("clienthttp")
 
 NativeScreenManager = clientApi.GetNativeScreenManagerCls()
 
@@ -121,6 +122,7 @@ class Main(BaseSystem):
         #rpc.CServerRpc().UrgeShipEvent()  # 催促发货
         #rpc.CServerRpc().StoreBuySuccServerEvent()  # 购买成功通知
         #rpc.CServerRpc().lobbyGoodBuySucServerEvent(event_data)  # 大厅商品购买成功
+        # clienthttp.HttpPool().RequestFile(url, imageUIControl._callbackSpriteStore)
 
     def regScreenProxy(self):
         screen_list = {

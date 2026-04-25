@@ -1,30 +1,30 @@
 {
-    "format_version": 1,
-    "header": {
-        "min_engine_version": [
-            1,
-            20,
-            50
-        ],
-        "description": "By XiGua",
-        "name": "HongBaoMod",
-        "uuid": "d2cedced-a3f9-40ff-9fcb-179043820bf7",
-        "version": [
-            0,
-            0,
-            1
-        ]
-    },
-    "modules": [
-        {
-            "description": "By XiGua",
-            "type": "resources",
-            "uuid": "04a5a90b-c6d3-40d4-a32c-31b696acced5",
-            "version": [
-                0,
-                0,
-                1
-            ]
-        }
+  "format_version": 1,
+  "header": {
+    "min_engine_version": [
+      1,
+      20,
+      50
+    ],
+    "description": "By XiGua",
+    "name": "HongBaoMod",
+    "uuid": "d2cedced-a3f9-40ff-9fcb-179043820bf7",
+    "version": [
+      0,
+      0,
+      2
     ]
+  },
+  "modules": [
+    {
+      "description": "By XiGua",
+      "type": "resources",
+      "uuid": "04a5a90b-c6d3-40d4-a32c-31b696acced5",
+      "version": [
+        0,
+        0,
+        2
+      ]
+    }
+  ]
 }

@@ -162,6 +162,7 @@ class Decoration(BaseSystem):
             "unwear_list": unwear_list,
             "dressed_keys": current_keys
         }
+        print "发送事件" + self.BATCH_SYNC_EVENT + str(data)
         self.NotifyToServer(self.BATCH_SYNC_EVENT, data)
         self._origin_dressed_keys = list(current_keys)
 
