@@ -14,6 +14,7 @@ class Main(BaseSystem):
         self.GaussianBlurTimer = None
         # 注册代理UI
         self.regScreenProxy()
+        clientApi.SetEnableReconnectNetgame(True)
 
     @Listen(event_type=Listen.server)
     def startMod(self, args):
