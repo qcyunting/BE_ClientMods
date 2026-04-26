@@ -143,9 +143,7 @@ class Main(ScreenNode):
             self.client.NotifyToServerF("RequestNextPage", {})
         elif btn_type == "close":
             # 关闭
-            self.client.NotifyToServerF("RequestClose", {})
-            self.client.ui_npcdialog = None
-            clientApi.PopScreen()
+            self.btn_close_event()
         elif btn_type == "finish":
             # 完成
             self.client.NotifyToServerF("RequestFinish", {})
@@ -153,10 +151,13 @@ class Main(ScreenNode):
             # 领取奖励
             self.client.NotifyToServerF("RequestClaimReward", {})
 
-    def btn_close_event(self,args):
+    def btn_close_event(self):
         # 关闭
         self.client.NotifyToServerF("RequestClose", {})
         self.client.ui_npcdialog = None
+        # 取消定时器
+        comp = clientApi.GetEngineCompFactory().CreateGame(self.LevelId)
+        comp.CancelTimer(self.Timer_delay_next)
         clientApi.PopScreen()
 
 
