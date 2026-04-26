@@ -27,86 +27,50 @@ class Main(ScreenNode):
         self.CreateStatus = False
 
         self.delay_next = None
-        self.Timer_delay_next = None
+
         self.LevelId = clientApi.GetLevelId()
 
 
     def Create(self):
+        """
+        @description UI创建成功时调用
+        """
         self.CreateStatus = True
-
-        root = self.GetBaseUIControl("/image")
-        if root:
-            root.SetVisible(False)
-
         tasks = self.tasks[:]
         self.tasks = []
         for F in tasks:
             F()
 
+    def delay_nextF(self,index,delay):
+        # 下一页延迟
+        self.delay_next = delay
+        def btn_countdown(indexB):
+            if self.delay_next>0:
+                text = "§7下一页(%ss)" % (str(self.delay_next))
+                pathB = "/stack_panel_btn/button%s/button_label" % (indexB+1)
+                pathA = "/stack_panel_btn/button%s" % (indexB+1)
+                btn_lable = self.GetBaseUIControl(pathB).asLabel()
+                btn_lable.SetText(text)
+                btn = self.GetBaseUIControl(pathA).asButton()
+                btn.SetTouchEnable(False)
+                self.delay_next -=1
 
-    def _cancel_delay_timer(self):
-        if self.Timer_delay_next is not None:
-            try:
+            else:
+                pathB = "/stack_panel_btn/button%s/button_label" % (indexB+1)
+                pathA = "/stack_panel_btn/button%s" % (indexB+1)
+                btn_lable = self.GetBaseUIControl(pathB).asLabel()
+                btn_lable.SetText("§a下一页")
+                btn = self.GetBaseUIControl(pathA).asButton()
+                btn.SetTouchEnable(True)
+
+                # 取消定时器
                 comp = clientApi.GetEngineCompFactory().CreateGame(self.LevelId)
                 comp.CancelTimer(self.Timer_delay_next)
-            except:
-                pass
-            self.Timer_delay_next = None
-
-    def delay_nextF(self, index, delay):
-        self.delay_next = int(delay)
-        self._cancel_delay_timer()
-
-        pathB = "/stack_panel_btn/button%s/button_label" % (index + 1)
-        pathA = "/stack_panel_btn/button%s" % (index + 1)
-
-        ctrl_label = self.GetBaseUIControl(pathB)
-        ctrl_btn = self.GetBaseUIControl(pathA)
-        if ctrl_label is None or ctrl_btn is None:
-            return
-        btn_lable = ctrl_label.asLabel()
-        btn = ctrl_btn.asButton()
-        if btn_lable is None or btn is None:
-            return
-
-        # 立即生效，避免“慢一拍”
-        btn.SetTouchEnable(False)
-        btn_lable.SetText("§7下一页(%ss)" % str(self.delay_next))
-
-        def btn_countdown(indexB):
-            if not self.CreateStatus:
-                self._cancel_delay_timer()
-                return
-
-            pathB2 = "/stack_panel_btn/button%s/button_label" % (indexB + 1)
-            pathA2 = "/stack_panel_btn/button%s" % (indexB + 1)
-            c_label = self.GetBaseUIControl(pathB2)
-            c_btn = self.GetBaseUIControl(pathA2)
-            if c_label is None or c_btn is None:
-                self._cancel_delay_timer()
-                return
-
-            l = c_label.asLabel()
-            b = c_btn.asButton()
-            if l is None or b is None:
-                self._cancel_delay_timer()
-                return
-
-            self.delay_next -= 1
-            if self.delay_next <= 0:
-                l.SetText("§a下一页")
-                b.SetTouchEnable(True)
-                self._cancel_delay_timer()
-            else:
-                l.SetText("§7下一页(%ss)" % str(self.delay_next))
 
         comp = clientApi.GetEngineCompFactory().CreateGame(self.LevelId)
-        self.Timer_delay_next = comp.AddRepeatedTimer(1.0, btn_countdown, indexB=index)
+        self.Timer_delay_next = comp.AddRepeatedTimer(1.0,btn_countdown,indexB=index)
 
 
-    def Destroy(self):
-        self.CreateStatus = False
-        self._cancel_delay_timer()
 
 
     def SetData(self,dialogue_id,npc_name,npc_icon,text,step_index,buttons):
@@ -125,7 +89,7 @@ class Main(ScreenNode):
             self.step_index = step_index
 
             self.delay_next = 3
-            self._cancel_delay_timer()
+            
             for i in range(5):
                 path = "/stack_panel_btn/button%s" % (i+1)
                 self.GetBaseUIControl(path).SetVisible(False)
@@ -142,12 +106,7 @@ class Main(ScreenNode):
             def btn_set(index,type):
                 pathA = "/stack_panel_btn/button%s" % (index+1)
                 self.GetBaseUIControl(pathA).SetVisible(True)
-                ctrl = self.GetBaseUIControl(pathA)
-                btn = ctrl.asButton() if ctrl else None
-                if btn:
-                    btn.SetTouchEnable(False)
-
-                btn.SetTouchEnable(True)
+                btn = self.GetBaseUIControl(pathA).asButton()
                 btn.AddTouchEventParams({"index":index,"type":type})
                 btn.SetButtonTouchDownCallback(self.btn_down_cb)
 
@@ -170,10 +129,6 @@ class Main(ScreenNode):
             self.image_dialog.resetAnimation()
             self.stack_panel_btn = self.GetBaseUIControl("/stack_panel_btn").asStackPanel()
             self.image_dialog.resetAnimation()
-            root = self.GetBaseUIControl("/image")
-            if root:
-                root.SetVisible(True)
-                
 
         except Exception as e:
             print "[ERROR]SetData",e
@@ -185,10 +140,6 @@ class Main(ScreenNode):
         btn_type = Params["type"]
         if btn_type == "next":
             # 下一页
-            pathA = "/stack_panel_btn/button%s" % (btn_index + 1)
-            btn = self.GetBaseUIControl(pathA).asButton()
-            if btn:
-                btn.SetTouchEnable(False)
             self.client.NotifyToServerF("RequestNextPage", {})
         elif btn_type == "close":
             # 关闭
@@ -208,6 +159,12 @@ class Main(ScreenNode):
         self.client.ui_npcdialog = None
         clientApi.PopScreen()
 
+
+    def Destroy(self):
+        """
+        @description UI销毁时调用
+        """
+        pass
 
     def OnActive(self):
         """

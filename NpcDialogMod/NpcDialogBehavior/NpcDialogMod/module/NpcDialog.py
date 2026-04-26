@@ -98,15 +98,16 @@ class NpcDialogModule(BaseState):
         if all([dialogue_id,npc_name,npc_icon,text,buttons]) and step_index>=0:
             if self.ui_npcdialog is None:
                 self.ui_npcdialog = clientApi.PushScreen(modName, 'npcdialog', {"isHud": 1, 'data': {}, 'client': self})
-            if self.ui_npcdialog is not None:
-                self.ui_npcdialog.SetData(dialogue_id, npc_name, npc_icon, text, step_index, buttons)
+            def ui_npcdialogF():
+                self.ui_npcdialog.SetData(dialogue_id,npc_name,npc_icon,text,step_index,buttons)
+            comp = clientApi.GetEngineCompFactory().CreateGame(LevelId)
+            comp.AddTimer(1,ui_npcdialogF())
         else:
             print "[ERROR] OpenDialogue",args
     
-    def PauseDialogue(self, args):
-        if self.ui_npcdialog is not None:
-            clientApi.PopScreen()
-            self.ui_npcdialog = None
+    def PauseDialogue(self,args):
+        # 暂时关闭对话
+        clientApi.PopScreen()
     
     def NotifyToServerF(self,event,args):
         print "NotifyToServerF",event,args
