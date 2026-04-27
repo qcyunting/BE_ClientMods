@@ -33,7 +33,10 @@ class MusicModule(BaseState):
         print "enable Music"
 
         # 开启事件监听
-        self._ClientListenEvent()
+        self.listen_client("UiInitFinished", self.UiInitFinished)
+    
+    def listen_client(self, event, func):
+        self.ListenForEvent("Minecraft", "Engine", event, self, func)
         
     def on_disable(self):
         print "disable Music"
@@ -41,46 +44,8 @@ class MusicModule(BaseState):
         # 停止音乐
         self.Music_Stop()
         # 关闭所有事件监听
-        self._ClientUnListenEvent()
-    
-    def _ClientAddEvent(self):
-        # 添加事件
-        def _addEvent(type,event,func):
-            self.events[type][event] = func
+        self.UnListenAllEvents()
 
-        _addEvent("server","UiInitFinished",self.UiInitFinished)
-
-    def _ClientListenEvent(self):
-        # 注册事件
-        for type,event in self.events.items():
-            for name,func in event.items():
-                if type == "client":
-                    self.listen_client(name,func)
-                elif type == "server":
-                    self.listen_server(name,func)
-    
-    def _ClientUnListenEvent(self):
-        # 反注册事件
-        for type,event in self.events.items():
-            for name,func in event.items():
-                if type == "client":
-                    self.unlisten_client(name,func)
-                elif type == "server":
-                    self.unlisten_server(name,func)
-    
-    def listen_server(self,event,func):
-        self.ListenForEvent(modName, "main", event, self, func)
-    
-    def listen_client(self,event,func):
-        self.ListenForEvent("Minecraft", "Engine", event, self, func)
-
-    def unlisten_server(self,event,func):
-        self.UnListenForEvent(modName, "main", event, self, func)
-
-    def unlisten_client(self,event,func):
-        self.UnListenForEvent("Minecraft", "Engine", event, self, func)
-
-    
     def UiInitFinished(self,args):
         """
         客户端UI初始化

@@ -1,3 +1,2 @@
-from . import test
-from . import Template
 from . import Music
+from . import GameSelect
