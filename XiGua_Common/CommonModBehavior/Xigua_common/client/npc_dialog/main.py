@@ -1,16 +1,8 @@
 # coding=utf-8
-"""
-Created on 2025-11-03
-NpcDialog模块
-这里主要 提供一个NpcDialog模块
-接口：
-- 
-"""
-from ..utils import *
-from ..module_registry import Module
+from ..utils.ClientSystem_utils import *
 
-@Module("NpcDialog")
-class NpcDialogModule(BaseState):
+
+class NpcDialog(BaseSystem):
     npc_icon_default = [
         "ALEX_3D",
         "ALLAY",
@@ -47,28 +39,15 @@ class NpcDialogModule(BaseState):
         "WITHER_BOSS"
     ]
     def __init__(self, namespace, systemName):
-        super(NpcDialogModule, self).__init__(namespace, systemName)
+        super(NpcDialog, self).__init__(namespace, systemName)
 
         self.ui_npcdialog = None
 
-    def on_enable(self):
-        print("启用NpcDialog")
-        self.ListenForEvent(modName, systemName, "OpenDialogue", self, self.OpenDialogue)
-        self.ListenForEvent(modName, systemName, "PauseDialogue", self, self.PauseDialogue)
-        self.listen_client("UiInitFinished", self.UiInitFinished)
-        self.listen_client("OnKeyPressInGame", self.OnKeyPressInGame)
-
-        clientApi.RegisterUI(modName, 'npcdialog', "{}.ui.NpcDialog.Main".format(modName),"npcdialog.main")
-        print "ui_npcdialog_enable"
-        
-    def listen_client(self, event, func):
-        self.ListenForEvent("Minecraft", "Engine", event, self, func)
-    
+    @Listen()
     def UiInitFinished(self,args):
-        print("UiInitFinished")
-        clientApi.RegisterUI(modName, 'npcdialog', "{}.ui.NpcDialog.Main".format(modName),"npcdialog.main")
+        clientApi.RegisterUI(modName, 'npcdialog', "{}.client.npc_dialog.ui.NpcDialog.Main".format(modName),"npcdialog.main")
 
-
+    @Listen()
     def OnKeyPressInGame(self,args):
         key = args["key"]
         isDown = args["isDown"]
@@ -80,8 +59,8 @@ class NpcDialogModule(BaseState):
                 # clientApi.PopScreen()
                 # self.ui_npcdialog = None
 
+    @Listen(event_type=Listen.server)
     def OpenDialogue(self, args):
-        print("OpenDialogue",args)
         dialogue_id = args.get("dialogue_id")
         npc_name = args.get("npc_name")
         npc_icon = self.npc_icon_default_fun(args.get("npc_icon","STEVE"))
@@ -90,7 +69,7 @@ class NpcDialogModule(BaseState):
         buttons = args.get("buttons")
         sound = args.get("sound")
         if sound:
-            comp = clientApi.GetEngineCompFactory().CreateCustomAudio(LevelId)
+            comp = clientApi.GetEngineCompFactory().CreateCustomAudio(levelId)
             comp.PlayCustomUIMusic(sound, 1, 1, False)
 
         if all([dialogue_id,npc_name,npc_icon,text,buttons]) and step_index>=0:
@@ -98,11 +77,12 @@ class NpcDialogModule(BaseState):
                 self.ui_npcdialog = clientApi.PushScreen(modName, 'npcdialog', {"isHud": 1, 'data': {}, 'client': self})
             def ui_npcdialogF():
                 self.ui_npcdialog.SetData(dialogue_id,npc_name,npc_icon,text,step_index,buttons)
-            comp = clientApi.GetEngineCompFactory().CreateGame(LevelId)
+            comp = clientApi.GetEngineCompFactory().CreateGame(levelId)
             comp.AddTimer(1,ui_npcdialogF())
         else:
             print "[ERROR] OpenDialogue",args
-    
+
+    @Listen(event_type=Listen.server)
     def PauseDialogue(self,args):
         # 暂时关闭对话
         clientApi.PopScreen()
@@ -122,8 +102,3 @@ class NpcDialogModule(BaseState):
             if not icon in self.npc_icon_default:
                 icon = "STEVE"
             return "textures/npc/" + icon.lower()
-
-
-    def on_disable(self):
-        print("禁用NpcDialog")
-        self.UnListenAllEvents()
