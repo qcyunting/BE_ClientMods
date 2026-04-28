@@ -49,7 +49,6 @@ class NpcDialogModule(BaseState):
     def __init__(self, namespace, systemName):
         super(NpcDialogModule, self).__init__(namespace, systemName)
 
-        self.ui_npcdialog_enable = None
         self.ui_npcdialog = None
 
     def on_enable(self):
@@ -59,17 +58,16 @@ class NpcDialogModule(BaseState):
         self.listen_client("UiInitFinished", self.UiInitFinished)
         self.listen_client("OnKeyPressInGame", self.OnKeyPressInGame)
 
-        self.ui_npcdialog_enable = clientApi.RegisterUI(modName, 'npcdialog', "{}.ui.NpcDialog.Main".format(modName),"npcdialog.main")
-        print "ui_npcdialog_enable",self.ui_npcdialog_enable
+        clientApi.RegisterUI(modName, 'npcdialog', "{}.ui.NpcDialog.Main".format(modName),"npcdialog.main")
+        print "ui_npcdialog_enable"
         
     def listen_client(self, event, func):
         self.ListenForEvent("Minecraft", "Engine", event, self, func)
     
     def UiInitFinished(self,args):
         print("UiInitFinished")
-        if not self.ui_npcdialog_enable:
-            self.ui_npcdialog_enable = clientApi.RegisterUI(modName, 'npcdialog', "{}.ui.NpcDialog.Main".format(modName),"npcdialog.main")
-            print "ui_npcdialog_enable",self.ui_npcdialog_enable
+        clientApi.RegisterUI(modName, 'npcdialog', "{}.ui.NpcDialog.Main".format(modName),"npcdialog.main")
+
 
     def OnKeyPressInGame(self,args):
         key = args["key"]

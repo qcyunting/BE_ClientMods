@@ -14,7 +14,6 @@ class GameSelectModule(BaseState):
     def __init__(self, namespace, systemName):
         super(GameSelectModule, self).__init__(namespace, systemName)
 
-        self.ui_gameselect_enable = None
         self.ui_gameselect = None
 
     def on_enable(self):
@@ -23,7 +22,7 @@ class GameSelectModule(BaseState):
 
         self.ListenForEvent(modName, "main", "OpenGameMenu", self, self.OpenGameMenu)
 
-        self.ui_gameselect_enable = clientApi.RegisterUI(modName, 'gameselect', "{}.ui.GameSelect.Main".format(modName),"gameselect.main")
+        clientApi.RegisterUI(modName, 'gameselect', "{}.ui.GameSelect.Main".format(modName),"gameselect.main")
 
     def on_disable(self):
         print "禁用GameSelect"
@@ -33,9 +32,8 @@ class GameSelectModule(BaseState):
 
     def UiInitFinished(self,args):
         print("UiInitFinished")
-        if not self.ui_gameselect_enable:
-            self.ui_gameselect_enable = clientApi.RegisterUI(modName, 'gameselect', "{}.ui.GameSelect.Main".format(modName),"gameselect.main")
-            print "ui_gameselect_enable",self.ui_gameselect_enable
+        clientApi.RegisterUI(modName, 'gameselect', "{}.ui.GameSelect.Main".format(modName),"gameselect.main")
+        print "ui_gameselect_enable"
 
     def OpenGameMenu(self,args):
         # 打开游戏选择器
@@ -43,9 +41,10 @@ class GameSelectModule(BaseState):
         if not args:
             comp = clientApi.GetEngineCompFactory().CreateTextNotifyClient(LevelId)
             comp.SetLeftCornerNotify("[Error] 菜单数据异常")
+            print ("[Error] 菜单数据异常")
             return
-        clientApi.PushScreen(modName,"gameselect",{"isHud": 1, 'data': args, 'client': self})
-    
+        print "打开UI", clientApi.PushScreen(modName,"gameselect",{"isHud": 1, 'data': args, 'client': self})
+
     def send_to_server(self,event,args):
         self.NotifyToServer(event,args)
 
