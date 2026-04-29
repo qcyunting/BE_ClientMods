@@ -107,8 +107,11 @@ class Main(ScreenNode):
     def Destroy(self):
         self.CreateStatus = False
         self._cancel_delay_timer()
+<<<<<<< Updated upstream:XiGua_Common/CommonModBehavior/Xigua_common/client/npc_dialog/ui/NpcDialog.py
         if self.client and getattr(self.client, "ui_npcdialog", None) is self:
             self.client.ui_npcdialog = None
+=======
+>>>>>>> Stashed changes:NpcDialogMod/BehaviorPacks/NpcDialogMod/ui/NpcDialog.py
 
 
     def SetData(self,dialogue_id,npc_name,npc_icon,text,step_index,buttons):
