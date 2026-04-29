@@ -61,10 +61,6 @@ class NpcDialog(BaseSystem):
 
     @Listen(event_type=Listen.server)
     def OpenDialogue(self, args):
-<<<<<<< Updated upstream:XiGua_Common/CommonModBehavior/Xigua_common/client/npc_dialog/main.py
-=======
-        print("OpenDialogue",args)
->>>>>>> Stashed changes:NpcDialogMod/BehaviorPacks/NpcDialogMod/module/NpcDialog.py
         dialogue_id = args.get("dialogue_id")
         npc_name = args.get("npc_name")
         npc_icon = self.npc_icon_default_fun(args.get("npc_icon","STEVE"))
@@ -79,11 +75,8 @@ class NpcDialog(BaseSystem):
         if all([dialogue_id,npc_name,npc_icon,text,buttons]) and step_index>=0:
             if self.ui_npcdialog is None:
                 self.ui_npcdialog = clientApi.PushScreen(modName, 'npcdialog', {"isHud": 1, 'data': {}, 'client': self})
-<<<<<<< Updated upstream:XiGua_Common/CommonModBehavior/Xigua_common/client/npc_dialog/main.py
-            def ui_npcdialogF():
+            if self.ui_npcdialog is not None:
                 self.ui_npcdialog.SetData(dialogue_id,npc_name,npc_icon,text,step_index,buttons)
-            comp = clientApi.GetEngineCompFactory().CreateGame(levelId)
-            comp.AddTimer(1,ui_npcdialogF())
         else:
             print "[ERROR] OpenDialogue",args
 
@@ -93,17 +86,6 @@ class NpcDialog(BaseSystem):
         if self.ui_npcdialog is not None:
             self.ui_npcdialog = None
             clientApi.PopScreen()
-=======
-            if self.ui_npcdialog is not None:
-                self.ui_npcdialog.SetData(dialogue_id, npc_name, npc_icon, text, step_index, buttons)
-        else:
-            print "[ERROR] OpenDialogue",args
-    
-    def PauseDialogue(self, args):
-        if self.ui_npcdialog is not None:
-            clientApi.PopScreen()
-            self.ui_npcdialog = None
->>>>>>> Stashed changes:NpcDialogMod/BehaviorPacks/NpcDialogMod/module/NpcDialog.py
     
     def NotifyToServerF(self,event,args):
         print "NotifyToServerF",event,args

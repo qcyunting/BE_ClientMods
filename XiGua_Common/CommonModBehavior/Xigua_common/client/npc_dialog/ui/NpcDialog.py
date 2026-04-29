@@ -107,11 +107,21 @@ class Main(ScreenNode):
     def Destroy(self):
         self.CreateStatus = False
         self._cancel_delay_timer()
-<<<<<<< Updated upstream:XiGua_Common/CommonModBehavior/Xigua_common/client/npc_dialog/ui/NpcDialog.py
         if self.client and getattr(self.client, "ui_npcdialog", None) is self:
             self.client.ui_npcdialog = None
-=======
->>>>>>> Stashed changes:NpcDialogMod/BehaviorPacks/NpcDialogMod/ui/NpcDialog.py
+
+    def _disable_button(self, btn_index):
+        pathA = "/stack_panel_btn/button%s" % (btn_index + 1)
+        ctrl = self.GetBaseUIControl(pathA)
+        btn = ctrl.asButton() if ctrl else None
+        if btn:
+            btn.SetTouchEnable(False)
+
+    def _close_screen(self):
+        self._cancel_delay_timer()
+        if self.client and getattr(self.client, "ui_npcdialog", None) is self:
+            self.client.ui_npcdialog = None
+        clientApi.PopScreen()
 
 
     def SetData(self,dialogue_id,npc_name,npc_icon,text,step_index,buttons):
@@ -190,28 +200,27 @@ class Main(ScreenNode):
         btn_type = Params["type"]
         if btn_type == "next":
             # 下一页
-            pathA = "/stack_panel_btn/button%s" % (btn_index + 1)
-            btn = self.GetBaseUIControl(pathA).asButton()
-            if btn:
-                btn.SetTouchEnable(False)
+            self._disable_button(btn_index)
             self.client.NotifyToServerF("RequestNextPage", {})
         elif btn_type == "close":
             # 关闭
+            self._disable_button(btn_index)
             self.client.NotifyToServerF("RequestClose", {})
-            self.client.ui_npcdialog = None
-            clientApi.PopScreen()
+            self._close_screen()
         elif btn_type == "finish":
             # 完成
+            self._disable_button(btn_index)
             self.client.NotifyToServerF("RequestFinish", {})
+            self._close_screen()
         elif btn_type == "claim_reward":
             # 领取奖励
+            self._disable_button(btn_index)
             self.client.NotifyToServerF("RequestClaimReward", {})
 
     def btn_close_event(self,args):
         # 关闭
         self.client.NotifyToServerF("RequestClose", {})
-        self.client.ui_npcdialog = None
-        clientApi.PopScreen()
+        self._close_screen()
 
 
     def OnActive(self):
