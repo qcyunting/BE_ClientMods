@@ -24,6 +24,14 @@
                 "bloom": "textures/misc/missing_texture",
 
                 "cape_15th": "textures/decorations/cape/15th_anniversary_cape",
+                "tiktok": "textures/decorations/cape/tiktok",
+                "bilibili": "textures/decorations/cape/bilibili",
+                "creeper": "textures/decorations/cape/creeper",
+                "blazing_sun_creeper": "textures/decorations/cape/blazing_sun_creeper",
+                "end_creeper": "textures/decorations/cape/end_creeper",
+                "ice_creeper": "textures/decorations/cape/ice_creeper",
+                "cherry": "textures/decorations/cape/cherry",
+                "glass_sea": "textures/decorations/cape/glass_sea",
 
                 "dragon_wings_autumn": "textures/decorations/dragon_wings/dragon_wings_autumn",
                 "dragon_wings_bloody": "textures/decorations/dragon_wings/dragon_wings_bloody",

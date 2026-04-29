@@ -6,9 +6,9 @@
       "version": [
         0,
         0,
-        6
+        27
       ],
-      "description": "By XiGua"
+      "description": "By Netease"
     }
   ],
   "header": {
@@ -16,15 +16,15 @@
     "version": [
       0,
       0,
-      6
+      27
     ],
     "min_engine_version": [
       1,
       20,
       50
     ],
-    "description": "By XiGua",
-    "name": "CommonMod"
+    "description": "By Netease",
+    "name": "Commomod"
   },
   "format_version": 1
 }

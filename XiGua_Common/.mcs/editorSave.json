@@ -43,14 +43,16 @@
     },
     "UI": {
         "customPrefabGroupExpand": [
-            "dressing_room",
-            "xg_common"
+            "disconnect_"
         ],
         "expandData": {
             "prefab": {
                 "Xigua_settings.screen_background": [
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/screen_background"
+                ],
+                "disconnect_.disconnect_text": [
+                    "/netease_prefab_screen"
                 ],
                 "dressing_room.decoration_item_grid": [
                     "/netease_prefab_screen"
@@ -285,7 +287,8 @@
                     "/dressing_room_main_screen/stack_panel/render/image",
                     "/dressing_room_main_screen/stack_panel/render/image/button",
                     "/dressing_room_main_screen/input_panel",
-                    "/dressing_room_main_screen/input_panel/image(0)"
+                    "/dressing_room_main_screen/input_panel/image",
+                    "/dressing_room_main_screen/input_panel/image/image"
                 ],
                 "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_cast_character_screen.json": [
 

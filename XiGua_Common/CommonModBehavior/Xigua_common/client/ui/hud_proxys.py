@@ -33,6 +33,8 @@ class Main(BaseCustomScreenProxy):
         self.top_bar_dict = {}
         self.top_bar_control = None
 
+        self.is_test_server = False
+
     def OnCreate(self):
         self.ui_create = True
         if self.screen is None:
@@ -52,6 +54,15 @@ class Main(BaseCustomScreenProxy):
         self.child = self.screen.CreateChildControl("xg_hud.root_panel_watermelon", "root_panel_watermelon", panel)
         self.DanmakuPanel = self.screen.GetBaseUIControl(BP + "/root_panel_watermelon/danmaku")
         # self.SetScoreboard({"title": "分数板", "order": ("1", "2", "3"), "text_dict": {"1": "志云工作室", "2": "测试", "3": "TEST"}})
+
+    @Listen(event_type=Listen.server)
+    def setTestServer(self, args):
+        """
+        设置是否是测试版游戏
+        """
+        print "设置是否是测试版游戏", args
+        self.is_test_server = args.get("is_test_server", False)
+        self.screen.GetBaseUIControl(BP + "/root_panel_watermelon/test_watermark").SetVisible(self.is_test_server)
 
     @Listen(event_type=Listen.server)
     def initTopBar(self, args):

@@ -340,6 +340,10 @@
                             "binding_collection_name": "hud_buttons",
                             "binding_condition": "visible",
                             "binding_name": "#button_index"
+                        },
+                        {
+                            "binding_name_override": "#visible",
+                            "binding_name": "#hotbar_elipses_right_visible"
                         }
                     ],
                     "controls": [
@@ -359,10 +363,20 @@
     },
     "hud_button_list": {
         "type": "stack_panel",
-        "anchor_from": "top_left",
-        "anchor_to": "top_left",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
         "orientation": "horizontal",
         "controls": [
+            {
+                "pause_button@xg_hud.hud_button": {
+                    "$texture": "textures/ui/gui/pause"
+                }
+            },
+            {
+                "chat_button@xg_hud.hud_button": {
+                    "$texture": "textures/ui/gui/chat"
+                }
+            },
             {
                 "mapping": {
                     "type": "panel",
@@ -378,16 +392,6 @@
                             "binding_name": "#hud_visible_not_centered"
                         }
                     ]
-                }
-            },
-            {
-                "pause_button@xg_hud.hud_button": {
-                    "$texture": "textures/ui/gui/pause"
-                }
-            },
-            {
-                "chat_button@xg_hud.hud_button": {
-                    "$texture": "textures/ui/gui/chat"
                 }
             }
         ]
@@ -589,6 +593,38 @@
             }
         ]
     },
+    "root_panel_watermelon": {
+        "type": "panel",
+        "controls": [
+            {
+                "scoreboard@xg_hud.scoreboard_panel": {}
+            },
+            {
+                "client_info@xg_hud.client_info": {}
+            },
+            {
+                "hud_button_list@xg_hud.hud_button_list": {}
+            },
+            {
+                "game_info@xg_hud.game_info": {}
+            },
+            {
+                "pers_second@xg_hud.pers_second": {}
+            },
+            {
+                "player_list@xg_hud.player_list": {}
+            },
+            {
+                "danmaku@xg_hud.danmaku": {}
+            },
+            {
+                "test_watermark@xg_hud.test_watermark": {}
+            },
+            {
+                "top_bar@xg_hud.top_bar": {}
+            }
+        ]
+    },
     "scoreboard_background": {
         "type": "custom",
         "renderer": "gradient_renderer",
@@ -696,9 +732,9 @@
         "anchor_from": "left_middle",
         "anchor_to": "left_middle",
         "layer": 1,
+        "shadow": true,
         "text": "#scoreboard_panel.text",
         "text_alignment": "center",
-        "shadow": true,
         "property_bag": {
             "#scoreboard_panel.text": "Hello World!"
         },
@@ -716,6 +752,49 @@
                     "type": "image",
                     "layer": -1,
                     "texture": ""
+                }
+            }
+        ]
+    },
+    "test_watermark": {
+        "type": "panel",
+        "visible": false,
+        "controls": [
+            {
+                "bg": {
+                    "type": "image",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [
+                        0.0,
+                        40.0
+                    ],
+                    "size": [
+                        100,
+                        12.0
+                    ],
+                    "layer": -1,
+                    "alpha": 0.5,
+                    "enabled": false,
+                    "texture": "textures/ui/hud_tip_text_background",
+                    "controls": [
+                        {
+                            "label": {
+                                "type": "label",
+                                "layer": 1,
+                                "enabled": false,
+                                "color": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "font_type": "default",
+                                "shadow": true,
+                                "text": "测试服不代表最终品质",
+                                "text_alignment": "center"
+                            }
+                        }
+                    ]
                 }
             }
         ]
@@ -763,35 +842,6 @@
                         }
                     ]
                 }
-            }
-        ]
-    },
-    "root_panel_watermelon": {
-        "type": "panel",
-        "controls": [
-            {
-                "scoreboard@xg_hud.scoreboard_panel": {}
-            },
-            {
-                "client_info@xg_hud.client_info": {}
-            },
-            {
-                "hud_button_list@xg_hud.hud_button_list": {}
-            },
-            {
-                "game_info@xg_hud.game_info": {}
-            },
-            {
-                "pers_second@xg_hud.pers_second": {}
-            },
-            {
-                "player_list@xg_hud.player_list": {}
-            },
-            {
-                "danmaku@xg_hud.danmaku": {}
-            },
-            {
-                "top_bar@xg_hud.top_bar": {}
             }
         ]
     },
