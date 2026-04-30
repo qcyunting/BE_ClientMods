@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "idle": "animation.target_dummy.idle",
+                "hurt1": "animation.target_dummy.hurt1",
+                "hurt2": "animation.target_dummy.hurt2",
+                "hurt3": "animation.target_dummy.hurt3",
+                "hurt4": "animation.target_dummy.hurt4",
+                "death": "animation.target_dummy.death",
+                "spawn": "animation.target_dummy.spawn",
+                "root": "controller.animation.target_dummy.root"
+            },
+            "geometry": {
+                "default": "geometry.npc.target_dummy"
+            },
+            "identifier": "npc:target_dummy",
+            "materials": {
+                "default": "npc"
+            },
+            "render_controllers": [
+                "controller.render.c_npc"
+            ],
+            "scripts": {
+                "animate": [
+                    "root"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/npc/target_dummy"
+            }
+        }
+    }
+}

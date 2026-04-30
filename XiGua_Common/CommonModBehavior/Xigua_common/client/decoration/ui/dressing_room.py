@@ -60,6 +60,11 @@ class Main(BaseCustomScreen):
                 return key, item_data
         return None, None
 
+    def _is_item_saleable(self, item_data):
+        if not item_data:
+            return False
+        return item_data.get("amount", 0) != -1
+
     @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#tab_btn_click")
     def tab_btn_click(self, args):
         index = args["#collection_index"]
@@ -87,7 +92,7 @@ class Main(BaseCustomScreen):
                 self.system.unwear_one_decoration(key)
             else:
                 self.system.wear_one_decoration(key)
-        else:
+        elif self._is_item_saleable(item_data):
             self.system.buy_one_decoration(key)
         self.UpdateScreen()
 
@@ -97,6 +102,8 @@ class Main(BaseCustomScreen):
         if not key:
             return "§8选择服装"
         if not self.system.manager.is_owned(key):
+            if not self._is_item_saleable(item_data):
+                return "§8非卖品"
             return "§8购买"
         player_id = clientApi.GetLocalPlayerId()
         return "§8卸下" if self.system.manager.is_equipped(player_id, key) else "§8穿戴"

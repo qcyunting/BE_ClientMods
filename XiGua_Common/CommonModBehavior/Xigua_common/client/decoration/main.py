@@ -20,6 +20,11 @@ class Decoration(BaseSystem):
     def _get_local_player_id(self):
         return clientApi.GetLocalPlayerId()
 
+    def _normalize_pid(self, pid):
+        if pid is None:
+            return None
+        return str(pid)
+
     @Listen()
     def UiInitFinished(self, args):
         clientApi.RegisterUI(modName, "dressing_room", base_clsPath + "decoration.ui.dressing_room.Main",
@@ -28,13 +33,14 @@ class Decoration(BaseSystem):
     @Listen(event_type=Listen.server)
     def openDressingRoom(self, args):
         self.manager.set_all(args.get("all", {}))
+        self.manager.set_hidden(args.get("hidden", []))
         self.manager.set_has(args.get("has", {}))
         self.manager.set_dressed(args.get("dressed", {}))
         self.manager.clear_trying()
 
         server_local_id = self._get_server_local_id()
         player_id = self._get_local_player_id()
-        if player_id != server_local_id:
+        if self._normalize_pid(player_id) != self._normalize_pid(server_local_id):
             self.manager.set_player_dressed(player_id, self.manager.get_dressed_by_pid(server_local_id))
         self._origin_dressed_keys = self.manager.get_dressed_by_pid(player_id)
         self._rebuild_local_player_render()
@@ -46,12 +52,13 @@ class Decoration(BaseSystem):
         server_local_id = self._get_server_local_id()
         local_player_id = self._get_local_player_id()
         self.manager.set_all(args.get("all", {}))
+        self.manager.set_hidden(args.get("hidden", []))
         dressed_map = args.get("dressed", {})
         if not isinstance(dressed_map, dict):
             return
 
         for player_id, dressed_keys in dressed_map.items():
-            if player_id == server_local_id:
+            if self._normalize_pid(player_id) == self._normalize_pid(server_local_id):
                 self.manager.set_player_dressed(local_player_id, dressed_keys)
                 self._rebuild_player_render(local_player_id, include_try=False)
                 continue
