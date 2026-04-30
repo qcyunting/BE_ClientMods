@@ -7,4 +7,5 @@ system_dict = {
     "main": base_clsPath + "main.Main",
     "decoration": base_clsPath + "decoration.main.Decoration",
     "text_board": base_clsPath + "text_board.main.TextBoard",
+    "npc_dialog": base_clsPath + "npc_dialog.main.NpcDialog",
 }

@@ -104,7 +104,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "30%+0px",
-                                                            90.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -133,10 +133,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -145,7 +145,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+90px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -364,7 +364,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "30%+0px",
-                                                            90.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -393,10 +393,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -405,7 +405,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+90px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -624,7 +624,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "30%+0px",
-                                                            90.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -653,10 +653,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -665,7 +665,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+90px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -905,7 +905,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "4%+0px",
-                                                            60.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
@@ -915,7 +915,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "17.6%+0px",
-                                                            60.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -944,10 +944,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -956,7 +956,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+60px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -1114,7 +1114,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            60.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
@@ -1124,7 +1124,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "17.6%+0px",
-                                                            60.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -1153,10 +1153,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -1165,7 +1165,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+60px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -1323,7 +1323,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            60.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
@@ -1333,7 +1333,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "17.6%+0px",
-                                                            60.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -1362,10 +1362,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -1374,7 +1374,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+60px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -1532,7 +1532,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            60.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
@@ -1542,7 +1542,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "17.6%+0px",
-                                                            60.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -1571,10 +1571,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -1583,7 +1583,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+60px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -1741,7 +1741,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            60.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
@@ -1751,7 +1751,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "17.6%+0px",
-                                                            60.0
+                                                            "75%x+0px"
                                                         ],
                                                         "layer": 1,
                                                         "controls": [
@@ -1780,10 +1780,10 @@
                                                                     "$nine_slice_right": 0,
                                                                     "$nine_slice_top": 0,
                                                                     "$nineslice_size": [
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0
                                                                     ],
                                                                     "$pressed_button_name": "%netease_editor_template_namespace.click",
                                                                     "$pressed_texture": "",
@@ -1792,7 +1792,7 @@
                                                                     "anchor_to": "left_middle",
                                                                     "size": [
                                                                         "100%+0px",
-                                                                        "0%+60px"
+                                                                        "100%+0px"
                                                                     ],
                                                                     "layer": 2,
                                                                     "button_mappings": [],
@@ -1830,6 +1830,7 @@
                                                                                             ],
                                                                                             "layer": 1,
                                                                                             "alpha": 0.5,
+                                                                                            "visible": false,
                                                                                             "color": [
                                                                                                 0.0,
                                                                                                 0.0,
@@ -1914,6 +1915,7 @@
                                                                         10.0
                                                                     ],
                                                                     "layer": 2,
+                                                                    "visible": false,
                                                                     "button_mappings": [],
                                                                     "default_control": "default",
                                                                     "hover_control": "hover",
@@ -1941,6 +1943,17 @@
                                                                         }
                                                                     ]
                                                                 }
+                                                            },
+                                                            {
+                                                                "image": {
+                                                                    "type": "image",
+                                                                    "size": [
+                                                                        "100%+0px",
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "layer": 5,
+                                                                    "texture": "textures/gameselect/qidai_black"
+                                                                }
                                                             }
                                                         ]
                                                     }
@@ -1950,7 +1963,7 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            60.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
