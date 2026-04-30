@@ -72,11 +72,14 @@ class NpcDialog(BaseSystem):
             comp = clientApi.GetEngineCompFactory().CreateCustomAudio(levelId)
             comp.PlayCustomUIMusic(sound, 1, 1, False)
 
-        if all([dialogue_id,npc_name,npc_icon,text,buttons]) and step_index>=0:
+        if dialogue_id is not None and npc_name is not None and npc_icon is not None and text is not None and buttons is not None and step_index>=0:
             if self.ui_npcdialog is None:
                 self.ui_npcdialog = clientApi.PushScreen(modName, 'npcdialog', {"isHud": 1, 'data': {}, 'client': self})
-            if self.ui_npcdialog is not None:
-                self.ui_npcdialog.SetData(dialogue_id,npc_name,npc_icon,text,step_index,buttons)
+            def ui_npcdialogF():
+                if self.ui_npcdialog is not None:
+                    self.ui_npcdialog.SetData(dialogue_id,npc_name,npc_icon,text,step_index,buttons)
+            comp = clientApi.GetEngineCompFactory().CreateGame(levelId)
+            comp.AddTimer(0.05, ui_npcdialogF)
         else:
             print "[ERROR] OpenDialogue",args
 

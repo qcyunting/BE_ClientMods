@@ -28,6 +28,8 @@ class Main(ScreenNode):
 
         self.delay_next = None
         self.Timer_delay_next = None
+        self.next_locked = False
+        self.next_requesting = False
         self.LevelId = clientApi.GetLevelId()
 
 
@@ -70,6 +72,7 @@ class Main(ScreenNode):
             return
 
         # 立即生效，避免“慢一拍”
+        self.next_locked = True
         btn.SetTouchEnable(False)
         btn_lable.SetText("§7下一页(%ss)" % str(self.delay_next))
 
@@ -96,6 +99,7 @@ class Main(ScreenNode):
             if self.delay_next <= 0:
                 l.SetText("§a下一页")
                 b.SetTouchEnable(True)
+                self.next_locked = False
                 self._cancel_delay_timer()
             else:
                 l.SetText("§7下一页(%ss)" % str(self.delay_next))
@@ -106,6 +110,8 @@ class Main(ScreenNode):
 
     def Destroy(self):
         self.CreateStatus = False
+        self.next_locked = False
+        self.next_requesting = False
         self._cancel_delay_timer()
         if self.client and getattr(self.client, "ui_npcdialog", None) is self:
             self.client.ui_npcdialog = None
@@ -140,6 +146,8 @@ class Main(ScreenNode):
             self.step_index = step_index
 
             self.delay_next = 3
+            self.next_locked = False
+            self.next_requesting = False
             self._cancel_delay_timer()
             for i in range(5):
                 path = "/stack_panel_btn/button%s" % (i+1)
@@ -159,10 +167,10 @@ class Main(ScreenNode):
                 self.GetBaseUIControl(pathA).SetVisible(True)
                 ctrl = self.GetBaseUIControl(pathA)
                 btn = ctrl.asButton() if ctrl else None
-                if btn:
-                    btn.SetTouchEnable(False)
+                if btn is None:
+                    return
 
-                btn.SetTouchEnable(True)
+                btn.SetTouchEnable(False)
                 btn.AddTouchEventParams({"index":index,"type":type})
                 btn.SetButtonTouchDownCallback(self.btn_down_cb)
 
@@ -176,6 +184,8 @@ class Main(ScreenNode):
 
                 if type=="next":
                     self.delay_nextF(index,3)
+                else:
+                    btn.SetTouchEnable(True)
 
             for index,type in enumerate(buttons[:5]):
                 btn_set(index,type)
@@ -201,6 +211,9 @@ class Main(ScreenNode):
         if btn_type == "next":
             # 下一页
             self._disable_button(btn_index)
+            if self.next_locked or self.next_requesting:
+                return
+            self.next_requesting = True
             self.client.NotifyToServerF("RequestNextPage", {})
         elif btn_type == "close":
             # 关闭
