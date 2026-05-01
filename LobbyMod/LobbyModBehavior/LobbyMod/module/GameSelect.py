@@ -19,7 +19,7 @@ class GameSelectModule(BaseState):
 
     def on_enable(self):
         print "启用GameSelect"
-        self.listen_client("UiInitFinished", self.UiInitFinished)
+        self.listen_client("OnKeyPressInGame", self.OnKeyPressInGame)
 
         self.ListenForEvent(modName, "main", "OpenGameMenu", self, self.OpenGameMenu)
 
@@ -30,12 +30,6 @@ class GameSelectModule(BaseState):
 
     def listen_client(self, event, func):
         self.ListenForEvent("Minecraft", "Engine", event, self, func)
-
-    def UiInitFinished(self,args):
-        print("UiInitFinished")
-        if not self.ui_gameselect_enable:
-            self.ui_gameselect_enable = clientApi.RegisterUI(modName, 'gameselect', "{}.ui.GameSelect.Main".format(modName),"gameselect.main")
-            print "ui_gameselect_enable",self.ui_gameselect_enable
 
     def OpenGameMenu(self,args):
         # 打开游戏选择器
@@ -48,4 +42,13 @@ class GameSelectModule(BaseState):
     
     def send_to_server(self,event,args):
         self.NotifyToServer(event,args)
+
+    def OnKeyPressInGame(self,args):
+        key = args["key"]
+        isDown = args["isDown"]
+        if isDown == "0":
+            if key == "27":
+                # esc键
+                clientApi.PopScreen()
+                
 

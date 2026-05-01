@@ -14,8 +14,6 @@ class MusicModule(BaseState):
     def __init__(self, namespace, systemName):
         super(MusicModule, self).__init__(namespace, systemName)
         self.events = {"server":{}, "client":{}}
-        self._ClientAddEvent()
-        
         # 设置音乐列表
         self.LobbyMusicList = [  
                     "flower",
@@ -32,8 +30,8 @@ class MusicModule(BaseState):
     def on_enable(self):
         print "enable Music"
 
-        # 开启事件监听
-        self.listen_client("UiInitFinished", self.UiInitFinished)
+        # 播放音乐
+        self.LobbyMusic_Play()
     
     def listen_client(self, event, func):
         self.ListenForEvent("Minecraft", "Engine", event, self, func)
@@ -45,13 +43,6 @@ class MusicModule(BaseState):
         self.Music_Stop()
         # 关闭所有事件监听
         self.UnListenAllEvents()
-
-    def UiInitFinished(self,args):
-        """
-        客户端UI初始化
-        """
-        # 播放主城音乐
-        self.LobbyMusic_Play()
 
     
     def LobbyMusic_Play(self):
