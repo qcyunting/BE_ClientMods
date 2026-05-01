@@ -3,7 +3,6 @@ from ..utils.ClientSystem_utils import *
 from ..misc.blur import GaussianBlurController
 from ..misc.debug_shop import test_shop as run_test_shop
 from ..misc.input import handle_alt_camera_key
-from ..misc.screen_registry import register_screen_proxies
 
 
 class Main(BaseSystem):
@@ -48,7 +47,6 @@ class Main(BaseSystem):
         clientApi.HideChatGUI(True)
         clientApi.HideFoldGUI(True)
         clientApi.HideVoiceGUI(True)
-        clientApi.Hide
 
         screen_list = {
             "hud.hud_screen": "{}.client.hud.ui.hud.Main".format(modName),
