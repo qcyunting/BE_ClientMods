@@ -17,13 +17,23 @@ class Main(ScreenNode):
 
         self.LevelId = clientApi.GetLevelId()
 
-        self.game_path = {"btn":"/image/s_panel/s_panel_%s/game%s/button",
-                           "bg":"/image/s_panel/s_panel_%s/game%s/button/image",
-                           "name":"/image/s_panel/s_panel_%s/game%s/button/image/image/label",
-                           "paiwei":{"all":"/image/s_panel/s_panel_%s/game%s/button/image/paiwei",
-                                     "icon":"/image/s_panel/s_panel_%s/game%s/button/image/paiwei/image",
-                                     "text":"/image/s_panel/s_panel_%s/game%s/button/image/paiwei/label"
-                                     }}
+        self.game_path = {
+            "btn": "/image/s_panel/s_panel_%s/game%s/button",
+            "bg": "/image/s_panel/s_panel_%s/game%s/button/image",
+            "name": "/image/s_panel/s_panel_%s/game%s/button/image/image/label",
+            "name_all": "/image/s_panel/s_panel_%s/game%s/button/image/image",
+            "online_tag": {
+                "all": "/image/s_panel/s_panel_%s/game%s/button/image/image_tag",
+                "label": "/image/s_panel/s_panel_%s/game%s/button/image/image_tag/label",
+                "icon": "/image/s_panel/s_panel_%s/game%s/button/image/image_tag/image"
+            },
+            "paiwei": {
+                "all": "/image/s_panel/s_panel_%s/game%s/button/image/paiwei",
+                "icon": "/image/s_panel/s_panel_%s/game%s/button/image/paiwei/image",
+                "text": "/image/s_panel/s_panel_%s/game%s/button/image/paiwei/label"
+            },
+            "ban": "/image/s_panel/s_panel_%s/game%s/image_ban"
+        }
 
 
     def Create(self):
@@ -42,8 +52,9 @@ class Main(ScreenNode):
             label_title = self.GetBaseUIControl("/image/label").asLabel().SetText(title)
         if subtitle:
             label_subtitle = self.GetBaseUIControl("/image/label_sub").asLabel().SetText(subtitle)
-        for idx,game in enumerate(games):
-            if idx+1<4:
+        for idx,game in enumerate(games[:8] or []):
+            game_idx = idx + 1
+            if game_idx < 4:
                 pidx = 1
             else:
                 pidx = 2
@@ -53,21 +64,57 @@ class Main(ScreenNode):
             name = game.get("name")
             text = game.get("text")
             ui = game.get("ui")
+            online = self.data.get("online",0)
+            if online<5:
+                online = "流畅"
             paiwei = game.get("paiwei")
             
-            label_game_name = self.GetBaseUIControl(path["name"] % (pidx,idx+1)).asLabel().SetText(name)
-            img_game = self.GetBaseUIControl(path["bg"] % (pidx,idx+1)).asImage().SetSprite(ui)
+            label_game_name = self.GetBaseUIControl(self._game_path(path["name"], pidx, game_idx)).asLabel().SetText(name or "")
+            img_game = self.GetBaseUIControl(self._game_path(path["bg"], pidx, game_idx)).asImage()
+            if ui:
+                img_game.SetSprite(ui)
+
             if pidx==1:
                 if paiwei:
+                    self.GetBaseUIControl(self._game_path(path["paiwei"]["all"], pidx, game_idx)).SetVisible(True)
                     paiwei_icon = paiwei.get("icon")
-                    paiwei_name = paiwei.get("name")
-                    paiwei_score = paiwei.get("score")
+                    paiwei_name = paiwei.get("name") or ""
+                    paiwei_score = paiwei.get("score") or ""
+                    if paiwei_icon:
+                        self.GetBaseUIControl(self._game_path(path["paiwei"]["icon"], pidx, game_idx)).asImage().SetSprite(paiwei_icon)
+                    self.GetBaseUIControl(self._game_path(path["paiwei"]["text"], pidx, game_idx)).asLabel().SetText("%s\n%s" % (paiwei_name, paiwei_score))
                 else:
-                    img_paiwei = self.GetBaseUIControl(path["paiwei"]["all"] % (pidx,idx+1)).SetVisible(False)
+                    self.GetBaseUIControl(self._game_path(path["paiwei"]["all"], pidx, game_idx)).SetVisible(False)
+            else:
+                self.GetBaseUIControl(self._game_path(path["paiwei"]["all"], pidx, game_idx)).SetVisible(False)
             
-            btn_game = self.GetBaseUIControl(path["btn"] % (pidx,idx+1)).asButton()
+            online_label = self.GetBaseUIControl(self._game_path(path["online_tag"]["label"], pidx, game_idx)).asLabel().SetText(online)
+            
+            btn_game = self.GetBaseUIControl(self._game_path(path["btn"], pidx, game_idx)).asButton()
             btn_game.AddTouchEventParams({"gid":gid})
             btn_game.SetButtonTouchDownCallback(self.game_select)
+        if len(games[:8])<8:
+            for i in range(8-len(games[:8])):
+                game_idx = 8-i
+                if game_idx < 4:
+                    pidx = 1
+                else:
+                    pidx = 2
+                self.GetBaseUIControl(self._game_path(path["ban"], pidx, game_idx)).SetVisible(True)
+                self.GetBaseUIControl(self._game_path(path["ban"], pidx, game_idx)).asImage().SetSprite("textures/gameselect/black/qidai")
+                self.GetBaseUIControl(self._game_path(path["name_all"], pidx, game_idx)).SetVisible(False)
+                self.GetBaseUIControl(self._game_path(path["online_tag"]["all"], pidx, game_idx)).SetVisible(False)
+                self.GetBaseUIControl(self._game_path(path["paiwei"]["all"], pidx, game_idx)).SetVisible(False)
+                self.GetBaseUIControl(self._game_path(path["btn"], pidx, game_idx)).SetTouchEnable(False)
+
+    def _game_path(self, path, pidx, game_idx):
+        return path % (pidx, game_idx)
+
+    def _optional_control(self, path):
+        try:
+            return self.GetBaseUIControl(path)
+        except:
+            return None
 
     
     def game_select(self,args):
