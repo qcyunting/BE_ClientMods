@@ -43,13 +43,17 @@
     },
     "UI": {
         "customPrefabGroupExpand": [
-            "disconnect_"
+            "debug_section"
         ],
         "expandData": {
             "prefab": {
                 "Xigua_settings.screen_background": [
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/screen_background"
+                ],
+                "debug_section.debug_section": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/debug_section"
                 ],
                 "disconnect_.disconnect_text": [
                     "/netease_prefab_screen"
@@ -198,25 +202,6 @@
                 "persona_common_.info_bulb_icon": [
                     "/netease_prefab_screen"
                 ],
-                "xg_common.cancel_btn": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/cancel_btn"
-                ],
-                "xg_common.screen_background": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/screen_background",
-                    "/netease_prefab_screen/screen_background/top_bar"
-                ],
-                "xg_common.skin_model": [
-                    "/netease_prefab_screen"
-                ],
-                "xg_common.toggle_checked_state": [
-                    "/netease_prefab_screen"
-                ],
-                "xg_common.toggle_unchecked_state": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/toggle_unchecked_state"
-                ],
                 "xg_hud.game_info_bar": [
                     "/netease_prefab_screen"
                 ],
@@ -295,6 +280,9 @@
                 ],
                 "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_common.json": [
                     "/netease_prefab_screen"
+                ],
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": [
+                    "/root_screen"
                 ]
             }
         }

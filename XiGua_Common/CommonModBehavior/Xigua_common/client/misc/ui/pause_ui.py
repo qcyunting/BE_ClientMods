@@ -45,6 +45,13 @@ class Main(CustomUIScreenProxy):
         """
         pass
 
+    @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#button.menu_settings")
+    def setting_button_click(self, index):
+        """
+        点击设置按钮
+        """
+        clientApi.GetSystem(modName, "settings").openSetting({})
+
     @ViewBinder.binding(ViewBinder.BF_BindBool, "#input_panel_visible")
     def input_panel_visible(self):
         """

@@ -1,0 +1,17 @@
+{
+    "namespace": "debug_section",
+    "debug_section@settings_common.content_panel": {
+        "controls": [
+            {
+                "option_toggle_build_info@settings_common.option_toggle": {
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "$option_binding_name": "#dev_show_build_info",
+                    "$option_enabled_binding_name": "#dev_show_build_info_enabled",
+                    "$option_label": "options.dev_showBuildInfo",
+                    "$toggle_name": "dev_show_build_info"
+                }
+            }
+        ]
+    }
+}

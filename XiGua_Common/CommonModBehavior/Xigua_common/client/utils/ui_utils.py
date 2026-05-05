@@ -55,6 +55,42 @@ class BaseCustomScreen(ScreenNode):
         """
         self.local_id = args.get("local_id", -2)
 
+
+    def Update(self):
+        # type: () -> 'None'
+        """
+        客户端每帧调用，1秒有30帧
+        """
+        pass
+
+    def Destroy(self):
+        # type: () -> 'None'
+        """
+        UI生命周期函数，当UI销毁时调用。
+        """
+        pass
+
+    def Create(self):
+        # type: () -> 'None'
+        """
+        UI生命周期函数，当UI创建成功时调用。
+        """
+        pass
+
+    def OnDeactive(self):
+        # type: () -> 'None'
+        """
+        UI生命周期函数，当栈顶UI有其他UI入栈时调用。
+        """
+        pass
+
+    def OnActive(self):
+        # type: () -> 'None'
+        """
+        UI生命周期函数，当UI重新回到栈顶时调用。
+        """
+        pass
+
 CustomUIScreenProxy = clientApi.GetUIScreenProxyCls()
 class BaseCustomScreenProxy(CustomUIScreenProxy):
     ListenDict = {"Minecraft": ("Minecraft", "Engine"), "client": (modName, "main"), "server": (modName, "main")}
@@ -92,6 +128,10 @@ class BaseCustomScreenProxy(CustomUIScreenProxy):
         给服务器发送事件通知
         """
         self.system.NotifyToServer(eventName, eventData)
+
+    @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#cancel_btn_click")
+    def cancel_btn_click(self, args):
+        clientApi.PopScreen()
 
     @Listen(event_type=Listen.server)
     def setLocalId(self, args):

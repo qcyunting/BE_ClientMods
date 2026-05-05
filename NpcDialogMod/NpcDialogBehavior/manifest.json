@@ -6,24 +6,24 @@
       20,
       50
     ],
-    "description": "By XiGua",
+    "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
     "name": "NpcDialogMod",
     "uuid": "19060063-5195-4018-8124-c9c3de255e99",
     "version": [
       0,
       0,
-      14
+      15
     ]
   },
   "modules": [
     {
-      "description": "By XiGua",
+      "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
       "type": "data",
       "uuid": "e3cb6660-56d7-4e39-a0dd-3cc4ed27d3ff",
       "version": [
         0,
         0,
-        14
+        15
       ]
     }
   ]

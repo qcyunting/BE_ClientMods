@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "2159275c-6b95-4e7f-97a7-49f3b2e412c6",
+      "version": [
+        0,
+        0,
+        2
+      ],
+      "description": "By XiGua"
+    }
+  ],
+  "header": {
+    "uuid": "afec009b-394d-41e0-a1d4-6823e351da1e",
+    "version": [
+      0,
+      0,
+      2
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      50
+    ],
+    "description": "By XiGua",
+    "name": "py_to_mcp"
+  },
+  "format_version": 2
+}

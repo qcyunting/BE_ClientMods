@@ -1,4 +1,5 @@
 {
+  "__copyright": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
   "format_version": 1,
   "header": {
     "min_engine_version": [
@@ -6,34 +7,24 @@
       20,
       50
     ],
-    "description": "By XiGua",
+    "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
     "name": "LobbyMod",
     "uuid": "100c463c-d73e-4e15-99e3-898f914cd01a",
     "version": [
       0,
       0,
-      22
+      23
     ]
   },
   "modules": [
     {
-      "description": "By XiGua",
+      "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
       "type": "data",
       "uuid": "3f805f9e-8c92-41c0-bc96-fd1d546337cf",
       "version": [
         0,
         0,
-        22
-      ]
-    }
-  ],
-  "dependencies": [
-    {
-      "uuid": "d674fe0c-fc61-4b24-a237-12687d7eb0e0",
-      "version": [
-        0,
-        0,
-        1
+        23
       ]
     }
   ]

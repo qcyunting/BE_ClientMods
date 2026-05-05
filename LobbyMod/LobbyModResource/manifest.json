@@ -6,24 +6,24 @@
       20,
       50
     ],
-    "description": "By XiGua",
+    "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
     "name": "LobbyMod",
     "uuid": "d674fe0c-fc61-4b24-a237-12687d7eb0e0",
     "version": [
       0,
       0,
-      22
+      23
     ]
   },
   "modules": [
     {
-      "description": "By XiGua",
+      "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
       "type": "resources",
       "uuid": "14c4386c-b1f0-4d18-92c9-d74b2c6582d5",
       "version": [
         0,
         0,
-        22
+        23
       ]
     }
   ]
