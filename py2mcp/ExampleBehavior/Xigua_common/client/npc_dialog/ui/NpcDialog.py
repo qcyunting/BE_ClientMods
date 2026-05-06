@@ -127,13 +127,6 @@ class Main(ScreenNode):
         step_index = int(args.get("step_index",0))
         buttons = args.get("buttons")
 
-        if not self.CreateStatus:
-            # UI未创建完成
-            self.tasks = []
-            self.tasks.append(
-                lambda: self.SetData(dialogue_id)
-            )
-            return
         # if self.dialogue_id==dialogue_id and self.step_index==step_index:
         #     # 重复发同一个对话
         #     return

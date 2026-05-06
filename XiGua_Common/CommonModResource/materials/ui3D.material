@@ -151,11 +151,7 @@
       "vertexShader": "shaders/selection_box.vertex",
       "vrGeometryShader": "shaders/position.geometry",
       "fragmentShader": "shaders/selection_box_color.fragment",
-      "msaaSupport": "Both",
-      "+states": [
-        "DisableDepthTest",
-        "DisableDepthWrite"
-      ]
+      "msaaSupport": "Both"
     },
     "selection_overlay_double_sided:selection_overlay": {
       "+states": [
@@ -163,10 +159,6 @@
       ]
     },
     "selection_box": {
-      "+states": [
-        "DisableDepthTest",
-        "DisableDepthWrite"
-      ],
       "+defines": [ "LINE_STRIP" ],
       "primitiveMode": "Line",
 

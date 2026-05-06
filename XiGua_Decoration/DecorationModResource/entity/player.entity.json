@@ -16,7 +16,10 @@
             "geometry": {
                 "default": "geometry.humanoid.custom",
                 "cape": "geometry.cape",
-                "dragon_wings": "geometry.dragon_wings"
+                "dragon_wings": "geometry.dragon_wings",
+                "asura_wings": "geometry.asura_wings",
+                "paladin_wings": "geometry.paladin_wings",
+                "volt_wings": "geometry.volt_wings"
             },
             "textures": {
                 "default": "textures/entity/steve",
@@ -33,25 +36,29 @@
                 "cherry": "textures/decorations/cape/cherry",
                 "glass_sea": "textures/decorations/cape/glass_sea",
 
-                "dragon_wings_autumn": "textures/decorations/dragon_wings/dragon_wings_autumn",
-                "dragon_wings_bloody": "textures/decorations/dragon_wings/dragon_wings_bloody",
-                "dragon_wings_chainsketch": "textures/decorations/dragon_wings/dragon_wings_chainsketch",
-                "dragon_wings_cottoncandy": "textures/decorations/dragon_wings/dragon_wings_cottoncandy",
-                "dragon_wings_default": "textures/decorations/dragon_wings/dragon_wings_default",
-                "dragon_wings_gold": "textures/decorations/dragon_wings/dragon_wings_gold",
-                "dragon_wings_grap": "textures/decorations/dragon_wings/dragon_wings_grap",
-                "dragon_wings_green": "textures/decorations/dragon_wings/dragon_wings_green",
-                "dragon_wings_greyscale": "textures/decorations/dragon_wings/dragon_wings_greyscale",
-                "dragon_wings_lemon": "textures/decorations/dragon_wings/dragon_wings_lemon",
-                "dragon_wings_light_blue": "textures/decorations/dragon_wings/dragon_wings_light_blue",
-                "dragon_wings_phantom": "textures/decorations/dragon_wings/dragon_wings_phantom",
-                "dragon_wings_puperice": "textures/decorations/dragon_wings/dragon_wings_puperice",
-                "dragon_wings_purple": "textures/decorations/dragon_wings/dragon_wings_purple",
-                "dragon_wings_red": "textures/decorations/dragon_wings/dragon_wings_red",
-                "dragon_wings_sea": "textures/decorations/dragon_wings/dragon_wings_sea",
-                "dragon_wings_sky": "textures/decorations/dragon_wings/dragon_wings_sky",
-                "dragon_wings_sunset": "textures/decorations/dragon_wings/dragon_wings_sunset",
-                "dragon_wings_turtle": "textures/decorations/dragon_wings/dragon_wings_turtle"
+                "dragon_wings_autumn": "textures/decorations/wings/dragon_wings_autumn",
+                "dragon_wings_bloody": "textures/decorations/wings/dragon_wings_bloody",
+                "dragon_wings_chainsketch": "textures/decorations/wings/dragon_wings_chainsketch",
+                "dragon_wings_cottoncandy": "textures/decorations/wings/dragon_wings_cottoncandy",
+                "dragon_wings_default": "textures/decorations/wings/dragon_wings_default",
+                "dragon_wings_gold": "textures/decorations/wings/dragon_wings_gold",
+                "dragon_wings_grap": "textures/decorations/wings/dragon_wings_grap",
+                "dragon_wings_green": "textures/decorations/wings/dragon_wings_green",
+                "dragon_wings_greyscale": "textures/decorations/wings/dragon_wings_greyscale",
+                "dragon_wings_lemon": "textures/decorations/wings/dragon_wings_lemon",
+                "dragon_wings_light_blue": "textures/decorations/wings/dragon_wings_light_blue",
+                "dragon_wings_phantom": "textures/decorations/wings/dragon_wings_phantom",
+                "dragon_wings_puperice": "textures/decorations/wings/dragon_wings_puperice",
+                "dragon_wings_purple": "textures/decorations/wings/dragon_wings_purple",
+                "dragon_wings_red": "textures/decorations/wings/dragon_wings_red",
+                "dragon_wings_sea": "textures/decorations/wings/dragon_wings_sea",
+                "dragon_wings_sky": "textures/decorations/wings/dragon_wings_sky",
+                "dragon_wings_sunset": "textures/decorations/wings/dragon_wings_sunset",
+                "dragon_wings_turtle": "textures/decorations/wings/dragon_wings_turtle",
+                
+                "asura_wings": "textures/decorations/wings/asura_wings",
+                "paladin_wings": "textures/decorations/wings/paladin_wings",
+                "volt_wings": "textures/decorations/wings/volt_wings"
             },
             "animations": {
                 "root": "controller.animation.player.root",
@@ -116,20 +123,21 @@
                 "crawling.legs": "animation.player.crawl.legs",
                 "holding_heavy_core": "animation.player.holding_heavy_core",
                 "riding.root": "animation.player.riding.root",
-                "dragon_wings": "animation.dragon_wings.idle"
+                "dragon_wings": "animation.dragon_wings.idle",
+                "paladin_wings": "animation.paladin_wings.idle"
             },
             "render_controllers": [
                 {
-                    "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+                    "controller.render.player.first_person": "variable.is_first_person"
                 },
                 {
-                    "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+                    "controller.render.player.third_person":"!variable.is_first_person && !variable.map_face_icon"
                 },
                 {
-                    "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+                    "controller.render.player.first_person_bloom":"variable.is_first_person"
                 },
                 {
-                    "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+                    "controller.render.player.third_person_bloom":"!variable.is_first_person && !variable.map_face_icon"
                 },
                 {
                     "controller.render.player.map": "variable.map_face_icon"
@@ -159,7 +167,8 @@
                 ],
                 "animate": [
                     "root",
-                    "dragon_wings"
+                    "dragon_wings",
+                    "paladin_wings"
                 ]
             }
         }

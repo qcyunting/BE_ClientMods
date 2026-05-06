@@ -133,6 +133,27 @@
             "materials": [{"*": "Material.default"}],
             "textures": ["Texture.dragon_wings_default"],
             "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.asura_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.asura_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.asura_wings"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.paladin_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.paladin_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.paladin_wings"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.volt_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.volt_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.volt_wings"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
         }
     }
 }

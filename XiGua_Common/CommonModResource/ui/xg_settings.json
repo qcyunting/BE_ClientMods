@@ -45,7 +45,7 @@
                         },
                         {
                             "top_bar_toggle_btn_3@xg_common.top_bar_toggle_btn": {
-                                "$text": "视频",
+                                "$text": "声音",
                                 "$toggle_group_forced_index": 3
                             }
                         },
@@ -57,9 +57,15 @@
                         },
                         {
                             "top_bar_toggle_btn_5@xg_common.top_bar_toggle_btn": {
-                                "$text": "调试",
-                                "ignored": "$is_publish",
+                                "$text": "管理员",
                                 "$toggle_group_forced_index": 5
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_6@xg_common.top_bar_toggle_btn": {
+                                "$text": "调试",
+                                "$toggle_group_forced_index": 6,
+                                "ignored": "$is_publish"
                             }
                         }
                     ]
@@ -67,6 +73,7 @@
             },
             {
                 "button@xg_common.cancel_btn": {
+                    "$to_button_id": "button.menu_exit",
                     "anchor_from": "top_right",
                     "anchor_to": "top_right",
                     "offset": [
@@ -83,6 +90,10 @@
                 "content_panel": {
                     "type": "panel",
                     "$enabled": true,
+                    "max_size": [
+                        500.0,
+                        "default"
+                    ],
                     "controls": [
                         {
                             "settings_content_0@settings_common.content_panel": {
@@ -91,6 +102,7 @@
                         },
                         {
                             "settings_content_1@settings_common.content_panel": {
+                                "$content_stack_panel": "ui_section.ui_section",
                                 "$source_property_name": "(#tab_index = 1)"
                             }
                         },
@@ -110,8 +122,15 @@
                             }
                         },
                         {
-                            "settings_content_5@debug_section.debug_section": {
+                            "settings_content_5@settings_common.content_panel": {
+                                "$content_stack_panel": "admin_section.admin_section",
                                 "$source_property_name": "(#tab_index = 5)"
+                            }
+                        },
+                        {
+                            "settings_content_6@settings_common.content_panel": {
+                                "$content_stack_panel": "debug_section.debug_section",
+                                "$source_property_name": "(#tab_index = 6)"
                             }
                         }
                     ]

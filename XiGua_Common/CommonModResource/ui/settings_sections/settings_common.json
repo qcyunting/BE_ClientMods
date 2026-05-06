@@ -6,6 +6,31 @@
 {
   "namespace": "settings_common",
 
+  "content_stack_panel": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [
+        0.0,
+        0.0
+    ],
+    "size": [
+        "100%",
+        "default"
+    ],
+    "controls": [
+      {
+        "hint": {
+          "type": "label",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "shadow": true,
+          "text": "功能开发中，敬请期待"
+        }
+      }
+    ]
+  },
+
   "content_panel": {
     "type": "panel",
     "anchor_from": "top_middle",
@@ -15,23 +40,163 @@
         23.0
     ],
     "size": [
-        "100%+-20px",
+        "100%+-30px",
         "100%+-30px"
     ],
+    "$content_stack_panel": "settings_common.content_stack_panel",
     "layer": 1,
+    "visible": false,
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "$scrolling_content": "$content_stack_panel",
+          "$show_background": false,
+          "$scroll_size": [ "5px", "100% - 4px" ],
+          "$scroll_bar_left_padding_size": [ 1, 0 ]
+        }
+      }
+    ],
     "$source_property_name|default": "false",
     "bindings": [
-        {
-            "binding_name": "#tab_index",
-            "binding_condition": "always"
-        },
-        {
-            "binding_type": "view",
-            "source_property_name": "$source_property_name",
-            "target_property_name": "#visible"
-        }
+      {
+        "binding_name": "#tab_index",
+        "binding_condition": "always"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "$source_property_name",
+        "target_property_name": "#visible"
+      }
     ]
   },
+
+  "segmented_control": {
+    "type": "panel",
+    "$title_label": "",
+    "size": [ "100%", 40 ],
+    "controls": [
+      {
+        "title_label": {
+          "type": "label",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "shadow": true,
+          "text": "$title_label"
+        }
+      },
+      {
+        "radio_control_group@settings_common.option_radio_group_control": {
+          "offset": [
+              0.0,
+              10.0
+          ],
+          "orientation": "horizontal",
+          "size": [ "100%", "100%" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ]
+  },
+
+  "segmented_control_option@settings_common.radio_with_label": {
+    "$unchecked_control": "settings_common.segmented_control_option_unchecked_control",
+    "$checked_control": "settings_common.segmented_control_option_checked_control",
+    "$unchecked_hover_control": "settings_common.segmented_control_option_hover_control",
+    "$checked_hover_control": "settings_common.segmented_control_option_checked_control",
+    "$unchecked_locked_control": "settings_common.segmented_control_option_lock_control",
+    "$unchecked_locked_hover_control": "settings_common.segmented_control_option_lock_control",
+    "$checked_locked_control": "settings_common.segmented_control_option_lock_control",
+    "$checked_locked_hover_control": "settings_common.segmented_control_option_lock_control",
+    "$radio_with_label_core_size": ["100%", "100%"],
+    "size": "$option_size"
+  },
+
+  "segmented_control_option_texture": {
+    "type": "image",
+    "size": ["100%", "100%"],
+    "$radio_label_text|default": "",
+    "controls": [
+      {
+        "text": {
+          "type": "label",
+          "layer": 1,
+          "size": [ "default", "default" ],
+          "text": "$radio_label_text"
+        }
+      }
+    ]
+  },
+
+  "segmented_control_option_unchecked_control@segmented_control_option_texture": {
+    "texture": "textures/ui/button_borderless_light"
+  },
+
+  "segmented_control_option_lock_control@segmented_control_option_texture": {
+    "texture": "textures/ui/button_borderless_lightpressednohover"
+  },
+
+  "segmented_control_option_hover_control@segmented_control_option_texture": {
+    "texture": "textures/ui/button_borderless_lighthover"
+  },
+
+  "segmented_control_option_checked_control@segmented_control_option_texture": {
+    "texture": "textures/ui/button_borderless_lightpressed"
+  },
+
+  "toggle": {
+    "type": "panel",
+    "$option_label": "",
+    "size": [
+      "100%",
+      20
+    ],
+    "layer": 1,
+    "controls": [
+      {
+        "text": {
+          "type": "label",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [
+            2.0,
+            0.0
+          ],
+          "size": [
+            "default",
+            "default"
+          ],
+          "max_size": [
+            "100%+-35px",
+            "default"
+          ],
+          "text": "$option_label"
+        }
+      },
+      {
+        "toggle@settings_common.option_toggle_control": {
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "size": [
+            "100%c+0px",
+            "100%c"
+          ]
+        }
+      }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
 
   "arrow_image": {
     "$alpha|default": 1.0,
@@ -1008,7 +1173,8 @@
     "$checked_locked_control|default": "settings_common.radio_visuals_checked_locked",
     "$checked_locked_hover_control|default": "settings_common.radio_visuals_checked_locked",
     "$radio_toggle_group": true,
-    "size": [ "100%", "100%c" ],
+    "$radio_with_label_core_size|default": [ "100%", "100%c" ],
+    "size": "$radio_with_label_core_size",
     "$toggle_name|default": "$toggle_state_binding_name",
     "$toggle_enabled_binding_name": "$option_enabled_binding_name",
 

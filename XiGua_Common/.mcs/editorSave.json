@@ -43,7 +43,7 @@
     },
     "UI": {
         "customPrefabGroupExpand": [
-            "debug_section"
+            "ui_section"
         ],
         "expandData": {
             "prefab": {
@@ -51,9 +51,12 @@
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/screen_background"
                 ],
-                "debug_section.debug_section": [
+                "admin_section.admin_section": [
+                    "/netease_prefab_screen"
+                ],
+                "admin_section.segmented_control": [
                     "/netease_prefab_screen",
-                    "/netease_prefab_screen/debug_section"
+                    "/netease_prefab_screen/segmented_control"
                 ],
                 "disconnect_.disconnect_text": [
                     "/netease_prefab_screen"
@@ -202,6 +205,10 @@
                 "persona_common_.info_bulb_icon": [
                     "/netease_prefab_screen"
                 ],
+                "ui_section.toggle": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/toggle"
+                ],
                 "xg_hud.game_info_bar": [
                     "/netease_prefab_screen"
                 ],
@@ -282,7 +289,7 @@
                     "/netease_prefab_screen"
                 ],
                 "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": [
-                    "/root_screen"
+
                 ]
             }
         }

@@ -25,65 +25,14 @@
     "$include_realm_invite_link_settings|default": false
   },
 
-  "screen_world_create@xg_settings.main": {
-    "$is_world_create": true,
-    "$is_template_create": false,
-    "$is_world_edit": false,
-    "$_include_world_section": true
-  },
-
-  "screen_template_create@xg_settings.main": {
-    "$is_world_create": false,
-    "$is_template_create": true,
-    "$is_world_edit": false,
-    "$_include_world_section": true
-  },
-
-  "screen_world_edit@xg_settings.main": {
-    "$is_world_create": false,
-    "$is_template_create": false,
-    "$is_world_edit": true,
-    "$_include_world_section": true
-  },
-
-  "screen_controls_and_settings@xg_settings.main": {
+  "screen_world_controls_and_settings_@settings_screen_base": {
+    "$_include_world_section": true,
+    "$include_controls_and_settings_sections": true
   },
 
   "screen_world_controls_and_settings@xg_settings.main": {
     "$_include_world_section": true,
     "$include_controls_and_settings_sections": true
-  },
-
-  "screen_realm_controls_and_settings@xg_settings.main": {
-    "$include_realm_section": true,
-    "$include_controls_and_settings_sections": true
-  },
-
-  "screen_realm_settings@xg_settings.main": {
-    "$include_realm_section": true
-  },
-
-  "screen_world_slot_edit@xg_settings.main": {
-    "$include_realm_section": true,
-    "$is_realm_slot": true,
-    "$_include_world_section": false
-  },
-
-  "screen_realm_manage@xg_settings.main": {
-    "$include_realm_section": true,
-    "$realm_no_world_edit": true,
-    "$_include_world_section": false,
-    "$include_controls_and_settings_sections": false,
-    "$realms_pack_feature_enabled": false
-  },
-
-  "screen_realm_invite_link_settings@xg_settings.main": {
-    "$include_realm_section": false,
-    "$realm_no_world_edit": false,
-    "$_include_world_section": false,
-    "$include_controls_and_settings_sections": false,
-    "$realms_pack_feature_enabled": false,
-    "$include_realm_invite_link_settings": true
   },
 
   "selector_stack_panel": {

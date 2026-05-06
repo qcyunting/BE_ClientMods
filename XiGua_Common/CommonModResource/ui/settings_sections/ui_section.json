@@ -1,0 +1,92 @@
+{
+  "namespace": "ui_section",
+  "ui_section@settings_common.content_stack_panel": {
+    "controls": [
+      {
+        "fullscreen_toggle@settings_common.toggle": {
+          "$option_binding_name": "#full_screen",
+          "$option_enabled_binding_name": "#full_screen_enabled",
+          "$option_label": "options.fullscreen",
+          "$show_fullscreen_toggle|default": true,
+          "$toggle_name": "full_screen",
+          "visible": "($show_fullscreen_toggle and not $is_holographic)"
+        }
+      },
+      {
+        "option_toggle_hidehand@settings_common.toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.hidehand",
+          "$option_binding_name": "#hide_hand",
+          "$option_enabled_binding_name": "#hide_hand_enabled",
+          "$toggle_name": "hide_hand"
+        }
+      },
+      {
+        "option_toggle_vrhidehand@settings_common.toggle": {
+          "ignored": "(not $is_holographic)",
+          "$option_label": "options.vrHideHand",
+          "$option_binding_name": "#vr_hide_hand",
+          "$option_enabled_binding_name": "#vr_hide_hand_enabled",
+          "$toggle_name": "vr_hide_hand"
+        }
+      },
+      {
+        "hide_paperdoll_toggle@settings_common.toggle": {
+          "$option_label": "options.hidepaperdoll",
+          "$option_binding_name": "#hide_paperdoll",
+          "$option_enabled_binding_name": "#hide_paperdoll_enabled",
+          "$toggle_name": "hide_paperdoll"
+        }
+      },
+      {
+        "option_toggle_hidehud@settings_common.toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.hidehud",
+          "$option_binding_name": "#hide_hud",
+          "$option_enabled_binding_name": "#hide_hud_enabled",
+          "$toggle_name": "hide_hud"
+        }
+      },
+      {
+        "option_toggle_vrhidehud@settings_common.toggle": {
+          "ignored": "(not $is_holographic)",
+          "$option_label": "options.vrHideHud",
+          "$option_binding_name": "#vr_hide_hud",
+          "$option_enabled_binding_name": "#vr_hide_hud_enabled",
+          "$toggle_name": "vr_hide_hud"
+        }
+      },
+      {
+        "option_toggle_screen_animations@settings_common.toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.screenAnimations",
+          "$option_binding_name": "#screen_animations",
+          "$option_enabled_binding_name": "#screen_animations_enabled",
+          "$toggle_name": "screen_animations",
+          "bindings": [
+            {
+              "binding_name": "#screen_animations_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "setup_safe_zone": {
+          "type": "panel",
+          "size": [ "100%", 32 ],
+          "controls": [
+            {
+              "action_button@settings_common.action_button": {
+                "$pressed_button_name": "setup_safe_zone_button",
+                "$button_text": "options.safeZone.title",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

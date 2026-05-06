@@ -98,8 +98,7 @@
                 "value": 0
             },
             "minecraft:nameable": {
-                "alwaysShow": true,
-                "name": "靶子"
+                "alwaysShow": true
             },
             "minecraft:pushable": {
                 "is_pushable": false,
