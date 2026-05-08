@@ -89,11 +89,16 @@ class Main(BaseCustomScreenProxy):
     def setImageColor(self, args):
         self.top_bar_utils.set_image_color(args)
 
-    # ==================== 指标 (Metrics) ====================
     @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#hud_button_click")
     def OnButtonClick(self, args):
-        self.metrics_utils.on_button_click(args)
+        parts = args["ButtonPath"].split("/")
+        result = parts[-2]
+        if result == "pause_button":
+            clientApi.OpenPauseGui()
+        elif result == "chat_button":
+            clientApi.PushScreen(modName, "xg_chat")
 
+    # ==================== 指标 (Metrics) ====================
     @Listen("LeftClickBeforeClientEvent")
     def OnLeftClickBeforeClientEvent(self, args):
         self.metrics_utils.on_left_click(args)

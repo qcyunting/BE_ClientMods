@@ -32,6 +32,7 @@
   },
 
   "content_panel": {
+    "$enabled|default": true,
     "type": "panel",
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",

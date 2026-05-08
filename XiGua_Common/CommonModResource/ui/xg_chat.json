@@ -1,36 +1,60 @@
 {
     "__copyright": "Copyright (C) 2026 西瓜. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
     "main@common.base_screen": {
-        "$screen_content": "xg_hud.root_screen"
+        "$background_animations|default": [],
+        "$screen_animations|default": [],
+        "$screen_content": "xg_chat.root_screen"
     },
     "namespace": "xg_chat",
     "root_screen": {
         "type": "screen",
         "controls": [
             {
-                "switch_toggle@common_toggles.switch_toggle_collection": {
+                "panel": {
                     "type": "panel",
-                    "$default_texture": "textures/ui/chat/off",
-                    "$hover_texture": "textures/ui/chat/on",
-                    "$pressed_no_hover_texture": "textures/ui/chat/on_hover",
-                    "$pressed_texture": "textures/ui/chat/off_hover",
-                    "$toggle_name": "#netease_editor_template_namespace.toggle_name",
-                    "$toggle_state_binding_name": "#netease_editor_template_namespace.toggle_state",
                     "anchor_from": "left_middle",
                     "anchor_to": "left_middle",
+                    "offset": [
+                        "$safezone_left",
+                        0
+                    ],
                     "size": [
-                        15.0,
-                        15.0
+                        100,
+                        "100%+0px"
                     ],
                     "layer": 1,
-                    "bindings": [
+                    "controls": [
                         {
-                            "binding_type": "collection_details",
-                            "binding_collection_name": "",
-                            "binding_condition": "always_when_visible"
+                            "text": {
+                                "type": "label",
+                                "layer": 1,
+                                "text": "$safezone_left"
+                            }
+                        },
+                        {
+                            "image": {
+                                "type": "image",
+                                "anchor_from": "right_middle",
+                                "anchor_to": "right_middle",
+                                "size": [
+                                    "100%",
+                                    "default"
+                                ],
+                                "layer": 1,
+                                "color": [
+                                    0.2549019607843137,
+                                    0.2549019607843137,
+                                    0.2549019607843137
+                                ],
+                                "keep_ratio": false,
+                                "texture": "textures/ui/white_background"
+                            }
                         }
                     ]
                 }
+            },
+            {
+                "c_b@xg_common.cancel_btn": {}
             }
         ]
     }

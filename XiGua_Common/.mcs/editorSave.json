@@ -288,6 +288,10 @@
                 "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_common.json": [
                     "/netease_prefab_screen"
                 ],
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_chat.json": [
+                    "/root_screen",
+                    "/root_screen/panel"
+                ],
                 "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": [
 
                 ]
