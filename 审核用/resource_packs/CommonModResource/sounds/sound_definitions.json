@@ -1,0 +1,16 @@
+{
+    "dy_load_list": [
+
+    ],
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "punctuation": {
+            "sounds": [
+                {
+                    "name": "sounds/punctuation",
+                    "stream": true
+                }
+            ]
+        }
+    }
+}

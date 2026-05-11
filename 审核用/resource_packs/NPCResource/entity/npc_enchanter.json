@@ -1,0 +1,34 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "idle": "animation.enchanter.idle",
+                "enchanter": "animation.enchanter.enchanter"
+            },
+            "geometry": {
+                "default": "geometry.npc.enchanter"
+            },
+            "identifier": "npc:enchanter",
+            "materials": {
+                "default": "npc"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    {
+                        "enchanter": "query.is_item_equipped('main_hand', 'minecraft:enchanted_book')"
+                    },
+                    {
+                        "idle": "!query.is_item_equipped('main_hand', 'minecraft:enchanted_book')"
+                    }
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/npc/enchanter"
+            }
+        }
+    }
+}

@@ -1,0 +1,582 @@
+{
+    "__copyright": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
+    "game": {
+        "type": "panel",
+        "size": [
+            "30%+0px",
+            "75%x+0px"
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "button@common.button": {
+                    "type": "button",
+                    "$control_alpha": 1.0,
+                    "$default_texture": "",
+                    "$hover_texture": "textures/gameselect/rec_active",
+                    "$is_new_nine_slice": false,
+                    "$label_color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "$label_font_scale_factor": 1.0,
+                    "$label_font_size": "large",
+                    "$label_layer": 3,
+                    "$label_offset": [
+                        0,
+                        0
+                    ],
+                    "$label_text": "",
+                    "$nine_slice_buttom": 0,
+                    "$nine_slice_left": 0,
+                    "$nine_slice_right": 0,
+                    "$nine_slice_top": 0,
+                    "$nineslice_size": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "$pressed_button_name": "%netease_editor_template_namespace.click",
+                    "$pressed_texture": "",
+                    "$texture_layer": 2,
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 2,
+                    "button_mappings": [],
+                    "default_control": "default",
+                    "hover_control": "hover",
+                    "is_handle_button_move_event": true,
+                    "pressed_control": "pressed",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "",
+                            "binding_condition": "always_when_visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "image": {
+                                "type": "image",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "fill": true,
+                                "texture": "textures/gameselect/qidai",
+                                "controls": [
+                                    {
+                                        "image_tag": {
+                                            "type": "image",
+                                            "anchor_from": "top_right",
+                                            "anchor_to": "top_right",
+                                            "offset": [
+                                                -2.0,
+                                                2.0
+                                            ],
+                                            "size": [
+                                                "100%c+2px",
+                                                8.0
+                                            ],
+                                            "layer": 2,
+                                            "fill": true,
+                                            "texture": "textures/gameselect/detil",
+                                            "controls": [
+                                                {
+                                                    "label": {
+                                                        "type": "label",
+                                                        "anchor_from": "right_middle",
+                                                        "anchor_to": "right_middle",
+                                                        "layer": 10,
+                                                        "font_scale_factor": 0.8,
+                                                        "text": "999"
+                                                    }
+                                                },
+                                                {
+                                                    "image": {
+                                                        "type": "image",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "size": [
+                                                            8.0,
+                                                            8.0
+                                                        ],
+                                                        "layer": 1,
+                                                        "texture": "textures/ui/Friend2"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "paiwei": {
+                                            "type": "image",
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "offset": [
+                                                0.0,
+                                                6.0
+                                            ],
+                                            "size": [
+                                                78.0,
+                                                25.0
+                                            ],
+                                            "layer": 1,
+                                            "texture": "textures/gameselect/paiwei",
+                                            "controls": [
+                                                {
+                                                    "image": {
+                                                        "type": "image",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "offset": [
+                                                            8.0,
+                                                            0.0
+                                                        ],
+                                                        "size": [
+                                                            20.0,
+                                                            20.0
+                                                        ],
+                                                        "layer": 10,
+                                                        "texture": "textures/gameselect/wangzhe"
+                                                    }
+                                                },
+                                                {
+                                                    "label": {
+                                                        "type": "label",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "offset": [
+                                                            32.0,
+                                                            0.0
+                                                        ],
+                                                        "layer": 10,
+                                                        "font_scale_factor": 0.8,
+                                                        "font_type": "unicode",
+                                                        "text": "王者 I\n2450",
+                                                        "text_alignment": "center"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "type": "image",
+                                            "anchor_from": "bottom_middle",
+                                            "anchor_to": "bottom_middle",
+                                            "size": [
+                                                "100%+0px",
+                                                22.5
+                                            ],
+                                            "layer": 1,
+                                            "alpha": 0.5,
+                                            "color": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                            "fill": true,
+                                            "texture": "textures/gameselect/rec_buttom_big",
+                                            "controls": [
+                                                {
+                                                    "label": {
+                                                        "type": "label",
+                                                        "layer": 10,
+                                                        "font_scale_factor": 1.2,
+                                                        "font_type": "unicode",
+                                                        "text": "惊变跑刀",
+                                                        "text_alignment": "center"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "default@netease_editor_template_namespace.default": {}
+                        },
+                        {
+                            "hover@netease_editor_template_namespace.hover": {
+                                "fill": true
+                            }
+                        },
+                        {
+                            "pressed@netease_editor_template_namespace.pressed": {}
+                        },
+                        {
+                            "button_label@netease_editor_template_namespace.button_label": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "image_ban": {
+                    "type": "image",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 5,
+                    "visible": false,
+                    "texture": "textures/gameselect/black/shouyao"
+                }
+            }
+        ]
+    },
+    "main": {
+        "type": "screen",
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 1,
+                    "fill": true,
+                    "texture": "textures/gameselect/bg",
+                    "controls": [
+                        {
+                            "label": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    10.0
+                                ],
+                                "font_type": "unicode",
+                                "text": "§6§l小游戏菜单",
+                                "text_alignment": "center"
+                            }
+                        },
+                        {
+                            "label_sub": {
+                                "type": "label",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    22.0
+                                ],
+                                "alpha": 0.6,
+                                "font_scale_factor": 0.8,
+                                "font_type": "default",
+                                "text": "§e选择你想玩的游戏模式",
+                                "text_alignment": "center"
+                            }
+                        },
+                        {
+                            "line": {
+                                "type": "image",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    30.0
+                                ],
+                                "size": [
+                                    "100%+0px",
+                                    5.0
+                                ],
+                                "layer": 1,
+                                "texture": "textures/gameselect/line"
+                            }
+                        },
+                        {
+                            "s_panel": {
+                                "type": "stack_panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%c+0px"
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "s_panel_1": {
+                                            "type": "stack_panel",
+                                            "anchor_from": "top_middle",
+                                            "anchor_to": "top_middle",
+                                            "offset": [
+                                                0.0,
+                                                40.0
+                                            ],
+                                            "size": [
+                                                "100%+0px",
+                                                "100%cm+0px"
+                                            ],
+                                            "max_size": [
+                                                0.0,
+                                                "default"
+                                            ],
+                                            "layer": 1,
+                                            "orientation": "horizontal",
+                                            "controls": [
+                                                {
+                                                    "p0": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "4%+0px",
+                                                            90.0
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game1@gameselect.game": {}
+                                                },
+                                                {
+                                                    "p1": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            90.0
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game2@gameselect.game": {}
+                                                },
+                                                {
+                                                    "p2": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            90.0
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game3@gameselect.game": {}
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "p0": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%+0px",
+                                                5.0
+                                            ],
+                                            "layer": 1
+                                        }
+                                    },
+                                    {
+                                        "s_panel_2": {
+                                            "type": "stack_panel",
+                                            "offset": [
+                                                0.0,
+                                                60.0
+                                            ],
+                                            "size": [
+                                                "100%+0px",
+                                                "100%cm+0px"
+                                            ],
+                                            "max_size": [
+                                                0.0,
+                                                "default"
+                                            ],
+                                            "layer": 1,
+                                            "orientation": "horizontal",
+                                            "controls": [
+                                                {
+                                                    "p0": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "4%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game4@gameselect.game": {
+                                                        "size": [
+                                                            "17.6%+0px",
+                                                            "75%x+0px"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "p1": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game5@gameselect.game": {
+                                                        "size": [
+                                                            "17.6%+0px",
+                                                            "75%x+0px"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "p2": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game6@gameselect.game": {
+                                                        "size": [
+                                                            "17.6%+0px",
+                                                            "75%x+0px"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "p3": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game7@gameselect.game": {
+                                                        "size": [
+                                                            "17.6%+0px",
+                                                            "75%x+0px"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "p4": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "game8@gameselect.game": {
+                                                        "size": [
+                                                            "17.6%+0px",
+                                                            "75%x+0px"
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "p5": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "1%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "btn_close@common.button": {
+                                "type": "button",
+                                "$control_alpha": 1.0,
+                                "$default_texture": "textures/ui/arrow_left_white",
+                                "$hover_texture": "textures/ui/arrow_l_hover",
+                                "$is_new_nine_slice": false,
+                                "$label_color": [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                "$label_font_scale_factor": 1.0,
+                                "$label_font_size": "large",
+                                "$label_layer": 3,
+                                "$label_offset": [
+                                    0,
+                                    0
+                                ],
+                                "$label_text": "",
+                                "$nine_slice_buttom": 0,
+                                "$nine_slice_left": 0,
+                                "$nine_slice_right": 0,
+                                "$nine_slice_top": 0,
+                                "$nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ],
+                                "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                "$pressed_texture": "",
+                                "$texture_layer": 2,
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    10.0,
+                                    10.0
+                                ],
+                                "size": [
+                                    16.0,
+                                    16.0
+                                ],
+                                "layer": 5,
+                                "alpha": 0.8,
+                                "propagate_alpha": true,
+                                "button_mappings": [],
+                                "default_control": "default",
+                                "hover_control": "hover",
+                                "is_handle_button_move_event": true,
+                                "pressed_control": "pressed",
+                                "bindings": [
+                                    {
+                                        "binding_type": "collection_details",
+                                        "binding_collection_name": "",
+                                        "binding_condition": "always_when_visible"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "default@netease_editor_template_namespace.default": {}
+                                    },
+                                    {
+                                        "hover@netease_editor_template_namespace.hover": {}
+                                    },
+                                    {
+                                        "pressed@netease_editor_template_namespace.pressed": {}
+                                    },
+                                    {
+                                        "button_label@netease_editor_template_namespace.button_label": {}
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "namespace": "gameselect"
+}

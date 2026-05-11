@@ -1,0 +1,12 @@
+{
+    "Arena.Component.Namespace": "eujlg",
+    "FirstTabSetting": 0,
+    "ShortItemSettings": [
+        "VillageDefenseResource\\ui",
+        "VillageDefenseResource\\textures"
+    ],
+    "Uluru.autoLayerDict": {
+
+    },
+    "Uluru.checkSuspectOldUI": true
+}

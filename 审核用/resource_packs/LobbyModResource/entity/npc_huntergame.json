@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "default": "animation.huntergame.loop"
+            },
+            "geometry": {
+                "default": "geometry.huntergame"
+            },
+            "identifier": "npc:huntergame",
+            "materials": {
+                "default": "npc"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "scripts": {
+                "animate": [
+                    "default"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/npc/huntergame"
+            }
+        }
+    }
+}

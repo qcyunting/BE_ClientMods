@@ -1,0 +1,286 @@
+{
+    "__copyright": "Copyright (C) 2026 西瓜. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
+    "content_panel": {
+        "type": "panel",
+        "$content_stack_panel|default": "vd_effect.content_stack_panel",
+        "$enabled|default": true,
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "offset": [
+            0.0,
+            23.0
+        ],
+        "size": [
+            "100%+-30px",
+            "100%+-30px"
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "scrolling_panel@common.scrolling_panel": {
+                    "$scroll_bar_left_padding_size": [
+                        1,
+                        0
+                    ],
+                    "$scroll_size": [
+                        "5px",
+                        "100% - 4px"
+                    ],
+                    "$scrolling_content": "$content_stack_panel",
+                    "$show_background": false
+                }
+            }
+        ]
+    },
+    "content_stack_panel": {
+        "type": "stack_panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "offset": [
+            0.0,
+            0.0
+        ],
+        "size": [
+            "100%",
+            "default"
+        ],
+        "controls": [
+            {
+                "HEALTH_BOOST@vd_effect.effect_panel": {
+                    "$effect_name": "生命提升",
+                    "$to_button_id": "#HEALTH_BOOST"
+                }
+            },
+            {
+                "SPEED@vd_effect.effect_panel": {
+                    "$effect_name": "速度增益",
+                    "$to_button_id": "#SPEED"
+                }
+            },
+            {
+                "INCREASE_DAMAGE@vd_effect.effect_panel": {
+                    "$effect_name": "力量增益",
+                    "$to_button_id": "#INCREASE_DAMAGE"
+                }
+            },
+            {
+                "DAMAGE_RESISTANCE@vd_effect.effect_panel": {
+                    "$effect_name": "抗性增益",
+                    "$to_button_id": "#DAMAGE_RESISTANCE"
+                }
+            }
+        ]
+    },
+    "effect_panel": {
+        "type": "panel",
+        "size": [
+            "100%+0px",
+            30.0
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "name": {
+                    "type": "label",
+                    "$effect_name|default": "增益名字",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        2.0,
+                        0.0
+                    ],
+                    "font_type": "default",
+                    "text": "$effect_name",
+                    "text_alignment": "center",
+                    "controls": [
+                        {
+                            "level": {
+                                "type": "label",
+                                "anchor_from": "right_middle",
+                                "anchor_to": "left_middle",
+                                "offset": [
+                                    4.0,
+                                    0.0
+                                ],
+                                "font_type": "default",
+                                "text_alignment": "center"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "progress_bar": {
+                    "type": "panel",
+                    "$clip_direction": "left",
+                    "$clip_ratio": 0.0,
+                    "$is_new_nine_slice": false,
+                    "$nine_slice_buttom": 0,
+                    "$nine_slice_left": 0,
+                    "$nine_slice_right": 0,
+                    "$nine_slice_top": 0,
+                    "$nineslice_size": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "$progress_bar_empty_texture": "textures/ui/empty_progress_bar",
+                    "$progress_bar_filled_texture": "textures/ui/filled_progress_bar",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        2.0,
+                        12.0
+                    ],
+                    "size": [
+                        "100%+-80px",
+                        10
+                    ],
+                    "layer": 8,
+                    "controls": [
+                        {
+                            "empty_progress_bar@netease_editor_template_namespace.empty_progress_bar": {}
+                        },
+                        {
+                            "filled_progress_bar@netease_editor_template_namespace.filled_progress_bar": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "button@common.button": {
+                    "type": "button",
+                    "$control_alpha": 1.0,
+                    "$default_texture": "textures/ui/button_borderless_light",
+                    "$hover_texture": "textures/ui/button_borderless_lighthover",
+                    "$is_new_nine_slice": false,
+                    "$label_color": [
+                        0.6,
+                        0.6,
+                        0.6
+                    ],
+                    "$label_font_scale_factor": 1.0,
+                    "$label_font_size": "normal",
+                    "$label_layer": 3,
+                    "$label_offset": [
+                        0,
+                        0
+                    ],
+                    "$label_text": "供奉",
+                    "$nine_slice_buttom": 0,
+                    "$nine_slice_left": 0,
+                    "$nine_slice_right": 0,
+                    "$nine_slice_top": 0,
+                    "$nineslice_size": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "$pressed_button_name": "%netease_editor_template_namespace.click",
+                    "$pressed_texture": "textures/ui/button_borderless_lightpressed",
+                    "$texture_layer": 2,
+                    "$to_button_id|default": "#cancel_btn_click",
+                    "anchor_from": "right_middle",
+                    "anchor_to": "right_middle",
+                    "offset": [
+                        -5.0,
+                        0.0
+                    ],
+                    "size": [
+                        70.0,
+                        24.0
+                    ],
+                    "layer": 2,
+                    "button_mappings": [
+                        {
+                            "to_button_id": "$to_button_id",
+                            "from_button_id": "button.menu_select",
+                            "mapping_type": "pressed"
+                        }
+                    ],
+                    "default_control": "default",
+                    "hover_control": "hover",
+                    "is_handle_button_move_event": true,
+                    "pressed_control": "pressed",
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "",
+                            "binding_condition": "always_when_visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "default@netease_editor_template_namespace.default": {}
+                        },
+                        {
+                            "hover@netease_editor_template_namespace.hover": {}
+                        },
+                        {
+                            "pressed@netease_editor_template_namespace.pressed": {}
+                        },
+                        {
+                            "button_label@netease_editor_template_namespace.button_label": {
+                                "shadow": true
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "main@common.base_screen": {
+        "$screen_bg_content": "vd_effect.screen_background",
+        "$screen_content": "vd_effect.root_screen"
+    },
+    "namespace": "vd_effect",
+    "root_screen": {
+        "type": "screen",
+        "controls": [
+            {
+                "button@xg_common.cancel_btn": {
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "offset": [
+                        -10,
+                        5
+                    ],
+                    "size": [
+                        16,
+                        16
+                    ]
+                }
+            },
+            {
+                "content_panel": {
+                    "type": "panel",
+                    "max_size": [
+                        500.0,
+                        "default"
+                    ],
+                    "controls": [
+                        {
+                            "content@vd_effect.content_panel": {}
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "screen_background": {
+        "type": "panel",
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "layer": 1,
+                    "alpha": 0.5,
+                    "keep_ratio": false,
+                    "texture": "textures/ui/Black"
+                }
+            }
+        ]
+    }
+}

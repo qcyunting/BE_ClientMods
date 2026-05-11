@@ -1,0 +1,72 @@
+{
+    "Addon": {
+        "EnchantSetting": {
+            "amplifier": 1
+        },
+        "PackResourceSortData": {
+
+        },
+        "PlayerEffectSetting": {
+            "amplifier": 1,
+            "duration": 10
+        },
+        "PresetInstanceTreeData": [
+
+        ]
+    },
+    "UI": {
+        "customPrefabGroupExpand": [
+            "vd_effect",
+            "vd_shop"
+        ],
+        "expandData": {
+            "prefab": {
+                "vd_effect.content_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "vd_effect.content_stack_panel": [
+                    "/netease_prefab_screen"
+                ],
+                "vd_effect.effect_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/effect_panel",
+                    "/netease_prefab_screen/effect_panel/name"
+                ],
+                "vd_effect.screen_background": [
+                    "/netease_prefab_screen"
+                ],
+                "vd_shop.content_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/content_panel"
+                ],
+                "vd_shop.content_stack_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/content_stack_panel"
+                ],
+                "vd_shop.goods_button": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/goods_button",
+                    "/netease_prefab_screen/goods_button/button"
+                ],
+                "vd_shop.goods_grid": [
+                    "/netease_prefab_screen"
+                ],
+                "vd_shop.goods_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/goods_panel"
+                ]
+            },
+            "screen": {
+                "F:\\Documents\\python\\BE_ClientMods\\VillageDefense\\VillageDefenseResource\\ui\\vd_effect.json": [
+                    "/root_screen",
+                    "/root_screen/content_panel"
+                ],
+                "F:\\Documents\\python\\BE_ClientMods\\VillageDefense\\VillageDefenseResource\\ui\\vd_shop.json": [
+                    "/root_screen",
+                    "/root_screen/tab_panel/panel",
+                    "/root_screen/content_panel"
+                ]
+            }
+        }
+    }
+}
