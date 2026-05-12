@@ -10,3 +10,5 @@ empty-directory/
 .idea/
 
 *.zip
+
+.review_output/
