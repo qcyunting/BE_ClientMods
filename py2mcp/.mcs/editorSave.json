@@ -1,0 +1,24 @@
+{
+    "Addon": {
+        "EnchantSetting": {
+            "amplifier": 1
+        },
+        "PackResourceSortData": {
+            "4_gknzd:block": {
+                "createTime": 1777830749.7975512,
+                "modifyTime": 1777830866.1934571
+            },
+            "4_huan:guizi": {
+                "createTime": 1777835040.3447468,
+                "modifyTime": 1777836083.5617738
+            }
+        },
+        "PlayerEffectSetting": {
+            "amplifier": 1,
+            "duration": 10
+        },
+        "PresetInstanceTreeData": [
+
+        ]
+    }
+}

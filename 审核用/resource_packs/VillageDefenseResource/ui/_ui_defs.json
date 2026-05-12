@@ -1,0 +1,6 @@
+{
+    "ui_defs": [
+        "ui/vd_effect.json",
+        "ui/vd_shop.json"
+    ]
+}

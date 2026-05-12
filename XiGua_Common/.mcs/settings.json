@@ -3,6 +3,8 @@
     "FirstTabSetting": 0,
     "ShortItemSettings": [
         "CommonModResource\\ui",
+        "CommonModResource\\effects",
+        "CommonModResource\\models",
         "CommonModResource\\textures"
     ],
     "Uluru.autoLayerDict": {

@@ -1,0 +1,42 @@
+{
+    "frames": [
+        {
+            "filename": "block_selected_box.png",
+            "frame": {
+                "h": 16,
+                "w": 16,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "h": 16,
+                "w": 16,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    ],
+    "meta": {
+        "app": "https://www.codeandweb.com/texturepacker",
+        "format": "RGBA8888",
+        "image": "block_selected_box.png",
+        "scale": "1",
+        "size": {
+            "h": 16,
+            "w": 16
+        },
+        "smartupdate": "$TexturePacker:SmartUpdate:4d8486ea5b1a51f36785757291eedc36:9730b8a7a4f65c7d118607ad500ff86e:34211626b7aaa4f6ee0287189582fdc0$",
+        "version": "1.0"
+    }
+}

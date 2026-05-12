@@ -1,0 +1,154 @@
+{
+    "__copyright": "Copyright (C) 2026 西瓜. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
+    "main@common.base_screen": {
+        "$screen_bg_content": "xg_settings.screen_background",
+        "$screen_content": "xg_settings.root_screen"
+    },
+    "namespace": "xg_settings",
+    "root_screen": {
+        "type": "screen",
+        "controls": [
+            {
+                "tab_panel": {
+                    "type": "stack_panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        10.0,
+                        5.0
+                    ],
+                    "size": [
+                        "100%+-35px",
+                        16.0
+                    ],
+                    "layer": 1,
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "top_bar_toggle_btn_0@xg_common.top_bar_toggle_btn": {
+                                "$text": "通用",
+                                "$toggle_group_forced_index": 0
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_1@xg_common.top_bar_toggle_btn": {
+                                "$text": "界面",
+                                "$toggle_group_forced_index": 1
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_2@xg_common.top_bar_toggle_btn": {
+                                "$text": "控制",
+                                "$toggle_group_forced_index": 2
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_3@xg_common.top_bar_toggle_btn": {
+                                "$text": "声音",
+                                "$toggle_group_forced_index": 3
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_4@xg_common.top_bar_toggle_btn": {
+                                "$text": "主播认证",
+                                "$toggle_group_forced_index": 4
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_5@xg_common.top_bar_toggle_btn": {
+                                "$text": "管理员",
+                                "$toggle_group_forced_index": 5
+                            }
+                        },
+                        {
+                            "top_bar_toggle_btn_6@xg_common.top_bar_toggle_btn": {
+                                "$text": "调试",
+                                "$toggle_group_forced_index": 6,
+                                "ignored": "$is_publish"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "button@xg_common.cancel_btn": {
+                    "$to_button_id": "button.menu_exit",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "offset": [
+                        -10,
+                        5
+                    ],
+                    "size": [
+                        16,
+                        16
+                    ]
+                }
+            },
+            {
+                "content_panel": {
+                    "type": "panel",
+                    "$enabled": true,
+                    "max_size": [
+                        500.0,
+                        "default"
+                    ],
+                    "controls": [
+                        {
+                            "settings_content_0@settings_common.content_panel": {
+                                "$source_property_name": "(#tab_index = 0)"
+                            }
+                        },
+                        {
+                            "settings_content_1@settings_common.content_panel": {
+                                "$content_stack_panel": "ui_section.ui_section",
+                                "$source_property_name": "(#tab_index = 1)"
+                            }
+                        },
+                        {
+                            "settings_content_2@settings_common.content_panel": {
+                                "$source_property_name": "(#tab_index = 2)"
+                            }
+                        },
+                        {
+                            "settings_content_3@settings_common.content_panel": {
+                                "$source_property_name": "(#tab_index = 3)"
+                            }
+                        },
+                        {
+                            "settings_content_4@settings_common.content_panel": {
+                                "$source_property_name": "(#tab_index = 4)"
+                            }
+                        },
+                        {
+                            "settings_content_5@settings_common.content_panel": {
+                                "$content_stack_panel": "admin_section.admin_section",
+                                "$source_property_name": "(#tab_index = 5)"
+                            }
+                        },
+                        {
+                            "settings_content_6@settings_common.content_panel": {
+                                "$content_stack_panel": "debug_section.debug_section",
+                                "$source_property_name": "(#tab_index = 6)"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "screen_background": {
+        "type": "panel",
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "layer": 1,
+                    "alpha": 0.5,
+                    "keep_ratio": false,
+                    "texture": "textures/ui/Black"
+                }
+            }
+        ]
+    }
+}

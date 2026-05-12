@@ -1,0 +1,124 @@
+{
+  "admin_section@settings_common.content_stack_panel": {
+    "controls": [
+      {
+        "world_game_mode_dropdown_content@settings_common.segmented_control": {
+          "$title_label": "createWorldScreen.gameMode.default",
+          "$option_enabled_binding_name": "#world_game_mode_dropdown_enabled",
+          "$option_size": [
+            "25%",
+            25
+          ],
+          "$radio_buttons": [
+            {
+              "world_survival_mode_toggle@settings_common.segmented_control_option": {
+                "$radio_label_text": "createWorldScreen.gameMode.survival",
+                "$toggle_state_binding_name": "#world_game_mode_radio_survival"
+              }
+            },
+            {
+              "world_creative_mode_toggle@settings_common.segmented_control_option": {
+                "$radio_label_text": "createWorldScreen.gameMode.creative",
+                "$toggle_state_binding_name": "#world_game_mode_radio_creative"
+              }
+            },
+            {
+              "world_adventure_mode_toggle@settings_common.segmented_control_option": {
+                "$radio_label_text": "createWorldScreen.gameMode.adventure",
+                "$toggle_state_binding_name": "#world_game_mode_radio_adventure"
+              }
+            },
+            {
+              "world_spectator_mode_toggle@settings_common.segmented_control_option": {
+                "$radio_label_text": "createWorldScreen.gameMode.spectator",
+                "$toggle_state_binding_name": "#world_game_mode_radio_spectator"
+              }
+            }
+          ],
+          "$radio_collection_name": "world_game_mode_dropdown"
+        }
+      },
+      {
+        "player_game_mode_dropdown_content@settings_common.segmented_control": {
+          "$title_label": "createWorldScreen.gameMode.personal",
+          "$option_enabled_binding_name": "#player_game_mode_dropdown_enabled",
+          "$option_size": [
+            "20%",
+            25
+          ],
+          "$radio_buttons": [
+            {
+              "player_default_mode_toggle@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#player_game_mode_radio_default",
+                "$radio_label_text": "createWorldScreen.gameMode.serverDefault"
+              }
+            },
+            {
+              "player_survival_mode_toggle@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#player_game_mode_radio_survival",
+                "$radio_label_text": "createWorldScreen.gameMode.survival"
+              }
+            },
+            {
+              "player_creative_mode_toggle@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#player_game_mode_radio_creative",
+                "$radio_label_text": "createWorldScreen.gameMode.creative"
+              }
+            },
+            {
+              "player_adventure_mode_toggle@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#player_game_mode_radio_adventure",
+                "$radio_label_text": "createWorldScreen.gameMode.adventure"
+              }
+            },
+            {
+              "player_spectator_mode_toggle@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#player_game_mode_radio_spectator",
+                "$radio_label_text": "createWorldScreen.gameMode.spectator"
+              }
+            }
+          ],
+          "$radio_collection_name": "player_game_mode_dropdown"
+        }
+      },
+      {
+        "world_difficulty_dropdown_content@settings_common.segmented_control": {
+          "$title_label": "options.difficulty",
+          "$option_enabled_binding_name": "#world_difficulty_dropdown_enabled",
+          "$option_size": [
+            "25%",
+            25
+          ],
+          "$radio_buttons": [
+            {
+              "world_difficulty_radio_peaceful@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#world_difficulty_radio_peaceful",
+                "$radio_label_text": "options.difficulty.peaceful"
+              }
+            },
+            {
+              "world_difficulty_radio_easy@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#world_difficulty_radio_easy",
+                "$radio_label_text": "options.difficulty.easy"
+              }
+            },
+            {
+              "world_difficulty_radio_normal@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#world_difficulty_radio_normal",
+                "$radio_label_text": "options.difficulty.normal"
+              }
+            },
+            {
+              "world_difficulty_radio_hard@settings_common.segmented_control_option": {
+                "$toggle_state_binding_name": "#world_difficulty_radio_hard",
+                "$radio_label_text": "options.difficulty.hard"
+              }
+            }
+          ],
+          "$radio_collection_name": "world_difficulty_dropdown"
+        }
+      }
+    ]
+  },
+  "namespace": "admin_section"
+}

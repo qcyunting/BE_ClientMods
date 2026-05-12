@@ -1,0 +1,178 @@
+{
+  "namespace": "debug_section",
+  "debug_section@settings_common.content_stack_panel": {
+    "controls": [
+      {
+        "option_toggle_build_info@settings_common.option_toggle": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$option_binding_name": "#dev_show_build_info",
+          "$option_enabled_binding_name": "#dev_show_build_info_enabled",
+          "$option_label": "options.dev_showBuildInfo",
+          "$toggle_name": "dev_show_build_info"
+        }
+      },
+      {
+        "build_info_label_panel": {
+          "type": "stack_panel",
+          "size": [
+            "100%",
+            "100%c"
+          ],
+          "controls": [
+            {
+              "version_label": {
+                "type": "label",
+                "offset": [
+                  2,
+                  0
+                ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "text": "#version",
+                "bindings": [
+                  {
+                    "binding_name": "#version"
+                  }
+                ]
+              }
+            },
+            {
+              "build_id_label": {
+                "type": "label",
+                "color": "$body_text_color",
+                "offset": [
+                  2,
+                  0
+                ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "text": "#build_id",
+                "bindings": [
+                  {
+                    "binding_name": "#build_id"
+                  }
+                ]
+              }
+            },
+            {
+              "network_info_label": {
+                "type": "label",
+                "offset": [
+                  2,
+                  0
+                ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "text": "#network_info",
+                "bindings": [
+                  {
+                    "binding_name": "#network_info"
+                  },
+                  {
+                    "binding_name": "#network_info_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "protocol_version_label": {
+                "type": "label",
+                "offset": [
+                  2,
+                  0
+                ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "text": "#protocol_version",
+                "bindings": [
+                  {
+                    "binding_name": "#protocol_version"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "client_os_label": {
+          "type": "stack_panel",
+          "size": [
+            "100%",
+            "100%c"
+          ],
+          "controls": [
+            {
+              "microsoft_os": {
+                "ignored": "(not $microsoft_os)",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "type": "label",
+                "text": "操作系统: Microsoft操作系统",
+                "offset": [
+                  2,
+                  0
+                ]
+              }
+            },
+            {
+              "apple_os": {
+                "ignored": "(not $apple_os)",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "type": "label",
+                "text": "操作系统: Apple操作系统",
+                "offset": [
+                  2,
+                  0
+                ]
+              }
+            },
+            {
+              "google_os": {
+                "ignored": "(not $google_os)",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "type": "label",
+                "text": "操作系统: Google操作系统",
+                "offset": [
+                  2,
+                  0
+                ]
+              }
+            },
+            {
+              "nx_os": {
+                "ignored": "(not $nx_os)",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "type": "label",
+                "text": "操作系统: Nintendo Switch系统",
+                "offset": [
+                  2,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "manage_account_button_mobile@settings_common.link_button": {
+          "size": [
+            "100%",
+            30
+          ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "$button_text": "options.manageAccount",
+          "property_bag": {
+            "#hyperlink": "https://account.xbox.com/Settings"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "materials": {
+    "version": "1.0.0",
+
+    "selection_overlay_opaque:selection_overlay": {
+      "vertexShader": "shaders/selection_box.vertex",
+      "vrGeometryShader": "shaders/position.geometry",
+      "fragmentShader": "shaders/selection_box_color.fragment",
+      "msaaSupport": "Both",
+      "+states": [
+        "DisableDepthTest",
+        "DisableDepthWrite"
+      ]
+    },
+    "selection_box": {
+      "+states": [
+        "DisableDepthTest",
+        "DisableDepthWrite"
+      ],
+      "+defines": [ "LINE_STRIP" ],
+      "primitiveMode": "Line",
+
+      "depthFunc": "LessEqual",
+      "vertexShader": "shaders/selection_box.vertex",
+      "vrGeometryShader": "shaders/position.geometry",
+      "fragmentShader": "shaders/selection_box_color.fragment",
+      "vertexFields": [
+        { "field": "Position" }
+      ],
+
+      "msaaSupport": "Both"
+    }
+  }
+}

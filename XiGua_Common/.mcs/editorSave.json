@@ -43,13 +43,20 @@
     },
     "UI": {
         "customPrefabGroupExpand": [
-            "disconnect_"
+
         ],
         "expandData": {
             "prefab": {
                 "Xigua_settings.screen_background": [
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/screen_background"
+                ],
+                "admin_section.admin_section": [
+                    "/netease_prefab_screen"
+                ],
+                "admin_section.segmented_control": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/segmented_control"
                 ],
                 "disconnect_.disconnect_text": [
                     "/netease_prefab_screen"
@@ -198,24 +205,9 @@
                 "persona_common_.info_bulb_icon": [
                     "/netease_prefab_screen"
                 ],
-                "xg_common.cancel_btn": [
+                "ui_section.toggle": [
                     "/netease_prefab_screen",
-                    "/netease_prefab_screen/cancel_btn"
-                ],
-                "xg_common.screen_background": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/screen_background",
-                    "/netease_prefab_screen/screen_background/top_bar"
-                ],
-                "xg_common.skin_model": [
-                    "/netease_prefab_screen"
-                ],
-                "xg_common.toggle_checked_state": [
-                    "/netease_prefab_screen"
-                ],
-                "xg_common.toggle_unchecked_state": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/toggle_unchecked_state"
+                    "/netease_prefab_screen/toggle"
                 ],
                 "xg_hud.game_info_bar": [
                     "/netease_prefab_screen"
@@ -295,6 +287,13 @@
                 ],
                 "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_common.json": [
                     "/netease_prefab_screen"
+                ],
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_chat.json": [
+                    "/root_screen",
+                    "/root_screen/panel"
+                ],
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": [
+
                 ]
             }
         }

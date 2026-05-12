@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "default": "animation.trampoline.idle"
+            },
+            "geometry": {
+                "default": "geometry.npc.trampoline"
+            },
+            "identifier": "npc:trampoline",
+            "materials": {
+                "default": "npc"
+            },
+            "render_controllers": [
+                "controller.render.trampoline"
+            ],
+            "scripts": {
+                "animate": [
+                    "default"
+                ]
+            },
+            "textures": {
+                "green": "textures/entity/npc/trampoline/green",
+                "red": "textures/entity/npc/trampoline/red",
+                "cyan": "textures/entity/npc/trampoline/cyan",
+                "orange": "textures/entity/npc/trampoline/orange",
+                "purple": "textures/entity/npc/trampoline/purple",
+                "yellow": "textures/entity/npc/trampoline/yellow"
+            }
+        }
+    }
+}

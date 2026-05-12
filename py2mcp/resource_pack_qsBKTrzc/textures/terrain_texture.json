@@ -1,0 +1,18 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "gknzd:border": {
+            "textures": "textures/border"
+        },
+        "huan:custom_dirt": {
+            "textures": "textures/blocks/custom_dirt"
+        },
+        "huan:guizi": {
+            "textures": "textures/blocks/texture_guizi"
+        },
+        "nwpWXTkb": {
+            "textures": "textures/items/border"
+        }
+    },
+    "texture_name": "atlas.terrain"
+}

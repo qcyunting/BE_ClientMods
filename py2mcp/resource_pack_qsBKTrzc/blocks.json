@@ -1,0 +1,20 @@
+{
+    "format_version": [
+        1,
+        1,
+        0
+    ],
+    "gknzd:block": {
+        "textures": "gknzd:border"
+    },
+    "huan:guizi": {
+        "client_entity": {
+            "block_icon": "nwpWXTkb",
+            "destoryed_textures": "huan:guizi",
+            "hand_model_use_client_entity": true,
+            "identifier": ""
+        },
+        "netease_model": "huan:guizi",
+        "textures": "huan:custom_dirt"
+    }
+}

@@ -1,0 +1,95 @@
+{
+    "namespace": "input_section",
+    "input_section@settings_common.content_stack_panel": {
+        "controls": [
+            {
+                "input_mode@input_section.input_mode": {}
+            },
+            {
+                "keyboard_and_mouse_section@controls_section.keyboard_and_mouse_section": {}
+            },
+            {
+                "controller_section@controls_section.controller_section": {}
+            },
+            {
+                "touch_section@controls_section.touch_section": {}
+            }
+        ]
+    },
+    "input_mode": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "size": [
+            "100%",
+            "100%cm+2px"
+        ],
+        "$default_selector_toggle_index": 0,
+        "$controls_section_header": "options.group.input",
+        "$social_section_header": "options.social",
+        "$general_section_header": "stat.generalButton",
+        "$debug_section_header": "options.debug",
+        "controls": [
+            {
+                "keyboard_and_mouse_button@input_section.keyboard_and_mouse_button": {
+                    "ignored": "(not $keyboard_and_mouse_supported)",
+                    "$toggle_group_forced_index": 0,
+                    "$tts_section_header": "$controls_section_header"
+                }
+            },
+            {
+                "controller_button@input_section.controller_button": {
+                    "ignored": "(not $gamepad_supported or $nx_os)",
+                    "$toggle_group_forced_index": 1,
+                    "$tts_section_header": "$controls_section_header"
+                }
+            },
+            {
+                "touch_button@input_section.touch_button": {
+                    "ignored": "($is_holographic or not $touch_supported or $nx_os)",
+                    "$toggle_group_forced_index": 2,
+                    "$tts_section_header": "$controls_section_header"
+                }
+            }
+        ]
+    },
+    "keyboard_and_mouse_button@settings_common.section_toggle_base2": {
+        "$toggle_view_binding_name": "keyboard_and_mouse_button_toggle",
+        "$glyph_texture": "textures/ui/keyboard_and_mouse_glyph",
+        "$glyph_color_texture": "textures/ui/keyboard_and_mouse_glyph_color",
+        "$glyph_size": [
+            19,
+            9
+        ],
+        "$button_text": "options.keyboardAndMouse",
+        "$toggle_property_bag": {
+            "#panel_title": "options.keyboardAndMouseSettings",
+            "#toggle_state": true
+        }
+    },
+    "controller_button@settings_common.section_toggle_base2": {
+        "$toggle_view_binding_name": "controller_button_toggle",
+        "$glyph_texture": "textures/ui/controller_glyph",
+        "$glyph_color_texture": "textures/ui/controller_glyph_color",
+        "$glyph_size": [
+            21,
+            14
+        ],
+        "$button_text": "options.controller",
+        "$toggle_property_bag": {
+            "#panel_title": "options.controllerSettings"
+        }
+    },
+    "touch_button@settings_common.section_toggle_base2": {
+        "$toggle_view_binding_name": "touch_button_toggle",
+        "$glyph_texture": "textures/ui/touch_glyph",
+        "$glyph_color_texture": "textures/ui/touch_glyph_color",
+        "$glyph_size": [
+            20,
+            14
+        ],
+        "$button_text": "options.touch",
+        "$toggle_property_bag": {
+            "#panel_title": "options.touchSettings"
+        }
+    }
+}
