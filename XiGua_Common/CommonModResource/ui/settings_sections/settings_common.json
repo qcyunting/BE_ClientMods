@@ -16,7 +16,7 @@
     ],
     "size": [
         "100%",
-        "default"
+        "100%c"
     ],
     "controls": [
       {
@@ -57,7 +57,6 @@
         }
       }
     ],
-    "$source_property_name|default": "false",
     "bindings": [
       {
         "binding_name": "#tab_index",
@@ -73,7 +72,7 @@
 
   "segmented_control": {
     "type": "panel",
-    "$title_label": "",
+    "$option_label|default": "",
     "size": [ "100%", 40 ],
     "controls": [
       {
@@ -82,7 +81,7 @@
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "shadow": true,
-          "text": "$title_label"
+          "text": "$option_label"
         }
       },
       {
@@ -104,7 +103,7 @@
     "$unchecked_control": "settings_common.segmented_control_option_unchecked_control",
     "$checked_control": "settings_common.segmented_control_option_checked_control",
     "$unchecked_hover_control": "settings_common.segmented_control_option_hover_control",
-    "$checked_hover_control": "settings_common.segmented_control_option_checked_control",
+    "$checked_hover_control": "settings_common.segmented_control_option_checked_hover_control",
     "$unchecked_locked_control": "settings_common.segmented_control_option_lock_control",
     "$unchecked_locked_hover_control": "settings_common.segmented_control_option_lock_control",
     "$checked_locked_control": "settings_common.segmented_control_option_lock_control",
@@ -116,77 +115,81 @@
   "segmented_control_option_texture": {
     "type": "image",
     "size": ["100%", "100%"],
+    "$bg_color|default": [0, 0, 0],
+    "color": "$bg_color",
+    "texture": "textures/ui/focus_border_white",
+    "$texture|default": "",
+    "$text_color|default": [0.3, 0.3, 0.3],
     "$radio_label_text|default": "",
+    "$text_offset|default": [0, 0],
     "controls": [
       {
         "text": {
           "type": "label",
-          "layer": 1,
+          "layer": 3,
+          "color": "$text_color",
+          "offset": "$text_offset",
           "size": [ "default", "default" ],
           "text": "$radio_label_text"
+        }
+      },
+      {
+        "text": {
+          "type": "image",
+          "size": ["100%-2px", "100%-2px"],
+          "layer": 2,
+          "texture": "$texture"
         }
       }
     ]
   },
 
   "segmented_control_option_unchecked_control@segmented_control_option_texture": {
-    "texture": "textures/ui/button_borderless_light"
+    "$texture": "textures/ui/button_borderless_light"
   },
 
   "segmented_control_option_lock_control@segmented_control_option_texture": {
-    "texture": "textures/ui/button_borderless_lightpressednohover"
+    "$texture": "textures/ui/disabledButtonNoBorder"
   },
 
   "segmented_control_option_hover_control@segmented_control_option_texture": {
-    "texture": "textures/ui/button_borderless_lighthover"
+    "$texture": "textures/ui/button_borderless_lighthover",
+    "$text_color": [1, 1, 1],
+    "$bg_color": [1, 1, 1]
   },
 
   "segmented_control_option_checked_control@segmented_control_option_texture": {
-    "texture": "textures/ui/button_borderless_lightpressed"
+    "$texture": "textures/ui/button_borderless_lightpressednohover",
+    "$text_offset": [0, 1],
+    "$text_color": [1, 1, 1]
   },
 
-  "toggle": {
-    "type": "panel",
-    "$option_label": "",
-    "size": [
-      "100%",
-      20
-    ],
-    "layer": 1,
-    "controls": [
-      {
-        "text": {
-          "type": "label",
-          "anchor_from": "left_middle",
-          "anchor_to": "left_middle",
-          "offset": [
-            2.0,
-            0.0
-          ],
-          "size": [
-            "default",
-            "default"
-          ],
-          "max_size": [
-            "100%+-35px",
-            "default"
-          ],
-          "text": "$option_label"
-        }
-      },
-      {
-        "toggle@settings_common.option_toggle_control": {
-          "anchor_from": "right_middle",
-          "anchor_to": "right_middle",
-          "size": [
-            "100%c+0px",
-            "100%c"
-          ]
-        }
-      }
-    ]
+  "segmented_control_option_checked_hover_control@segmented_control_option_texture": {
+    "$texture": "textures/ui/button_borderless_lightpressed",
+    "$text_offset": [0, 1],
+    "$text_color": [1, 1, 1],
+    "$bg_color": [1, 1, 1]
   },
 
+  "section_toggle_base2@common_toggles.light_ui_toggle": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "33%", "30px" ],
+    "$button_size_override": [ "100%", "100% + 1px" ],
+    "$button_type_panel": "settings_common.toggle_button_control",
+
+    "$radio_toggle_group": true,
+    "$toggle_name": "navigation_tab",
+    "$toggle_group_default_selected": "$default_selector_toggle_index",
+
+    "$toggle_tab_focus_binding_type": "global",
+    "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+    "$toggle_on_hover_binding_type": "global",
+    "$toggle_on_hover_binding_name": "#toggle_on_hover",
+    "$toggle_tts_toggle_on_text": "accessibility.state.selected",
+    "$toggle_tts_toggle_off_text": "accessibility.state.unselected",
+    "$toggle_tts_name": "accessibility.tab.tts.title"
+  },
 
 
 

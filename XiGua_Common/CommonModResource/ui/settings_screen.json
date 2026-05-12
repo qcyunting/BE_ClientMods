@@ -36,6 +36,7 @@
   },
 
   "selector_stack_panel": {
+    "$is_netease": false,
     "type": "stack_panel",
     "anchor_from": "top_left",
     "anchor_to": "top_left",
@@ -352,6 +353,7 @@
   },
 
   "section_content_panels": {
+    "$is_netease": false,
     "type": "panel",
     "anchor_from": "top_left",
     "anchor_to": "top_left",

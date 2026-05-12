@@ -29,9 +29,11 @@ class TopBarUtils:
 
     def _set_control(self, control, child):
         _type = control.get("type", "text")
+        scale = control.get("scale", 1.0)
         if _type == "text":
             if control.get("text"):
                 child.GetChildByPath("/image/text").asLabel().SetText(control.get("text"))
+                child.GetChildByPath("/image/text").asLabel().SetTextFontSize(scale)
             if control.get("background"):
                 child.GetChildByPath("/image").asImage().SetSprite(control.get("background"))
             if control.get("color"):
@@ -39,10 +41,12 @@ class TopBarUtils:
         elif _type == "image":
             if control.get("text"):
                 child.GetChildByPath("/image/text").asLabel().SetText(control.get("text"))
+                child.GetChildByPath("/image/text").asLabel().SetTextFontSize(scale)
             if control.get("background"):
                 child.GetChildByPath("/image").asImage().SetSprite(control.get("background"))
             if control.get("texture"):
                 child.GetChildByPath("/image/image").asImage().SetSprite(control.get("texture"))
+                child.GetChildByPath("/image/image").asImage().SetSize((10 * scale, 10 * scale))
             if control.get("color"):
                 child.GetChildByPath("/image/image").asImage().SetSpriteColor(control.get("color"))
         elif _type == "progress_bar":

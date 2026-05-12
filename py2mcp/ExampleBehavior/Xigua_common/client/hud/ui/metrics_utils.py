@@ -7,14 +7,6 @@ class MetricsUtils:
     def __init__(self, hud_instance):
         self.hud = hud_instance
 
-    def on_button_click(self, args):
-        parts = args["ButtonPath"].split("/")
-        result = parts[-2]
-        if result == "pause_button":
-            clientApi.OpenPauseGui()
-        elif result == "chat_button":
-            clientApi.OpenChatGui()
-
     def on_left_click(self, args):
         self.hud.CPS_left_click_set.append(time.time())
 

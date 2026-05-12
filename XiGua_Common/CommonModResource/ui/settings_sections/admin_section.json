@@ -3,7 +3,7 @@
     "controls": [
       {
         "world_game_mode_dropdown_content@settings_common.segmented_control": {
-          "$title_label": "createWorldScreen.gameMode.default",
+          "$option_label": "createWorldScreen.gameMode.default",
           "$option_enabled_binding_name": "#world_game_mode_dropdown_enabled",
           "$option_size": [
             "25%",
@@ -40,7 +40,7 @@
       },
       {
         "player_game_mode_dropdown_content@settings_common.segmented_control": {
-          "$title_label": "createWorldScreen.gameMode.personal",
+          "$option_label": "createWorldScreen.gameMode.personal",
           "$option_enabled_binding_name": "#player_game_mode_dropdown_enabled",
           "$option_size": [
             "20%",
@@ -83,7 +83,7 @@
       },
       {
         "world_difficulty_dropdown_content@settings_common.segmented_control": {
-          "$title_label": "options.difficulty",
+          "$option_label": "options.difficulty",
           "$option_enabled_binding_name": "#world_difficulty_dropdown_enabled",
           "$option_size": [
             "25%",

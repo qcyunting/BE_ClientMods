@@ -825,14 +825,6 @@
           "size": [ "100%", "100%c" ],
           "controls": [
             {
-                "option_toggle_build_info@settings_common.option_toggle": {
-                    "$option_binding_name": "#dev_show_build_info",
-                    "$option_enabled_binding_name": "#dev_show_build_info_enabled",
-                    "$option_label": "options.dev_showBuildInfo",
-                    "$toggle_name": "dev_show_build_info"
-                }
-            },
-            {
               "option_enable_new_touch_control_schemes_button@settings_common.option_toggle": {
                 "$option_label": "options.enableNewTouchControlSchemes",
                 "$option_binding_name": "#enable_new_touch_control_schemes",

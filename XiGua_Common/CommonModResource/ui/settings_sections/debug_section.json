@@ -13,6 +13,14 @@
         }
       },
       {
+        "option_toggle_assertions_show_dialog@settings_common.option_toggle": {
+          "$option_label": "options.dev_assertions_show_dialog",
+          "$option_binding_name": "#dev_assertions_show_dialog",
+          "$option_enabled_binding_name": "#dev_assertions_show_dialog_enabled",
+          "$toggle_name": "dev_assertions_show_dialog"
+        }
+      },
+      {
         "build_info_label_panel": {
           "type": "stack_panel",
           "size": [
@@ -157,20 +165,6 @@
               }
             }
           ]
-        }
-      },
-      {
-        "manage_account_button_mobile@settings_common.link_button": {
-          "size": [
-            "100%",
-            30
-          ],
-          "anchor_from": "top_right",
-          "anchor_to": "top_right",
-          "$button_text": "options.manageAccount",
-          "property_bag": {
-            "#hyperlink": "https://account.xbox.com/Settings"
-          }
         }
       }
     ]

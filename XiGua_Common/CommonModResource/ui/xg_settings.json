@@ -21,6 +21,7 @@
                         "100%+-35px",
                         16.0
                     ],
+                    "$toggle_grid_collection_name": "tab_panel_collection",
                     "layer": 1,
                     "orientation": "horizontal",
                     "controls": [
@@ -32,13 +33,13 @@
                         },
                         {
                             "top_bar_toggle_btn_1@xg_common.top_bar_toggle_btn": {
-                                "$text": "界面",
+                                "$text": "控制",
                                 "$toggle_group_forced_index": 1
                             }
                         },
                         {
                             "top_bar_toggle_btn_2@xg_common.top_bar_toggle_btn": {
-                                "$text": "控制",
+                                "$text": "视频",
                                 "$toggle_group_forced_index": 2
                             }
                         },
@@ -101,17 +102,19 @@
                         },
                         {
                             "settings_content_1@settings_common.content_panel": {
-                                "$content_stack_panel": "ui_section.ui_section",
+                                "$content_stack_panel": "input_section.input_section",
                                 "$source_property_name": "(#tab_index = 1)"
                             }
                         },
                         {
                             "settings_content_2@settings_common.content_panel": {
+                                "$content_stack_panel": "video_section.video_section",
                                 "$source_property_name": "(#tab_index = 2)"
                             }
                         },
                         {
                             "settings_content_3@settings_common.content_panel": {
+                                "$content_stack_panel": "sound_section.sound_section",
                                 "$source_property_name": "(#tab_index = 3)"
                             }
                         },
