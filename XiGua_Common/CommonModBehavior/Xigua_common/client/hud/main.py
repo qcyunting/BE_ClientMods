@@ -46,29 +46,17 @@ class Main(BaseSystem):
         clientApi.HideVoiceGUI(True)
 
 
-    @Listen()
-    def ClientItemUseOnEvent(self, args):
-        if time.time() - self.iiiiiiiiiiiiiiiiiiiiiiiiiii <= 1:
-            return
-        self.iiiiiiiiiiiiiiiiiiiiiiiiiii = time.time()
-        item = args.get("itemDict")
-        x = args.get("x")
-        y = args.get("y")
-        z = args.get("z")
-        pos = (x, y, z)
-        if item["newItemName"] == "minecraft:wooden_axe":
-            if self.start_pos:
-                if self.id:
-                    self.removeSfx(self.id)
-                    CF.CreateTextNotifyClient(levelId).SetLeftCornerNotify("§c已取消")
-                    self.id = None
-                    self.start_pos = ()
-                else:
-                    self.id = self.cube_renderer.renderCube(self.start_pos, pos, True)
-                    CF.CreateTextNotifyClient(levelId).SetLeftCornerNotify("§a已记录结束坐标")
-            else:
-                self.start_pos = pos
-                CF.CreateTextNotifyClient(levelId).SetLeftCornerNotify("§a已记录开始坐标")
+    @Listen(event_type=Listen.server)
+    def creatCube(self, args):
+        x1 = args.get("x1")
+        y1 = args.get("y1")
+        z1 = args.get("z1")
+        x2 = args.get("x2")
+        y2 = args.get("y2")
+        z2 = args.get("z2")
+        pos1 = (x1, y1, z1)
+        pos2 = (x2, y2, z2)
+        self.cube_renderer.renderCube(pos1, pos2, True, args.get("id"))
 
     def createSfx_test(self):
         frameEntityId = self.CreateEngineSfxFromEditor("effects/test.json")
@@ -82,9 +70,9 @@ class Main(BaseSystem):
     def createSfx(self):
         return self.cube_renderer.renderCube((0, 100, 0), (10, 102, -2))
 
-    # 删除
-    def removeSfx(self, frameEntityId):
-        self.cube_renderer.removeCube(frameEntityId)
+    @Listen(event_type=Listen.server)
+    def removeCube(self, args):
+        self.cube_renderer.removeCube(args.get("id"))
 
     @Listen()
     def OnKeyPressInGame(self, args):

@@ -17,12 +17,13 @@ class CubeRenderer:
             self.drawing_comp = clientApi.GetEngineCompFactory().CreateDrawing(self.levelId)
         return self.drawing_comp
 
-    def renderCube(self, start_pos, end_pos, with_outline=True):
+    def renderCube(self, start_pos, end_pos, with_outline=True, cube_id=None):
         """
         渲染一个立方体
         start_pos: 起始坐标 (x, y, z)，方块坐标的角点
         end_pos: 结束坐标 (x, y, z)，方块坐标的角点
         with_outline: 是否同时渲染描边，默认为True
+        cube_id: 可选的立方体ID，如果指定则使用该ID（重复则删除旧的），不指定则自增
         返回: cube_id 用于后续删除
         """
         # 计算方块坐标的最小和最大坐标（方块坐标）
@@ -67,8 +68,24 @@ class CubeRenderer:
             {"pos": (center_x, center_y - scale_y, center_z), "rot": (-90, 0, 0), "scale": (scale_x, scale_z, 1)},  # 下
         ]
 
-        cube_id = self.next_id
-        self.next_id += 1
+        # 确定cube_id
+        if cube_id is not None:
+            # 指定了ID，删除旧的（如果存在）
+            if cube_id in self.cubes:
+                self.removeCube(cube_id)
+            # 检查是否与自增ID冲突（假设自增ID有前缀）
+            # 如果不带前缀的自增ID与指定的cube_id相同，则跳过该自增ID
+            while "auto_" + str(self.next_id) == str(cube_id) or str(self.next_id) == str(cube_id):
+                self.next_id += 1
+        else:
+            # 不指定ID，使用带前缀的自增ID
+            cube_id = "auto_" + str(self.next_id)
+            self.next_id += 1
+            # 确保生成的自增ID不与任何手动指定的ID冲突
+            while cube_id in self.cubes:
+                self.next_id += 1
+                cube_id = "auto_" + str(self.next_id)
+
         face_ids = []
 
         # 渲染立方体面
