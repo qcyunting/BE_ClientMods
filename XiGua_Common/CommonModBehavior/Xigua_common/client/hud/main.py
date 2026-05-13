@@ -15,9 +15,6 @@ class Main(BaseSystem):
         self.regScreenProxy()
         self.cube_renderer = CubeRenderer(self)
         clientApi.SetEnableReconnectNetgame(True)
-        self.id = None
-        self.start_pos = ()
-        self.iiiiiiiiiiiiiiiiiiiiiiiiiii = 0
 
     @Listen(event_type=Listen.server)
     def startMod(self, args):

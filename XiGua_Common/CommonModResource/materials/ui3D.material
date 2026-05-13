@@ -254,6 +254,20 @@
         "DisableDepthWrite"
       ]
     },
+    "name_tag_text_shadow": {
+      "+states": [
+        "Blending"
+      ],
+      "depthFunc": "Always",
+      "msaaSupport": "Both",
+      "vertexShader": "shaders/color_uv.vertex",
+      "fragmentShader": "shaders/text.fragment",
+      "+defines": [
+        "SHADOW"
+      ],
+      "blendSrc": "SourceAlpha",
+      "blendDst": "OneMinusSrcAlpha"
+    },
     "sign_text": {
       "+states": [
         "Blending"

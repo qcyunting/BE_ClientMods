@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from LobbyMod.LobbyModBehavior.LobbyMod.client.utils import *
+from ..utils import *
 import re
 ViewBinder = clientApi.GetViewBinderCls()
 ViewRequest = clientApi.GetViewViewRequestCls()
