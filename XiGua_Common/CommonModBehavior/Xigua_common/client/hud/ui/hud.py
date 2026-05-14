@@ -96,7 +96,8 @@ class Main(BaseCustomScreenProxy):
         if result == "pause_button":
             clientApi.OpenPauseGui()
         elif result == "chat_button":
-            clientApi.PushScreen(modName, "xg_chat")
+            clientApi.OpenChatGui()
+            #clientApi.PushScreen(modName, "xg_chat")
 
     # ==================== 指标 (Metrics) ====================
     @Listen("LeftClickBeforeClientEvent")

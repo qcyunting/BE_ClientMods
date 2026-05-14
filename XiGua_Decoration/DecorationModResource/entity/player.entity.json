@@ -19,7 +19,10 @@
                 "dragon_wings": "geometry.dragon_wings",
                 "asura_wings": "geometry.asura_wings",
                 "paladin_wings": "geometry.paladin_wings",
-                "volt_wings": "geometry.volt_wings"
+                "volt_wings": "geometry.volt_wings",
+                "phoenix_wings": "geometry.phoenix_wings",
+                "wings": "geometry.wings",
+                "wings_max": "geometry.wings_max"
             },
             "textures": {
                 "default": "textures/entity/steve",
@@ -58,7 +61,15 @@
                 
                 "asura_wings": "textures/decorations/wings/asura_wings",
                 "paladin_wings": "textures/decorations/wings/paladin_wings",
-                "volt_wings": "textures/decorations/wings/volt_wings"
+                "volt_wings": "textures/decorations/wings/volt_wings",
+                "phoenix_wings": "textures/decorations/wings/phoenix_wings",
+                "wings1": "textures/decorations/wings/wings1",
+                "wings2": "textures/decorations/wings/wings2",
+                "wings3": "textures/decorations/wings/wings3",
+                "wings4": "textures/decorations/wings/wings4",
+                "wings5": "textures/decorations/wings/wings5",
+                "wings6": "textures/decorations/wings/wings6",
+                "wings7": "textures/decorations/wings/wings7"
             },
             "animations": {
                 "root": "controller.animation.player.root",

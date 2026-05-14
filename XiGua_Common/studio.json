@@ -34,7 +34,7 @@
   "NameSpace": "fqqgt",
   "EditMaterialPaths": [],
   "EditLogFilePath": "",
-  "ServerName": "",
+  "ServerName": "EXPR",
   "StudioPort": 10418,
   "DCWebUrl": "https://x19apigatewayexpr.nie.netease.com",
   "ShowGuide": false,
@@ -45,5 +45,5 @@
   "EditorResourcePackPath": "",
   "EditDate": 1770992885,
   "EditDuration": 155111,
-  "TestDuration": 159296
+  "TestDuration": 159324
 }
