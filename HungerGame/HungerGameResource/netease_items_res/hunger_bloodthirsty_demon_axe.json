@@ -1,0 +1,11 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "hunger:bloodthirsty_demon_axe"
+        },
+        "description": {
+            "identifier": "hunger:bloodthirsty_demon_axe"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:food": {
+                "can_always_eat": true
+            }
+        },
+        "description": {
+            "category": "equipment",
+            "identifier": "hunger:blood_demon_heart"
+        }
+    }
+}

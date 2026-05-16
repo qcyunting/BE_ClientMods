@@ -1,0 +1,11 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "hunger:doomsday_divine_sword"
+        },
+        "description": {
+            "identifier": "hunger:doomsday_divine_sword"
+        }
+    }
+}

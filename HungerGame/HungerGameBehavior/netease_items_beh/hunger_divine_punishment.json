@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:hand_equipped": true,
+            "minecraft:use_duration": 7200.0,
+            "netease:render_offsets": {
+                "controller_position_adjust": [
+                    0.125,
+                    -0.0625,
+                    0.125
+                ],
+                "controller_rotation_adjust": [
+                    -25,
+                    -45,
+                    -25
+                ],
+                "controller_scale": 0.88
+            }
+        },
+        "description": {
+            "category": "equipment",
+            "custom_item_type": "ranged_weapon",
+            "identifier": "hunger:divine_punishment"
+        }
+    }
+}
