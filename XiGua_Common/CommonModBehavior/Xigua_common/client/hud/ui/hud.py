@@ -37,7 +37,7 @@ class Main(BaseCustomScreenProxy):
         self.top_bar_control = None
 
         self.is_test_server = False
-        self.child = None
+        self.child = None  # type: ScreenNode
         self.DanmakuPanel = None
 
         # 工具类实例

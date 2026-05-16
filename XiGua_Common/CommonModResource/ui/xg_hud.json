@@ -669,6 +669,32 @@
         ],
         "controls": [
             {
+                "title_image": {
+                    "type": "panel",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "size": [
+                        "100%c+0px",
+                        "100%c+0px"
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "image": {
+                                "type": "image",
+                                "size": [
+                                    60.0,
+                                    20.0
+                                ],
+                                "layer": 2,
+                                "visible": false,
+                                "texture": ""
+                            }
+                        }
+                    ]
+                }
+            },
+            {
                 "title": {
                     "type": "label",
                     "anchor_from": "top_middle",

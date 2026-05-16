@@ -43,7 +43,7 @@
     },
     "UI": {
         "customPrefabGroupExpand": [
-
+            "xg_hud"
         ],
         "expandData": {
             "prefab": {
@@ -224,7 +224,15 @@
                 ],
                 "xg_hud.root_panel_watermelon": [
                     "/netease_prefab_screen",
-                    "/netease_prefab_screen/root_panel_watermelon"
+                    "/netease_prefab_screen/root_panel_watermelon",
+                    "/netease_prefab_screen/root_panel_watermelon/scoreboard",
+                    "/netease_prefab_screen/root_panel_watermelon/scoreboard/title_image"
+                ],
+                "xg_hud.scoreboard_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/scoreboard_panel",
+                    "/netease_prefab_screen/scoreboard_panel/title_image",
+                    "/netease_prefab_screen/scoreboard_panel/title"
                 ],
                 "xg_hud.top_bar": [
                     "/netease_prefab_screen",
@@ -291,6 +299,9 @@
                 "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_chat.json": [
                     "/root_screen",
                     "/root_screen/panel"
+                ],
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_hud.json": [
+
                 ],
                 "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": [
 

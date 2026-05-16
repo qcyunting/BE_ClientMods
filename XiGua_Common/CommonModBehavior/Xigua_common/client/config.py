@@ -10,3 +10,14 @@ system_dict = {
     "npc_dialog": base_clsPath + "npc_dialog.main.NpcDialog",
     "settings": base_clsPath + "xg_settings.settings.Settings",
 }
+
+
+scoreboard_title_image_dict = {
+    "超能激战": "cnjz",
+    "村庄守卫战": "cs",
+    "决斗游戏": "jdyx",
+    "饥饿游戏": "je",
+    "街机游戏": "jjyx",
+    "猎人游戏": "lryx",
+    "云庭庄园": "ytzy",
+}

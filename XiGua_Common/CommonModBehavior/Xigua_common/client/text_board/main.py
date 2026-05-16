@@ -7,6 +7,7 @@ class TextBoard(BaseSystem):
         super(TextBoard, self).__init__(namespace, systemName)
         self.textBoardComp = textBoardComp
         self.all_text_board = {}
+        self.image_board = {}
 
     @Listen(event_name="textBoard", event_type=Listen.server)
     def handleTextBoard(self, args):
@@ -34,6 +35,9 @@ class TextBoard(BaseSystem):
             self._delete_board(board_key)
 
     def _handle_create(self, board_key, args):
+        if args.get("image"):
+            self._handle_create_image(board_key, args)
+            return
         old_board = self.all_text_board.get(board_key)
         if old_board:
             self._remove_client_board(old_board.get("clientBoardId"))
@@ -41,6 +45,28 @@ class TextBoard(BaseSystem):
         board_data = self._create(args)
         if board_data:
             self.all_text_board[board_key] = board_data
+
+    def _handle_create_image(self, board_key, args):
+        image = args.get("image")
+        frameEntityId = self.image_board.pop(board_key, None)
+        if frameEntityId:
+            self.DestroyEntity(frameEntityId)
+
+        json_file = "effects/" + scoreboard_title_image_dict.get(image) + ".json"
+        frameEntityId = self.CreateEngineSfxFromEditor(json_file)
+        if frameEntityId:
+            frameAniTransComp = clientApi.GetEngineCompFactory().CreateFrameAniTrans(frameEntityId)
+            frameAniTransComp.SetPos(self._get_pos(args))
+            frameAniTransComp.SetRot(self._get_rot(args))
+            scale_x, scale_y = self._get_scale(args)
+            frameAniTransComp.SetScale((scale_x, scale_y, 0))
+            frameAniControlComp = clientApi.GetEngineCompFactory().CreateFrameAniControl(frameEntityId)
+            frameAniControlComp.SetFaceCamera(args.get("faceCamera", True))
+            frameAniControlComp.SetDeepTest(args.get("depthTest", True))
+            frameAniControlComp.Play()
+            self.image_board[board_key] = frameEntityId
+        else:
+            self._handle_create(board_key, args)
 
     def _create(self, args):
         """创建文字面板"""
@@ -136,6 +162,10 @@ class TextBoard(BaseSystem):
         board_data = self.all_text_board.pop(board_key, None)
         if board_data:
             self._remove_client_board(board_data.get("clientBoardId"))
+        else:
+            frameEntityId = self.image_board.pop(board_key, None)
+            if frameEntityId:
+                self.DestroyEntity(frameEntityId)
 
     def _remove_client_board(self, client_board_id):
         if client_board_id:
