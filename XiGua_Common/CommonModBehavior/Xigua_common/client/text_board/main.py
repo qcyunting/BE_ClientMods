@@ -111,6 +111,10 @@ class TextBoard(BaseSystem):
     def _update(self, board_data, args):
         """更新文字面板"""
         client_board_id = board_data.get("clientBoardId")
+        if args.get("image"):
+            board_key = args.get("boardId")
+            self._handle_create_image(board_key, args)
+            return
         if not client_board_id:
             return
 

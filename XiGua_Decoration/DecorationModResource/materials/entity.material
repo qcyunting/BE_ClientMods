@@ -75,13 +75,11 @@
     },
 
     "entity:entity_static": {
-      "+defines": [
-        "USE_OVERLAY",
-        "USE_UV_ANIM"
-      ],
+      "+defines": [ "USE_OVERLAY" ],
 
       "msaaSupport": "Both"
     },
+
 
     "opaque_block:entity_static": {
       "msaaSupport": "Both"
@@ -175,7 +173,9 @@
     },
 
     "entity_alphatest:entity_nocull": {
-      "+defines": [ "ALPHA_TEST" ],
+      "+defines": [
+        "ALPHA_TEST",
+        "USE_UV_ANIM"],
       "+samplerStates": [
         {
           "samplerIndex": 1,

@@ -19,42 +19,6 @@
         }
       },
       {
-        "perspective_dropdown@settings_common.segmented_control": {
-          "$option_label": "options.thirdperson",
-          "ignored": "($is_holographic and $is_reality_mode)",
-          "$dropdown_content": "general_section.third_person_dropdown_content",
-          "$dropdown_area": "content_area",
-          "$dropdown_name": "third_person_dropdown",
-          "$option_enabled_binding_name": "#third_person_dropdown_enabled",
-          "$options_dropdown_toggle_label_binding": "#third_person_dropdown_toggle_label",
-          "$dropdown_scroll_content_size": [ "100%", "200%" ],
-          "$option_size": [
-            "33.33%",
-            25
-          ],
-          "$radio_buttons": [
-            {
-              "firstperson@settings_common.segmented_control_option": {
-                "$toggle_state_binding_name": "#thirdperson_radio_first",
-                "$radio_label_text": "options.thirdperson.firstperson"
-              }
-            },
-            {
-              "thirdpersonback@settings_common.segmented_control_option": {
-                "$toggle_state_binding_name": "#thirdperson_radio_third_back",
-                "$radio_label_text": "options.thirdperson.thirdpersonback"
-              }
-            },
-            {
-              "thirdpersonfront@settings_common.segmented_control_option": {
-                "$toggle_state_binding_name": "#thirdperson_radio_third_front",
-                "$radio_label_text": "options.thirdperson.thirdpersonfront"
-              }
-            }
-          ]
-        }
-      },
-      {
         "fullscreen_toggle@settings_common.option_toggle": {
           "$show_fullscreen_toggle|default": true,
           "visible": "($show_fullscreen_toggle and not $is_holographic)",

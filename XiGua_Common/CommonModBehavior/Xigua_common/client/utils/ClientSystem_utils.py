@@ -16,6 +16,8 @@ textBoardComp = CF.CreateTextBoard(levelId)
 musicComp = CF.CreateCustomAudio(levelId)
 nameComp = CF.CreateName(playerId)
 itemComp = CF.CreateItem(playerId)
+cameraComp = CF.CreateCamera(levelId)
+
 playerComp = CF.CreatePlayer
 attrComp = CF.CreateAttr
 modelComp = CF.CreateModel

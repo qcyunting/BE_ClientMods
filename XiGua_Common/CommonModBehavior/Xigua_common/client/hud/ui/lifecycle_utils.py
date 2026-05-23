@@ -22,6 +22,8 @@ class LifecycleUtils:
         self.hud.child = self.hud.screen.CreateChildControl("xg_hud.root_panel_watermelon", "root_panel_watermelon", panel)
         self.hud.DanmakuPanel = self.hud.screen.GetBaseUIControl(BP + "/root_panel_watermelon/danmaku")
 
+        self.hud.perspective = CF.CreatePlayerView(playerId).GetPerspective()
+
     def on_destroy(self):
         if getattr(self.hud, "screen", None) is not None and getattr(self.hud, "child", None) is not None:
             self.hud.screen.RemoveChildControl(self.hud.child)

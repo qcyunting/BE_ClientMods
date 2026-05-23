@@ -83,7 +83,7 @@ class Main(BaseSystem):
 
         screen_list = {
             "hud.hud_screen": "{}.client.hud.ui.hud.Main".format(modName),
-            "pause.pause_screen": "{}.client.misc.ui.pause_ui.Main".format(modName),
+            "pause.pause_screen": "{}.client.pause.ui.pause.Main".format(modName),
             "settings.screen_world_controls_and_settings": "{}.client.xg_settings.ui.settings.Settings".format(modName),
         }
         for screenName, proxyClassName in screen_list.items():

@@ -101,13 +101,6 @@
                                 "$texture": "textures/ui/pause/set",
                                 "$texture_pressed": "textures/ui/pause/set_pressed"
                             }
-                        },
-                        {
-                            "list_button@pause.button_panel": {
-                                "$pressed_button_name": "%pause_ui_proxys.list_button",
-                                "$texture": "textures/ui/pause/list",
-                                "$texture_pressed": "textures/ui/pause/list_pressed"
-                            }
                         }
                     ]
                 }
@@ -385,7 +378,7 @@
         "$texture_pressed|default": "$texture",
         "$texture|default": "",
         "size": [
-            "33.33%+0.0px",
+            "50%+0.0px",
             "100.0%+0.0px"
         ],
         "controls": [
@@ -457,7 +450,7 @@
             "100.0%+10.0px"
         ]
     },
-    "namespace": "pause",
+    "namespace": "pause_",
     "player_list_scrolling_panel": {
         "size": [
             "100% - 10px",

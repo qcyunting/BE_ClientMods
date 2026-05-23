@@ -45,6 +45,37 @@
             "default"
         ]
     },
+    "goods_button_texture": {
+        "type": "image",
+        "texture": "textures/ui/focus_border_white",
+        "$texture|default": "",
+        "$bg_color|default": [0, 0, 0],
+        "color": "$bg_color",
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "size": ["100%-2px", "100%-2px"],
+                    "layer": 2,
+                    "texture": "$texture"
+                }
+            }
+        ]
+    },
+    "goods_button_texture_default@vd_shop.goods_button_texture": {
+        "$texture": "textures/ui/button_borderless_light"
+    },
+
+    "goods_button_texture_hover@vd_shop.goods_button_texture": {
+        "$texture": "textures/ui/button_borderless_lighthover",
+        "$bg_color": [1, 1, 1]
+    },
+
+    "goods_button_texture_pressed@vd_shop.goods_button_texture": {
+        "$texture": "textures/ui/button_borderless_lightpressednohover",
+        "$bg_color": [1, 1, 1]
+    },
+
     "goods_button": {
         "type": "panel",
         "size": [
@@ -57,8 +88,6 @@
                 "button@common.button": {
                     "type": "button",
                     "$control_alpha": 1.0,
-                    "$default_texture": "textures/ui/button_borderless_light",
-                    "$hover_texture": "textures/ui/button_borderless_lighthover",
                     "$is_new_nine_slice": false,
                     "$label_color": [
                         1,
@@ -83,7 +112,6 @@
                         0
                     ],
                     "$pressed_button_name": "%netease_editor_template_namespace.click",
-                    "$pressed_texture": "textures/ui/button_borderless_lightpressed",
                     "$texture_layer": 2,
                     "$to_button_id|default": "#goods_button_click",
                     "size": [
@@ -131,13 +159,13 @@
                             }
                         },
                         {
-                            "default@netease_editor_template_namespace.default": {}
+                            "default@vd_shop.goods_button_texture_default": {}
                         },
                         {
-                            "hover@netease_editor_template_namespace.hover": {}
+                            "hover@vd_shop.goods_button_texture_hover": {}
                         },
                         {
-                            "pressed@netease_editor_template_namespace.pressed": {}
+                            "pressed@vd_shop.goods_button_texture_pressed": {}
                         },
                         {
                             "button_label@netease_editor_template_namespace.button_label": {
@@ -168,6 +196,7 @@
                                     {
                                         "lock": {
                                             "type": "image",
+                                            "size": ["100%-2px", "100%-2px"],
                                             "color": [
                                                 0.6,
                                                 0.6,

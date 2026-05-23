@@ -2,21 +2,21 @@
   "modules": [
     {
       "type": "data",
-      "uuid": "e8f19262-78be-4559-a2b9-0d6dca65196e",
+      "uuid": "a7ce4628-dff6-4632-b130-1ca8f429b9da",
       "version": [
         0,
         0,
-        34
+        35
       ],
       "description": "By XiGua, neteast server common mod"
     }
   ],
   "header": {
-    "uuid": "ef13720b-de07-4cf9-94a0-8f22a133ee9e",
+    "uuid": "44172d74-f682-47cf-976a-12f42337b160",
     "version": [
       0,
       0,
-      34
+      35
     ],
     "min_engine_version": [
       1,
