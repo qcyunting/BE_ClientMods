@@ -37,8 +37,10 @@ class Main(BaseCustomScreenProxy):
         self.top_bar_control = None
 
         self.is_test_server = False
-        self.child = None
+        self.child = None  # type: ScreenNode
         self.DanmakuPanel = None
+
+        self.perspective = 0
 
         # 工具类实例
         self.danmaku_utils = DanmakuUtils(self)
@@ -89,6 +91,18 @@ class Main(BaseCustomScreenProxy):
     def setImageColor(self, args):
         self.top_bar_utils.set_image_color(args)
 
+    @ViewBinder.binding(ViewBinder.BF_BindBool, "#perspective_0_button")
+    def on_perspective_0_button(self):
+        return self.perspective == 2
+
+    @ViewBinder.binding(ViewBinder.BF_BindBool, "#perspective_1_button")
+    def on_perspective_1_button(self):
+        return self.perspective == 0
+
+    @ViewBinder.binding(ViewBinder.BF_BindBool, "#perspective_2_button")
+    def on_perspective_2_button(self):
+        return self.perspective == 1
+
     @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#hud_button_click")
     def OnButtonClick(self, args):
         parts = args["ButtonPath"].split("/")
@@ -96,7 +110,17 @@ class Main(BaseCustomScreenProxy):
         if result == "pause_button":
             clientApi.OpenPauseGui()
         elif result == "chat_button":
-            clientApi.PushScreen(modName, "xg_chat")
+            clientApi.OpenChatGui()
+            #clientApi.PushScreen(modName, "xg_chat")
+        elif result == "perspective_0_button":
+            CF.CreatePlayerView(playerId).SetPerspective(0)
+            self.perspective = 0
+        elif result == "perspective_1_button":
+            CF.CreatePlayerView(playerId).SetPerspective(1)
+            self.perspective = 1
+        elif result == "perspective_2_button":
+            CF.CreatePlayerView(playerId).SetPerspective(2)
+            self.perspective = 2
 
     # ==================== 指标 (Metrics) ====================
     @Listen("LeftClickBeforeClientEvent")

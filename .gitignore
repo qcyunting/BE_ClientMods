@@ -12,3 +12,8 @@ empty-directory/
 *.zip
 
 .review_output/
+
+# py2mcp: ignore generated examples but keep shared baseline files
+.py2mcp/ExampleBehavior/*
+!.py2mcp/ExampleBehavior/entities/
+!.py2mcp/ExampleBehavior/manifest.json

@@ -25,11 +25,12 @@ class MusicModule(BaseState):
         self.MusicNow=None
         
         # 音乐计时器
-        self.MusicTipsTimes = 20
+        self.MusicTipsTimes = 5
         self.LobbyMusicTips_Timer = None
     def on_enable(self):
         print "enable Music"
 
+        self.MusicTipsTimes = 5
         # 播放音乐
         self.LobbyMusic_Play()
     
@@ -69,7 +70,7 @@ class MusicModule(BaseState):
 
     def LobbyMusicTips(self,music):
         self.MusicTipsTimes -=1
-        if self.MusicTipsTimes:
+        if self.MusicTipsTimes >= 0:
             comp = clientApi.GetEngineCompFactory().CreateGame(PlayerId)
             comp.SetTipMessage("§e正在播放：§q音乐-{}".format(music))
         else:

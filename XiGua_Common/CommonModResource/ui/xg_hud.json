@@ -235,7 +235,8 @@
         "type": "label",
         "anchor_from": "bottom_right",
         "anchor_to": "bottom_right",
-        "font_type": "default",
+        "alpha": 0.4,
+        "font_type": "smooth",
         "text": "#game_info.text",
         "text_alignment": "right",
         "bindings": [
@@ -277,7 +278,7 @@
     },
     "hud_button": {
         "type": "panel",
-        "$texture|default": "",
+        "$texture": "textures/gui/gui3",
         "size": [
             22.0,
             22.0
@@ -337,25 +338,37 @@
                     "pressed_control": "pressed",
                     "bindings": [
                         {
-                            "binding_type": "collection_details",
-                            "binding_collection_name": "hud_buttons",
-                            "binding_condition": "visible",
-                            "binding_name": "#button_index"
-                        },
-                        {
                             "binding_name_override": "#visible",
                             "binding_name": "#hotbar_elipses_right_visible"
                         }
                     ],
                     "controls": [
                         {
-                            "default@netease_editor_template_namespace.default": {}
+                            "default@netease_editor_template_namespace.default": {
+                                "uv": "$uv",
+                                "uv_size": [
+                                    80,
+                                    80
+                                ]
+                            }
                         },
                         {
-                            "hover@netease_editor_template_namespace.hover": {}
+                            "hover@netease_editor_template_namespace.hover": {
+                                "uv": "$uv",
+                                "uv_size": [
+                                    80,
+                                    80
+                                ]
+                            }
                         },
                         {
-                            "pressed@netease_editor_template_namespace.pressed": {}
+                            "pressed@netease_editor_template_namespace.pressed": {
+                                "uv": "$uv",
+                                "uv_size": [
+                                    80,
+                                    80
+                                ]
+                            }
                         }
                     ]
                 }
@@ -366,16 +379,68 @@
         "type": "stack_panel",
         "anchor_from": "top_right",
         "anchor_to": "top_right",
+        "layer": 2,
         "orientation": "horizontal",
         "controls": [
             {
+                "perspective_0_button@xg_hud.hud_button": {
+                    "$uv": [
+                        198,
+                        304
+                    ],
+                    "bindings": [
+                        {
+                            "binding_condition": "always",
+                            "binding_name": "#perspective_0_button",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "perspective_1_button@xg_hud.hud_button": {
+                    "$uv": [
+                        108,
+                        304
+                    ],
+                    "bindings": [
+                        {
+                            "binding_condition": "always",
+                            "binding_name": "#perspective_1_button",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "perspective_2_button@xg_hud.hud_button": {
+                    "$uv": [
+                        18,
+                        304
+                    ],
+                    "bindings": [
+                        {
+                            "binding_condition": "always",
+                            "binding_name": "#perspective_2_button",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
                 "pause_button@xg_hud.hud_button": {
-                    "$texture": "textures/ui/gui/pause"
+                    "$uv": [
+                        18,
+                        402
+                    ]
                 }
             },
             {
                 "chat_button@xg_hud.hud_button": {
-                    "$texture": "textures/ui/gui/chat"
+                    "$uv": [
+                        108,
+                        402
+                    ]
                 }
             },
             {
@@ -668,6 +733,32 @@
             }
         ],
         "controls": [
+            {
+                "title_image": {
+                    "type": "panel",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "size": [
+                        "100%c+0px",
+                        "100%c+0px"
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "image": {
+                                "type": "image",
+                                "size": [
+                                    60.0,
+                                    20.0
+                                ],
+                                "layer": 2,
+                                "visible": false,
+                                "texture": ""
+                            }
+                        }
+                    ]
+                }
+            },
             {
                 "title": {
                     "type": "label",

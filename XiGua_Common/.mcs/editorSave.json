@@ -37,13 +37,11 @@
             "amplifier": 1,
             "duration": 10
         },
-        "PresetInstanceTreeData": [
-
-        ]
+        "PresetInstanceTreeData": []
     },
     "UI": {
         "customPrefabGroupExpand": [
-
+            "xg_hud"
         ],
         "expandData": {
             "prefab": {
@@ -209,11 +207,23 @@
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/toggle"
                 ],
+                "xg_hud.client_info": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_hud.game_info": [
+                    "/netease_prefab_screen"
+                ],
                 "xg_hud.game_info_bar": [
                     "/netease_prefab_screen"
                 ],
                 "xg_hud.heart_renderer": [
                     "/netease_prefab_screen"
+                ],
+                "xg_hud.hud_button_list": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/hud_button_list",
+                    "/netease_prefab_screen/hud_button_list/perspective_0_button",
+                    "/netease_prefab_screen/hud_button_list/perspective_0_button/button"
                 ],
                 "xg_hud.hunger_renderer": [
                     "/netease_prefab_screen",
@@ -224,7 +234,15 @@
                 ],
                 "xg_hud.root_panel_watermelon": [
                     "/netease_prefab_screen",
-                    "/netease_prefab_screen/root_panel_watermelon"
+                    "/netease_prefab_screen/root_panel_watermelon",
+                    "/netease_prefab_screen/root_panel_watermelon/scoreboard",
+                    "/netease_prefab_screen/root_panel_watermelon/scoreboard/title_image"
+                ],
+                "xg_hud.scoreboard_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/scoreboard_panel",
+                    "/netease_prefab_screen/scoreboard_panel/title_image",
+                    "/netease_prefab_screen/scoreboard_panel/title"
                 ],
                 "xg_hud.top_bar": [
                     "/netease_prefab_screen",
@@ -246,12 +264,8 @@
                 ]
             },
             "screen": {
-                "D:\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xg_hud.json": [
-
-                ],
-                "D:\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xigua_server_form.json": [
-
-                ],
+                "D:\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xg_hud.json": [],
+                "D:\\client_mod\\XiGua_Common\\CommoModResource\\ui\\xigua_server_form.json": [],
                 "F:\\Documents\\client_mod\\XiGua_Common\\CommoModResource\\ui\\Xigua_settings.json": [
                     "/main",
                     "/main/variables_button_mappings_and_controls/safezone_screen_matrix/inner_matrix"
@@ -282,9 +296,7 @@
                     "/dressing_room_main_screen/input_panel/image",
                     "/dressing_room_main_screen/input_panel/image/image"
                 ],
-                "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_cast_character_screen.json": [
-
-                ],
+                "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_cast_character_screen.json": [],
                 "F:\\Documents\\client_mod\\XiGua_Common\\CommonModResource\\ui\\persona_common.json": [
                     "/netease_prefab_screen"
                 ],
@@ -292,9 +304,8 @@
                     "/root_screen",
                     "/root_screen/panel"
                 ],
-                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": [
-
-                ]
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_hud.json": [],
+                "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_settings.json": []
             }
         }
     }

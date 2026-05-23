@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "netease:projectile": ""
+        },
+        "description": {
+            "category": "equipment",
+            "custom_item_type": "projectile_item",
+            "identifier": "hunger:blood_demon_bottle"
+        }
+    }
+}

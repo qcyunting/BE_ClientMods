@@ -43,7 +43,17 @@ class ScoreboardUtils:
         return bool(self.hud.scoreboard_text_dict.get("order"))
 
     def get_title(self):
-        return self.hud.scoreboard_text_dict.get("title", "")
+        text = self.hud.scoreboard_text_dict.get("title", "")
+        if self.hud.child:
+            c = self.hud.child.GetChildByPath("/scoreboard/title_image/image")
+            image = scoreboard_title_image_dict.get(text, "")
+            if image:
+                c.SetVisible(True)
+                c.asImage().SetSprite("textures/sfxs/" + image)
+                return ""
+            c.SetVisible(False)
+            return text
+        return text
 
     def get_item_count(self):
         return len(self.hud.scoreboard_text_dict.get("order", ()))

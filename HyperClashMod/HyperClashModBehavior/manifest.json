@@ -1,30 +1,30 @@
 {
-  "format_version": 1,
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "3c4f6af9-111d-4215-9701-1b8f6560bb61",
+      "version": [
+        0,
+        0,
+        32
+      ],
+      "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。"
+    }
+  ],
   "header": {
+    "uuid": "06300453-1d15-4a13-af02-b60b70c954e9",
+    "version": [
+      0,
+      0,
+      32
+    ],
     "name": "HyperClash Behavior",
-    "description": "Copyright (C) 2026 \u521D\u4E91. All rights reserved. \u7981\u6B62\u53CD\u7F16\u8BD1\u3001\u89E3\u5305\u6216\u672A\u6388\u6743\u4F7F\u7528\u3002\u5F88\u60CA\u8BB6\u4F60\u5C45\u7136\u62FF\u5230\u4E86\u5B83\uFF0C\u5B83\u867D\u4E0D\u590D\u6742\uFF0C\u4F46\u82B1\u8D39\u4E86\u6211\u4EEC\u4E0D\u5C11\u65F6\u95F4\u3002",
+    "description": "Copyright (C) 2026 初云. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
     "min_engine_version": [
       1,
       18,
       0
-    ],
-    "uuid": "24d40b4d-3573-48a8-b8fa-48b9f2cde796",
-    "version": [
-      0,
-      0,
-      27
     ]
   },
-  "modules": [
-    {
-      "type": "data",
-      "description": "Copyright (C) 2026 \u521D\u4E91. All rights reserved. \u7981\u6B62\u53CD\u7F16\u8BD1\u3001\u89E3\u5305\u6216\u672A\u6388\u6743\u4F7F\u7528\u3002\u5F88\u60CA\u8BB6\u4F60\u5C45\u7136\u62FF\u5230\u4E86\u5B83\uFF0C\u5B83\u867D\u4E0D\u590D\u6742\uFF0C\u4F46\u82B1\u8D39\u4E86\u6211\u4EEC\u4E0D\u5C11\u65F6\u95F4\u3002",
-      "uuid": "9aba96f0-389f-49e8-bdfc-01eb4d80e9a5",
-      "version": [
-        0,
-        0,
-        27
-      ]
-    }
-  ]
+  "format_version": 1
 }

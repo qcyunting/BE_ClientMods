@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "58575730-ba5e-49b8-ace0-6c1fc67a979d",
+      "version": [
+        0,
+        0,
+        36
+      ],
+      "description": "Copyright (C) 2026 西瓜. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。"
+    }
+  ],
+  "header": {
+    "uuid": "0a24a0a6-60bd-42a0-942c-5f86116333d5",
+    "version": [
+      0,
+      0,
+      36
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      50
+    ],
+    "description": "Copyright (C) 2026 西瓜. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。",
+    "name": "CommonMod"
+  },
+  "format_version": 2
+}

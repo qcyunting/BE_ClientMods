@@ -1,0 +1,219 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.player.dragon_wings_phantom": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_phantom"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_sky": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_sky"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_autumn": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_autumn"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_purple": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_purple"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_green": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_green"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_sunset": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_sunset"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_grap": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_grap"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_gold": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_gold"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_puperice": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_puperice"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_bloody": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_bloody"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_red": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_red"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_turtle": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_turtle"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_sea": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_sea"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_cottoncandy": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_cottoncandy"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_light_blue": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_light_blue"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_chainsketch": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_chainsketch"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_lemon": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_lemon"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_greyscale": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_greyscale"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.dragon_wings_default": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.dragon_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.dragon_wings_default"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.asura_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.asura_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.asura_wings"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.paladin_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.paladin_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.paladin_wings"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.volt_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.volt_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.volt_wings"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.phoenix_wings": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.phoenix_wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.phoenix_wings"],
+            "uv_anim": {
+                "offset": [0, "math.mod(math.floor(query.anim_time * 5), 5) / 5"],
+                "scale": [1, "1 / 5"]
+            },
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings1": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings1"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings2": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings2"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings3": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_max",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings3"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings4": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings4"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings5": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings5"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings6": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings6"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        },
+        "controller.render.player.wings7": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings",
+            "materials": [{"*": "Material.default"}],
+            "textures": ["Texture.wings7"],
+            "is_hurt_color": {"r": 0.0, "g": 0.0, "b": 0.0, "a": 0.0}
+        }
+    }
+}

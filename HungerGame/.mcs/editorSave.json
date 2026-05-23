@@ -1,0 +1,44 @@
+{
+    "Addon": {
+        "EnchantSetting": {
+            "amplifier": 1
+        },
+        "PackResourceSortData": {
+            "2_hunger:blood_demon_bottle": {
+                "createTime": 1778907669.675219,
+                "modifyTime": 1778907762.509048
+            },
+            "2_hunger:blood_demon_heart": {
+                "createTime": 1778907787.0782723,
+                "modifyTime": 1778909863.1775746
+            },
+            "2_hunger:bloodthirsty_demon_axe": {
+                "createTime": 1778907955.7514324,
+                "modifyTime": 1778907982.500845
+            },
+            "2_hunger:divine_golden_sword": {
+                "createTime": 1778908006.8782694,
+                "modifyTime": 1778908021.4846387
+            },
+            "2_hunger:divine_punishment": {
+                "createTime": 1778908146.6523838,
+                "modifyTime": 1778909204.6480513
+            },
+            "2_hunger:doomsday_divine_sword": {
+                "createTime": 1778908064.3519804,
+                "modifyTime": 1778908087.8314486
+            },
+            "2_hunger:sword_of_hope": {
+                "createTime": 1778908110.000583,
+                "modifyTime": 1778908126.4949095
+            }
+        },
+        "PlayerEffectSetting": {
+            "amplifier": 1,
+            "duration": 10
+        },
+        "PresetInstanceTreeData": [
+
+        ]
+    }
+}

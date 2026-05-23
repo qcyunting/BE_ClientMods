@@ -1,0 +1,34 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "divine_punishment": {
+            "textures": [
+                "textures/items/divine_punishment_0",
+                "textures/items/divine_punishment_1",
+                "textures/items/divine_punishment_2"
+            ]
+        },
+        "hunger:blood_demon_bottle": {
+            "textures": "textures/items/blood_demon_bottle"
+        },
+        "hunger:blood_demon_heart": {
+            "textures": "textures/items/blood_demon_heart"
+        },
+        "hunger:bloodthirsty_demon_axe": {
+            "textures": "textures/items/bloodthirsty_demon_axe"
+        },
+        "hunger:divine_golden_sword": {
+            "textures": "textures/items/divine_golden_sword"
+        },
+        "hunger:divine_punishment": {
+            "textures": "textures/items/divine_punishment"
+        },
+        "hunger:doomsday_divine_sword": {
+            "textures": "textures/items/doomsday_divine_sword"
+        },
+        "hunger:sword_of_hope": {
+            "textures": "textures/items/sword_of_hope"
+        }
+    },
+    "texture_name": "atlas.items"
+}

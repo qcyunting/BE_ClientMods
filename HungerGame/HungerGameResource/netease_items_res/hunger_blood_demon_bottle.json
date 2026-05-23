@@ -1,0 +1,11 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "hunger:blood_demon_bottle"
+        },
+        "description": {
+            "identifier": "hunger:blood_demon_bottle"
+        }
+    }
+}

@@ -1,15 +1,15 @@
 {
   "Source": "import",
   "CreateVersion": "3.7.0.211586",
-  "EditVersion": "3.8.0.283091",
+  "EditVersion": "3.8.0.300259",
   "OldEditCount": 0,
-  "NewEditCount": 30,
+  "NewEditCount": 32,
   "OldComponents": [],
   "Account": "zbobo2024@163.com",
   "UserName": "西瓜云",
   "UserId": "140494",
   "Id": "b52323a750f24640875b08c41737fa24",
-  "EditType": 3,
+  "EditType": 4,
   "IsMap": false,
   "CreateNew": true,
   "CodeEnable": false,
@@ -35,7 +35,7 @@
   "EditMaterialPaths": [],
   "EditLogFilePath": "C:\\MCStudioDownload\\work\\editor\\edit.log",
   "ServerName": "EXPR",
-  "StudioPort": 10418,
+  "StudioPort": 12103,
   "DCWebUrl": "https://x19apigatewayexpr.nie.netease.com",
   "ShowGuide": false,
   "AssertCacheDir": "C:\\MCStudioDownload\\EngineAssert",
@@ -44,6 +44,6 @@
   "StudioTempPath": "C:\\MCStudioDownload\\temp\\editorTemp",
   "EditorResourcePackPath": "C:\\Program Files (x86)\\Netease\\MCStudio\\data\\inner_res",
   "EditDate": 1770992885,
-  "EditDuration": 155111,
-  "TestDuration": 158761
+  "EditDuration": 167183,
+  "TestDuration": 168530
 }

@@ -8,7 +8,7 @@ class GaussianBlurController(object):
         self.timer = None
 
     def on_push_screen_event(self, args):
-        if args.get("screenName") in ["toast_screen", "in_game_play_screen", "hud_screen"]:
+        if args.get("screenName") in ["toast_screen", "in_game_play_screen", "hud_screen", "pause_screen"]:
             return
         self._cancel_timer()
         CF.CreatePostProcess(levelId).SetEnableGaussianBlur(True)
