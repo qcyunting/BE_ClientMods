@@ -1,0 +1,134 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.devil_wings",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "devil_wings",
+					"parent": "body",
+					"pivot": [0, 22, 0]
+				},
+				{
+					"name": "devil_wings_group",
+					"parent": "devil_wings",
+					"pivot": [0.03464, 20.4321, 3],
+					"cubes": [
+						{
+							"origin": [7.04163, 27.54416, 2],
+							"size": [16, 2, 2],
+							"pivot": [-1, 53, 2],
+							"rotation": [0, 0, 45],
+							"uv": {
+								"north": {"uv": [2, 30], "uv_size": [16, 2]},
+								"east": {"uv": [0, 30], "uv_size": [2, 2]},
+								"south": {"uv": [20, 30], "uv_size": [16, 2]},
+								"west": {"uv": [18, 30], "uv_size": [2, 2]},
+								"up": {"uv": [2, 28], "uv_size": [16, 2]},
+								"down": {"uv": [18, 30], "uv_size": [16, -2]}
+							}
+						},
+						{
+							"origin": [7.04163, 4.80761, 2],
+							"size": [2, 23, 2],
+							"pivot": [-1, 53, 2],
+							"rotation": [0, 0, 45],
+							"uv": {
+								"north": {"uv": [2, 34], "uv_size": [2, 23]},
+								"east": {"uv": [0, 34], "uv_size": [2, 23]},
+								"south": {"uv": [6, 34], "uv_size": [2, 23]},
+								"west": {"uv": [4, 34], "uv_size": [2, 23]},
+								"up": {"uv": [2, 32], "uv_size": [2, 2]},
+								"down": {"uv": [4, 34], "uv_size": [2, -2]}
+							}
+						},
+						{
+							"origin": [-5.75736, 11.52817, 3],
+							"size": [21, 28, 0],
+							"pivot": [-16, 44, 2],
+							"rotation": [0, 0, 45],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [21, 28]},
+								"east": {"uv": [0, 0], "uv_size": [0, 28]},
+								"south": {"uv": [21, 0], "uv_size": [21, 28]},
+								"west": {"uv": [21, 0], "uv_size": [0, 28]},
+								"up": {"uv": [0, 0], "uv_size": [21, 0]},
+								"down": {"uv": [21, 0], "uv_size": [21, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "devil_wings_group2",
+					"parent": "devil_wings",
+					"pivot": [-0.0277, 20.34775, 3],
+					"cubes": [
+						{
+							"origin": [-23.62742, 26.12994, 2],
+							"size": [16, 2, 2],
+							"pivot": [-1, 53, 2],
+							"rotation": [0, 0, -45],
+							"uv": {
+								"north": {"uv": [18, 30], "uv_size": [-16, 2]},
+								"east": {"uv": [20, 30], "uv_size": [-2, 2]},
+								"south": {"uv": [36, 30], "uv_size": [-16, 2]},
+								"west": {"uv": [2, 30], "uv_size": [-2, 2]},
+								"up": {"uv": [18, 28], "uv_size": [-16, 2]},
+								"down": {"uv": [34, 30], "uv_size": [-16, -2]}
+							}
+						},
+						{
+							"origin": [-9.62742, 3.17157, 2],
+							"size": [2, 23, 2],
+							"pivot": [-1, 53, 2],
+							"rotation": [0, 0, -45],
+							"uv": {
+								"north": {"uv": [4, 34], "uv_size": [-2, 23]},
+								"east": {"uv": [6, 34], "uv_size": [-2, 23]},
+								"south": {"uv": [8, 34], "uv_size": [-2, 23]},
+								"west": {"uv": [2, 34], "uv_size": [-2, 23]},
+								"up": {"uv": [4, 32], "uv_size": [-2, 2]},
+								"down": {"uv": [6, 34], "uv_size": [-2, -2]}
+							}
+						},
+						{
+							"origin": [-12.87132, 9.67767, 3],
+							"size": [21, 28, 0],
+							"pivot": [15, 40, 2],
+							"rotation": [0, 0, -45],
+							"uv": {
+								"north": {"uv": [21, 0], "uv_size": [-21, 28]},
+								"east": {"uv": [21, 0], "uv_size": [0, 28]},
+								"south": {"uv": [42, 0], "uv_size": [-21, 28]},
+								"west": {"uv": [0, 0], "uv_size": [0, 28]},
+								"up": {"uv": [21, 0], "uv_size": [-21, 0]},
+								"down": {"uv": [42, 0], "uv_size": [-21, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

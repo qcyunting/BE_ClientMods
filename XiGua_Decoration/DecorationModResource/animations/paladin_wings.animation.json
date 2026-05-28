@@ -21,7 +21,7 @@
 						}
 					}
 				},
-				"left_wing": {
+				"paladin_wings_left_wing": {
 					"rotation": {
 						"0.0": {
 							"post": [0, 40, 0],
@@ -37,7 +37,7 @@
 						}
 					}
 				},
-				"right_wing": {
+				"paladin_wings_right_wing": {
 					"rotation": {
 						"0.0": {
 							"post": [0, -40, 0],
@@ -53,7 +53,7 @@
 						}
 					}
 				},
-				"left_wing_end": {
+				"paladin_wings_left_wing_end": {
 					"rotation": {
 						"0.0": {
 							"post": [0, 40, 0],
@@ -69,7 +69,7 @@
 						}
 					}
 				},
-				"right_wing_end": {
+				"paladin_wings_right_wing_end": {
 					"rotation": {
 						"0.0": {
 							"post": [0, -40, 0],

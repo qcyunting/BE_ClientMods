@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.wings1.idle": {
+			"loop": true,
+			"animation_length": 1.25,
+			"bones": {
+				"wings1_group2": {
+					"rotation": {
+						"0.0": [0, -20, 0],
+						"0.625": [0, 30, 0],
+						"1.25": [0, -20, 0]
+					}
+				},
+				"wings1_group": {
+					"rotation": {
+						"0.0": [0, 20, 0],
+						"0.625": [0, -30, 0],
+						"1.25": [0, 20, 0]
+					}
+				}
+			}
+		}
+	}
+}

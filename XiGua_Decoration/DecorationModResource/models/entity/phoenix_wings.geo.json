@@ -4,41 +4,47 @@
 		{
 			"description": {
 				"identifier": "geometry.phoenix_wings",
-				"texture_width": 16,
-				"texture_height": 16,
-				"visible_bounds_width": 7,
-				"visible_bounds_height": 6,
-				"visible_bounds_offset": [0, 1, 0]
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
 			},
 			"bones": [
 				{
-					"name": "h_bone",
-					"pivot": [0, 16, 0],
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "phoenix_wings",
+					"parent": "body",
+					"pivot": [0, -5, 0]
+				},
+				{
+					"name": "phoenix_wings_group",
+					"parent": "phoenix_wings",
+					"pivot": [0, 12, 2],
 					"cubes": [
 						{
-							"origin": [-17, -17.5, 11],
-							"size": [67, 67, 0],
-							"pivot": [17, 6, 11],
+							"origin": [0, 12, 2],
+							"size": [16, 18, 0],
+							"pivot": [0, 12, 2],
 							"rotation": [0, -22.5, 0],
 							"uv": {
-								"north": {"uv": [16, 0], "uv_size": [-16, 16]},
-								"east": {"uv": [0, 0], "uv_size": [0, 16]},
-								"south": {"uv": [0, 0], "uv_size": [16, 16]},
-								"west": {"uv": [0, 0], "uv_size": [0, 16]},
-								"up": {"uv": [16, 0], "uv_size": [-16, 0]},
-								"down": {"uv": [16, 0], "uv_size": [-16, 0]}
-							}
-						},
-						{
-							"origin": [-50, -17.5, 11],
-							"size": [67, 67, 0],
-							"pivot": [-17, 6, 11],
-							"rotation": [0, 22.5, 0],
-							"uv": {
-								"north": {"uv": [0, 0], "uv_size": [16, 16]},
-								"east": {"uv": [0, 0], "uv_size": [0, 16]},
-								"south": {"uv": [16, 0], "uv_size": [-16, 16]},
-								"west": {"uv": [0, 0], "uv_size": [0, 16]},
+								"north": {"uv": [0, 0], "uv_size": [16, 18]},
+								"east": {"uv": [0, 0], "uv_size": [0, 18]},
+								"south": {"uv": [16, 0], "uv_size": [16, 18]},
+								"west": {"uv": [0, 0], "uv_size": [0, 18]},
 								"up": {"uv": [0, 0], "uv_size": [16, 0]},
 								"down": {"uv": [0, 0], "uv_size": [16, 0]}
 							}
@@ -46,13 +52,23 @@
 					]
 				},
 				{
-					"name": "hitbox",
-					"pivot": [0, 16, 0],
+					"name": "phoenix_wings_group2",
+					"parent": "phoenix_wings",
+					"pivot": [0, 12, 2],
 					"cubes": [
 						{
-							"origin": [-0.5, 15.5, -0.5],
-							"size": [1, 1, 1],
-							"uv": {}
+							"origin": [-16, 12, 2],
+							"size": [16, 18, 0],
+							"pivot": [0, 12, 2],
+							"rotation": [0, 22.5, 0],
+							"uv": {
+								"north": {"uv": [0, 18], "uv_size": [16, 18]},
+								"east": {"uv": [0, 0], "uv_size": [0, 18]},
+								"south": {"uv": [16, 18], "uv_size": [16, 18]},
+								"west": {"uv": [0, 0], "uv_size": [0, 18]},
+								"up": {"uv": [0, 0], "uv_size": [16, 0]},
+								"down": {"uv": [0, 0], "uv_size": [16, 0]}
+							}
 						}
 					]
 				}

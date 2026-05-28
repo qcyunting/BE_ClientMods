@@ -1,0 +1,70 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.wings5",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "wings5",
+					"parent": "body",
+					"pivot": [0, 22, 6]
+				},
+				{
+					"name": "wings5_group2",
+					"parent": "wings5",
+					"pivot": [0, 12.65, 2.63044],
+					"cubes": [
+						{
+							"origin": [-1.60679, 5.65, 6.90988],
+							"size": [21.43788, 24, 0.03],
+							"pivot": [9.61215, 16.65, 6.90988],
+							"rotation": [0, -22.5, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [21.43752, 24]},
+								"south": {"uv": [22, 0], "uv_size": [21.43752, 24]}
+							}
+						}
+					]
+				},
+				{
+					"name": "wings5_group",
+					"parent": "wings5",
+					"pivot": [-0.75854, 12.65, 2.63044],
+					"cubes": [
+						{
+							"origin": [-19.83109, 5.65, 6.90988],
+							"size": [21.43788, 24, 0.03],
+							"pivot": [-9.61215, 16.65, 6.90988],
+							"rotation": [0, 22.5, 0],
+							"uv": {
+								"north": {"uv": [21.43752, 0], "uv_size": [-21.43752, 24]},
+								"south": {"uv": [43.43752, 0], "uv_size": [-21.43752, 24]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

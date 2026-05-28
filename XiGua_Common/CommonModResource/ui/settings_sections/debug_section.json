@@ -13,6 +13,14 @@
         }
       },
       {
+        "option_toggle_dev_console_button_0@settings_common.option_toggle": {
+          "$option_label": "options.dev_showDevConsoleButton",
+          "$option_binding_name": "#dev_show_dev_console_button",
+          "$option_enabled_binding_name": "#dev_show_dev_console_button_enabled",
+          "$toggle_name": "dev_show_dev_console_button"
+        }
+      },
+      {
         "option_toggle_assertions_show_dialog@settings_common.option_toggle": {
           "$option_label": "options.dev_assertions_show_dialog",
           "$option_binding_name": "#dev_assertions_show_dialog",

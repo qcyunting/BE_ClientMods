@@ -1,0 +1,78 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.purple_wings",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "purple_wings",
+					"parent": "body",
+					"pivot": [0, 10, 0]
+				},
+				{
+					"name": "purple_wings_group",
+					"parent": "purple_wings",
+					"pivot": [0, 12, 3],
+					"cubes": [
+						{
+							"origin": [0, 12, 3],
+							"size": [16, 18, 0],
+							"pivot": [0, 12, 3],
+							"rotation": [0, -22.5, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [16, 18]},
+								"east": {"uv": [0, 0], "uv_size": [0, 18]},
+								"south": {"uv": [16, 0], "uv_size": [16, 18]},
+								"west": {"uv": [0, 0], "uv_size": [0, 18]},
+								"up": {"uv": [0, 0], "uv_size": [16, 0]},
+								"down": {"uv": [0, 0], "uv_size": [16, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "purple_wings_group2",
+					"parent": "purple_wings",
+					"pivot": [0, 12, 3],
+					"cubes": [
+						{
+							"origin": [-16, 12, 3],
+							"size": [16, 18, 0],
+							"pivot": [0, 12, 3],
+							"rotation": [0, 22.5, 0],
+							"uv": {
+								"north": {"uv": [0, 18], "uv_size": [16, 18]},
+								"east": {"uv": [0, 0], "uv_size": [0, 18]},
+								"south": {"uv": [16, 18], "uv_size": [16, 18]},
+								"west": {"uv": [0, 0], "uv_size": [0, 18]},
+								"up": {"uv": [0, 0], "uv_size": [16, 0]},
+								"down": {"uv": [0, 0], "uv_size": [16, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

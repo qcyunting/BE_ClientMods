@@ -1,0 +1,78 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.random_cosmetic_v1_behind_demon_wing",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "behind_demon_wing",
+					"parent": "body",
+					"pivot": [0, 13, 3]
+				},
+				{
+					"name": "behind_demon_wing_bone",
+					"parent": "behind_demon_wing",
+					"pivot": [0, 13, 3],
+					"cubes": [
+						{
+							"origin": [-0.2, 13, 2.6],
+							"size": [16.2, 14.4, 0],
+							"pivot": [-0.2, 20.2, 2.6],
+							"rotation": [0, -22.5, 0],
+							"uv": {
+								"north": {"uv": [27, 24], "uv_size": [-27, 24]},
+								"east": {"uv": [0, 0], "uv_size": [0, 24]},
+								"south": {"uv": [0, 24], "uv_size": [27, 24]},
+								"west": {"uv": [0, 0], "uv_size": [0, 24]},
+								"up": {"uv": [0, 0], "uv_size": [27, 0]},
+								"down": {"uv": [0, 0], "uv_size": [27, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "behind_demon_wing_bone2",
+					"parent": "behind_demon_wing",
+					"pivot": [0, 13, 3],
+					"cubes": [
+						{
+							"origin": [-0.2, 13, 2.6],
+							"size": [16.2, 14.4, 0],
+							"pivot": [-0.2, 20.2, 2.6],
+							"rotation": [0, -157.5, 0],
+							"uv": {
+								"north": {"uv": [27, 24], "uv_size": [-27, 24]},
+								"east": {"uv": [0, 0], "uv_size": [0, 24]},
+								"south": {"uv": [0, 24], "uv_size": [27, 24]},
+								"west": {"uv": [0, 0], "uv_size": [0, 24]},
+								"up": {"uv": [0, 0], "uv_size": [27, 0]},
+								"down": {"uv": [0, 0], "uv_size": [27, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
