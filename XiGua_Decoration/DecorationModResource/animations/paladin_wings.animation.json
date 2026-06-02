@@ -24,15 +24,25 @@
 				"paladin_wings_left_wing": {
 					"rotation": {
 						"0.0": {
-							"post": [0, 40, 0],
+							"post": [0, 30, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
-							"post": [0, -27.5, 0],
+							"post": [0, -12.5, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"2.0": {
-							"post": [0, 40, 0],
+							"post": [0, 30, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
 					}
@@ -40,15 +50,25 @@
 				"paladin_wings_right_wing": {
 					"rotation": {
 						"0.0": {
-							"post": [0, -40, 0],
+							"post": [0, -30, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
-							"post": [0, 27.5, 0],
+							"post": [0, 12.5, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"2.0": {
-							"post": [0, -40, 0],
+							"post": [0, -30, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
 					}
@@ -56,15 +76,29 @@
 				"paladin_wings_left_wing_end": {
 					"rotation": {
 						"0.0": {
-							"post": [0, 40, 0],
+							"post": [0, 60, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
-							"post": [0, -25, 0],
+							"post": [0, -20, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"2.0": {
-							"post": [0, 40, 0],
+							"post": [0, 60, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [1, 0, -6],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [-2, 0, 2],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [1, 0, -6],
 							"lerp_mode": "catmullrom"
 						}
 					}
@@ -72,15 +106,29 @@
 				"paladin_wings_right_wing_end": {
 					"rotation": {
 						"0.0": {
-							"post": [0, -40, 0],
+							"post": [0, -60, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"1.0": {
-							"post": [0, 25, 0],
+							"post": [0, 20, 0],
 							"lerp_mode": "catmullrom"
 						},
 						"2.0": {
-							"post": [0, -40, 0],
+							"post": [0, -60, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [-1, 0, -6],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [2, 0, 2],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [-1, 0, -6],
 							"lerp_mode": "catmullrom"
 						}
 					}
