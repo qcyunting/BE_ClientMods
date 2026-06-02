@@ -17,6 +17,9 @@ class ShopSystem(ClientSystem):
 		# 保存商店UI实例引用
 		self.shopUI = None
 		self.uiRegistered = False
+		self.skillData = None
+		self.lastStatsData = None
+		self.lastCooldownData = None
 
 	def _ClientListenEvent(self):
 		# 监听引擎事件 - UI初始化完成
@@ -28,6 +31,8 @@ class ShopSystem(ClientSystem):
 		self.listen_server("UpdateItemDetail", self._UpdateItemDetail)
 
 		self.ListenForEvent(modConfig.ModName, "SkillSystem", "ShowSkillButtons", self, self.initSkill)  # 初始化
+		self.ListenForEvent(modConfig.ModName, "SkillSystem", "UpdateSkillCooldown", self, self._UpdateSkillCooldown)
+		self.ListenForEvent(modConfig.ModName, "PlayerStats", "UpdateStats", self, self._UpdateStats)
 
 
 	def listen_server(self, event, func):
@@ -51,15 +56,41 @@ class ShopSystem(ClientSystem):
 		comp.SetLeftCornerNotify(args['msg'])
 
 	def initSkill(self, args):
+		self.skillData = args
+		hud_ui = self._ensure_hud()
+		if hud_ui:
+			hud_ui.RefreshSkillData(args)
+			if self.lastStatsData:
+				hud_ui.UpdateStats(self.lastStatsData)
+			if self.lastCooldownData:
+				hud_ui.UpdateSkillCooldown(self.lastCooldownData)
+
+	def _ensure_hud(self):
+		if not self.uiRegistered:
+			self.UiInitFinished(None)
+
 		hud_ui = clientApi.GetUI("HyperClashHUD", "main")
 		if hud_ui:
-			hud_ui.Destroy()
-			hud_ui.param = {"data": args}
-			hud_ui.skills.clear()
-			hud_ui._initialized = False
-			hud_ui.Create()
-		else:
-			clientApi.CreateUI("HyperClashHUD", "main", {"isHud": 1, "data": args})
+			return hud_ui
+
+		data = self.skillData if self.skillData else {}
+		try:
+			return clientApi.CreateUI("HyperClashHUD", "main", {"isHud": 1, "data": data})
+		except Exception as e:
+			print "[ShopSystem] Create HUD failed:", e
+			return clientApi.GetUI("HyperClashHUD", "main")
+
+	def _UpdateSkillCooldown(self, args):
+		self.lastCooldownData = args
+		hud_ui = self._ensure_hud()
+		if hud_ui:
+			hud_ui.UpdateSkillCooldown(args)
+
+	def _UpdateStats(self, args):
+		self.lastStatsData = args
+		hud_ui = self._ensure_hud()
+		if hud_ui:
+			hud_ui.UpdateStats(args)
 
 	def _OpenCustomShop(self, args):
 		# 确保UI已注册

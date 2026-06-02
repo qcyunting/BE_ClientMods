@@ -140,7 +140,7 @@
             40.0,
             40.0
         ],
-        "layer": 2,
+        "layer": 50,
         "button_mappings": [],
         "default_control": "default",
         "hover_control": "hover",
@@ -156,12 +156,18 @@
         "controls": [
             {
                 "icon": {
-                    "type": "image"
+                    "type": "image",
+                    "size": [
+                        40.0,
+                        40.0
+                    ],
+                    "layer": 51
                 }
             },
             {
                 "text@netease_editor_template_namespace.button_label": {
-                    "font_type": "unicode"
+                    "font_type": "unicode",
+                    "layer": 52
                 }
             }
         ]
