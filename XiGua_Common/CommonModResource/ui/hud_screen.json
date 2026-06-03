@@ -56,17 +56,7 @@
     "layer": 1
   },
 
-  "armor_renderer": {
-    "type": "custom",
-    "size": [ 1, 1 ],
-    "renderer": "armor_renderer",
-    "layer": 1,
-    "bindings": [
-      {
-        "binding_name": "#is_armor_visible",
-        "binding_name_override": "#visible"
-      }
-    ]
+  "armor_renderer@xg_hud.armor_renderer": {
   },
 
   "horse_jump_renderer": {
@@ -599,7 +589,7 @@
       },
       {
         "armor_rend@armor_renderer": {
-          "offset": [ -1, -40 ],
+          "offset": [ -1, -44 ],
           "anchor_from": "bottom_left",
           "anchor_to": "bottom_left"
         }
@@ -689,7 +679,7 @@
       },
       {
         "armor_rend@armor_renderer": {
-          "offset": [ -1, -40 ],
+          "offset": [ -1, -44 ],
           "anchor_from": "bottom_left",
           "anchor_to": "bottom_left"
         }

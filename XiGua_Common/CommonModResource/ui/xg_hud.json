@@ -276,6 +276,36 @@
             }
         ]
     },
+    "armor_renderer": {
+        "type": "panel",
+        "size": [
+            82,
+            10
+        ],
+        "layer": 1,
+        "bindings": [
+            {
+                "binding_name_override": "#visible",
+                "binding_name": "#is_armor_visible"
+            }
+        ],
+        "controls": [
+            {
+                "armor_progress_bar@xg_hud.progress_bar_renderer": {
+                    "$binding_name": "#armor_percentage",
+                    "$collection_name": "armor_progress_bar_collection",
+                    "$color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "$progress_bar_empty_texture": "textures/ui/gui/bar",
+                    "$progress_bar_filled_texture": "textures/ui/gui/bar_background",
+                    "$text_binding_name": "#armor_percentage_text"
+                }
+            }
+        ]
+    },
     "hud_button": {
         "type": "panel",
         "$texture": "textures/gui/gui3",

@@ -32,6 +32,8 @@ class Main(BaseCustomScreenProxy):
         self.health_now = 20
         self.hunger_max = 20
         self.hunger_now = 20
+        self.armor_max = 20
+        self.armor_now = 0
 
         self.top_bar_dict = {}
         self.top_bar_control = None
@@ -186,6 +188,14 @@ class Main(BaseCustomScreenProxy):
     @ViewBinder.binding(ViewBinder.BF_BindString, "#hunger_percentage_text")
     def hunger_percentage_text(self):
         return self.metrics_utils.get_hunger_text()
+
+    @ViewBinder.binding(ViewBinder.BF_BindFloat, "#armor_percentage")
+    def armor_percentage(self):
+        return self.metrics_utils.get_armor_percentage()
+
+    @ViewBinder.binding(ViewBinder.BF_BindString, "#armor_percentage_text")
+    def armor_percentage_text(self):
+        return self.metrics_utils.get_armor_text()
 
     # ==================== 弹幕 ====================
     @Listen("NewDanmaku", "server")

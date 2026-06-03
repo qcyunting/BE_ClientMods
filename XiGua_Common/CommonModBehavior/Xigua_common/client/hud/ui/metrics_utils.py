@@ -80,3 +80,13 @@ class MetricsUtils:
 
     def get_hunger_text(self):
         return str(int(self.hud.hunger_now)) + "/" + str(int(self.hud.hunger_max))
+
+    def get_armor_percentage(self):
+        self.hud.armor_max = 20
+        self.hud.armor_now = attrComp(playerId).GetAttrValue(MC_Enum.AttrType.ARMOR)
+        if self.hud.armor_now < 0:
+            self.hud.armor_now = 0
+        return max(0, min(self.hud.armor_now / float(self.hud.armor_max), 1))
+
+    def get_armor_text(self):
+        return str(int(self.hud.armor_now)) + "/" + str(int(self.hud.armor_max))
