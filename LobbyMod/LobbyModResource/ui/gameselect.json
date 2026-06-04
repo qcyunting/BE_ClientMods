@@ -297,6 +297,12 @@
                         {
                             "s_panel": {
                                 "type": "stack_panel",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "offset": [
+                                    0.0,
+                                    40.0
+                                ],
                                 "size": [
                                     "100%+0px",
                                     "100%c+0px"
