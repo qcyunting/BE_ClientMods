@@ -2,21 +2,21 @@
   "modules": [
     {
       "type": "resources",
-      "uuid": "35026128-c481-4da2-b125-aaccacd88f43",
+      "uuid": "72263a38-29ea-4389-8fcc-65d7378565cf",
       "version": [
         0,
         0,
-        39
+        40
       ],
       "description": "Copyright (C) 2026 西瓜. All rights reserved. 禁止反编译、解包或未授权使用。很惊讶你居然拿到了它，它虽不复杂，但花费了我们不少时间。"
     }
   ],
   "header": {
-    "uuid": "e9a7dd60-f76b-4a49-9106-6db11a725c8b",
+    "uuid": "a72949ad-3663-4c2a-ad29-d9ca62b07845",
     "version": [
       0,
       0,
-      39
+      40
     ],
     "min_engine_version": [
       1,

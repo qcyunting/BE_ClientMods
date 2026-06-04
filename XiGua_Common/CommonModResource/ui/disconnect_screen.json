@@ -5,7 +5,7 @@
     "offset": [ 0, -40 ],
     "size": [ "default", "default" ],
     "max_size": [ "100% - 20px", 300 ],
-    "text": "#disconnect_text",
+    "text": "测试测试",
     "bindings": [
       {
         "binding_name": "#disconnect_text"

@@ -1,180 +1,180 @@
 {
-  "namespace": "debug_section",
-  "debug_section@settings_common.content_stack_panel": {
-    "controls": [
-      {
-        "option_toggle_build_info@settings_common.option_toggle": {
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "$option_binding_name": "#dev_show_build_info",
-          "$option_enabled_binding_name": "#dev_show_build_info_enabled",
-          "$option_label": "options.dev_showBuildInfo",
-          "$toggle_name": "dev_show_build_info"
-        }
-      },
-      {
-        "option_toggle_dev_console_button_0@settings_common.option_toggle": {
-          "$option_label": "options.dev_showDevConsoleButton",
-          "$option_binding_name": "#dev_show_dev_console_button",
-          "$option_enabled_binding_name": "#dev_show_dev_console_button_enabled",
-          "$toggle_name": "dev_show_dev_console_button"
-        }
-      },
-      {
-        "option_toggle_assertions_show_dialog@settings_common.option_toggle": {
-          "$option_label": "options.dev_assertions_show_dialog",
-          "$option_binding_name": "#dev_assertions_show_dialog",
-          "$option_enabled_binding_name": "#dev_assertions_show_dialog_enabled",
-          "$toggle_name": "dev_assertions_show_dialog"
-        }
-      },
-      {
-        "build_info_label_panel": {
-          "type": "stack_panel",
-          "size": [
-            "100%",
-            "100%c"
-          ],
-          "controls": [
+    "debug_section@settings_common.content_stack_panel": {
+        "controls": [
             {
-              "version_label": {
-                "type": "label",
-                "offset": [
-                  2,
-                  0
-                ],
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "text": "#version",
-                "bindings": [
-                  {
-                    "binding_name": "#version"
-                  }
-                ]
-              }
+                "option_toggle_build_info@settings_common.option_toggle": {
+                    "$option_binding_name": "#dev_show_build_info",
+                    "$option_enabled_binding_name": "#dev_show_build_info_enabled",
+                    "$option_label": "options.dev_showBuildInfo",
+                    "$toggle_name": "dev_show_build_info",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
             },
             {
-              "build_id_label": {
-                "type": "label",
-                "color": "$body_text_color",
-                "offset": [
-                  2,
-                  0
-                ],
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "text": "#build_id",
-                "bindings": [
-                  {
-                    "binding_name": "#build_id"
-                  }
-                ]
-              }
+                "option_toggle_dev_console_button_0@settings_common.option_toggle": {
+                    "$option_binding_name": "#dev_show_dev_console_button",
+                    "$option_enabled_binding_name": "#dev_show_dev_console_button_enabled",
+                    "$option_label": "options.dev_showDevConsoleButton",
+                    "$toggle_name": "dev_show_dev_console_button"
+                }
             },
             {
-              "network_info_label": {
-                "type": "label",
-                "offset": [
-                  2,
-                  0
-                ],
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "text": "#network_info",
-                "bindings": [
-                  {
-                    "binding_name": "#network_info"
-                  },
-                  {
-                    "binding_name": "#network_info_visible",
-                    "binding_name_override": "#visible"
-                  }
-                ]
-              }
+                "option_toggle_assertions_show_dialog@settings_common.option_toggle": {
+                    "$option_binding_name": "#dev_assertions_show_dialog",
+                    "$option_enabled_binding_name": "#dev_assertions_show_dialog_enabled",
+                    "$option_label": "options.dev_assertions_show_dialog",
+                    "$toggle_name": "dev_assertions_show_dialog"
+                }
             },
             {
-              "protocol_version_label": {
-                "type": "label",
-                "offset": [
-                  2,
-                  0
-                ],
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "text": "#protocol_version",
-                "bindings": [
-                  {
-                    "binding_name": "#protocol_version"
-                  }
-                ]
-              }
+                "build_info_label_panel": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100%",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "version_label": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "text": "#version",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#version"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "build_id_label": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "color": "$body_text_color",
+                                "text": "#build_id",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#build_id"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "network_info_label": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "text": "#network_info",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#network_info"
+                                    },
+                                    {
+                                        "binding_name_override": "#visible",
+                                        "binding_name": "#network_info_visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "protocol_version_label": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "text": "#protocol_version",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#protocol_version"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "client_os_label": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100%",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "microsoft_os": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "ignored": "(not $microsoft_os)",
+                                "text": "操作系统: Microsoft操作系统"
+                            }
+                        },
+                        {
+                            "apple_os": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "ignored": "(not $apple_os)",
+                                "text": "操作系统: Apple操作系统"
+                            }
+                        },
+                        {
+                            "google_os": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "ignored": "(not $google_os)",
+                                "text": "操作系统: Google操作系统"
+                            }
+                        },
+                        {
+                            "nx_os": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2,
+                                    0
+                                ],
+                                "ignored": "(not $nx_os)",
+                                "text": "操作系统: Nintendo Switch系统"
+                            }
+                        }
+                    ]
+                }
             }
-          ]
-        }
-      },
-      {
-        "client_os_label": {
-          "type": "stack_panel",
-          "size": [
-            "100%",
-            "100%c"
-          ],
-          "controls": [
-            {
-              "microsoft_os": {
-                "ignored": "(not $microsoft_os)",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "type": "label",
-                "text": "操作系统: Microsoft操作系统",
-                "offset": [
-                  2,
-                  0
-                ]
-              }
-            },
-            {
-              "apple_os": {
-                "ignored": "(not $apple_os)",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "type": "label",
-                "text": "操作系统: Apple操作系统",
-                "offset": [
-                  2,
-                  0
-                ]
-              }
-            },
-            {
-              "google_os": {
-                "ignored": "(not $google_os)",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "type": "label",
-                "text": "操作系统: Google操作系统",
-                "offset": [
-                  2,
-                  0
-                ]
-              }
-            },
-            {
-              "nx_os": {
-                "ignored": "(not $nx_os)",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "type": "label",
-                "text": "操作系统: Nintendo Switch系统",
-                "offset": [
-                  2,
-                  0
-                ]
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
+        ]
+    },
+    "namespace": "debug_section"
 }

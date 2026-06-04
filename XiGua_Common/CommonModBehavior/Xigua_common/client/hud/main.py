@@ -5,6 +5,9 @@ from ..misc.blur import GaussianBlurController
 from ..misc.debug_shop import test_shop as run_test_shop
 from ..misc.input import handle_alt_camera_key
 import time
+import json
+from ..utils import escape
+instance = escape.Escape()
 
 
 class Main(BaseSystem):
@@ -22,6 +25,34 @@ class Main(BaseSystem):
         self.BroadcastEvent("StartMod", args["all_mod"])
 
     @Listen(event_type=Listen.server)
+    def SetLocalUID(self, args):
+        uid = args.get("local_id")
+        self.uid = uid
+
+    @Listen(event_type=Listen.server)
+    def GetUserToken(self, args):
+        application = instance.importModule("application")
+        # CF.CreateTextNotifyClient(levelId).SetLeftCornerNotify('GetServerListUrl {}'.format(application.instance.GetServerListUrl()))
+        def return_user_token(token):
+            self.NotifyToServer("GetUserToken", {"user_token": token})
+        if self.uid == -1:
+            return_user_token("")
+            return
+        url = args.get("url")
+        if not url:
+            return_user_token("")
+            return
+        params = args.get("params")
+        if not params:
+            return_user_token("")
+            return
+        params = json.dumps(params)
+        utility = instance.importModule("utility")
+        user_token = utility.encrypt_token(url, params)
+        print "客户端:", user_token
+        return_user_token(user_token)
+
+    @Listen(event_type=Listen.server)
     def SetGameInfoText(self, args):
         """
         设置游戏信息文本
@@ -34,8 +65,6 @@ class Main(BaseSystem):
         ui创建成功
         """
         self.NotifyToServer("UiInitFinished", dict())
-        clientApi.RegisterUI(modName, "xg_chat", "{}.client.chat.main.Chat".format(modName), "xg_chat.main")
-
         clientApi.HideChangePersonGui(True)
         clientApi.HidePauseGUI(True)
         clientApi.HideChatGUI(True)
@@ -83,8 +112,8 @@ class Main(BaseSystem):
 
         screen_list = {
             "hud.hud_screen": "{}.client.hud.ui.hud.Main".format(modName),
-            "pause.pause_screen": "{}.client.pause.ui.pause.Main".format(modName),
             "settings.screen_world_controls_and_settings": "{}.client.xg_settings.ui.settings.Settings".format(modName),
+            "netease_chat.netease_chat_screen": "{}.client.chat.ui.main.Main".format(modName),
         }
         for screenName, proxyClassName in screen_list.items():
             NativeScreenManager.instance().RegisterScreenProxy(

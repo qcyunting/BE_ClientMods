@@ -9,6 +9,8 @@ class XiGua_server(object):
     def serverInit(self):
         path = "{}.server.main.Main".format(server_config.modName)
         serverApi.RegisterSystem(server_config.modName, server_config.systemName, path)
+        serverApi.RegisterSystem("neteaseShop", "neteaseShopBeh",
+                                 "mod.client.neteaseSystem.neteaseShopClientSystem.neteaseShopClientSystem")
         print ("======Init{}Server======".format(server_config.modName))
 
 import mod.client.extraClientApi as clientApi

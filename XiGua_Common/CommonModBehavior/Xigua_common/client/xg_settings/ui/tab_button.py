@@ -53,4 +53,3 @@ class TabButton(object):
             selected_bar.RemoveAnimation("size")  # 先删除之前残留的动画
             selected_bar.SetAnimEndCallback("top_bar_toggle_selected_anim", callback)  # 设置动画播放结束的回调函数
             selected_bar.SetAnimation("size", "xg_settings", "top_bar_toggle_selected_anim", True)  # 添加动画
-

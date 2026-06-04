@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/env python3
-"""扫描本地目录并输出审核用行为包/资源包目录（不压缩）。"""
+"""扫描本地目录并输出审核用行为包/资源包。"""
 
 from __future__ import annotations
 
@@ -11,11 +11,12 @@ import shutil
 import stat
 import time
 
+ZIP = True
 
 TARGET_BEHAVIOR = "behavior_packs"
 TARGET_RESOURCE = "resource_packs"
 VALID_TYPES = {"data": TARGET_BEHAVIOR, "resources": TARGET_RESOURCE}
-REMOVABLE_SUFFIXES = {".zip", ".mcp"}
+REMOVABLE_SUFFIXES = {".zip"}
 
 
 def _rmtree_force(path: Path) -> None:
@@ -107,7 +108,12 @@ def read_pack_type(manifest_path: Path) -> str | None:
     return None
 
 
-def copy_pack(pack_dir: Path, output_root: Path, used_names: set[str]) -> Path:
+def copy_pack(
+    pack_dir: Path,
+    output_root: Path,
+    used_names: set[str],
+    zip_enabled: bool,
+) -> tuple[Path, int, list[Path]]:
     base_name = pack_dir.name
     dest_name = base_name
     if dest_name in used_names:
@@ -120,7 +126,18 @@ def copy_pack(pack_dir: Path, output_root: Path, used_names: set[str]) -> Path:
     if dest_dir.exists():
         _rmtree_force(dest_dir)
     shutil.copytree(pack_dir, dest_dir)
-    return dest_dir
+
+    removed_count, failed_files = remove_zip_and_mcp_files(dest_dir)
+    if not zip_enabled:
+        return dest_dir, removed_count, failed_files
+
+    archive_path = output_root / f"{dest_name}.zip"
+    if archive_path.exists() and not _safe_unlink(archive_path):
+        raise RuntimeError(f"无法覆盖旧压缩包（可能被占用）：{archive_path}")
+
+    shutil.make_archive(str(archive_path.with_suffix("")), "zip", root_dir=dest_dir)
+    _rmtree_force(dest_dir)
+    return archive_path, removed_count, failed_files
 
 
 def remove_zip_and_mcp_files(root: Path) -> tuple[int, list[Path]]:
@@ -160,6 +177,8 @@ def build_review_package(root: Path, audit_root: Path) -> None:
     behavior_count = 0
     resource_count = 0
     skipped = []
+    removed_count = 0
+    failed_files: list[Path] = []
 
     for pack_dir in pack_dirs:
         pack_type = read_pack_type(pack_dir / "manifest.json")
@@ -169,19 +188,24 @@ def build_review_package(root: Path, audit_root: Path) -> None:
 
         target_dir = behavior_dir if pack_type == "data" else resource_dir
         used_names = behavior_used_names if pack_type == "data" else resource_used_names
-        copy_pack(pack_dir, target_dir, used_names)
-        packaged.append((pack_dir.name, pack_type))
+        output_path, pack_removed_count, pack_failed_files = copy_pack(
+            pack_dir,
+            target_dir,
+            used_names,
+            ZIP,
+        )
+        removed_count += pack_removed_count
+        failed_files.extend(pack_failed_files)
+        packaged.append((pack_dir.name, pack_type, output_path.name))
         if pack_type == "data":
             behavior_count += 1
         else:
             resource_count += 1
 
-    removed_count, failed_files = remove_zip_and_mcp_files(audit_root)
-
     if packaged:
-        print("复制完成：")
-        for name, pack_type in packaged:
-            print(f"- {name} -> {pack_type}")
+        print("打包完成：")
+        for name, pack_type, output_name in packaged:
+            print(f"- {name} -> {pack_type}: {output_name}")
     else:
         print("未发现可打包包。")
     print(f"总计：行为包 {behavior_count} 个，资源包 {resource_count} 个")

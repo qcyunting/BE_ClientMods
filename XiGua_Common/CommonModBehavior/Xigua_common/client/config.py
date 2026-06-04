@@ -6,6 +6,7 @@ base_clsPath = "{}.client.".format(modName)
 system_dict = {
     "main": base_clsPath + "hud.main.Main",
     "decoration": base_clsPath + "decoration.main.Decoration",
+    "chat": base_clsPath + "chat.main.Chat",
     "text_board": base_clsPath + "text_board.main.TextBoard",
     "npc_dialog": base_clsPath + "npc_dialog.main.NpcDialog",
     "settings": base_clsPath + "xg_settings.settings.Settings",

@@ -1100,7 +1100,19 @@
                 "binding_name": "#button_index"
             }
         ],
+        "default_control": "default",
+        "hover_control": "hover",
+        "pressed_control": "pressed",
         "controls": [
+            {
+                "default": {"type": "panel"}
+            },
+            {
+                "hover": {"type": "panel"}
+            },
+            {
+                "pressed": {"type": "panel"}
+            },
             {
                 "icon": {
                     "type": "image",
