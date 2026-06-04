@@ -10,6 +10,7 @@ LevelId  = clientApi.GetLevelId()
 class BaseCustomScreen(ScreenNode):
     ListenDict = {"Minecraft": ("Minecraft", "Engine"), "client": (modName, "main"), "server": (modName, "main")}
     system = None
+    uid = -1
     local_id = -2
     def __init__(self, namespace, name, param):
         super(BaseCustomScreen, self).__init__(namespace, name, param)
@@ -48,14 +49,6 @@ class BaseCustomScreen(ScreenNode):
     def cancel_btn_click(self, args):
         clientApi.PopScreen()
 
-    @Listen(event_type=Listen.server)
-    def setLocalId(self, args):
-        """
-        设置本地的玩家Id
-        """
-        self.local_id = args.get("local_id", -2)
-
-
     def Update(self):
         # type: () -> 'None'
         """
@@ -91,11 +84,24 @@ class BaseCustomScreen(ScreenNode):
         """
         pass
 
+    @Listen(event_type=Listen.server)
+    def setLocalId(self, args):
+        """
+        设置本地的玩家Id
+        """
+        self.local_id = args.get("local_id", -2)
+
+    @Listen(event_type=Listen.server)
+    def SetLocalUID(self, args):
+        uid = args.get("local_id")
+        self.uid = uid
+
 CustomUIScreenProxy = clientApi.GetUIScreenProxyCls()
 class BaseCustomScreenProxy(CustomUIScreenProxy):
     ListenDict = {"Minecraft": ("Minecraft", "Engine"), "client": (modName, "main"), "server": (modName, "main")}
     system = None
     screen = None
+    uid = -1
     local_id = -2
     def __init__(self, screenName, screenNode):
         super(BaseCustomScreenProxy, self).__init__(screenName, screenNode)
@@ -140,3 +146,7 @@ class BaseCustomScreenProxy(CustomUIScreenProxy):
         """
         self.local_id = args.get("local_id", -2)
 
+    @Listen(event_type=Listen.server)
+    def SetLocalUID(self, args):
+        uid = args.get("local_id")
+        self.uid = uid

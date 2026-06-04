@@ -31,6 +31,7 @@ class BaseSystem(ClientSystem):
         "client": (modName, "main"),
         "server": (modName, "main")
     }
+    uid = -1
     local_id = -2
     def __init__(self, namespace, systemName):
         super(BaseSystem, self).__init__(namespace, systemName)
@@ -54,8 +55,14 @@ class BaseSystem(ClientSystem):
         self.ListenForEvent(name, system, event, self, func, priority=priority)
 
     @Listen(event_type=Listen.server)
-    def setLocalId(self, args):
+    def SetLocalId(self, args):
         """
         设置本地的玩家Id
         """
         self.local_id = args.get("local_id", -2)
+
+    @Listen(event_type=Listen.server)
+    def SetLocalUID(self, args):
+        uid = args.get("local_uid")
+        print "设置本地UID", uid
+        self.uid = uid

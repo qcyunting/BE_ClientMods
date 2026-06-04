@@ -61,7 +61,7 @@ class Main(BaseCustomScreenProxy):
 
     # ==================== 水印 ====================
     @Listen(event_type=Listen.server)
-    def setTestServer(self, args):
+    def SetTestServer(self, args):
         self.watermark_utils.set_test_server(args)
 
     # ==================== 顶栏 ====================
@@ -113,7 +113,7 @@ class Main(BaseCustomScreenProxy):
             clientApi.OpenPauseGui()
         elif result == "chat_button":
             clientApi.OpenChatGui()
-            #clientApi.PushScreen(modName, "xg_chat")
+            # clientApi.PushScreen(modName, "xg_chat")
         elif result == "perspective_0_button":
             CF.CreatePlayerView(playerId).SetPerspective(0)
             self.perspective = 0

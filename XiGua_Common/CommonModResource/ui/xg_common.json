@@ -94,14 +94,14 @@
             0.0
         ],
         "$texture_size": [
-            9.0,
-            9.0
-        ],
-        "size": [
-            50,
-            10.0
+            18.0,
+            18.0
         ],
         "$to_button_id|default": "#cancel_btn_click",
+        "size": [
+            50,
+            20.0
+        ],
         "button_mappings": [
             {
                 "to_button_id": "$to_button_id",
@@ -319,12 +319,12 @@
     },
     "top_bar_toggle_btn@common.toggle": {
         "$bg_texture_alpha|default": 0,
-        "$text|default": "",
         "$checked_control": "xg_common.top_bar_toggle_checked_state",
         "$checked_hover_control": "xg_common.top_bar_toggle_checked_hover_state",
         "$checked_locked_control": "xg_common.top_bar_toggle_locked_state",
         "$checked_locked_hover_control": "xg_common.top_bar_toggle_locked_state",
         "$radio_toggle_group": true,
+        "$text|default": "",
         "$toggle_group_default_selected": 0,
         "$toggle_name": "#tab_toggle_btn",
         "$unchecked_control": "xg_common.top_bar_toggle_unchecked_state",
@@ -340,12 +340,6 @@
     },
     "top_bar_toggle_checked_hover_state@top_bar_toggle_common": {},
     "top_bar_toggle_checked_state@top_bar_toggle_common": {},
-    "top_bar_toggle_selected_anim": {
-        "anim_type": "size",
-        "duration": 0.15,
-        "from": [0, 2.0],
-        "to": [0, 2.0]
-    },
     "top_bar_toggle_common": {
         "type": "image",
         "$bg_texture_alpha|default": 0,
@@ -400,6 +394,18 @@
         ]
     },
     "top_bar_toggle_locked_state@top_bar_toggle_common": {},
+    "top_bar_toggle_selected_anim": {
+        "anim_type": "size",
+        "duration": 0.15,
+        "from": [
+            0,
+            2
+        ],
+        "to": [
+            0,
+            2
+        ]
+    },
     "top_bar_toggle_unchecked_hover_state@top_bar_toggle_common": {},
     "top_bar_toggle_unchecked_state@top_bar_toggle_common": {}
 }
