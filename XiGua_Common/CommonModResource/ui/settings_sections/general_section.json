@@ -6,6 +6,334 @@
 {
   "namespace": "general_section",
 
+
+    "general_section@settings_common.content_stack_panel": {
+
+       "controls": [
+      {
+        "option_toggle0@settings_common.option_toggle": {
+          "ignored": "(not $supports_flite_tts or not $platform_tts_exists)",
+          "$option_label": "options.enableAutoPlatformTextToSpeech",
+          "$option_binding_name": "#enable_auto_text_to_speech",
+          "$option_enabled_binding_name": "#enable_auto_text_to_speech_enabled",
+          "$toggle_name": "enable_auto_text_to_speech"
+        }
+      },
+      {
+        "option_toggle1@settings_common.option_toggle": {
+          "ignored": "(not $supports_flite_tts)",
+          "$option_label": "options.enableUITextToSpeech",
+          "$option_binding_name": "#enable_ui_text_to_speech",
+          "$option_enabled_binding_name": "#enable_ui_text_to_speech_enabled",
+          "$toggle_name": "enable_ui_text_to_speech"
+        }
+      },
+      {
+        "option_toggle2@settings_common.option_toggle": {
+          "ignored": "(not $supports_flite_tts)",
+          "$option_label": "options.enableChatTextToSpeech",
+          "$option_binding_name": "#enable_chat_text_to_speech",
+          "$option_enabled_binding_name": "#enable_chat_text_to_speech_enabled",
+          "$toggle_name": "enable_chat_text_to_speech",
+          "bindings": [
+            {
+              "binding_name": "#not_hide_chat",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_0@settings_common.option_slider": {
+          "$option_label": "#texttospeech_volume_slider_label",
+          "$slider_name": "texttospeech_volume",
+          "$slider_value_binding_name": "#texttospeech_volume",
+          "$slider_tts_text_value": "#texttospeech_volume_text_value",
+          "$option_enabled_binding_name": "#texttospeech_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_toggle3@settings_common.option_toggle": {
+          "ignored": "(not $supports_flite_tts)",
+          "$option_label": "options.enableOpenChatMessage",
+          "$option_binding_name": "#enable_open_chat_message",
+          "$option_enabled_binding_name": "#enable_open_chat_message_enabled",
+          "$toggle_name": "enable_open_chat_message"
+        }
+      },
+      {
+        "hud_text_background_opacity_slider@settings_common.option_slider": {
+          "$option_label": "#hud_text_background_opacity_slider_label",
+          "$slider_name": "hud_text_background_opacity",
+          "$slider_value_binding_name": "#hud_text_background_opacity",
+          "$slider_tts_text_value": "#hud_text_background_opacity_text_value",
+          "$option_enabled_binding_name": "#hud_text_background_opacity_enabled",
+          "$has_option_description": true,
+          "$option_description": "options.hudTextBackgroundOpacity.description",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "chat_opacity_slider@settings_common.option_slider": {
+          "$option_label": "#chat_background_opacity_slider_label",
+          "$slider_name": "chat_background_opacity",
+          "$slider_value_binding_name": "#chat_background_opacity",
+          "$slider_tts_text_value": "#chat_background_opacity_text_value",
+          "$option_enabled_binding_name": "#chat_background_opacity_enabled",
+          "$has_option_description": true,
+          "$option_description": "options.chatBackgroundOpacity.description",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "actionbar_text_background_opacity_slider@settings_common.option_slider": {
+          "$option_label": "#actionbar_text_background_opacity_slider_label",
+          "$slider_name": "actionbar_text_background_opacity",
+          "$slider_value_binding_name": "#actionbar_text_background_opacity",
+          "$slider_tts_text_value": "#actionbar_text_background_opacity_text_value",
+          "$option_enabled_binding_name": "#actionbar_text_background_opacity_enabled",
+          "$has_option_description": true,
+          "$option_description": "options.actionBarTextBackgroundOpacity.description",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "camera_shake_toggle@settings_common.option_toggle": {
+          "ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "options.screenShake",
+          "$option_binding_name": "#camera_shake",
+          "$option_enabled_binding_name": "#camera_shake_enabled",
+          "$toggle_name": "camera_shake"
+        }
+      },
+      {
+        "darkness_slider@settings_common.option_slider": {
+          "$option_label": "#darkness_slider_label",
+          "$slider_name": "darkness",
+          "$slider_value_binding_name": "#darkness",
+          "$slider_tts_text_value": "#darkness_text_value",
+          "$option_enabled_binding_name": "#darkness_enabled",
+          "$has_option_description": true,
+          "$option_description": "options.darknessEffectModifier.message",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "glint_strength_slider@settings_common.option_slider": {
+          "$option_label": "#glint_strength_slider_label",
+          "$slider_name": "glint_strength",
+          "$slider_value_binding_name": "#glint_strength",
+          "$slider_tts_text_value": "#glint_strength_text_value",
+          "$option_enabled_binding_name": "#glint_strength_enabled",
+          "$has_option_description": true,
+          "$option_description": "options.glintStrength.message",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "glint_speed_slider@settings_common.option_slider": {
+          "$option_label": "#glint_speed_slider_label",
+          "$slider_name": "glint_speed",
+          "$slider_value_binding_name": "#glint_speed",
+          "$slider_tts_text_value": "#glint_speed_text_value",
+          "$option_enabled_binding_name": "#glint_speed_enabled",
+          "$has_option_description": true,
+          "$option_description": "options.glintSpeed.message",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "toast_notification_duration_options_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "orientation": "vertical",
+          "controls": [
+            {
+              "toast_notification_duration_label_wrapper@common.tts_label_focus_wrapper": {
+                "$tts_label_panel": "general_section.toast_notification_duration_label"
+              }
+            },
+            {
+              "toast_notification_duration_info_label_wrapper@common.tts_label_focus_wrapper": {
+                "$tts_label_panel": "general_section.toast_notification_duration_info_label"
+              }
+            },
+            {
+              "toast_notification_duration_info_label_edu_wrapper@common.tts_label_focus_wrapper": {
+                "$tts_label_panel": "general_section.toast_notification_duration_info_edu_label"
+              }
+            },
+            {
+              "toast_notification_duration_dropdown_spacer_pre": {
+                "type": "panel",
+                "size": [ "100%", -8 ]
+              }
+            },
+            {
+              "toast_notification_duration_dropdown@settings_common.option_dropdown": {
+                "ignored": "($is_holographic and $is_reality_mode)",
+                "$dropdown_content": "general_section.toast_notification_duration_dropdown_content",
+                "$dropdown_area": "content_area",
+                "$dropdown_name": "toast_notification_duration_dropdown",
+                "$option_enabled_binding_name": "#toast_notification_duration_dropdown_enabled",
+                "$options_dropdown_toggle_label_binding": "#toast_notification_duration_dropdown_toggle_label",
+                "$dropdown_scroll_content_size": [ "100%", "200%" ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "chat_message_duration_options_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "orientation": "vertical",
+          "controls": [
+            {
+              "chat_message_duration_label_wrapper@common.tts_label_focus_wrapper": {
+                "$tts_label_panel": "general_section.chat_message_duration_label"
+              }
+            },
+            {
+              "chat_message_duration_info_label_wrapper@common.tts_label_focus_wrapper": {
+                "$tts_label_panel": "general_section.chat_message_duration_info_label"
+              }
+            },
+            {
+              "chat_message_duration_dropdown_spacer_pre": {
+                "type": "panel",
+                "size": [ "100%", -8 ]
+              }
+            },
+            {
+              "chat_message_duration_dropdown@settings_common.option_dropdown": {
+                "ignored": "($is_holographic and $is_reality_mode)",
+                "$dropdown_content": "general_section.chat_message_duration_dropdown_content",
+                "$dropdown_area": "content_area",
+                "$dropdown_name": "chat_message_duration_dropdown",
+                "$option_enabled_binding_name": "#chat_message_duration_dropdown_enabled",
+                "$options_dropdown_toggle_label_binding": "#chat_message_duration_dropdown_toggle_label",
+                "$dropdown_scroll_content_size": [ "100%", "200%" ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "gui_scale_slider@settings_common.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#gui_scale_slider_label",
+          "$slider_name": "gui_scale",
+          "$slider_value_binding_name": "#gui_scale",
+          "$slider_tts_text_value": "#gui_scale_text_value",
+          "$option_enabled_binding_name": "#gui_scale_enabled",
+          "$slider_steps_binding_name": "#gui_scale_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#gui_scale_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "gui_scale_disabled_option@general_section.gui_scale_disabled_option": {
+                "$gui_scale_disabled_option_visible": "#gui_scale_disabled_option_visible",
+                "$gui_scale_disabled_option_is_hovered_button_event": "button.gui_scale_disabled_option_is_hovered",
+                "$gui_scale_disabled_option_tooltip_visible": "#gui_scale_disabled_option_tooltip_visible"
+              }
+            },
+            { "option_generic_core@settings_common.option_generic_core": {} }
+          ]
+        }
+      },
+      {
+        "gui_accessibility_scaling_toggle@settings_common.option_toggle": {
+          "$option_label": "options.gui.accessibility.scaling",
+          "$option_binding_name": "#gui_accessibility_scaling",
+          "$option_enabled_binding_name": "#gui_accessibility_scaling_enabled",
+          "$toggle_name": "gui_accessibility_scaling",
+          "layer": 1,
+          "controls": [
+            { "accessibility_scaling_option@general_section.accessibility_scaling_option": {} },
+            { "option_generic_core@settings_common.option_generic_core": {} }
+          ]
+        }
+      },
+      {
+        "reset_button@settings_common.action_button": {
+          "ignored": "(not $is_pregame)",
+          "$pressed_button_name": "button.reset_settings",
+          "$button_text": "options.resetSettings",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+          "property_bag": {
+            "reset_group": "accessibility"
+          }
+        }
+      }
+    ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // GENERAL button & section
   "general_button@settings_common.section_toggle_base": {
     "$toggle_view_binding_name": "general_button_toggle",

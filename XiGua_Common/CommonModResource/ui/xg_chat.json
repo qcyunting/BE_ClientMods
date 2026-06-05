@@ -659,6 +659,34 @@
             }
         ]
     },
+    "head_image": {
+        "type": "image",
+        "anchor_from": "$anchor_from",
+        "anchor_to": "$anchor_to",
+        "offset": [
+            0.0,
+            2.0
+        ],
+        "size": [
+            18.2,
+            18.2
+        ],
+        "layer": 1,
+        "texture": "textures/ui/chat/default_user_frame",
+        "controls": [
+            {
+                "head": {
+                    "type": "image",
+                    "size": [
+                        12.5,
+                        12.5
+                    ],
+                    "layer": -1,
+                    "texture": "textures/ui/chat/default_user_head"
+                }
+            }
+        ]
+    },
     "left_safezone_horizontal_buffer@common.empty_panel": {
         "bindings": [
             {
@@ -682,80 +710,10 @@
         ],
         "size": [
             "100%+-4px",
-            "100%cm+10px"
+            "100%c+-11px"
         ],
         "layer": 1,
         "controls": [
-            {
-                "frame": {
-                    "type": "image",
-                    "anchor_from": "top_right",
-                    "anchor_to": "top_right",
-                    "offset": [
-                        0.0,
-                        2.0
-                    ],
-                    "size": [
-                        18.2,
-                        18.2
-                    ],
-                    "layer": 1,
-                    "texture": "textures/ui/chat/default_user_frame",
-                    "controls": [
-                        {
-                            "head": {
-                                "type": "image",
-                                "size": [
-                                    12.5,
-                                    12.5
-                                ],
-                                "layer": -1,
-                                "texture": "textures/ui/chat/default_user_head"
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "msg_bp": {
-                    "type": "image",
-                    "anchor_from": "top_right",
-                    "anchor_to": "top_right",
-                    "offset": [
-                        -18.0,
-                        11.0
-                    ],
-                    "size": [
-                        "100%c+6px",
-                        "100%c+6px"
-                    ],
-                    "max_size": [
-                        "100%+-32px",
-                        "default"
-                    ],
-                    "layer": 1,
-                    "nineslice_size": [
-                        2.0,
-                        2.0,
-                        2.0,
-                        2.0
-                    ],
-                    "texture": "textures/ui/chat/msg_bp/xigua",
-                    "controls": [
-                        {
-                            "label": {
-                                "type": "label",
-                                "max_size": [
-                                    145.0,
-                                    "default"
-                                ],
-                                "font_type": "unicode",
-                                "text": "我发的消息"
-                            }
-                        }
-                    ]
-                }
-            },
             {
                 "user_name@xg_chat.user_name_panel": {
                     "anchor_from": "top_right",
@@ -767,67 +725,91 @@
                 }
             },
             {
-                "input_panel": {
-                    "type": "input_panel",
+                "message@xg_chat.message_panel": {
+                    "$anchor_from": "top_right",
+                    "$anchor_to": "top_right",
+                    "$offset": [
+                        -21,
+                        13
+                    ]
+                }
+            },
+            {
+                "frame@xg_chat.head_image": {
+                    "$anchor_from": "top_right",
+                    "$anchor_to": "top_right"
+                }
+            },
+            {
+                "msg_tip": {
+                    "type": "panel",
                     "anchor_from": "bottom_right",
-                    "anchor_to": "bottom_right",
+                    "anchor_to": "top_right",
                     "offset": [
                         -22.0,
-                        -18.0
+                        -2.0
                     ],
                     "size": [
-                        "100%cm+2px",
-                        10.0
+                        0.0,
+                        0.0
                     ],
-                    "layer": 5,
+                    "layer": 100,
                     "visible": false,
-                    "button_mappings": [
-                        {
-                            "to_button_id": "#netease_to_button_id",
-                            "from_button_id": "button.menu_select",
-                            "mapping_type": "pressed"
-                        }
-                    ],
                     "controls": [
                         {
-                            "arrow": {
-                                "type": "image",
-                                "anchor_from": "bottom_right",
-                                "anchor_to": "bottom_right",
-                                "offset": [
-                                    -3.0,
-                                    0.0
-                                ],
+                            "input_panel": {
+                                "type": "input_panel",
+                                "anchor_from": "top_right",
+                                "anchor_to": "top_right",
                                 "size": [
-                                    14.0,
-                                    8.0
+                                    22.0,
+                                    12.0
                                 ],
-                                "layer": 1,
-                                "texture": "textures/ui/tooltip_default_chevron"
-                            }
-                        },
-                        {
-                            "image": {
-                                "type": "image",
-                                "anchor_from": "bottom_left",
-                                "anchor_to": "bottom_left",
-                                "offset": [
-                                    0.0,
-                                    -7.0
+                                "layer": 9,
+                                "button_mappings": [
+                                    {
+                                        "to_button_id": "#copy_msg",
+                                        "from_button_id": "button.menu_select",
+                                        "mapping_type": "pressed"
+                                    }
                                 ],
-                                "size": [
-                                    25.0,
-                                    14.0
-                                ],
-                                "layer": 1,
-                                "texture": "textures/ui/tooltip_default_background",
                                 "controls": [
                                     {
-                                        "label": {
-                                            "type": "label",
-                                            "font_type": "unicode",
-                                            "text": "复制",
-                                            "text_alignment": "center"
+                                        "bp": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "nineslice_size": [
+                                                2.0,
+                                                4.0,
+                                                6.0,
+                                                2.0
+                                            ],
+                                            "texture": "textures/ui/chat/msg_tip_bp",
+                                            "controls": [
+                                                {
+                                                    "copy": {
+                                                        "type": "label",
+                                                        "offset": [
+                                                            0.0,
+                                                            1.0
+                                                        ],
+                                                        "size": [
+                                                            "default",
+                                                            10.0
+                                                        ],
+                                                        "layer": 3,
+                                                        "font_scale_factor": 0.8,
+                                                        "font_type": "default",
+                                                        "shadow": true,
+                                                        "text": "复制",
+                                                        "text_alignment": "center"
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
@@ -848,6 +830,55 @@
         "$screen_content": "xg_chat.root_screen",
         "button_mappings": []
     },
+    "message_panel": {
+        "type": "label",
+        "anchor_from": "$anchor_from",
+        "anchor_to": "$anchor_to",
+        "offset": "$offset",
+        "max_size": [
+            "100%+-32px",
+            "default"
+        ],
+        "layer": 4,
+        "font_type": "unicode",
+        "text": "测试测试测试测试测试测试",
+        "controls": [
+            {
+                "input_panel": {
+                    "type": "input_panel",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 1,
+                    "button_mappings": [
+                        {
+                            "to_button_id": "#msg_panel_pressed",
+                            "from_button_id": "button.menu_select",
+                            "mapping_type": "pressed"
+                        }
+                    ]
+                }
+            },
+            {
+                "bp": {
+                    "type": "image",
+                    "size": [
+                        "100%+6px",
+                        "100%+6px"
+                    ],
+                    "layer": -1,
+                    "nineslice_size": [
+                        5.0,
+                        5.0,
+                        5.0,
+                        5.0
+                    ],
+                    "texture": "textures/ui/chat/msg_bp/default"
+                }
+            }
+        ]
+    },
     "msg_content": {
         "type": "input_panel",
         "anchor_from": "top_left",
@@ -857,6 +888,13 @@
             "100%c"
         ],
         "layer": 1,
+        "button_mappings": [
+            {
+                "to_button_id": "#msg_content_pressed",
+                "from_button_id": "button.menu_select",
+                "mapping_type": "pressed"
+            }
+        ],
         "controls": [
             {
                 "msg_content": {
@@ -883,78 +921,24 @@
         ],
         "size": [
             "100%+-4px",
-            "100%cm+10px"
+            "100%c+-11px"
         ],
         "layer": 1,
         "controls": [
             {
-                "frame": {
-                    "type": "image",
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "offset": [
-                        0.0,
-                        2.0
-                    ],
-                    "size": [
-                        18.2,
-                        18.2
-                    ],
-                    "layer": 1,
-                    "texture": "textures/ui/chat/default_user_frame",
-                    "controls": [
-                        {
-                            "head": {
-                                "type": "image",
-                                "size": [
-                                    12.5,
-                                    12.5
-                                ],
-                                "layer": -1,
-                                "texture": "textures/ui/chat/default_user_head"
-                            }
-                        }
+                "message@xg_chat.message_panel": {
+                    "$anchor_from": "top_left",
+                    "$anchor_to": "top_left",
+                    "$offset": [
+                        21,
+                        13
                     ]
                 }
             },
             {
-                "msg_bp": {
-                    "type": "image",
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "offset": [
-                        18.0,
-                        11.0
-                    ],
-                    "size": [
-                        "100%c+6px",
-                        "100%c+6px"
-                    ],
-                    "max_size": [
-                        "100%+-32px",
-                        "default"
-                    ],
-                    "layer": 1,
-                    "nineslice_size": [
-                        2.0,
-                        2.0,
-                        2.0,
-                        2.0
-                    ],
-                    "texture": "textures/ui/chat/msg_bp/xigua",
-                    "controls": [
-                        {
-                            "label": {
-                                "type": "label",
-                                "max_size": [
-                                    145.0,
-                                    "default"
-                                ],
-                                "font_type": "unicode",
-                                "text": "测试"
-                            }
-                        }
-                    ]
+                "frame@xg_chat.head_image": {
+                    "$anchor_from": "top_left",
+                    "$anchor_to": "top_left"
                 }
             },
             {
@@ -966,67 +950,75 @@
                 }
             },
             {
-                "input_panel": {
-                    "type": "input_panel",
+                "msg_tip": {
+                    "type": "panel",
                     "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
+                    "anchor_to": "top_left",
                     "offset": [
                         22.0,
-                        -18.0
+                        -2.0
                     ],
                     "size": [
-                        "100%cm+2px",
-                        10.0
+                        0.0,
+                        0.0
                     ],
-                    "layer": 5,
+                    "layer": 100,
                     "visible": false,
-                    "button_mappings": [
-                        {
-                            "to_button_id": "#netease_to_button_id",
-                            "from_button_id": "button.menu_select",
-                            "mapping_type": "pressed"
-                        }
-                    ],
                     "controls": [
                         {
-                            "arrow": {
-                                "type": "image",
-                                "anchor_from": "bottom_left",
-                                "anchor_to": "bottom_left",
-                                "offset": [
-                                    3.0,
-                                    0.0
-                                ],
+                            "input_panel": {
+                                "type": "input_panel",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
                                 "size": [
-                                    14.0,
-                                    8.0
+                                    22.0,
+                                    12.0
                                 ],
-                                "layer": 1,
-                                "texture": "textures/ui/tooltip_default_chevron"
-                            }
-                        },
-                        {
-                            "image": {
-                                "type": "image",
-                                "anchor_from": "bottom_left",
-                                "anchor_to": "bottom_left",
-                                "offset": [
-                                    0.0,
-                                    -7.0
+                                "layer": 9,
+                                "button_mappings": [
+                                    {
+                                        "to_button_id": "#copy_msg",
+                                        "from_button_id": "button.menu_select",
+                                        "mapping_type": "pressed"
+                                    }
                                 ],
-                                "size": [
-                                    25.0,
-                                    14.0
-                                ],
-                                "layer": 1,
-                                "texture": "textures/ui/tooltip_default_background",
                                 "controls": [
                                     {
-                                        "label": {
-                                            "type": "label",
-                                            "font_type": "unicode",
-                                            "text": "复制",
-                                            "text_alignment": "center"
+                                        "bp": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "nineslice_size": [
+                                                6.0,
+                                                4.0,
+                                                2.0,
+                                                2.0
+                                            ],
+                                            "texture": "textures/ui/chat/msg_tip_bp",
+                                            "controls": [
+                                                {
+                                                    "copy": {
+                                                        "type": "label",
+                                                        "offset": [
+                                                            0.0,
+                                                            1.0
+                                                        ],
+                                                        "size": [
+                                                            "default",
+                                                            10.0
+                                                        ],
+                                                        "layer": 3,
+                                                        "font_scale_factor": 0.8,
+                                                        "font_type": "default",
+                                                        "shadow": true,
+                                                        "text": "复制",
+                                                        "text_alignment": "center"
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ]
@@ -1104,7 +1096,14 @@
             },
             {
                 "c_b@xg_common.cancel_btn": {
-                    "$to_button_id": "button.chat_menu_cancel"
+                    "$texture": "",
+                    "$to_button_id": "button.chat_menu_cancel",
+                    "anchor_from": "right_middle",
+                    "anchor_to": "right_middle",
+                    "size": [
+                        "100%+50px",
+                        "100%+20px"
+                    ]
                 }
             }
         ]
@@ -1212,40 +1211,128 @@
             }
         ]
     },
+    "system_msg": {
+        "type": "label",
+        "max_size": [
+            "1100%+-32px",
+            "default"
+        ],
+        "color": [
+            0.807843137254902,
+            0.807843137254902,
+            0.807843137254902
+        ],
+        "font_scale_factor": 0.8,
+        "font_type": "default",
+        "locked_color": [
+            0.807843137254902,
+            0.807843137254902,
+            0.807843137254902
+        ],
+        "shadow": true,
+        "text": "系统消息"
+    },
     "tab_button_panel": {
-        "type": "panel",
+        "type": "stack_panel",
         "size": [
             "100%+0px",
             "100%+0px"
         ],
         "layer": 1,
+        "orientation": "vertical",
         "controls": [
             {
-                "switch_toggle@common_toggles.switch_toggle_collection": {
-                    "type": "panel",
-                    "$default_texture": "textures/ui/toggle_off",
-                    "$hover_texture": "textures/ui/toggle_on",
-                    "$pressed_no_hover_texture": "textures/ui/toggle_on_hover",
-                    "$pressed_texture": "textures/ui/toggle_off_hover",
-                    "$toggle_name": "#netease_editor_template_namespace.toggle_name",
-                    "$toggle_state_binding_name": "#netease_editor_template_namespace.toggle_state",
-                    "anchor_from": "top_middle",
-                    "anchor_to": "top_middle",
-                    "size": [
-                        "100%+0px",
-                        "200%x+0px"
-                    ],
-                    "layer": 1,
-                    "bindings": [
-                        {
-                            "binding_type": "collection_details",
-                            "binding_collection_name": "",
-                            "binding_condition": "always_when_visible"
-                        }
-                    ]
+                "all_toggle@xg_chat.tab_toggle": {
+                    "$label_text": "全\n局",
+                    "$toggle_group_forced_index": 0
+                }
+            },
+            {
+                "friend_toggle@xg_chat.tab_toggle": {
+                    "#enabled": false,
+                    "$label_text": "好\n友",
+                    "$toggle_group_forced_index": 1
                 }
             }
         ]
+    },
+    "tab_toggle@common.toggle": {
+        "$checked_control": "xg_chat.toggle_checked_state",
+        "$checked_hover_control": "xg_chat.toggle_checked_state",
+        "$checked_locked_control": "xg_chat.toggle_locked_state",
+        "$checked_locked_hover_control": "xg_chat.toggle_locked_state",
+        "$radio_toggle_group": true,
+        "$toggle_group_default_selected": 0,
+        "$toggle_name": "#tab_toggle",
+        "$unchecked_control": "xg_chat.toggle_unchecked_state",
+        "$unchecked_hover_control": "xg_chat.toggle_unchecked_state",
+        "$unchecked_locked_control": "xg_chat.toggle_locked_state",
+        "$unchecked_locked_hover_control": "xg_chat.toggle_locked_state",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "size": [
+            13,
+            25
+        ]
+    },
+    "toggle_checked_state@xg_chat.toggle_common_state": {
+        "$bg_color": [
+            1,
+            1,
+            1
+        ],
+        "$texture": "textures/ui/button_borderless_lighthover"
+    },
+    "toggle_common_state": {
+        "type": "image",
+        "$bg_color|default": [
+            0,
+            0,
+            0
+        ],
+        "$label_text|default": "",
+        "$texture|default": "",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "color": "$bg_color",
+        "texture": "textures/ui/focus_border_white",
+        "controls": [
+            {
+                "text": {
+                    "type": "label",
+                    "size": [
+                        "default",
+                        "default"
+                    ],
+                    "layer": 3,
+                    "color": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "text": "$label_text"
+                }
+            },
+            {
+                "image": {
+                    "type": "image",
+                    "size": [
+                        "100%-2px",
+                        "100%-2px"
+                    ],
+                    "layer": 2,
+                    "texture": "$texture"
+                }
+            }
+        ]
+    },
+    "toggle_locked_state@xg_chat.toggle_common_state": {
+        "$texture": "textures/ui/disabledButtonNoBorder"
+    },
+    "toggle_unchecked_state@xg_chat.toggle_common_state": {
+        "$texture": "textures/ui/button_borderless_light"
     },
     "top_safezone_vertical_buffer@common.safezone_buffer": {
         "size": "$top_vertical_safezone_size"

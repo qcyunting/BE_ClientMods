@@ -3,7 +3,7 @@
   "CreateVersion": "3.7.0.211586",
   "EditVersion": "3.8.0.300259",
   "OldEditCount": 0,
-  "NewEditCount": 39,
+  "NewEditCount": 45,
   "OldComponents": [],
   "Account": "",
   "UserName": "",
@@ -34,8 +34,8 @@
   "NameSpace": "fqqgt",
   "EditMaterialPaths": [],
   "EditLogFilePath": "",
-  "ServerName": "EXPR",
-  "StudioPort": 9904,
+  "ServerName": "",
+  "StudioPort": 9672,
   "DCWebUrl": "https://x19apigatewayexpr.nie.netease.com",
   "ShowGuide": false,
   "AssertCacheDir": "",
@@ -44,6 +44,6 @@
   "StudioTempPath": "",
   "EditorResourcePackPath": "",
   "EditDate": 1770992885,
-  "EditDuration": 229716,
-  "TestDuration": 199767
+  "EditDuration": 245908,
+  "TestDuration": 204230
 }
