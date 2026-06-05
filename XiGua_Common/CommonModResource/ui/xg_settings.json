@@ -6,7 +6,6 @@
     },
     "namespace": "xg_settings",
     "root_screen": {
-        "$is_publish": false,
         "type": "screen",
         "controls": [
             {
@@ -68,6 +67,12 @@
                                 "$toggle_group_forced_index": 6,
                                 "ignored": "$is_publish"
                             }
+                        },
+                        {
+                            "top_bar_toggle_btn_7@xg_common.top_bar_toggle_btn": {
+                                "$text": "其他",
+                                "$toggle_group_forced_index": 7
+                            }
                         }
                     ]
                 }
@@ -98,6 +103,7 @@
                     "controls": [
                         {
                             "settings_content_0@settings_common.content_panel": {
+                                "$content_stack_panel": "general_section.general_section",
                                 "$source_property_name": "(#tab_index = 0)"
                             }
                         },
@@ -134,6 +140,12 @@
                             "settings_content_6@settings_common.content_panel": {
                                 "$content_stack_panel": "debug_section.debug_section",
                                 "$source_property_name": "(#tab_index = 6)"
+                            }
+                        },
+                        {
+                            "settings_content_7@settings_common.content_panel": {
+                                "$content_stack_panel": "other_section.other_section",
+                                "$source_property_name": "(#tab_index = 7)"
                             }
                         }
                     ]

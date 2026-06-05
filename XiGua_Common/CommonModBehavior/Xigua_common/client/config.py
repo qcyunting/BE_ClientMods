@@ -22,4 +22,5 @@ scoreboard_title_image_dict = {
     "街机游戏": "jjyx",
     "猎人游戏": "lryx",
     "云庭庄园": "ytzy",
+    "千阙云庭": "qcyunting_logo",
 }

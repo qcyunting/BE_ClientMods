@@ -5,8 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/HyperClashMod/HyperClashModBehavior" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VillageDefense/VillageDefenseBehavior/VillageDefense/client" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/XiGua_Common/CommonModBehavior/Xigua_common/client" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/.py2mcp/ExampleBehavior/Xigua_common/client" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/.py2mcp/ExampleBehavior/VillageDefense/client" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.py2mcp/behavior_packs/mcp/VillageDefense/client" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.py2mcp/behavior_packs/mcp/Xigua_common/client" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.14 (client_mod)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

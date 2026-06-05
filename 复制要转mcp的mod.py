@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""收集行为包脚本目录到 .py2mcp/ExampleBehavior，并回填同名 .mcp 文件。"""
+"""收集行为包脚本目录，并回填同名 .mcp 文件。"""
 
 from __future__ import annotations
 
@@ -10,7 +10,18 @@ import shutil
 import time
 
 
+# ===== 可配置项 =====
+SCRIPT_OUTPUT_DIR = Path(".py2mcp") / "behavior_packs" / "mcp"
+MCP_DIR = Path(".py2mcp") / "mcp"
+FILL_BACK_MCP = True
+
 TARGET_BEHAVIOR = "data"
+
+
+def resolve_config_path(root: Path, path: Path) -> Path:
+    if path.is_absolute():
+        return path.resolve()
+    return (root / path).resolve()
 
 
 def is_hidden_dir(path: Path) -> bool:
@@ -19,7 +30,7 @@ def is_hidden_dir(path: Path) -> bool:
 
 def read_pack_type(manifest_path: Path) -> str | None:
     try:
-        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+        data = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
     except (OSError, json.JSONDecodeError):
         return None
 
@@ -28,11 +39,11 @@ def read_pack_type(manifest_path: Path) -> str | None:
         return None
 
     has_data = any(
-        isinstance(module, dict) and module.get("type") == "data"
+        isinstance(module, dict) and module.get("type") == TARGET_BEHAVIOR
         for module in modules
     )
     if has_data:
-        return "data"
+        return TARGET_BEHAVIOR
     return None
 
 
@@ -63,28 +74,33 @@ def collect_script_dirs(behavior_pack_dir: Path) -> list[Path]:
     return script_dirs
 
 
-def copy_script_dir(script_dir: Path, example_behavior_dir: Path) -> Path:
-    target_dir = example_behavior_dir / script_dir.name
+def copy_script_dir(script_dir: Path, script_output_dir: Path) -> Path:
+    target_dir = script_output_dir / script_dir.name
     if target_dir.exists():
         shutil.rmtree(target_dir)
     shutil.copytree(script_dir, target_dir)
     return target_dir
 
 
-def copy_mcp_back_if_exists(script_name: str, example_behavior_dir: Path, behavior_pack_dir: Path) -> Path | None:
-    source_mcp = example_behavior_dir / f"{script_name}.mcp"
+def copy_mcp_back_if_exists(
+    script_name: str,
+    mcp_dir: Path,
+    behavior_pack_dir: Path,
+) -> Path | None:
+    source_mcp = mcp_dir / f"{script_name}.mcp"
     if not source_mcp.is_file():
         return None
+
     target_mcp = behavior_pack_dir / source_mcp.name
     if target_mcp.exists():
         target_mcp.unlink()
-    shutil.move(source_mcp, target_mcp)
+    shutil.copy2(source_mcp, target_mcp)
     return target_mcp
 
 
-def run(root: Path, example_behavior_dir: Path) -> None:
+def run(root: Path, script_output_dir: Path, mcp_dir: Path) -> None:
     start_time = time.perf_counter()
-    example_behavior_dir.mkdir(parents=True, exist_ok=True)
+    script_output_dir.mkdir(parents=True, exist_ok=True)
 
     behavior_packs = collect_behavior_pack_dirs(root)
     copied_scripts: list[tuple[Path, Path]] = []
@@ -92,16 +108,19 @@ def run(root: Path, example_behavior_dir: Path) -> None:
 
     for behavior_pack_dir in behavior_packs:
         for script_dir in collect_script_dirs(behavior_pack_dir):
-            target_script_dir = copy_script_dir(script_dir, example_behavior_dir)
+            target_script_dir = copy_script_dir(script_dir, script_output_dir)
             copied_scripts.append((script_dir, target_script_dir))
 
+            if not FILL_BACK_MCP:
+                continue
+
             copied_mcp = copy_mcp_back_if_exists(
-                script_dir.name, example_behavior_dir, behavior_pack_dir
+                script_dir.name,
+                mcp_dir,
+                behavior_pack_dir,
             )
             if copied_mcp is not None:
-                copied_mcps.append(
-                    (example_behavior_dir / copied_mcp.name, copied_mcp)
-                )
+                copied_mcps.append((mcp_dir / copied_mcp.name, copied_mcp))
 
     if copied_scripts:
         print("已复制脚本目录：")
@@ -110,7 +129,9 @@ def run(root: Path, example_behavior_dir: Path) -> None:
     else:
         print("未发现包含 modMain.py 的脚本目录。")
 
-    if copied_mcps:
+    if not FILL_BACK_MCP:
+        print("已关闭 .mcp 文件回填。")
+    elif copied_mcps:
         print("已回填 .mcp 文件：")
         for source_mcp, target_mcp in copied_mcps:
             print(f"- {source_mcp} -> {target_mcp}")
@@ -124,7 +145,7 @@ def run(root: Path, example_behavior_dir: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="复制行为包脚本目录到 .py2mcp/ExampleBehavior，并回填同名 .mcp"
+        description="复制行为包脚本目录，并回填同名 .mcp"
     )
     parser.add_argument(
         "--root",
@@ -133,14 +154,25 @@ def main() -> None:
         help="扫描根目录（默认当前目录）",
     )
     parser.add_argument(
-        "--example-behavior-dir",
+        "--script-output-dir",
         type=Path,
-        default=Path.cwd() / ".py2mcp" / "ExampleBehavior",
-        help="ExampleBehavior 目录（默认当前目录/.py2mcp/ExampleBehavior）",
+        default=SCRIPT_OUTPUT_DIR,
+        help=f"脚本目录输出目录（默认 {SCRIPT_OUTPUT_DIR}）",
+    )
+    parser.add_argument(
+        "--mcp-dir",
+        type=Path,
+        default=MCP_DIR,
+        help=f".mcp 文件目录（默认 {MCP_DIR}）",
     )
     args = parser.parse_args()
 
-    run(args.root.resolve(), args.example_behavior_dir.resolve())
+    root = args.root.resolve()
+    run(
+        root,
+        resolve_config_path(root, args.script_output_dir),
+        resolve_config_path(root, args.mcp_dir),
+    )
 
 
 if __name__ == "__main__":

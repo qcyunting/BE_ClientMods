@@ -1,0 +1,112 @@
+{
+    "namespace": "other_section",
+    "other_section@settings_common.content_stack_panel": {
+        "$spatialPatternsPadding": [ "100%", 8 ],
+        "$paddingLineDivider": [ "100%", 16 ],
+        "controls": [
+            {
+                "option_label@settings_common.option_generic_core_label": {
+                    "$label_bindings|default": [],
+                    "$option_label|default": "options.other",
+                    "$show_option_label|default": true,
+                    "$option_label_alignment|default": "left",
+                    "$label_size|default": [ "100% - 34px", "default" ],
+                    "$label_offset|default": [ 34, 3 ],
+                    "$option_generic_core_label_size": "$label_size",
+                    "$option_generic_core_label_anchor_from": "top_left",
+                    "$option_generic_core_label_anchor_to": "top_left"
+                }
+            },
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingLinkEduSupport": {
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+
+      {
+        "credits_button@settings_common.link_button": {
+          "$pressed_button_name": "button.licensed_content_popup",
+          "$button_text": "options.licensed_content",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+
+      {
+        "paddingDividerSustainability": {
+          "type": "panel",
+          "size": "$paddingLineDivider"
+        }
+      },
+
+              {
+                "licenses_label_header": {
+                  "type": "label",
+                  "text": "options.licenses",
+                  "color": "$sub_header_text_color"
+                }
+              },
+
+
+              // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+              {
+                "paddingLicensedContent": {
+                  "type": "panel",
+                  "size": "$spatialPatternsPadding"
+                }
+              },
+
+              {
+                "font_license_popup_button@settings_common.action_button": {
+                  "$pressed_button_name": "button.font_license_popup",
+                  "$button_text": "options.font_license",
+                  "$focus_override_down": "FOCUS_OVERRIDE_STOP"
+                }
+              },
+              {
+                "third_party_copyright_info_label_panel": {
+                  "type": "stack_panel",
+                  "orientation": "vertical",
+                  "size": [ "100%", "100%c" ],
+                  "controls": [
+                    {
+                      "spacer_0": {
+                        "type": "panel",
+                        "size": [ "100%", 4 ]
+                      }
+                    },
+                    {
+                      "copyright_label": {
+                        "type": "label",
+                        "color": "$body_text_color",
+                        "text": "thirdPartyConsole.copyright"
+                      }
+                    },
+                    {
+                      "spacer_1": {
+                        "type": "panel",
+                        "size": [ "100%", 4 ]
+                      }
+                    },
+                    {
+                      "copyright_icon": {
+                        "type": "image",
+                        "size": [ 117, 41 ],
+                        "texture": "textures/sfxs/qcyunting_logo"
+                      }
+                    }
+                  ]
+                }
+              },
+
+              // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+              {
+                "paddingSectionDividerContentLog": {
+                  "type": "panel",
+                  "size": "$paddingLineDivider"
+                }
+              }
+        ]
+    }
+}

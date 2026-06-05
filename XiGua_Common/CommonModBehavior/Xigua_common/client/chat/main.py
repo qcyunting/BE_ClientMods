@@ -35,6 +35,7 @@ class Chat(BaseSystem):
     @Listen(event_type=Listen.server)
     def SendMessage(self, args):
         msg = args.get("message")
+        msg_type = args.get("type", "system")
         user_uid = str(args.get("uid"))
         username = args.get("username", self.get_username_by_uid(user_uid))
         msg_time = int(time.time() * 1000)
@@ -42,6 +43,7 @@ class Chat(BaseSystem):
 
         msg_data = {
             "msg_id": msg_id,
+            "type": msg_type,
             "time": msg_time,
             "message": msg,
             "user_uid": user_uid,
@@ -142,12 +144,11 @@ class Chat(BaseSystem):
             reverse=reverse
         )
 
-    def __len__(self):
-        return len(self.msg_ids)
-
-    def __iter__(self):
-        for msg_id in self.msg_ids:
-            yield self.messages[msg_id]
-
-    def __contains__(self, msg_id):
-        return msg_id in self.messages
+    @Listen(event_type=Listen.server)
+    def SetLocalUID(self, args):
+        uid = args.get("local_uid")
+        self.uid = uid
+        def callback(data):
+            player_data = data.get(str(uid), {"headImageUrl": None, "frameImageUrl": None, "username": None})
+            self.NotifyToServer("requestUidUsernameCallback", {"data": player_data})
+        chatUtils.requestUidUsername([str(uid), ], callback)

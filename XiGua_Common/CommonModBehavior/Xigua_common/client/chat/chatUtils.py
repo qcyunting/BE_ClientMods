@@ -23,11 +23,33 @@ def set_user_frame(ScreenName, FullPath, uid):
     frameFilePath = utility.get_stream_temp_folder(uid + 'frame_image.png')
     gui.set_sprite(ScreenName, FullPath, frameFilePath, "RawPath")
 
+def requestUidUsername(uids, callback):
+    if not uids:
+        return
+    onResponse = lambda data, callback=callback: requestUidUsernameCallback(data, callback)
+    network_proxy.cs_get_user_detail_batch(uids, onResponse, with_game_state=True)
+    return
+
+def requestUidUsernameCallback(data, callback):
+    handleData = {}
+    if data:
+        entities = data.get('entities')
+        if entities:
+            for entity in entities:
+                id = str(entity['id'])
+                handleData[id] = {}
+                username = entity['nickname']
+                headImageType = entity.get('headImageType', 0)
+                handleData[id]['username'] = username
+                if headImageType == 0:
+                    handleData[id]['headImageUrl'] = entity['headImage']
+                elif headImageType == 1:
+                    handleData[id]['headImageUrl'] = entity['static_url']
+                handleData[id]['frameImageUrl'] = entity['frame_id']
+    callback and callback(handleData)
 requestUidUsername_data = {
     "uid": {
         "username": str(),
-        "lv": int(),
-        "state": str(),
         "headImageUrl": str(),
         "frameImageUrl": str()
     }

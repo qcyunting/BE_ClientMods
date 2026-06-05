@@ -64,5 +64,4 @@ class BaseSystem(ClientSystem):
     @Listen(event_type=Listen.server)
     def SetLocalUID(self, args):
         uid = args.get("local_uid")
-        print "设置本地UID", uid
         self.uid = uid

@@ -2,6 +2,20 @@
 ##
 ## Note, trailing spaces will NOT be trimmed. If you want room between the end of the string and the start of a
 ## comment on the same line, use TABs.
+options.other=我们不知道可放置这些设置的其他地方
+thirdPartyConsole.copyright=第三方版权声明
+options.licensed_content_1=制作团队	#
+options.licensed_content=制作团队	#
+licensed_content.viewLicensedContent=服主:初云\n副服主:星汉\n程序:\n  星汉\n  西瓜\n运营:\n  Kaelthas\n反作弊:Jeyor & Haedus Inc.
+
+
+
+
+
+
+
+
+
 accessibility.disableTTS=文本转语音已禁用	#
 accessibility.enableTTS=文本转语音已启用	#
 
@@ -6148,8 +6162,6 @@ lanServer.title=局域网世界	#
 lanServer.restart=该服务器已重启！	#
 
 licensed_content.goBack=返回	#
-licensed_content.viewLicensedContent=如希望查看授权内容，请使用任一网络浏览器访问https://minecraft.net/licensed-content/。	#
-
 livingroom.hint.tap_touchpad_for_immersive=点击触控板可切换沉浸模式	#
 livingroom.hint.tap_view_for_immersive=按下 F5 键切换沉浸模式	#
 livingroom.hint.tap_view_for_immersive_gamepad=按方向键上可切换沉浸模式		#### CertRequirement:{GDK-PC}[D-pad] CertRequirement:{GDK-Xbox}[D-pad]{MaxLength=300}
@@ -6681,7 +6693,6 @@ options.forceUnicodeFont=强制使用Unicode字体	#
 options.fov=视野	#
 options.fov.toggle=奔跑时调整视野	#
 options.licenses=Licenses	#
-options.licensed_content=授权内容	#
 options.networkSettings=网络设置	#
 options.ecoMode=实验节能功能		#### {MaxLength='40'}
 options.enableEcoMode=当控制器断开连接时降低帧率		#### CertRequirement:{GDK-PC}[controller] CertRequirement:{GDK-Xbox}[controller]{MaxLength="63"}

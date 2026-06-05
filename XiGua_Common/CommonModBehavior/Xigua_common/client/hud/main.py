@@ -49,7 +49,6 @@ class Main(BaseSystem):
         params = json.dumps(params)
         utility = instance.importModule("utility")
         user_token = utility.encrypt_token(url, params)
-        print "客户端:", user_token
         return_user_token(user_token)
 
     @Listen(event_type=Listen.server)
@@ -112,6 +111,7 @@ class Main(BaseSystem):
 
         screen_list = {
             "hud.hud_screen": "{}.client.hud.ui.hud.Main".format(modName),
+            "pause.pause_screen": "{}.client.pause.ui.pause.Main".format(modName),
             "settings.screen_world_controls_and_settings": "{}.client.xg_settings.ui.settings.Settings".format(modName),
             "netease_chat.netease_chat_screen": "{}.client.chat.ui.main.Main".format(modName),
         }
