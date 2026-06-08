@@ -19,6 +19,7 @@ class Main(ScreenNode):
 
         self.game_path = {
             "btn": "/image/s_panel/s_panel_%s/game%s/button",
+            "btn_select": "/image/s_panel/s_panel_%s/game%s/button/default",
             "bg": "/image/s_panel/s_panel_%s/game%s/button/image",
             "name": "/image/s_panel/s_panel_%s/game%s/button/image/image/label",
             "name_all": "/image/s_panel/s_panel_%s/game%s/button/image/image",
@@ -35,6 +36,10 @@ class Main(ScreenNode):
             "ban": "/image/s_panel/s_panel_%s/game%s/image_ban"
         }
 
+        self.game_gids = {}
+
+        self.game_select_data = None
+
 
     def Create(self):
         """
@@ -43,6 +48,11 @@ class Main(ScreenNode):
         btn_close = self.GetBaseUIControl("/image/btn_close").asButton()
         btn_close.AddTouchEventParams()
         btn_close.SetButtonTouchDownCallback(self.btnclose)
+
+        btn_join = self.GetBaseUIControl("/image/s_panel/s_panel_3/button").asButton()
+        btn_join.AddTouchEventParams()
+        btn_join.SetButtonTouchDownCallback(self.game_btn_join)
+        btn_join.SetTouchEnable(False) #默认不可点击，需要选择后才可
 
         title = self.data.get("title")
         subtitle = self.data.get("subtitle")
@@ -61,6 +71,9 @@ class Main(ScreenNode):
 
             path = self.game_path
             gid = game.get("id")
+
+            self.game_gids.setdefault(gid,{"game_idx":game_idx,"pidx":pidx})
+
             name = game.get("name")
             text = game.get("text")
             ui = game.get("ui")
@@ -121,7 +134,32 @@ class Main(ScreenNode):
         Params = args.get("AddTouchEventParams")
         gid = Params.get("gid")
         if Params:
-            # 需插件修复后填写
+            # 由原来的点击即可加入，变成选择后按钮进入
+            # self.client.send_to_server(gid,{})
+            # clientApi.PopScreen()
+            self.game_rec_select(gid)
+    
+    def game_rec_select(self,gid):
+        path = self.game_path
+        gid_data = self.game_gids.get(gid)
+        if gid_data:
+            pidx = gid_data["pidx"]
+            game_idx = gid_data["game_idx"]
+            rec_select = "textures/gameselect/rec_select"
+            if self.game_select_data:
+                old_pidx = self.game_select_data.get("pidx")
+                old_game_idx = self.game_select_data.get("game_idx")
+                if old_pidx and old_game_idx:
+                    self.GetBaseUIControl(self._game_path(path["btn_select"], old_pidx, old_game_idx)).asImage().SetSprite("")
+            self.GetBaseUIControl(self._game_path(path["btn_select"], pidx, game_idx)).asImage().SetSprite(rec_select)
+            self.game_select_data = {"gid":gid,"pidx":pidx,"game_idx":game_idx}
+            btn_join = self.GetBaseUIControl("/image/s_panel/s_panel_3/button").asButton()
+            btn_join.SetTouchEnable(True) #设置可点击
+    
+    def game_btn_join(self,args):
+        gid = self.game_select_data.get("gid")
+        print "game_btn_join",gid
+        if gid!=None:
             self.client.send_to_server(gid,{})
             clientApi.PopScreen()
 

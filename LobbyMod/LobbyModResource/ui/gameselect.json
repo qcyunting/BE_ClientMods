@@ -334,39 +334,54 @@
                                                         "type": "panel",
                                                         "size": [
                                                             "4%+0px",
-                                                            90.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
                                                 },
                                                 {
-                                                    "game1@gameselect.game": {}
+                                                    "game1@gameselect.game": {
+                                                        "size": [
+                                                            "30%+0px",
+                                                            "62%x+0px"
+                                                        ]
+                                                    }
                                                 },
                                                 {
                                                     "p1": {
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            90.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
                                                 },
                                                 {
-                                                    "game2@gameselect.game": {}
+                                                    "game2@gameselect.game": {
+                                                        "size": [
+                                                            "30%+0px",
+                                                            "62%x+0px"
+                                                        ]
+                                                    }
                                                 },
                                                 {
                                                     "p2": {
                                                         "type": "panel",
                                                         "size": [
                                                             "1%+0px",
-                                                            90.0
+                                                            "100%sm+0px"
                                                         ],
                                                         "layer": 1
                                                     }
                                                 },
                                                 {
-                                                    "game3@gameselect.game": {}
+                                                    "game3@gameselect.game": {
+                                                        "size": [
+                                                            "30%+0px",
+                                                            "62%x+0px"
+                                                        ]
+                                                    }
                                                 }
                                             ]
                                         }
@@ -501,6 +516,111 @@
                                                 }
                                             ]
                                         }
+                                    },
+                                    {
+                                        "p1": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%+0px",
+                                                5.0
+                                            ],
+                                            "layer": 1
+                                        }
+                                    },
+                                    {
+                                        "s_panel_3": {
+                                            "type": "stack_panel",
+                                            "size": [
+                                                "100%+0px",
+                                                "100%cm+0px"
+                                            ],
+                                            "layer": 1,
+                                            "orientation": "horizontal",
+                                            "controls": [
+                                                {
+                                                    "p0": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "71%+0px",
+                                                            "100%sm+0px"
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "button@common.button": {
+                                                        "type": "button",
+                                                        "$control_alpha": 1.0,
+                                                        "$default_texture": "textures/gameselect/btn_game",
+                                                        "$hover_texture": "textures/ui/beacon_button_hover",
+                                                        "$is_new_nine_slice": true,
+                                                        "$label_color": [
+                                                            1.0,
+                                                            1.0,
+                                                            1.0
+                                                        ],
+                                                        "$label_font_scale_factor": 1.0,
+                                                        "$label_font_size": "normal",
+                                                        "$label_layer": 3,
+                                                        "$label_offset": [
+                                                            0,
+                                                            0
+                                                        ],
+                                                        "$label_text": "进入游戏",
+                                                        "$nine_slice_buttom": 10,
+                                                        "$nine_slice_left": 10,
+                                                        "$nine_slice_right": 10,
+                                                        "$nine_slice_top": 10,
+                                                        "$nineslice_size": [
+                                                            0,
+                                                            0,
+                                                            0,
+                                                            0
+                                                        ],
+                                                        "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                                        "$pressed_texture": "textures/ui/beacon_button_pressed",
+                                                        "$texture_layer": 2,
+                                                        "anchor_from": "bottom_right",
+                                                        "anchor_to": "bottom_right",
+                                                        "offset": [
+                                                            -5.0,
+                                                            0.0
+                                                        ],
+                                                        "size": [
+                                                            "25%+0px",
+                                                            20.0
+                                                        ],
+                                                        "layer": 2,
+                                                        "button_mappings": [],
+                                                        "default_control": "default",
+                                                        "hover_control": "hover",
+                                                        "is_handle_button_move_event": true,
+                                                        "pressed_control": "pressed",
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "collection_details",
+                                                                "binding_collection_name": "",
+                                                                "binding_condition": "always_when_visible"
+                                                            }
+                                                        ],
+                                                        "controls": [
+                                                            {
+                                                                "default@netease_editor_template_namespace.default": {}
+                                                            },
+                                                            {
+                                                                "hover@netease_editor_template_namespace.hover": {}
+                                                            },
+                                                            {
+                                                                "pressed@netease_editor_template_namespace.pressed": {}
+                                                            },
+                                                            {
+                                                                "button_label@netease_editor_template_namespace.button_label": {}
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     }
                                 ]
                             }
@@ -536,13 +656,13 @@
                                     0
                                 ],
                                 "$pressed_button_name": "%netease_editor_template_namespace.click",
-                                "$pressed_texture": "",
+                                "$pressed_texture": "textures/ui/arrow_left_white",
                                 "$texture_layer": 2,
                                 "anchor_from": "top_left",
                                 "anchor_to": "top_left",
                                 "offset": [
-                                    10.0,
-                                    10.0
+                                    13.0,
+                                    13.0
                                 ],
                                 "size": [
                                     16.0,
