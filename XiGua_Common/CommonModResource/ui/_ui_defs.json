@@ -11,6 +11,7 @@
         "ui/settings_sections/social_section.json",
         "ui/settings_sections/sound_section.json",
         "ui/settings_sections/video_section.json",
+        "ui/settings_sections/other_section.json",
         "ui/chat_screen.json",
         "ui/disconnect_screen.json",
         "ui/hud_screen.json",

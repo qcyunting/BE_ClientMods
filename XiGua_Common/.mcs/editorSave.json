@@ -211,18 +211,15 @@
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/toggle"
                 ],
-                "xg_chat.chat_panel": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/chat_panel"
-                ],
-                "xg_chat.left_safezone_horizontal_buffer": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/left_safezone_horizontal_buffer",
-                    "/netease_prefab_screen/left_safezone_horizontal_buffer/bp"
-                ],
                 "xg_chat.m_msg": [
                     "/netease_prefab_screen",
-                    "/netease_prefab_screen/m_msg"
+                    "/netease_prefab_screen/m_msg",
+                    "/netease_prefab_screen/m_msg/msg_tip",
+                    "/netease_prefab_screen/m_msg/msg_tip/input_panel"
+                ],
+                "xg_chat.message_panel": [
+                    "/netease_prefab_screen",
+                    "/netease_prefab_screen/message_panel"
                 ],
                 "xg_chat.msg_content": [
                     "/netease_prefab_screen",
@@ -232,14 +229,18 @@
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/other_user_msg"
                 ],
+                "xg_chat.system_msg": [
+                    "/netease_prefab_screen"
+                ],
+                "xg_chat.system_msg_panel": [
+                    "/netease_prefab_screen"
+                ],
                 "xg_chat.tab_button_panel": [
                     "/netease_prefab_screen",
                     "/netease_prefab_screen/tab_button_panel"
                 ],
-                "xg_chat.user_name_panel": [
-                    "/netease_prefab_screen",
-                    "/netease_prefab_screen/user_name_panel",
-                    "/netease_prefab_screen/user_name_panel/user_name_panel"
+                "xg_chat.toggle_common_state": [
+                    "/netease_prefab_screen"
                 ],
                 "xg_common.button_texture": [
                     "/netease_prefab_screen"
@@ -342,9 +343,7 @@
                 ],
                 "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_chat.json": [
                     "/root_screen",
-                    "/root_screen/panel",
-                    "/root_screen/panel/chat_panel",
-                    "/root_screen/panel/chat_panel/chat_panel"
+                    "/root_screen/panel"
                 ],
                 "F:\\Documents\\python\\BE_ClientMods\\XiGua_Common\\CommonModResource\\ui\\xg_hud.json": [
                     "/netease_prefab_screen",
