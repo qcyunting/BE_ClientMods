@@ -184,6 +184,236 @@
                 "b": 0.0,
                 "a": 0.0
             }
+        },
+        "controller.render.player.rainbow_creeper_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.rainbow_creeper"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.steel_creeper_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.steel_creeper"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.blue_pink_gradient_creeper_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.blue_pink_gradient_creeper"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.blue_night_full_moon_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.blue_night_full_moon"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.music_soul_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.music_soul"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.slime_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.slime"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.sky_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.sky"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.turtle_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.turtle"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.allay_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.allay"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.purple_poppy_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.purple_poppy"
+            ],
+            "part_visibility": [
+                {
+                    "cape": "query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                }
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
         }
     }
 }

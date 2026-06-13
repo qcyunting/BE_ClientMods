@@ -761,7 +761,7 @@
       },
       {
         "armor_rend@armor_renderer": {
-          "offset": [ 2, 2 ],
+          "offset": [ 2, 14 ],
           "anchor_from": "top_left",
           "anchor_to": "top_left"
         }
