@@ -541,16 +541,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v1": {
+        "controller.render.player.midnight_fae_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v1",
+            "geometry": "Geometry.midnight_fae_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v1"
+                "Texture.midnight_fae_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -559,16 +559,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2": {
+        "controller.render.player.crimson_demon_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2",
+            "geometry": "Geometry.crimson_demon_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2"
+                "Texture.crimson_demon_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -577,16 +577,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v3": {
+        "controller.render.player.silver_radiance_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v3",
+            "geometry": "Geometry.silver_radiance_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v3"
+                "Texture.silver_radiance_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -595,16 +595,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v4": {
+        "controller.render.player.rose_fairy_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v4",
+            "geometry": "Geometry.rose_fairy_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v4"
+                "Texture.rose_fairy_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -613,16 +613,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v5": {
+        "controller.render.player.void_bat_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v5",
+            "geometry": "Geometry.void_bat_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v5"
+                "Texture.void_bat_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -631,16 +631,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v6": {
+        "controller.render.player.azure_crystal_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v6",
+            "geometry": "Geometry.azure_crystal_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v6"
+                "Texture.azure_crystal_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -649,16 +649,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2_1": {
+        "controller.render.player.forest_child_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2_1",
+            "geometry": "Geometry.forest_child_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2_1"
+                "Texture.forest_child_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -667,16 +667,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2_2": {
+        "controller.render.player.nightmare_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2_2",
+            "geometry": "Geometry.nightmare_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2_2"
+                "Texture.nightmare_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -685,16 +685,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2_3": {
+        "controller.render.player.froststeel_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2_3",
+            "geometry": "Geometry.froststeel_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2_3"
+                "Texture.froststeel_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -703,16 +703,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2_4": {
+        "controller.render.player.ember_drake_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2_4",
+            "geometry": "Geometry.ember_drake_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2_4"
+                "Texture.ember_drake_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -721,16 +721,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2_5": {
+        "controller.render.player.golden_seraph_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2_5",
+            "geometry": "Geometry.golden_seraph_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2_5"
+                "Texture.golden_seraph_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,
@@ -739,16 +739,16 @@
                 "a": 0.0
             }
         },
-        "controller.render.player.wings_v2_6": {
+        "controller.render.player.rose_dream_wings": {
             "rebuild_animation_matrices": true,
-            "geometry": "Geometry.wings_v2_6",
+            "geometry": "Geometry.rose_dream_wings",
             "materials": [
                 {
                     "*": "Material.default"
                 }
             ],
             "textures": [
-                "Texture.wings_v2_6"
+                "Texture.rose_dream_wings"
             ],
             "is_hurt_color": {
                 "r": 0.0,

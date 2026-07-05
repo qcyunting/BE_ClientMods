@@ -1,0 +1,74 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.silver_radiance_wings.idle": {
+			"loop": true,
+			"animation_length": 3,
+			"bones": {
+				"wings_3_bone": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								-7.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								22.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								0,
+								-7.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"wings_3_bone2": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								7.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5": {
+							"post": [
+								0,
+								-22.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [
+								0,
+								7.5,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"wings_3_all": {
+					"position": [
+						0,
+						12,
+						0
+					]
+				}
+			}
+		}
+	}
+}
