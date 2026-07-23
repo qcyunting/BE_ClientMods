@@ -756,6 +756,222 @@
                 "b": 0.0,
                 "a": 0.0
             }
+        },
+        "controller.render.player.wings_v1": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v1",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v1"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v3": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v3",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v3"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v4": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v4",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v4"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v5": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v5",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v5"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v6": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v6",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v6"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2_1": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2_1",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2_1"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2_2": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2_2",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2_2"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2_3": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2_3",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2_3"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2_4": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2_4",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2_4"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2_5": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2_5",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2_5"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.wings_v2_6": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.wings_v2_6",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.wings_v2_6"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
         }
     }
 }

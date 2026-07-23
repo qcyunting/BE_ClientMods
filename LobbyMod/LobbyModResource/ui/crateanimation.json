@@ -1,0 +1,389 @@
+{
+  "namespace": "crateanimation",
+  "slot": {
+    "type": "panel",
+    "size": [
+      74,
+      104
+    ],
+    "controls": [
+      {
+        "card_border": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "color": [
+            0.204,
+            0.231,
+            0.275
+          ],
+          "size": [
+            74,
+            104
+          ],
+          "layer": 2
+        }
+      },
+      {
+        "card_surface": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "color": [
+            0.125,
+            0.145,
+            0.176
+          ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [
+            72,
+            102
+          ],
+          "layer": 3
+        }
+      },
+      {
+        "item_renderer": {
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [
+            0,
+            8
+          ],
+          "size": [
+            42,
+            42
+          ],
+          "layer": 4,
+          "property_bag": {
+            "#item_id_aux": 0
+          }
+        }
+      },
+      {
+        "name": {
+          "type": "label",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [
+            0,
+            -12
+          ],
+          "size": [
+            70,
+            34
+          ],
+          "text_alignment": "center",
+          "font_size": "small",
+          "color": [
+            0.957,
+            0.965,
+            0.973
+          ],
+          "layer": 5,
+          "font_scale_factor": 2
+        }
+      },
+      {
+        "rarity_stripe": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [
+            0,
+            -1
+          ],
+          "size": [
+            72,
+            4
+          ],
+          "layer": 6
+        }
+      }
+    ]
+  },
+  "main": {
+    "type": "screen",
+    "is_showing_menu": true,
+    "render_game_behind": true,
+    "controls": [
+      {
+        "root": {
+          "type": "panel",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "controls": [
+            {
+              "shade": {
+                "type": "image",
+                "texture": "textures/ui/Black",
+                "keep_ratio": false,
+                "size": [
+                  "100%",
+                  "100%"
+                ],
+                "alpha": 0.8,
+                "layer": 1
+              }
+            },
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  -112
+                ],
+                "size": [
+                  400,
+                  24
+                ],
+                "text_alignment": "center",
+                "font_size": "large",
+                "color": [
+                  0.957,
+                  0.965,
+                  0.973
+                ],
+                "layer": 10
+              }
+            },
+            {
+              "subtitle": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  -90
+                ],
+                "size": [
+                  400,
+                  20
+                ],
+                "text_alignment": "center",
+                "color": [
+                  0.62,
+                  0.651,
+                  0.698
+                ],
+                "layer": 10
+              }
+            },
+            {
+              "reel_frame": {
+                "type": "image",
+                "texture": "textures/ui/White",
+                "keep_ratio": false,
+                "color": [
+                  0.204,
+                  0.231,
+                  0.275
+                ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  -4
+                ],
+                "size": [
+                  404,
+                  124
+                ],
+                "layer": 3,
+                "controls": [
+                  {
+                    "surface": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "color": [
+                        0.102,
+                        0.118,
+                        0.141
+                      ],
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "size": [
+                        400,
+                        120
+                      ],
+                      "layer": 4
+                    }
+                  },
+                  {
+                    "reel": {
+                      "type": "panel",
+                      "size": [
+                        400,
+                        110
+                      ],
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "clips_children": true,
+                      "layer": 5,
+                      "controls": [
+                        {
+                          "slot0@crateanimation.slot": {}
+                        },
+                        {
+                          "slot1@crateanimation.slot": {}
+                        },
+                        {
+                          "slot2@crateanimation.slot": {}
+                        },
+                        {
+                          "slot3@crateanimation.slot": {}
+                        },
+                        {
+                          "slot4@crateanimation.slot": {}
+                        },
+                        {
+                          "slot5@crateanimation.slot": {}
+                        },
+                        {
+                          "slot6@crateanimation.slot": {}
+                        },
+                        {
+                          "slot7@crateanimation.slot": {}
+                        },
+                        {
+                          "slot8@crateanimation.slot": {}
+                        },
+                        {
+                          "slot9@crateanimation.slot": {}
+                        },
+                        {
+                          "slot10@crateanimation.slot": {}
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "pointer_line": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "color": [
+                        1,
+                        0.788,
+                        0.157
+                      ],
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "size": [
+                        2,
+                        114
+                      ],
+                      "layer": 8
+                    }
+                  },
+                  {
+                    "pointer_top": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "color": [
+                        1,
+                        0.788,
+                        0.157
+                      ],
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [
+                        0,
+                        5
+                      ],
+                      "size": [
+                        12,
+                        3
+                      ],
+                      "layer": 9
+                    }
+                  },
+                  {
+                    "pointer_bottom": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "color": [
+                        1,
+                        0.788,
+                        0.157
+                      ],
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "bottom_middle",
+                      "offset": [
+                        0,
+                        -5
+                      ],
+                      "size": [
+                        12,
+                        3
+                      ],
+                      "layer": 9
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "status": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  91
+                ],
+                "size": [
+                  400,
+                  20
+                ],
+                "text_alignment": "center",
+                "color": [
+                  0.62,
+                  0.651,
+                  0.698
+                ],
+                "layer": 10
+              }
+            },
+            {
+              "result": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  99
+                ],
+                "size": [
+                  400,
+                  46
+                ],
+                "text_alignment": "center",
+                "font_size": "large",
+                "color": [
+                  0.957,
+                  0.965,
+                  0.973
+                ],
+                "layer": 10,
+                "font_scale_factor": 0.5
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

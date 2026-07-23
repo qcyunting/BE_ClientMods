@@ -1,0 +1,3133 @@
+{
+  "namespace": "exchangestore",
+  "good_row": {
+    "type": "button",
+    "size": [
+      "100%+-10px",
+      35
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "layer": 8,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "default_control": "default",
+    "hover_control": "hover",
+    "pressed_control": "pressed",
+    "$default_texture": "",
+    "$hover_texture": "textures/ui/White",
+    "$pressed_texture": "textures/ui/White",
+    "$pressed_button_name": "%netease_editor_template_namespace.click",
+    "button_mappings": [],
+    "controls": [
+      {
+        "edge": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "color": [
+            0.27,
+            0.3,
+            0.34
+          ],
+          "layer": 1
+        }
+      },
+      {
+        "surface": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "size": [
+            "100%+-2px",
+            "100%+-2px"
+          ],
+          "color": [
+            0.145,
+            0.165,
+            0.19
+          ],
+          "layer": 2,
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      },
+      {
+        "icon": {
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [
+            7,
+            0
+          ],
+          "size": [
+            25,
+            25
+          ],
+          "layer": 4,
+          "property_bag": {
+            "#item_id_aux": 0
+          }
+        }
+      },
+      {
+        "name": {
+          "type": "label",
+          "text": "商品",
+          "color": [
+            0.91,
+            0.92,
+            0.94
+          ],
+          "layer": 6,
+          "font_scale_factor": 0.78,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [
+            38,
+            5
+          ],
+          "size": [
+            "100%+-92px",
+            13
+          ],
+          "text_alignment": "left"
+        }
+      },
+      {
+        "sub": {
+          "type": "label",
+          "text": "",
+          "color": [
+            0.62,
+            0.65,
+            0.7
+          ],
+          "layer": 6,
+          "font_scale_factor": 0.67,
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [
+            38,
+            -4
+          ],
+          "size": [
+            "100%+-92px",
+            12
+          ],
+          "text_alignment": "left"
+        }
+      },
+      {
+        "flag": {
+          "type": "label",
+          "text": "",
+          "color": [
+            0.91,
+            0.92,
+            0.94
+          ],
+          "layer": 6,
+          "font_scale_factor": 0.72,
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [
+            -7,
+            0
+          ],
+          "size": [
+            48,
+            16
+          ],
+          "text_alignment": "right"
+        }
+      },
+      {
+        "default": {
+          "type": "panel"
+        }
+      },
+      {
+        "hover": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "color": [
+            0.45,
+            0.86,
+            0.82
+          ],
+          "alpha": 0.14
+        }
+      },
+      {
+        "pressed": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "keep_ratio": false,
+          "color": [
+            0.45,
+            0.86,
+            0.82
+          ],
+          "alpha": 0.28
+        }
+      }
+    ]
+  },
+  "goods_scroll_content": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [
+      "100%",
+      4864
+    ],
+    "controls": [
+      {
+        "row0@exchangestore.good_row": {
+          "offset": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "row1@exchangestore.good_row": {
+          "offset": [
+            0,
+            38
+          ]
+        }
+      },
+      {
+        "row2@exchangestore.good_row": {
+          "offset": [
+            0,
+            76
+          ]
+        }
+      },
+      {
+        "row3@exchangestore.good_row": {
+          "offset": [
+            0,
+            114
+          ]
+        }
+      },
+      {
+        "row4@exchangestore.good_row": {
+          "offset": [
+            0,
+            152
+          ]
+        }
+      },
+      {
+        "row5@exchangestore.good_row": {
+          "offset": [
+            0,
+            190
+          ]
+        }
+      },
+      {
+        "row6@exchangestore.good_row": {
+          "offset": [
+            0,
+            228
+          ]
+        }
+      },
+      {
+        "row7@exchangestore.good_row": {
+          "offset": [
+            0,
+            266
+          ]
+        }
+      },
+      {
+        "row8@exchangestore.good_row": {
+          "offset": [
+            0,
+            304
+          ]
+        }
+      },
+      {
+        "row9@exchangestore.good_row": {
+          "offset": [
+            0,
+            342
+          ]
+        }
+      },
+      {
+        "row10@exchangestore.good_row": {
+          "offset": [
+            0,
+            380
+          ]
+        }
+      },
+      {
+        "row11@exchangestore.good_row": {
+          "offset": [
+            0,
+            418
+          ]
+        }
+      },
+      {
+        "row12@exchangestore.good_row": {
+          "offset": [
+            0,
+            456
+          ]
+        }
+      },
+      {
+        "row13@exchangestore.good_row": {
+          "offset": [
+            0,
+            494
+          ]
+        }
+      },
+      {
+        "row14@exchangestore.good_row": {
+          "offset": [
+            0,
+            532
+          ]
+        }
+      },
+      {
+        "row15@exchangestore.good_row": {
+          "offset": [
+            0,
+            570
+          ]
+        }
+      },
+      {
+        "row16@exchangestore.good_row": {
+          "offset": [
+            0,
+            608
+          ]
+        }
+      },
+      {
+        "row17@exchangestore.good_row": {
+          "offset": [
+            0,
+            646
+          ]
+        }
+      },
+      {
+        "row18@exchangestore.good_row": {
+          "offset": [
+            0,
+            684
+          ]
+        }
+      },
+      {
+        "row19@exchangestore.good_row": {
+          "offset": [
+            0,
+            722
+          ]
+        }
+      },
+      {
+        "row20@exchangestore.good_row": {
+          "offset": [
+            0,
+            760
+          ]
+        }
+      },
+      {
+        "row21@exchangestore.good_row": {
+          "offset": [
+            0,
+            798
+          ]
+        }
+      },
+      {
+        "row22@exchangestore.good_row": {
+          "offset": [
+            0,
+            836
+          ]
+        }
+      },
+      {
+        "row23@exchangestore.good_row": {
+          "offset": [
+            0,
+            874
+          ]
+        }
+      },
+      {
+        "row24@exchangestore.good_row": {
+          "offset": [
+            0,
+            912
+          ]
+        }
+      },
+      {
+        "row25@exchangestore.good_row": {
+          "offset": [
+            0,
+            950
+          ]
+        }
+      },
+      {
+        "row26@exchangestore.good_row": {
+          "offset": [
+            0,
+            988
+          ]
+        }
+      },
+      {
+        "row27@exchangestore.good_row": {
+          "offset": [
+            0,
+            1026
+          ]
+        }
+      },
+      {
+        "row28@exchangestore.good_row": {
+          "offset": [
+            0,
+            1064
+          ]
+        }
+      },
+      {
+        "row29@exchangestore.good_row": {
+          "offset": [
+            0,
+            1102
+          ]
+        }
+      },
+      {
+        "row30@exchangestore.good_row": {
+          "offset": [
+            0,
+            1140
+          ]
+        }
+      },
+      {
+        "row31@exchangestore.good_row": {
+          "offset": [
+            0,
+            1178
+          ]
+        }
+      },
+      {
+        "row32@exchangestore.good_row": {
+          "offset": [
+            0,
+            1216
+          ]
+        }
+      },
+      {
+        "row33@exchangestore.good_row": {
+          "offset": [
+            0,
+            1254
+          ]
+        }
+      },
+      {
+        "row34@exchangestore.good_row": {
+          "offset": [
+            0,
+            1292
+          ]
+        }
+      },
+      {
+        "row35@exchangestore.good_row": {
+          "offset": [
+            0,
+            1330
+          ]
+        }
+      },
+      {
+        "row36@exchangestore.good_row": {
+          "offset": [
+            0,
+            1368
+          ]
+        }
+      },
+      {
+        "row37@exchangestore.good_row": {
+          "offset": [
+            0,
+            1406
+          ]
+        }
+      },
+      {
+        "row38@exchangestore.good_row": {
+          "offset": [
+            0,
+            1444
+          ]
+        }
+      },
+      {
+        "row39@exchangestore.good_row": {
+          "offset": [
+            0,
+            1482
+          ]
+        }
+      },
+      {
+        "row40@exchangestore.good_row": {
+          "offset": [
+            0,
+            1520
+          ]
+        }
+      },
+      {
+        "row41@exchangestore.good_row": {
+          "offset": [
+            0,
+            1558
+          ]
+        }
+      },
+      {
+        "row42@exchangestore.good_row": {
+          "offset": [
+            0,
+            1596
+          ]
+        }
+      },
+      {
+        "row43@exchangestore.good_row": {
+          "offset": [
+            0,
+            1634
+          ]
+        }
+      },
+      {
+        "row44@exchangestore.good_row": {
+          "offset": [
+            0,
+            1672
+          ]
+        }
+      },
+      {
+        "row45@exchangestore.good_row": {
+          "offset": [
+            0,
+            1710
+          ]
+        }
+      },
+      {
+        "row46@exchangestore.good_row": {
+          "offset": [
+            0,
+            1748
+          ]
+        }
+      },
+      {
+        "row47@exchangestore.good_row": {
+          "offset": [
+            0,
+            1786
+          ]
+        }
+      },
+      {
+        "row48@exchangestore.good_row": {
+          "offset": [
+            0,
+            1824
+          ]
+        }
+      },
+      {
+        "row49@exchangestore.good_row": {
+          "offset": [
+            0,
+            1862
+          ]
+        }
+      },
+      {
+        "row50@exchangestore.good_row": {
+          "offset": [
+            0,
+            1900
+          ]
+        }
+      },
+      {
+        "row51@exchangestore.good_row": {
+          "offset": [
+            0,
+            1938
+          ]
+        }
+      },
+      {
+        "row52@exchangestore.good_row": {
+          "offset": [
+            0,
+            1976
+          ]
+        }
+      },
+      {
+        "row53@exchangestore.good_row": {
+          "offset": [
+            0,
+            2014
+          ]
+        }
+      },
+      {
+        "row54@exchangestore.good_row": {
+          "offset": [
+            0,
+            2052
+          ]
+        }
+      },
+      {
+        "row55@exchangestore.good_row": {
+          "offset": [
+            0,
+            2090
+          ]
+        }
+      },
+      {
+        "row56@exchangestore.good_row": {
+          "offset": [
+            0,
+            2128
+          ]
+        }
+      },
+      {
+        "row57@exchangestore.good_row": {
+          "offset": [
+            0,
+            2166
+          ]
+        }
+      },
+      {
+        "row58@exchangestore.good_row": {
+          "offset": [
+            0,
+            2204
+          ]
+        }
+      },
+      {
+        "row59@exchangestore.good_row": {
+          "offset": [
+            0,
+            2242
+          ]
+        }
+      },
+      {
+        "row60@exchangestore.good_row": {
+          "offset": [
+            0,
+            2280
+          ]
+        }
+      },
+      {
+        "row61@exchangestore.good_row": {
+          "offset": [
+            0,
+            2318
+          ]
+        }
+      },
+      {
+        "row62@exchangestore.good_row": {
+          "offset": [
+            0,
+            2356
+          ]
+        }
+      },
+      {
+        "row63@exchangestore.good_row": {
+          "offset": [
+            0,
+            2394
+          ]
+        }
+      },
+      {
+        "row64@exchangestore.good_row": {
+          "offset": [
+            0,
+            2432
+          ]
+        }
+      },
+      {
+        "row65@exchangestore.good_row": {
+          "offset": [
+            0,
+            2470
+          ]
+        }
+      },
+      {
+        "row66@exchangestore.good_row": {
+          "offset": [
+            0,
+            2508
+          ]
+        }
+      },
+      {
+        "row67@exchangestore.good_row": {
+          "offset": [
+            0,
+            2546
+          ]
+        }
+      },
+      {
+        "row68@exchangestore.good_row": {
+          "offset": [
+            0,
+            2584
+          ]
+        }
+      },
+      {
+        "row69@exchangestore.good_row": {
+          "offset": [
+            0,
+            2622
+          ]
+        }
+      },
+      {
+        "row70@exchangestore.good_row": {
+          "offset": [
+            0,
+            2660
+          ]
+        }
+      },
+      {
+        "row71@exchangestore.good_row": {
+          "offset": [
+            0,
+            2698
+          ]
+        }
+      },
+      {
+        "row72@exchangestore.good_row": {
+          "offset": [
+            0,
+            2736
+          ]
+        }
+      },
+      {
+        "row73@exchangestore.good_row": {
+          "offset": [
+            0,
+            2774
+          ]
+        }
+      },
+      {
+        "row74@exchangestore.good_row": {
+          "offset": [
+            0,
+            2812
+          ]
+        }
+      },
+      {
+        "row75@exchangestore.good_row": {
+          "offset": [
+            0,
+            2850
+          ]
+        }
+      },
+      {
+        "row76@exchangestore.good_row": {
+          "offset": [
+            0,
+            2888
+          ]
+        }
+      },
+      {
+        "row77@exchangestore.good_row": {
+          "offset": [
+            0,
+            2926
+          ]
+        }
+      },
+      {
+        "row78@exchangestore.good_row": {
+          "offset": [
+            0,
+            2964
+          ]
+        }
+      },
+      {
+        "row79@exchangestore.good_row": {
+          "offset": [
+            0,
+            3002
+          ]
+        }
+      },
+      {
+        "row80@exchangestore.good_row": {
+          "offset": [
+            0,
+            3040
+          ]
+        }
+      },
+      {
+        "row81@exchangestore.good_row": {
+          "offset": [
+            0,
+            3078
+          ]
+        }
+      },
+      {
+        "row82@exchangestore.good_row": {
+          "offset": [
+            0,
+            3116
+          ]
+        }
+      },
+      {
+        "row83@exchangestore.good_row": {
+          "offset": [
+            0,
+            3154
+          ]
+        }
+      },
+      {
+        "row84@exchangestore.good_row": {
+          "offset": [
+            0,
+            3192
+          ]
+        }
+      },
+      {
+        "row85@exchangestore.good_row": {
+          "offset": [
+            0,
+            3230
+          ]
+        }
+      },
+      {
+        "row86@exchangestore.good_row": {
+          "offset": [
+            0,
+            3268
+          ]
+        }
+      },
+      {
+        "row87@exchangestore.good_row": {
+          "offset": [
+            0,
+            3306
+          ]
+        }
+      },
+      {
+        "row88@exchangestore.good_row": {
+          "offset": [
+            0,
+            3344
+          ]
+        }
+      },
+      {
+        "row89@exchangestore.good_row": {
+          "offset": [
+            0,
+            3382
+          ]
+        }
+      },
+      {
+        "row90@exchangestore.good_row": {
+          "offset": [
+            0,
+            3420
+          ]
+        }
+      },
+      {
+        "row91@exchangestore.good_row": {
+          "offset": [
+            0,
+            3458
+          ]
+        }
+      },
+      {
+        "row92@exchangestore.good_row": {
+          "offset": [
+            0,
+            3496
+          ]
+        }
+      },
+      {
+        "row93@exchangestore.good_row": {
+          "offset": [
+            0,
+            3534
+          ]
+        }
+      },
+      {
+        "row94@exchangestore.good_row": {
+          "offset": [
+            0,
+            3572
+          ]
+        }
+      },
+      {
+        "row95@exchangestore.good_row": {
+          "offset": [
+            0,
+            3610
+          ]
+        }
+      },
+      {
+        "row96@exchangestore.good_row": {
+          "offset": [
+            0,
+            3648
+          ]
+        }
+      },
+      {
+        "row97@exchangestore.good_row": {
+          "offset": [
+            0,
+            3686
+          ]
+        }
+      },
+      {
+        "row98@exchangestore.good_row": {
+          "offset": [
+            0,
+            3724
+          ]
+        }
+      },
+      {
+        "row99@exchangestore.good_row": {
+          "offset": [
+            0,
+            3762
+          ]
+        }
+      },
+      {
+        "row100@exchangestore.good_row": {
+          "offset": [
+            0,
+            3800
+          ]
+        }
+      },
+      {
+        "row101@exchangestore.good_row": {
+          "offset": [
+            0,
+            3838
+          ]
+        }
+      },
+      {
+        "row102@exchangestore.good_row": {
+          "offset": [
+            0,
+            3876
+          ]
+        }
+      },
+      {
+        "row103@exchangestore.good_row": {
+          "offset": [
+            0,
+            3914
+          ]
+        }
+      },
+      {
+        "row104@exchangestore.good_row": {
+          "offset": [
+            0,
+            3952
+          ]
+        }
+      },
+      {
+        "row105@exchangestore.good_row": {
+          "offset": [
+            0,
+            3990
+          ]
+        }
+      },
+      {
+        "row106@exchangestore.good_row": {
+          "offset": [
+            0,
+            4028
+          ]
+        }
+      },
+      {
+        "row107@exchangestore.good_row": {
+          "offset": [
+            0,
+            4066
+          ]
+        }
+      },
+      {
+        "row108@exchangestore.good_row": {
+          "offset": [
+            0,
+            4104
+          ]
+        }
+      },
+      {
+        "row109@exchangestore.good_row": {
+          "offset": [
+            0,
+            4142
+          ]
+        }
+      },
+      {
+        "row110@exchangestore.good_row": {
+          "offset": [
+            0,
+            4180
+          ]
+        }
+      },
+      {
+        "row111@exchangestore.good_row": {
+          "offset": [
+            0,
+            4218
+          ]
+        }
+      },
+      {
+        "row112@exchangestore.good_row": {
+          "offset": [
+            0,
+            4256
+          ]
+        }
+      },
+      {
+        "row113@exchangestore.good_row": {
+          "offset": [
+            0,
+            4294
+          ]
+        }
+      },
+      {
+        "row114@exchangestore.good_row": {
+          "offset": [
+            0,
+            4332
+          ]
+        }
+      },
+      {
+        "row115@exchangestore.good_row": {
+          "offset": [
+            0,
+            4370
+          ]
+        }
+      },
+      {
+        "row116@exchangestore.good_row": {
+          "offset": [
+            0,
+            4408
+          ]
+        }
+      },
+      {
+        "row117@exchangestore.good_row": {
+          "offset": [
+            0,
+            4446
+          ]
+        }
+      },
+      {
+        "row118@exchangestore.good_row": {
+          "offset": [
+            0,
+            4484
+          ]
+        }
+      },
+      {
+        "row119@exchangestore.good_row": {
+          "offset": [
+            0,
+            4522
+          ]
+        }
+      },
+      {
+        "row120@exchangestore.good_row": {
+          "offset": [
+            0,
+            4560
+          ]
+        }
+      },
+      {
+        "row121@exchangestore.good_row": {
+          "offset": [
+            0,
+            4598
+          ]
+        }
+      },
+      {
+        "row122@exchangestore.good_row": {
+          "offset": [
+            0,
+            4636
+          ]
+        }
+      },
+      {
+        "row123@exchangestore.good_row": {
+          "offset": [
+            0,
+            4674
+          ]
+        }
+      },
+      {
+        "row124@exchangestore.good_row": {
+          "offset": [
+            0,
+            4712
+          ]
+        }
+      },
+      {
+        "row125@exchangestore.good_row": {
+          "offset": [
+            0,
+            4750
+          ]
+        }
+      },
+      {
+        "row126@exchangestore.good_row": {
+          "offset": [
+            0,
+            4788
+          ]
+        }
+      },
+      {
+        "row127@exchangestore.good_row": {
+          "offset": [
+            0,
+            4826
+          ]
+        }
+      }
+    ]
+  },
+  "main": {
+    "type": "screen",
+    "absorbs_input": true,
+    "is_modal": true,
+    "is_showing_menu": true,
+    "render_game_behind": true,
+    "controls": [
+      {
+        "root": {
+          "type": "panel",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "controls": [
+            {
+              "shade": {
+                "type": "image",
+                "texture": "textures/ui/Black",
+                "keep_ratio": false,
+                "size": [
+                  "100%",
+                  "100%"
+                ],
+                "alpha": 0.42,
+                "layer": 0
+              }
+            },
+            {
+              "window": {
+                "type": "panel",
+                "size": [
+                  "100%+-14px",
+                  "100%+-14px"
+                ],
+                "max_size": [
+                  820,
+                  460
+                ],
+                "layer": 1,
+                "controls": [
+                  {
+                    "left_edge": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "size": [
+                        1,
+                        "100%"
+                      ],
+                      "color": [
+                        0.22,
+                        0.25,
+                        0.29
+                      ],
+                      "layer": 1,
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle"
+                    }
+                  },
+                  {
+                    "right_edge": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "size": [
+                        1,
+                        "100%"
+                      ],
+                      "color": [
+                        0.22,
+                        0.25,
+                        0.29
+                      ],
+                      "layer": 1,
+                      "anchor_from": "right_middle",
+                      "anchor_to": "right_middle"
+                    }
+                  },
+                  {
+                    "top_edge": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "size": [
+                        "100%",
+                        1
+                      ],
+                      "color": [
+                        0.22,
+                        0.25,
+                        0.29
+                      ],
+                      "layer": 1,
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle"
+                    }
+                  },
+                  {
+                    "bottom_edge": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "size": [
+                        "100%",
+                        1
+                      ],
+                      "color": [
+                        0.22,
+                        0.25,
+                        0.29
+                      ],
+                      "layer": 1,
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "bottom_middle"
+                    }
+                  },
+                  {
+                    "header": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "keep_ratio": false,
+                      "color": [
+                        0.13,
+                        0.15,
+                        0.18
+                      ],
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [
+                        0,
+                        1
+                      ],
+                      "size": [
+                        "100%+-2px",
+                        27
+                      ],
+                      "layer": 3,
+                      "controls": [
+                        {
+                          "title": {
+                            "type": "label",
+                            "text": "商城",
+                            "color": [
+                              0.91,
+                              0.92,
+                              0.94
+                            ],
+                            "layer": 6,
+                            "font_scale_factor": 1,
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "offset": [
+                              9,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "subtitle": {
+                            "type": "label",
+                            "text": "商城",
+                            "color": [
+                              0.62,
+                              0.65,
+                              0.7
+                            ],
+                            "layer": 6,
+                            "font_scale_factor": 0.85,
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "offset": [
+                              55,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "close@common.button": {
+                            "type": "button",
+                            "size": [
+                              20,
+                              20
+                            ],
+                            "offset": [
+                              "100%+-24px",
+                              3
+                            ],
+                            "layer": 8,
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "default_control": "default",
+                            "hover_control": "hover",
+                            "pressed_control": "pressed",
+                            "$default_texture": "",
+                            "$hover_texture": "textures/ui/White",
+                            "$pressed_texture": "textures/ui/White",
+                            "$pressed_button_name": "%netease_editor_template_namespace.click",
+                            "button_mappings": [],
+                            "controls": [
+                              {
+                                "label": {
+                                  "type": "label",
+                                  "text": "×",
+                                  "color": [
+                                    0.82,
+                                    0.84,
+                                    0.88
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 1.1
+                                }
+                              },
+                              {
+                                "default": {
+                                  "type": "panel"
+                                }
+                              },
+                              {
+                                "hover": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "color": [
+                                    0.45,
+                                    0.86,
+                                    0.82
+                                  ],
+                                  "alpha": 0.14
+                                }
+                              },
+                              {
+                                "pressed": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "color": [
+                                    0.45,
+                                    0.86,
+                                    0.82
+                                  ],
+                                  "alpha": 0.28
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "content": {
+                      "type": "panel",
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [
+                        0,
+                        33
+                      ],
+                      "size": [
+                        "100%+-12px",
+                        "100%+-40px"
+                      ],
+                      "layer": 3,
+                      "controls": [
+                        {
+                          "categories": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "size": [
+                              "18%",
+                              "100%"
+                            ],
+                            "layer": 3,
+                            "controls": [
+                              {
+                                "frame": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%",
+                                    "100%"
+                                  ],
+                                  "color": [
+                                    0.2,
+                                    0.22,
+                                    0.26
+                                  ],
+                                  "layer": 1
+                                }
+                              },
+                              {
+                                "surface": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%+-2px",
+                                    "100%+-2px"
+                                  ],
+                                  "color": [
+                                    0.075,
+                                    0.085,
+                                    0.105
+                                  ],
+                                  "layer": 2,
+                                  "anchor_from": "center",
+                                  "anchor_to": "center"
+                                }
+                              },
+                              {
+                                "heading": {
+                                  "type": "label",
+                                  "text": "商品分类",
+                                  "color": [
+                                    0.91,
+                                    0.92,
+                                    0.94
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.78,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    7,
+                                    7
+                                  ]
+                                }
+                              },
+                              {
+                                "cat0@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-10px",
+                                    28
+                                  ],
+                                  "offset": [
+                                    5,
+                                    25
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "icon": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          6,
+                                          0
+                                        ],
+                                        "size": [
+                                          18,
+                                          18
+                                        ],
+                                        "layer": 4,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "分类",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.8,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          29,
+                                          0
+                                        ],
+                                        "size": [
+                                          "100%+-34px",
+                                          18
+                                        ],
+                                        "text_alignment": "left"
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "cat1@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-10px",
+                                    28
+                                  ],
+                                  "offset": [
+                                    5,
+                                    58
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "icon": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          6,
+                                          0
+                                        ],
+                                        "size": [
+                                          18,
+                                          18
+                                        ],
+                                        "layer": 4,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "分类",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.8,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          29,
+                                          0
+                                        ],
+                                        "size": [
+                                          "100%+-34px",
+                                          18
+                                        ],
+                                        "text_alignment": "left"
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "cat2@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-10px",
+                                    28
+                                  ],
+                                  "offset": [
+                                    5,
+                                    91
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "icon": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          6,
+                                          0
+                                        ],
+                                        "size": [
+                                          18,
+                                          18
+                                        ],
+                                        "layer": 4,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "分类",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.8,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          29,
+                                          0
+                                        ],
+                                        "size": [
+                                          "100%+-34px",
+                                          18
+                                        ],
+                                        "text_alignment": "left"
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "cat3@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-10px",
+                                    28
+                                  ],
+                                  "offset": [
+                                    5,
+                                    124
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "icon": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          6,
+                                          0
+                                        ],
+                                        "size": [
+                                          18,
+                                          18
+                                        ],
+                                        "layer": 4,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "分类",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.8,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          29,
+                                          0
+                                        ],
+                                        "size": [
+                                          "100%+-34px",
+                                          18
+                                        ],
+                                        "text_alignment": "left"
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "cat4@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-10px",
+                                    28
+                                  ],
+                                  "offset": [
+                                    5,
+                                    157
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "icon": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          6,
+                                          0
+                                        ],
+                                        "size": [
+                                          18,
+                                          18
+                                        ],
+                                        "layer": 4,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "分类",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.8,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          29,
+                                          0
+                                        ],
+                                        "size": [
+                                          "100%+-34px",
+                                          18
+                                        ],
+                                        "text_alignment": "left"
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "cat5@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-10px",
+                                    28
+                                  ],
+                                  "offset": [
+                                    5,
+                                    190
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "icon": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          6,
+                                          0
+                                        ],
+                                        "size": [
+                                          18,
+                                          18
+                                        ],
+                                        "layer": 4,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "分类",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.8,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                          29,
+                                          0
+                                        ],
+                                        "size": [
+                                          "100%+-34px",
+                                          18
+                                        ],
+                                        "text_alignment": "left"
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "goods": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [
+                              "18%+5px",
+                              0
+                            ],
+                            "size": [
+                              "47%+-5px",
+                              "100%"
+                            ],
+                            "clips_children": true,
+                            "layer": 3,
+                            "controls": [
+                              {
+                                "frame": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%",
+                                    "100%"
+                                  ],
+                                  "color": [
+                                    0.2,
+                                    0.22,
+                                    0.26
+                                  ],
+                                  "layer": 1
+                                }
+                              },
+                              {
+                                "surface": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%+-2px",
+                                    "100%+-2px"
+                                  ],
+                                  "color": [
+                                    0.075,
+                                    0.085,
+                                    0.105
+                                  ],
+                                  "layer": 2,
+                                  "anchor_from": "center",
+                                  "anchor_to": "center"
+                                }
+                              },
+                              {
+                                "heading": {
+                                  "type": "label",
+                                  "text": "商品",
+                                  "color": [
+                                    0.91,
+                                    0.92,
+                                    0.94
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.82,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    2,
+                                    6
+                                  ]
+                                }
+                              },
+                              {
+                                "filter_all@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    36,
+                                    18
+                                  ],
+                                  "offset": [
+                                    "100%+-78px",
+                                    2
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.18,
+                                          0.42,
+                                          0.45
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "全部",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.75
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "filter_owned@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    36,
+                                    18
+                                  ],
+                                  "offset": [
+                                    "100%+-38px",
+                                    2
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.16,
+                                          0.18,
+                                          0.21
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "拥有",
+                                        "color": [
+                                          0.91,
+                                          0.92,
+                                          0.94
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.75
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "list@common.scrolling_panel": {
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    2,
+                                    25
+                                  ],
+                                  "size": [
+                                    "100%+-4px",
+                                    "100%+-27px"
+                                  ],
+                                  "layer": 5,
+                                  "$scrolling_content": "exchangestore.goods_scroll_content",
+                                  "$show_background": false,
+                                  "$background_nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                  ],
+                                  "$box_nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                  ],
+                                  "$track_nineslice_size": [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                  ],
+                                  "$scroll_background_texture": "textures/ui/White",
+                                  "$scroll_track_texture": "textures/ui/White",
+                                  "$scroll_box_texture": "textures/ui/White",
+                                  "$is_background_nine_slice": false,
+                                  "$is_track_nine_slice": false,
+                                  "$is_box_nine_slice": false
+                                }
+                              },
+                              {
+                                "empty": {
+                                  "type": "label",
+                                  "text": "该分类暂无商品",
+                                  "color": [
+                                    0.62,
+                                    0.65,
+                                    0.7
+                                  ],
+                                  "layer": 8,
+                                  "font_scale_factor": 0.82,
+                                  "anchor_from": "center",
+                                  "anchor_to": "center"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "detail": {
+                            "type": "panel",
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "size": [
+                              "34%",
+                              "100%"
+                            ],
+                            "layer": 3,
+                            "controls": [
+                              {
+                                "left_edge": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    1,
+                                    "100%"
+                                  ],
+                                  "color": [
+                                    0.2,
+                                    0.22,
+                                    0.26
+                                  ],
+                                  "layer": 1,
+                                  "anchor_from": "left_middle",
+                                  "anchor_to": "left_middle"
+                                }
+                              },
+                              {
+                                "right_edge": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    1,
+                                    "100%"
+                                  ],
+                                  "color": [
+                                    0.2,
+                                    0.22,
+                                    0.26
+                                  ],
+                                  "layer": 1,
+                                  "anchor_from": "right_middle",
+                                  "anchor_to": "right_middle"
+                                }
+                              },
+                              {
+                                "top_edge": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%",
+                                    1
+                                  ],
+                                  "color": [
+                                    0.2,
+                                    0.22,
+                                    0.26
+                                  ],
+                                  "layer": 1,
+                                  "anchor_from": "top_middle",
+                                  "anchor_to": "top_middle"
+                                }
+                              },
+                              {
+                                "bottom_edge": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%",
+                                    1
+                                  ],
+                                  "color": [
+                                    0.2,
+                                    0.22,
+                                    0.26
+                                  ],
+                                  "layer": 1,
+                                  "anchor_from": "bottom_middle",
+                                  "anchor_to": "bottom_middle"
+                                }
+                              },
+                              {
+                                "lower_surface": {
+                                  "type": "image",
+                                  "texture": "textures/ui/White",
+                                  "keep_ratio": false,
+                                  "size": [
+                                    "100%+-2px",
+                                    "100%+-80px"
+                                  ],
+                                  "color": [
+                                    0.075,
+                                    0.085,
+                                    0.105
+                                  ],
+                                  "layer": 2,
+                                  "anchor_from": "bottom_middle",
+                                  "anchor_to": "bottom_middle",
+                                  "offset": [
+                                    0,
+                                    -1
+                                  ]
+                                }
+                              },
+                              {
+                                "preview": {
+                                  "type": "panel",
+                                  "anchor_from": "top_middle",
+                                  "anchor_to": "top_middle",
+                                  "offset": [
+                                    0,
+                                    6
+                                  ],
+                                  "size": [
+                                    "100%+-12px",
+                                    72
+                                  ],
+                                  "layer": 3,
+                                  "controls": [
+                                    {
+                                      "top": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          1
+                                        ],
+                                        "color": [
+                                          0.32,
+                                          0.36,
+                                          0.42
+                                        ],
+                                        "layer": 4,
+                                        "anchor_from": "top_middle",
+                                        "anchor_to": "top_middle"
+                                      }
+                                    },
+                                    {
+                                      "bottom": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          1
+                                        ],
+                                        "color": [
+                                          0.32,
+                                          0.36,
+                                          0.42
+                                        ],
+                                        "layer": 4,
+                                        "anchor_from": "bottom_middle",
+                                        "anchor_to": "bottom_middle"
+                                      }
+                                    },
+                                    {
+                                      "left": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          1,
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.32,
+                                          0.36,
+                                          0.42
+                                        ],
+                                        "layer": 4,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle"
+                                      }
+                                    },
+                                    {
+                                      "right": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          1,
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.32,
+                                          0.36,
+                                          0.42
+                                        ],
+                                        "layer": 4,
+                                        "anchor_from": "right_middle",
+                                        "anchor_to": "right_middle"
+                                      }
+                                    },
+                                    {
+                                      "fallback": {
+                                        "type": "custom",
+                                        "renderer": "inventory_item_renderer",
+                                        "anchor_from": "top_middle",
+                                        "anchor_to": "top_middle",
+                                        "offset": [
+                                          0,
+                                          4
+                                        ],
+                                        "size": [
+                                          32,
+                                          32
+                                        ],
+                                        "layer": 5,
+                                        "property_bag": {
+                                          "#item_id_aux": 0
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "name": {
+                                  "type": "label",
+                                  "text": "商品",
+                                  "color": [
+                                    0.91,
+                                    0.92,
+                                    0.94
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.82,
+                                  "anchor_from": "top_middle",
+                                  "anchor_to": "top_middle",
+                                  "offset": [
+                                    0,
+                                    83
+                                  ],
+                                  "size": [
+                                    "100%+-16px",
+                                    22
+                                  ],
+                                  "text_alignment": "center"
+                                }
+                              },
+                              {
+                                "store": {
+                                  "type": "label",
+                                  "text": "",
+                                  "color": [
+                                    0.45,
+                                    0.84,
+                                    0.86
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.74,
+                                  "anchor_from": "top_middle",
+                                  "anchor_to": "top_middle",
+                                  "offset": [
+                                    0,
+                                    104
+                                  ],
+                                  "size": [
+                                    "100%+-16px",
+                                    14
+                                  ],
+                                  "text_alignment": "center"
+                                }
+                              },
+                              {
+                                "status_label": {
+                                  "type": "label",
+                                  "text": "状态",
+                                  "color": [
+                                    0.62,
+                                    0.65,
+                                    0.7
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.72,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    8,
+                                    122
+                                  ]
+                                }
+                              },
+                              {
+                                "status": {
+                                  "type": "label",
+                                  "text": "-",
+                                  "color": [
+                                    0.91,
+                                    0.92,
+                                    0.94
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.72,
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "offset": [
+                                    -8,
+                                    122
+                                  ],
+                                  "size": [
+                                    "100%+-52px",
+                                    14
+                                  ],
+                                  "text_alignment": "right"
+                                }
+                              },
+                              {
+                                "cooldown_label": {
+                                  "type": "label",
+                                  "text": "冷却",
+                                  "color": [
+                                    0.62,
+                                    0.65,
+                                    0.7
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.72,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    8,
+                                    137
+                                  ]
+                                }
+                              },
+                              {
+                                "cooldown": {
+                                  "type": "label",
+                                  "text": "-",
+                                  "color": [
+                                    0.62,
+                                    0.65,
+                                    0.7
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.72,
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "offset": [
+                                    -8,
+                                    137
+                                  ],
+                                  "size": [
+                                    "100%+-52px",
+                                    14
+                                  ],
+                                  "text_alignment": "right"
+                                }
+                              },
+                              {
+                                "remaining_label": {
+                                  "type": "label",
+                                  "text": "剩余",
+                                  "color": [
+                                    0.62,
+                                    0.65,
+                                    0.7
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.72,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    8,
+                                    152
+                                  ]
+                                }
+                              },
+                              {
+                                "remaining": {
+                                  "type": "label",
+                                  "text": "-",
+                                  "color": [
+                                    0.91,
+                                    0.92,
+                                    0.94
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.72,
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "offset": [
+                                    -8,
+                                    152
+                                  ],
+                                  "size": [
+                                    "100%+-52px",
+                                    14
+                                  ],
+                                  "text_alignment": "right"
+                                }
+                              },
+                              {
+                                "lore": {
+                                  "type": "label",
+                                  "text": "",
+                                  "color": [
+                                    0.68,
+                                    0.7,
+                                    0.74
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.68,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [
+                                    8,
+                                    171
+                                  ],
+                                  "size": [
+                                    "100%+-16px",
+                                    "100%+-205px"
+                                  ],
+                                  "text_alignment": "left"
+                                }
+                              },
+                              {
+                                "empty": {
+                                  "type": "label",
+                                  "text": "选择一个商品",
+                                  "color": [
+                                    0.62,
+                                    0.65,
+                                    0.7
+                                  ],
+                                  "layer": 6,
+                                  "font_scale_factor": 0.82,
+                                  "anchor_from": "center",
+                                  "anchor_to": "center"
+                                }
+                              },
+                              {
+                                "action@common.button": {
+                                  "type": "button",
+                                  "size": [
+                                    "100%+-16px",
+                                    24
+                                  ],
+                                  "offset": [
+                                    8,
+                                    "100%+-30px"
+                                  ],
+                                  "layer": 8,
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "default_control": "default",
+                                  "hover_control": "hover",
+                                  "pressed_control": "pressed",
+                                  "$default_texture": "",
+                                  "$hover_texture": "textures/ui/White",
+                                  "$pressed_texture": "textures/ui/White",
+                                  "$pressed_button_name": "%netease_editor_template_namespace.click",
+                                  "button_mappings": [],
+                                  "controls": [
+                                    {
+                                      "surface": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "size": [
+                                          "100%",
+                                          "100%"
+                                        ],
+                                        "color": [
+                                          0.18,
+                                          0.55,
+                                          0.34
+                                        ],
+                                        "layer": 1
+                                      }
+                                    },
+                                    {
+                                      "label": {
+                                        "type": "label",
+                                        "text": "购买",
+                                        "color": [
+                                          1,
+                                          1,
+                                          1
+                                        ],
+                                        "layer": 6,
+                                        "font_scale_factor": 0.9
+                                      }
+                                    },
+                                    {
+                                      "default": {
+                                        "type": "panel"
+                                      }
+                                    },
+                                    {
+                                      "hover": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.14
+                                      }
+                                    },
+                                    {
+                                      "pressed": {
+                                        "type": "image",
+                                        "texture": "textures/ui/White",
+                                        "keep_ratio": false,
+                                        "color": [
+                                          0.45,
+                                          0.86,
+                                          0.82
+                                        ],
+                                        "alpha": 0.28
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "notice": {
+                      "type": "label",
+                      "text": "",
+                      "color": [
+                        1,
+                        1,
+                        1
+                      ],
+                      "layer": 20,
+                      "font_scale_factor": 0.78,
+                      "visible": false,
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [
+                        0,
+                        35
+                      ],
+                      "size": [
+                        "70%",
+                        22
+                      ],
+                      "text_alignment": "center"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

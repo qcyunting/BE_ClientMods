@@ -1,0 +1,60 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.xigua.decoration_wings": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "angel_wings",
+            "behind_demon_wing",
+            "butterfly_wings",
+            "crow_wings",
+            "demon_wings",
+            "devil_wings",
+            "draconic_wings",
+            "dragon_wings",
+            "eagle_wings",
+            "golden_wings",
+            "magic_wings",
+            "metal_wings",
+            "ocean_wings",
+            "paladin_wings",
+            "purple_wings",
+            "phoenix_wings",
+            "wings1",
+            "wings2",
+            "wings3",
+            "wings4",
+            "wings5",
+            "wings6",
+            "midnight_fae_wings",
+            "crimson_demon_wings",
+            "silver_radiance_wings",
+            "rose_fairy_wings",
+            "void_bat_wings",
+            "azure_crystal_wings",
+            "forest_child_wings",
+            "nightmare_wings",
+            "froststeel_wings",
+            "ember_drake_wings",
+            "golden_seraph_wings",
+            "rose_dream_wings",
+            "wings_v1",
+            "wings_v2",
+            "wings_v3",
+            "wings_v4",
+            "wings_v5",
+            "wings_v6",
+            "wings_v2_1",
+            "wings_v2_2",
+            "wings_v2_3",
+            "wings_v2_4",
+            "wings_v2_5",
+            "wings_v2_6"
+          ]
+        }
+      }
+    }
+  }
+}

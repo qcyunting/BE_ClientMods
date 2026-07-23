@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "animations": {
+        "default": "animation.farmer.idle"
+      },
+      "geometry": {
+        "default": "geometry.farmer"
+      },
+      "identifier": "npc:farmer",
+      "materials": {
+        "default": "npc"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "scripts": {
+        "animate": [
+          "default"
+        ]
+      },
+      "textures": {
+        "default": "textures/entity/npc/farmer"
+      }
+    }
+  }
+}

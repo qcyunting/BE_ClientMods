@@ -31,6 +31,9 @@ class Main(BaseCustomScreen):
             BP + "/stack_panel/item_grid/image/scroll_view"
         ).asScrollView().GetScrollViewContentControl().GetChildByPath("/grid").asGrid()
         self.move_tab_btn_selection_image(self.type_index)
+        game_comp = clientApi.GetEngineCompFactory().CreateGame(clientApi.GetLevelId())
+        game_comp.AddTimer(0, self.update_grid)
+        game_comp.AddTimer(0.1, self.update_grid)
 
     def _get_current_items(self):
         if not self.type_key:
@@ -100,13 +103,13 @@ class Main(BaseCustomScreen):
     def return_use_button_text(self):
         key, item_data = self._get_selected_item()
         if not key:
-            return "§8选择服装"
+            return "选择服装"
         if not self.system.manager.is_owned(key):
             if not self._is_item_saleable(item_data):
-                return "§8非卖品"
-            return "§8购买"
+                return "非卖品"
+            return "购买"
         player_id = clientApi.GetLocalPlayerId()
-        return "§8卸下" if self.system.manager.is_equipped(player_id, key) else "§8穿戴"
+        return "卸下" if self.system.manager.is_equipped(player_id, key) else "穿戴"
 
     @ViewBinder.binding(ViewBinder.BF_ToggleChanged, "#isHasType")
     def OnHasTypeTabChecked(self, args):
@@ -115,8 +118,10 @@ class Main(BaseCustomScreen):
         self.update_grid()
 
     def update_grid(self):
+        if not self.item_grid:
+            return
         gui_size_x, gui_size_y = Gui.get_size(self.screen_name, BP)
-        self.max_x = max(1, int(gui_size_x - 10 - 55 - 150 - 6 - 8) // 50)
+        self.max_x = max(1, int(gui_size_x - 10 - 70 - 125 - 12 - 8) // 50)
         item_count = len(self._get_current_items())
         y = max(1, (item_count + self.max_x - 1) // self.max_x)
         self.item_grid.SetGridDimension((self.max_x, y))
@@ -185,6 +190,10 @@ class Main(BaseCustomScreen):
             return self.type_list[index]
         return ""
 
+    @ViewBinder.binding_collection(ViewBinder.BF_BindBool, "tab_list", "#tab_selected")
+    def return_tab_selected(self, index):
+        return index == self.type_index
+
     def move_tab_btn_selection_image(self, to_index):
         if not self.type_list:
             return
@@ -195,8 +204,8 @@ class Main(BaseCustomScreen):
             "move_tab_btn_selection": {
                 "anim_type": "offset",
                 "duration": 0.1,
-                "from": [0, self.type_index * 15],
-                "to": [0, to_index * 15]
+                "from": [0, self.type_index * 24],
+                "to": [0, to_index * 24]
             }
         }
         clientApi.RegisterUIAnimations(anim, True)

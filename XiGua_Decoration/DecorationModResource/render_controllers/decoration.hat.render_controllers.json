@@ -1,0 +1,95 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.player.greenhat": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.greenhat",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.greenhat"
+      ],
+      "is_hurt_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      }
+    },
+    "controller.render.player.minerhat": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.minerhat",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.minerhat"
+      ],
+      "is_hurt_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      }
+    },
+    "controller.render.player.piratehat": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.piratehat",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.piratehat"
+      ],
+      "is_hurt_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      }
+    },
+    "controller.render.player.sunhat": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.sunhat",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.sunhat"
+      ],
+      "is_hurt_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      }
+    },
+    "controller.render.player.tvhat": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.tvhat",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.tvhat"
+      ],
+      "is_hurt_color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      }
+    }
+  }
+}

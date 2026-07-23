@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "animations": {
+        "default": "animation.mechanic.idle"
+      },
+      "geometry": {
+        "default": "geometry.mechanic"
+      },
+      "identifier": "npc:mechanic",
+      "materials": {
+        "default": "npc"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "scripts": {
+        "animate": [
+          "default"
+        ]
+      },
+      "textures": {
+        "default": "textures/entity/npc/mechanic"
+      }
+    }
+  }
+}
